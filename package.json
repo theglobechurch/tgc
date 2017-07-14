@@ -1,0 +1,14 @@
+{
+  "name": "the-globe-church",
+  "private": true,
+  "dependencies": {},
+  "version": "0.0.0",
+  "description": "The Globe Church website",
+  "author": "James Doc",
+  "scripts": {
+    "dev": "node_modules/.bin/gulp dev"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

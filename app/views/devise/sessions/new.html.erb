@@ -1,0 +1,36 @@
+<main class="login-form">
+
+  <div class="login-form__content">
+
+    The Globe Church
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="login-form__field">
+        <%= f.email_field :email, autofocus: true, placeholder: 'Email',
+          class: 'login-form__input' %>
+      </div>
+
+      <div class="login-form__field">
+        <%= f.password_field :password, autocomplete: 'off',
+              placeholder: 'Password', class: 'login-form__input' %>
+      </div>
+
+      <% if false && devise_mapping.rememberable? %>
+        <div class="login-form__field">
+          <%= f.check_box :remember_me, class: 'login-form__checkbox' %>
+          <%= f.label :remember_me, class: 'login-form__label' %>
+        </div>
+      <% end %>
+
+      <div class="login-form__field">
+        <%= f.submit 'Log in', class: 'login-form__button' %>
+      </div>
+
+    <% end %>
+
+    <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot your password?", new_password_path(resource_name),
+        class: 'login-form__forgot' %>
+    <% end %>
+  </div>
+</main>

@@ -1,0 +1,23 @@
+---
+- name: "generate the server locale"
+  locale_gen: name={{ locale }} state=present
+
+- name: "set locale"
+  lineinfile: dest=/etc/default/locale regexp='^LANG' line='LANG={{ locale }}'
+
+- name: "reload locale"
+  raw: . /etc/default/locale
+
+- name: "set /etc/localtime"
+  command: /bin/cp /usr/share/zoneinfo/{{ timezone }} /etc/localtime
+
+- name: "Install additional software"
+  apt: pkg={{ item }} state=installed
+  with_items:
+  - dnsutils
+  - git
+  - vim
+  - ntp
+  - at
+  - lvm2
+  - build-essential

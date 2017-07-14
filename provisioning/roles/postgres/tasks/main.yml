@@ -1,0 +1,56 @@
+---
+- name: "Add PSQL repo key"
+  apt_key:
+    url: "https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+    state: present
+
+- name: "Add Postgres repo (for latest PSQLs)"
+  apt_repository:
+    repo: deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main
+
+- name: ensure apt cache is up to date
+  apt: update_cache=yes
+
+- name: "Install a database"
+  apt: pkg={{ item }} state=installed
+  with_items:
+  - postgresql-9.6
+  - python-psycopg2 # Needed for Ansible to config the db
+  - libpq-dev       # Needed for Ansible to config the db
+
+- name: "Copy across pg_hba file"
+  copy:
+    src: ../files/pg_hba.conf
+    dest: /etc/postgresql/9.6/main/pg_hba.conf
+    backup: yes
+
+- name: "Create DB"
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: "{{ item }}"
+    port: 5432 # May change...
+    encoding: UTF-8
+    lc_collate: en_GB.UTF-8
+    lc_ctype: en_GB.UTF-8
+    state: present
+  with_items:
+    - globe_development
+    - globe_test
+
+- name: "Create PSQL user"
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: rails
+    db: "{{ item }}"
+    password: secret
+    priv: "ALL"
+  with_items:
+    - globe_development
+    - globe_test
+
+- name: "Confirm DB and user set up correctly"
+  shell: PGPASSWORD=secret psql -U rails -h localhost --list
+  register: dbstatus
+  failed_when: dbstatus.rc == 2
