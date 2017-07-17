@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         get 'preview'
       end
     end
+    post :graphics, to: 'graphics#create'
   end
 
 end

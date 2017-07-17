@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170708121035) do
   end
 
   create_table "graphics", force: :cascade do |t|
+    t.string "background_image_uid"
     t.string "background_image_thumbnail_uid"
     t.string "background_image_320_uid"
     t.string "background_image_640_uid"
@@ -49,6 +50,8 @@ ActiveRecord::Schema.define(version: 20170708121035) do
     t.string "background_image_1280_uid"
     t.string "background_image_1920_uid"
     t.string "background_image_2560_uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "groupings", force: :cascade do |t|

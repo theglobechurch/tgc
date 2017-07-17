@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Globe Admin</title>
+    <%#= stylesheet_link_tag 'admin', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -13,5 +14,11 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
     <%= yield %>
+
+
+    <% if Rails.env.development? %>
+    <%= javascript_include_tag 'vendors' %>
+    <% end %>
+    <%= javascript_include_tag 'bundle' %>
   </body>
 </html>

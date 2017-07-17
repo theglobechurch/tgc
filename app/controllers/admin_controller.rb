@@ -4,6 +4,8 @@ class AdminController < ApplicationController
 
   layout 'admin'
 
-  def index; end
+  def index
+    @graphic = Graphic.all
+  end
 
 end

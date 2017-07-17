@@ -29,10 +29,12 @@ class Setup < ActiveRecord::Migration[5.1]
     end
 
     create_table :graphics do |t|
+      t.string :background_image_uid
       t.string :background_image_thumbnail_uid
       [320, 640, 960, 1280, 1920, 2560].each do |size|
         t.string :"background_image_#{size}_uid"
       end
+      t.timestamps
     end
 
     # At some point we may want to relate resources to themselves…
