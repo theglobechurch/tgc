@@ -2,19 +2,52 @@
 <html>
   <head>
     <title>Globe Admin</title>
-    <%#= stylesheet_link_tag 'admin', media: 'all' %>
+    <%= stylesheet_link_tag 'admin', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+
+    <header class="m-admin-header">
+      <a href="#" class="m-admin-header--menu">
+        <%= svg_tag('admin-menu')%>
+      </a>
+
+      <div class="m-admin-header--logo">
+        <%= link_to svg_tag('tgc-logo-long'), "/" %>
+      </div>
+
+      <div class="m-admin-header--user">
+        <%= image_tag(gravatar_url(current_user.email, {size: 55, d: 'mm'}),
+                      srcset: "#{gravatar_url(current_user.email, {size: 110, d: 'mm'})} 2x",
+                      alt: 'My account') %>
+        
+        <ul class="m-admin-header--user--subnav">
+          <li>Sign out</li>
+          <li>Change password</li>
+        </ul>
+      </div>
+    </header>
+
+    <!--<nav class="m-admin-nav">
+      <ul>
+        <li>Menu</li>
+        <li>Resources</li>
+        <li>Groupings</li>
+        <li>People</li>
+      </ul>
+    </nav>-->
+
+    <main>
+      <%= yield %>
+    </main>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <%= yield %>
-
 
     <% if Rails.env.development? %>
     <%= javascript_include_tag 'vendors' %>

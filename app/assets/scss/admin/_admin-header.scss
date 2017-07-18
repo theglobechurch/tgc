@@ -1,0 +1,55 @@
+.m-admin-header {
+  background-color: #282938;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+
+  &--menu {
+    color: white;
+    transition: color 0.2s;
+    padding: 10px;
+    width: 75px;
+
+    &:hover {
+      color: #d06348; 
+    }
+
+    svg {
+      height: 55px;
+      width: 55px;
+    }
+  }
+
+  &--logo {
+    color: white;
+    padding: 10px;
+    transition: color 0.1s;
+
+    svg {
+      max-height: 55px;
+      max-width: 205px;
+    }
+
+    &:hover {
+      color: lighten(#d06348, 30);
+    }
+  }
+
+  &--user {
+    padding: 8px;
+
+    img {
+      border: 1px solid white;
+      border-radius: 50%;
+    }
+
+    &--subnav {
+      display: none;
+
+      & .is-open {
+        display: block;
+      }
+    }
+  }
+}

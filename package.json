@@ -2,6 +2,8 @@
   "name": "the-globe-church",
   "private": true,
   "dependencies": {
+    "gulp-svg-symbols": "^2.0.2",
+    "gulp-svgmin": "^1.2.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
@@ -19,7 +21,10 @@
     "browserify": "^14.4.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-util": "^3.0.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

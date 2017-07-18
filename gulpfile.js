@@ -1,15 +1,24 @@
 // Gulpy gulp
-const gulp          = require('gulp');
-const browserify    = require('browserify');
-const source        = require('vinyl-source-stream');
-const gutil         = require('gulp-util');
+const autoprefixer  = require('gulp-autoprefixer');
 const babelify      = require('babelify');
+const browserify    = require('browserify');
 const del           = require('del');
+const gulp          = require('gulp');
+const gutil         = require('gulp-util');
+const sass          = require('gulp-sass');
+const source        = require('vinyl-source-stream');
+const sourcemaps    = require('gulp-sourcemaps');
+const svgmin        = require('gulp-svgmin');
+const svgsymbols    = require('gulp-svg-symbols');
 
 // Paths
 const paths = {
   js_src:  `${__dirname}/app/assets/js-raw`,
-  js_dest: `${__dirname}/app/assets/js`
+	js_dest: `${__dirname}/app/assets/js`,
+	scss_src: `${__dirname}/app/assets/scss`,
+	css_dest: `${__dirname}/app/assets/css`,
+	svg_src: `${__dirname}/app/assets/svg-raw`,
+	svg_dest: `${__dirname}/app/assets/svg`
 };
 
 const dependencies = [
@@ -21,25 +30,60 @@ let scriptsCount = 0;
 
 // Empty temp folders
 function clean() {
-  return del([`${paths.js_dest}`]);
+	return del([paths.js_dest,
+							paths.css_dest]);
 }
 
 gulp.task('scripts', function () {
-    bundleApp(false);
+    bundleJS(false);
+});
+
+gulp.task('scss', function () {
+    bundleCSS();
+});
+
+gulp.task('svg', function () {
+    bundleSVG();
 });
 
 gulp.task('deploy', function () {
     clean();
-    bundleApp(true);
+    bundleSVG();
+    bundleCSS();
+    bundleJS(true);
 });
 
 gulp.task('watch', function () {
 	gulp.watch([`${paths.js_src}/**/*.js`], ['scripts']);
+	gulp.watch([`${paths.scss_src}/**/*.scss`], ['scss']);
+	gulp.watch([`${paths.svg_src}/**/*.svg`], ['svg']);
 });
 
-gulp.task('default', ['scripts','watch']);
+gulp.task('default', ['scripts', 'scss', 'svg', 'watch']);
 
-function bundleApp(isProduction) {
+function bundleSVG() {
+  return gulp.src(`${paths.svg_src}/**/*.svg`)
+    .pipe(svgmin())
+    .pipe(svgsymbols({
+			svgClassname: 'svg-icon',
+			templates: ['default-svg'],
+      title: false,
+    }))
+    .pipe(gulp.dest(paths.svg_dest));
+}
+
+function bundleCSS() {
+  return gulp.src(`${paths.scss_src}/**/*.scss`)
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }).on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(paths.css_dest));
+}
+
+function bundleJS(isProduction) {
   scriptsCount++;
   
 	// Browserify will bundle all our js files together in to one and will let
