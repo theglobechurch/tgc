@@ -23,3 +23,12 @@
 .byebug_history
 
 public/dragonfly/*
+
+# These are compiled by gulp - don't commit them.
+/app/assets/css/*
+/app/assets/js/*
+/app/assets/svg/*
+
+!/app/assets/css/.keep
+!/app/assets/js/.keep
+!/app/assets/svg/.keep
