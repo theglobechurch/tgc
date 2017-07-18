@@ -1,4 +1,35 @@
-<%= @resource.title %>
-<hr />
+<div class="m-resource-preview">
+  <iframe class="m-resource-preview__iframe" src="<%= preview_admin_resource_path(@resource) %>"></iframe>
 
-<iframe class="" src="<%= preview_admin_resource_path(@resource) %>"></iframe>
+  <div class="m-resource-preview__sidebar">
+    <h1><%= @resource.title %></h1>
+
+    <%= link_to("Edit", edit_admin_resource_path(@resource)) %>
+
+    <%= btn_state_change('Publish',
+                         @resource,
+                         :publish,
+                         {},
+                         class: 'btn') if @resource.can_publish? %>
+
+    <%= btn_state_change('Unpublish',
+                         @resource,
+                         :unpublish,
+                         {},
+                         class: 'btn') if @resource.can_unpublish? %>
+
+    <%= btn_state_change('Delete',
+                         @resource,
+                         :expunge,
+                         {},
+                         class: 'btn') if @resource.can_expunge? %>
+
+    <hr />
+
+    <% if @resource.state == 'published' %>
+      <!-- copy to clipboard via https://davidwalsh.name/clipboard -->
+      Share link: <%= @resource.slug %>
+    <% end %>
+
+  </div>
+</div>

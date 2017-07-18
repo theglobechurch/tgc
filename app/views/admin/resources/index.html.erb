@@ -1,1 +1,12 @@
-<%= @resources.inspect %>
+<h1>Resources</h1>
+<ul>
+<% @resources.each do | resource | %>
+  <li>
+    <label><%= resource.resource_type %></label>
+    <h2><%= resource.title %></h2>
+    <p><%= resource.state %></p>
+    <%= link_to "Preview", admin_resource_path(resource) %>
+    <%= link_to "Edit", edit_admin_resource_path(resource) %>
+  </li>
+<% end %>
+</ul>

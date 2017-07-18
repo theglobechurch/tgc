@@ -1,5 +1,4 @@
 class Admin::ResourcesController < AdminController
-
   layout 'application', only: [:preview]
 
   def index
@@ -21,13 +20,15 @@ class Admin::ResourcesController < AdminController
   def create
     @resource = Resource.new(resource_params)
     @resource.save
-    # Respond with?
+    flash[:notice] = "Resource saved"
+    respond_with(:admin, @resource)
   end
 
   def update
     resource.attributes = resource_params
     resource.save
-    # Respond with?
+    flash[:notice] = "Resource updated"
+    respond_with(:admin, @resource)
   end
 
   def preview
@@ -51,7 +52,8 @@ private
                                      :external_reference,
                                      :body,
                                      :introduction,
-                                     :slug)
+                                     :slug,
+                                     :state_event)
   end
 
 end

@@ -6,6 +6,7 @@ gem 'dragonfly', '~> 1.1.3'                 # File uploads
 gem 'pg'                                    # Talk to the database
 gem 'puma', '~> 3.7'                        # server
 gem 'rails', '~> 5.1.2'                     # Ruby on rails framework
+gem 'state_machines-activerecord'           # Allow models to have states (draft, published, deleted, etc)
 
 group :development, :test, :build do
   gem 'factory_girl_rails'  # For testing
