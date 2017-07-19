@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       member do
         get 'preview'
       end
+      collection do
+        post :upload, to: 'uploads#create'
+      end
     end
     post :graphics, to: 'graphics#create'
   end

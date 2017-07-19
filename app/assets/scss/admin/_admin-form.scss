@@ -1,0 +1,25 @@
+.form {
+  
+  &__field {
+    &.is-hidden {
+      @include visuallyHidden;
+    }
+  }
+
+  &__label{ 
+    display: block;
+  }
+
+  &__input,
+  &__textarea {
+    border: 1px solid siteColor(petrel);
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__textarea {
+    resize: none;
+    height: 100px;
+  }
+}

@@ -39,7 +39,6 @@ table {
 // end resets, start defaults
 html, body {
   box-sizing: border-box;
-  height: 100%;
 }
 
 *, *:before, *:after {
@@ -75,15 +74,9 @@ a {
 
 hr {
   background-color: transparent;
+  border-bottom: 1px solid siteColor(petrel);
   clear: both;
-  color: grey;
-  font-size: 20px;
-  font-weight: 800;
-  margin: 0 0 10px;
-
-  &::after {
-    content: '\\\00a0\00a0\\';
-  }
+  margin: 5px 0;
 }
 
 abbr, acronym {
@@ -125,4 +118,8 @@ ul {
 
 li {
   margin: 0 0 10px;
+}
+
+textarea, input, button {
+  outline: none;
 }

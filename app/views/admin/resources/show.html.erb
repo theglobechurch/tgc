@@ -1,7 +1,9 @@
-<div class="m-resource-preview">
-  <iframe class="m-resource-preview__iframe" src="<%= preview_admin_resource_path(@resource) %>"></iframe>
-
-  <div class="m-resource-preview__sidebar">
+<main class="m-admin-body">
+  <section class="m-admin-body--main m-admin-preview">
+    <iframe class="m-admin-preview__iframe" src="<%= preview_admin_resource_path(@resource) %>"></iframe>
+  </section>
+  
+  <section class="m-admin-body--sidebar">
     <h1><%= @resource.title %></h1>
 
     <%= link_to("Edit", edit_admin_resource_path(@resource)) %>
@@ -31,5 +33,5 @@
       Share link: <%= @resource.slug %>
     <% end %>
 
-  </div>
-</div>
+  </section>
+</main>

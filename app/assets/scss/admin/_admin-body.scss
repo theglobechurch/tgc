@@ -1,0 +1,18 @@
+.m-admin-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  min-height: calc(100vh - 80px);
+
+  &--main {
+    padding: 10px;
+    width: 75%;
+  }
+
+  &--sidebar {
+    padding: 10px;
+    width: 25%;
+    border-left: 1px solid black;
+  }
+}

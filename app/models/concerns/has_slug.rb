@@ -11,6 +11,10 @@ module HasSlug
     validate :validate_slug_unchanged
 
     delegate :generate_slug_from, to: :class
+
+    before_validation do |r|
+      r.slug = r.title.parameterize if r.slug.blank?
+    end
   end
 
   def to_param
@@ -18,16 +22,12 @@ module HasSlug
   end
 
   def slug_can_be_changed?
-    !(respond_to?(:published_at) ? published_at? : persisted?)
+    !(state == 'published')
   end
 
   class_methods do
     def slug_find(s)
-      find_by! slug: s
-    end
-
-    def generate_slug_from
-      :title
+      find_by slug: s
     end
   end
 

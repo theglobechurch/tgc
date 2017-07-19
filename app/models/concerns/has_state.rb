@@ -32,6 +32,8 @@ module HasState
         scope state, -> { with_state(state) }
       end
 
+      scope :non_deleted, -> {without_state(:expunged)}
+
     end
   end
 

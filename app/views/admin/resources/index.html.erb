@@ -1,12 +1,25 @@
-<h1>Resources</h1>
-<ul>
-<% @resources.each do | resource | %>
-  <li>
-    <label><%= resource.resource_type %></label>
-    <h2><%= resource.title %></h2>
-    <p><%= resource.state %></p>
-    <%= link_to "Preview", admin_resource_path(resource) %>
-    <%= link_to "Edit", edit_admin_resource_path(resource) %>
-  </li>
-<% end %>
-</ul>
+<main class="m-admin-body">
+
+  <section class="m-admin-body--main">
+    <header>
+      <h1>Resources</h1>
+    </header>
+
+    <ul>
+    <% @resources.each do | resource | %>
+      <li>
+        <label><%= resource.resource_type %></label>
+        <h2><%= resource.title %></h2>
+        <p><%= resource.state %></p>
+        <%= link_to "Preview", admin_resource_path(resource) %>
+        <%= link_to "Edit", edit_admin_resource_path(resource) %>
+      </li>
+    <% end %>
+    </ul>
+  </section>
+
+  <section class="m-admin-body--sidebar">
+    <%= link_to "Create new", new_admin_resource_path() %>
+  </section>
+
+</main>

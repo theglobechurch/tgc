@@ -1,4 +1,7 @@
 class Admin::ResourcesController < AdminController
+
+  helper Admin::ResourceTypeHelper
+
   layout 'application', only: [:preview]
 
   def index
@@ -10,10 +13,12 @@ class Admin::ResourcesController < AdminController
   end
 
   def new
+    @uploads = Upload.all
     @resource = Resource.new
   end
 
   def edit
+    @uploads = Upload.all
     @resource = resource
   end
 
@@ -44,6 +49,10 @@ private
 
   def resource
     @resource ||= resources.slug_find(params[:id])
+    if (!@resource)
+      redirect_to admin_resources_path
+    end
+    @resource
   end
 
   def resource_params
@@ -53,7 +62,8 @@ private
                                      :body,
                                      :introduction,
                                      :slug,
-                                     :state_event)
+                                     :state_event,
+                                     :uploads_id)
   end
 
 end

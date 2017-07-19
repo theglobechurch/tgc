@@ -29,6 +29,7 @@
     svg {
       max-height: 55px;
       max-width: 205px;
+      width: 100%;
     }
 
     &:hover {
@@ -42,6 +43,8 @@
     img {
       border: 1px solid white;
       border-radius: 50%;
+      width: 55px;
+      height: 55px;
     }
 
     &--subnav {

@@ -1,4 +1,48 @@
 .m-admin-nav {
-  background-color: #282938;
-  color: #fff;
+  background-color: siteColor(gold-braid);
+  position: absolute;
+  top: 75px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(2px);
+  z-index: 1;
+
+  @include bpMinXSmall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bpMinSmall {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--link {
+    display: flex;
+    line-height: 100%;
+    align-items: center;
+
+    &--text {
+      margin-left: 5px;
+    }
+  }
+
+  svg {
+    width: 55px;
+    height: 55px;
+    border: 1px solid red;
+    border-radius: 50%;
+    padding: 5px;
+  }
+
+  &.is-hidden {
+    @include visuallyHidden;
+    opacity: 0;
+  }
 }

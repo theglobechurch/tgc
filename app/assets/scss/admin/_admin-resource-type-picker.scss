@@ -1,0 +1,36 @@
+.m-admin-resource-type-picker {
+  display: flex;
+
+  &__button {
+    width: 100%;
+    height: 40px;
+    border: 1px solid siteColor(lark-green);
+    border-right: none;
+    background-color: siteColor(lark-green);
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &.is-selected {
+      background-color: darken(siteColor(lark-green), 10);
+      pointer-events: none;
+    }
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+      border-right: 1px solid siteColor(lark-green);
+    }
+
+    &:hover {
+      background-color: siteColor(gold-braid);
+
+      &.is-selected {
+        background-color: darken(siteColor(lark-green), 10);
+      }
+    }
+  }
+}

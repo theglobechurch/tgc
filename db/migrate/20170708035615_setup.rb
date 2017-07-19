@@ -37,13 +37,20 @@ class Setup < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
+    create_table :uploads do |t|
+      t.string :file_uid, null: false
+      t.string :filesize
+      t.jsonb :meta, null: false, default: '{}'
+      t.timestamps
+    end
+    add_index  :uploads, :meta, using: :gin
+
     # At some point we may want to relate resources to themselves…
     # …will deal with that headache another time
     create_table :resources do |t|
       t.string :title, null: false
       t.string :state, default: 'draft'
       t.string :resource_type, null: false, index: true # recording | page | blog | download | link
-      t.string :upload_uid
       t.string :external_reference # may be a link to a third part website?
       t.text :body
       t.text :introduction
@@ -53,6 +60,7 @@ class Setup < ActiveRecord::Migration[5.1]
 
       t.belongs_to :people, index: true, foreign_key: true
       t.belongs_to :graphics, index: true, foreign_key: true
+      t.belongs_to :uploads, index: true, foreign_key: true
     end
 
     # Might not be needed...

@@ -1,0 +1,30 @@
+$site_colors: (
+  sockeye: #d06348,
+  petrel: #282938,
+  gold-braid: #c6ae40,
+  lark-green: #83c3a5
+);
+
+$font-family: (
+  heading: (Arial, Helvetica, sans-serif),
+  body: (Arial, Helvetica, sans-serif),
+);
+
+$breakpoints: (
+  x-small: 360px,
+  small: 768px,
+  medium: 1024px,
+  large: 1200px
+);
+
+@function siteColor($c: sockeye) {
+  @return map-get($site_colors, $c);
+}
+
+@function fontFamily($type: body) {
+  @return map-get($font-family, $type);
+}
+
+@function breakpoint($size) {
+  @return map-get($breakpoints, $size);
+}

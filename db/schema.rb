@@ -100,7 +100,6 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.string "title", null: false
     t.string "state", default: "draft"
     t.string "resource_type", null: false
-    t.string "upload_uid"
     t.string "external_reference"
     t.text "body"
     t.text "introduction"
@@ -110,10 +109,12 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.datetime "updated_at", null: false
     t.bigint "people_id"
     t.bigint "graphics_id"
+    t.bigint "uploads_id"
     t.index ["graphics_id"], name: "index_resources_on_graphics_id"
     t.index ["people_id"], name: "index_resources_on_people_id"
     t.index ["resource_type"], name: "index_resources_on_resource_type"
     t.index ["slug"], name: "index_resources_on_slug"
+    t.index ["uploads_id"], name: "index_resources_on_uploads_id"
   end
 
   create_table "resources_meta", force: :cascade do |t|
@@ -129,6 +130,15 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.bigint "resource_id", null: false
     t.index ["resource_id"], name: "index_series_resources_on_resource_id"
     t.index ["series_id"], name: "index_series_resources_on_series_id"
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.string "file_uid", null: false
+    t.string "filesize"
+    t.jsonb "meta", default: "{}", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meta"], name: "index_uploads_on_meta", using: :gin
   end
 
   create_table "users", force: :cascade do |t|
@@ -156,5 +166,6 @@ ActiveRecord::Schema.define(version: 20170708035615) do
   add_foreign_key "people", "locations"
   add_foreign_key "resources", "graphics", column: "graphics_id"
   add_foreign_key "resources", "people", column: "people_id"
+  add_foreign_key "resources", "uploads", column: "uploads_id"
   add_foreign_key "resources_meta", "resources", column: "resources_id"
 end

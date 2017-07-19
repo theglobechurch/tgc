@@ -6,7 +6,8 @@
     "gulp-svgmin": "^1.2.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "slugger": "^1.0.1"
   },
   "version": "0.0.0",
   "description": "The Globe Church website",
