@@ -30,7 +30,19 @@
 
   <div class="form__field js-resource-field" data-name="upload">
     <%= f.label :upload, class: 'form__label' %>
-    <div class="r-resource-upload" data-input-id="resource_uploads_id" data-valid-types="audio/mp3|audio/mpeg" data-file-src="<%= @resource.upload.try(:file).try(:remote_url) %>" data-file-type="<%= @resource.upload.try(:meta['type']) %>"></div>
+    <% if @resource.upload %>
+    <div class="r-resource-upload"
+         data-input-id="resource_uploads_id"
+         data-valid-types="audio/mp3|audio/mpeg"
+         data-file-src="<%= @resource.upload.file.try(:remote_url) %>"
+         data-file-type="<%= @resource.upload.meta['type'] %>">
+    </div>
+    <% else %>
+    <div class="r-resource-upload"
+         data-input-id="resource_uploads_id"
+         data-valid-types="audio/mp3|audio/mpeg">
+    </div>
+    <% end %>
     <%= f.hidden_field :uploads_id %>
   </div>
 
