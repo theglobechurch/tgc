@@ -14,11 +14,13 @@ class Admin::ResourcesController < AdminController
 
   def new
     @uploads = Upload.all
+    @groupings = Grouping.published
     @resource = Resource.new
   end
 
   def edit
     @uploads = Upload.all
+    @groupings = Grouping.published
     @resource = resource
   end
 
@@ -63,7 +65,8 @@ private
                                      :introduction,
                                      :slug,
                                      :state_event,
-                                     :uploads_id)
+                                     :uploads_id,
+                                     grouping_ids: [])
   end
 
 end

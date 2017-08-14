@@ -1,0 +1,37 @@
+<main class="m-admin-body">
+  <section class="m-admin-body--main m-admin-preview">
+    <iframe class="m-admin-preview__iframe" src="<%= preview_admin_grouping_path(@grouping) %>"></iframe>
+  </section>
+  
+  <section class="m-admin-body--sidebar">
+    <h1><%= @grouping.title %></h1>
+
+    <%= link_to("Edit", edit_admin_grouping_path(@grouping)) %>
+
+    <%= btn_state_change('Publish',
+                         @grouping,
+                         :publish,
+                         {},
+                         class: 'btn') if @grouping.can_publish? %>
+
+    <%= btn_state_change('Unpublish',
+                         @grouping,
+                         :unpublish,
+                         {},
+                         class: 'btn') if @grouping.can_unpublish? %>
+
+    <%= btn_state_change('Delete',
+                         @grouping,
+                         :expunge,
+                         {},
+                         class: 'btn') if @grouping.can_expunge? %>
+
+    <hr />
+
+    <% if @grouping.state == 'published' %>
+      <!-- copy to clipboard via https://davidwalsh.name/clipboard -->
+      Share link: <%= @grouping.slug %>
+    <% end %>
+
+  </section>
+</main>

@@ -15,3 +15,9 @@ Resource.create(title: "For the joy",
                 external_reference: "http://www.desiringgod.org/labs/for-the-joy-set-before-him",
                 introduction: "The New Testament motivates us toward spiritual gr...",
                 slug: "for-the-joy")
+
+Grouping.create(title: "Philemon: For Love's Sake",
+                description: "In the book of Philemon, Paul writes to a local church leader calling him to gospel love. In this series we’re going to see that gospel love will push us further and deeper than we could ever imagine.",
+                state: "published",
+                group_type: "series",
+                slug: "philemon-for-loves-sake")

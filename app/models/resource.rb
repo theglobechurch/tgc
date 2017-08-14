@@ -12,6 +12,10 @@ class Resource < ApplicationRecord
              optional: true,
              foreign_key: :uploads_id
 
+  has_many :resource_grouping_joins
+  has_many :groupings,
+           through: :resource_grouping_joins 
+
   validates :title, :resource_type, presence: true
   validates :resource_type,
             inclusion: { in: RESOURCE_TYPES,

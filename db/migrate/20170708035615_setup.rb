@@ -56,6 +56,7 @@ class Setup < ActiveRecord::Migration[5.1]
       t.text :introduction
       t.string :slug, index: true, unique: true
       t.datetime :published_at
+      t.datetime :display_date
       t.timestamps
 
       t.belongs_to :people, index: true, foreign_key: true
@@ -74,10 +75,20 @@ class Setup < ActiveRecord::Migration[5.1]
     create_table :groupings do |t|
       t.string :title, null: false
       t.text :description
+      t.string :group_type, null: false, index: true # series | resource | etc      
       t.datetime :start_date
       t.datetime :end_date
+      t.string :slug, index: true, unique: true
       t.string :state, default: 'draft'
       t.datetime :published_at
+      t.timestamps
+
+      t.belongs_to :graphics, index: true, foreign_key: true
+    end
+
+    create_table :resource_grouping_joins do |t|
+      t.integer :resource_id, index: true
+      t.integer :grouping_id, index: true
       t.timestamps
     end
 
@@ -102,11 +113,6 @@ class Setup < ActiveRecord::Migration[5.1]
       t.text :description
 
       t.string :slug, index: true, unique: true
-    end
-
-    create_join_table :series, :resources, table_name: :series_resources do |t|
-      t.index :series_id
-      t.index :resource_id
     end
 
     ### DEVISE SETUP

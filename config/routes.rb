@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :admin, only: [:index]
   namespace :admin do
+
     resources :resources do
       member do
         get 'preview'
@@ -17,7 +18,16 @@ Rails.application.routes.draw do
         post :upload, to: 'uploads#create'
       end
     end
+
+    resources :groupings do
+      member do
+        get 'preview'
+      end
+    end
+
     post :graphics, to: 'graphics#create'
   end
+
+  resources :resources, only: [:index, :show]
 
 end

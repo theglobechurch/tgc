@@ -59,7 +59,7 @@ gulp.task('watch', function () {
 	gulp.watch([`${paths.svg_src}/**/*.svg`], ['svg']);
 });
 
-gulp.task('default', ['scripts', 'scss', 'svg', 'watch']);
+gulp.task('dev', ['scripts', 'scss', 'svg', 'watch']);
 
 function bundleSVG() {
   return gulp.src(`${paths.svg_src}/**/*.svg`)

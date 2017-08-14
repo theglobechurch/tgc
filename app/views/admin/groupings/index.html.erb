@@ -1,0 +1,25 @@
+<main class="m-admin-body">
+
+  <section class="m-admin-body--main">
+    <header>
+      <h1>Series and Resources</h1>
+    </header>
+
+    <ul>
+    <% @groupings.each do | group | %>
+      <li>
+        <label><%= group.group_type %></label>
+        <h2><%= group.title %></h2>
+        <p><%= group.state %></p>
+        <%= link_to "Preview", admin_grouping_path(group) %>
+        <%= link_to "Edit", edit_admin_grouping_path(group) %>
+      </li>
+    <% end %>
+    </ul>
+  </section>
+
+  <section class="m-admin-body--sidebar">
+    <%= link_to "Create new", new_admin_grouping_path() %>
+  </section>
+
+</main>

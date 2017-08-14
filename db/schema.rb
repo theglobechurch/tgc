@@ -57,12 +57,18 @@ ActiveRecord::Schema.define(version: 20170708035615) do
   create_table "groupings", force: :cascade do |t|
     t.string "title", null: false
     t.text "description"
+    t.string "group_type", null: false
     t.datetime "start_date"
     t.datetime "end_date"
+    t.string "slug"
     t.string "state", default: "draft"
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "graphics_id"
+    t.index ["graphics_id"], name: "index_groupings_on_graphics_id"
+    t.index ["group_type"], name: "index_groupings_on_group_type"
+    t.index ["slug"], name: "index_groupings_on_slug"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -96,6 +102,15 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.index ["slug"], name: "index_people_on_slug"
   end
 
+  create_table "resource_grouping_joins", force: :cascade do |t|
+    t.integer "resource_id"
+    t.integer "grouping_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["grouping_id"], name: "index_resource_grouping_joins_on_grouping_id"
+    t.index ["resource_id"], name: "index_resource_grouping_joins_on_resource_id"
+  end
+
   create_table "resources", force: :cascade do |t|
     t.string "title", null: false
     t.string "state", default: "draft"
@@ -105,6 +120,7 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.text "introduction"
     t.string "slug"
     t.datetime "published_at"
+    t.datetime "display_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "people_id"
@@ -123,13 +139,6 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.bigint "resources_id"
     t.index ["meta_key"], name: "index_resources_meta_on_meta_key"
     t.index ["resources_id"], name: "index_resources_meta_on_resources_id"
-  end
-
-  create_table "series_resources", id: false, force: :cascade do |t|
-    t.bigint "series_id", null: false
-    t.bigint "resource_id", null: false
-    t.index ["resource_id"], name: "index_series_resources_on_resource_id"
-    t.index ["series_id"], name: "index_series_resources_on_series_id"
   end
 
   create_table "uploads", force: :cascade do |t|
@@ -163,6 +172,7 @@ ActiveRecord::Schema.define(version: 20170708035615) do
   add_foreign_key "event_instances", "locations"
   add_foreign_key "event_series", "graphics", column: "graphics_id"
   add_foreign_key "event_series", "locations"
+  add_foreign_key "groupings", "graphics", column: "graphics_id"
   add_foreign_key "people", "locations"
   add_foreign_key "resources", "graphics", column: "graphics_id"
   add_foreign_key "resources", "people", column: "people_id"

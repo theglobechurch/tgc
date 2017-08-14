@@ -8,6 +8,13 @@
 
   &__label{ 
     display: block;
+
+    &--radio {
+      span {
+        margin-left: 4px;
+        text-transform: capitalize;
+      }
+    }
   }
 
   &__input,

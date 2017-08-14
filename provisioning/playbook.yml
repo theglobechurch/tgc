@@ -11,3 +11,8 @@
     - nginx
     - ruby
     - postgres
+
+- name: Webserver setup
+  hosts: all
+  roles:
+    - gems

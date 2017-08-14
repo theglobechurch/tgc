@@ -10,7 +10,7 @@ resourceTypeSelector();
 renderFeatureImageSelector('.r-featureImageSelector');
 renderResourceUploader('.r-resource-upload');
 
-const slugFields = document.querySelectorAll('.js-resource-slug-field');
+const slugFields = document.querySelectorAll('.js-slug-field');
 if (slugFields) {
   slugFields.forEach(f => adminSlugger(f));
 }

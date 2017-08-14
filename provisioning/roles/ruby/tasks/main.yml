@@ -19,7 +19,7 @@
 - name: "Install Bundler"
   shell: gem install bundler --no-document
 
-- name: "Install Gems"
-  bundler:
-    state: present
-    gemfile: /srv/tgc/Gemfile
+# - name: "Install Gems"
+#   bundler:
+#     state: present
+#     gemfile: /srv/tgc/Gemfile
