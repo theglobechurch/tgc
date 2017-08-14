@@ -8,7 +8,7 @@ module ApplicationHelper
       content_tag(
         :use,
         '',
-        'xlink:href': image_path("svg-symbols.svg##{icon}"),
+        'xlink:href': image_path("tgc-fractal.svg##{icon}"),
       ),
       html_options)
   end

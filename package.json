@@ -2,6 +2,7 @@
   "name": "the-globe-church",
   "private": true,
   "dependencies": {
+    "globe-fractal": "theglobechurch/fractal#e22e41e",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-svgmin": "^1.2.4",
     "prop-types": "^15.5.10",

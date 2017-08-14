@@ -2,10 +2,23 @@
 <html>
   <head>
     <title>Globe</title>
+    <%= stylesheet_link_tag 'tgc-fractal', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+
+    <%= render "globals/header" %>
+
+    <main class="c-main" role="main">
+      <%= render "globals/banner" %>
     <%= yield %>
+    </main>
+
+    <%= render "globals/footer" %>
+    <%= render "globals/main_nav" %>
+    
+
+    <%= javascript_include_tag 'tgc-fractal' %>
   </body>
 </html>
