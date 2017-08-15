@@ -20,4 +20,13 @@ module ApplicationHelper
     end.to_s
   end
 
+  def responsive_image_tag(graphic, html_options = {})
+    srcset = graphic.map { |(k, v)| "#{URI.escape(v)} #{k}w" }
+    kwargs = html_options.deep_merge(sizes:
+      html_options.fetch(:sizes, []).join(', '))
+    image_tag URI.escape(banner['image'].try(:[], :"960")),
+              srcset: srcset.join(', '),
+              **kwargs
+  end
+
 end

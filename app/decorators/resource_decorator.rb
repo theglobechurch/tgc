@@ -4,7 +4,8 @@ class ResourceDecorator < Draper::Decorator
   def banner
     {
       "title" => title,
-      "pretitle" => pretitle
+      "pretitle" => pretitle,
+      "image" => lead_image
     }
   end
 
@@ -16,6 +17,14 @@ class ResourceDecorator < Draper::Decorator
 
   def title
     object.title
+  end
+
+  def lead_image
+    if !object.graphic.nil?
+      object.graphic.background_image_size_urls
+    elsif !object.groupings.nil? && !object.groupings.graphics.nil?
+      object.groupings.graphic.background_image_size_urls
+    end
   end
 
 end

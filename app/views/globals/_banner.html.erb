@@ -1,5 +1,10 @@
 <section class="c-banner">
-  <%# <img src="/assets/img/globals/banner/img/southbank-960.jpg" srcset="/assets/img/globals/banner/img/southbank-320.jpg 320w,/assets/img/globals/banner/img/southbank-640.jpg 640w,/assets/img/globals/banner/img/southbank-960.jpg 960w,/assets/img/globals/banner/img/southbank-1280.jpg 1280w,/assets/img/globals/banner/img/southbank-1920.jpg 1920w,/assets/img/globals/banner/img/southbank-2560.jpg 2560w," alt="The Globe Church" class="c-banner__img" /> %>
+
+  <%= responsive_image_tag(banner['image'],
+                           sizes: ['100vw'],
+                           class: "c-banner__img",
+                           alt: banner['title']) if banner['image'] %>
+                           
   <div class="c-banner__text">
 
     <div class="site-container">

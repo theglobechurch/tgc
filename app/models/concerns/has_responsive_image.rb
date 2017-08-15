@@ -48,4 +48,5 @@ module HasResponsiveImage
       to_h.
       delete_if { |_, v| v.blank? }
   end
+
 end
