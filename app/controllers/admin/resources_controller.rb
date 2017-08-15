@@ -39,7 +39,8 @@ class Admin::ResourcesController < AdminController
   end
 
   def preview
-    @resource = resource
+    @resource = resource.decorate
+    @banner = @resource.banner
   end
 
 private
@@ -67,6 +68,7 @@ private
                                      :state_event,
                                      :display_date,
                                      :uploads_id,
+                                     :graphics_id,
                                      grouping_ids: [])
   end
 

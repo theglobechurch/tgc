@@ -6,6 +6,10 @@ class Grouping < ApplicationRecord
 
   publishable
 
+  belongs_to :graphic,
+             optional: true,
+             foreign_key: :graphics_id
+
   has_many :resource_grouping_joins
   has_many :resources,
            through: :resource_grouping_joins

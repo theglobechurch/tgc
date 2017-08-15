@@ -59,6 +59,7 @@ private
                                      :start_date,
                                      :end_date,
                                      :slug,
-                                     :state_event)
+                                     :state_event,
+                                     :graphics_id)
   end
 end

@@ -1,7 +1,1 @@
-<div class="site-container">
-  
-  <% if @resource.resource_type == "recording" %>
-    <%= render 'recording' %>
-  <% end %>
-  
-</div>
+<%= render 'resource', object: @resource %>
