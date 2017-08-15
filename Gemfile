@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem 'active_model_serializers', '~> 0.10.0' # Return nicely formatted JSON when required
 gem 'devise'                                # User authentication
+gem 'draper'                                # Decorate models
 gem 'dragonfly', '~> 1.1.3'                 # File uploads
 gem 'pg'                                    # Talk to the database
 gem 'puma', '~> 3.7'                        # server

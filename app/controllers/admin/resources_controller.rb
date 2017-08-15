@@ -65,6 +65,7 @@ private
                                      :introduction,
                                      :slug,
                                      :state_event,
+                                     :display_date,
                                      :uploads_id,
                                      grouping_ids: [])
   end

@@ -1,5 +1,7 @@
 <div class="site-container">
-  <section class="c-content-box">
-    <%= @resource.inspect %>
-  </section>
+  
+  <% if @resource.resource_type == "recording" %>
+    <%= render 'recording' %>
+  <% end %>
+  
 </div>

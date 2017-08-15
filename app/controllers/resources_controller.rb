@@ -5,7 +5,8 @@ class ResourcesController < ApplicationController
   end
 
   def show
-    @resource = resource
+    @resource = resource.decorate
+    @banner = @resource.banner
   end
 
 private
