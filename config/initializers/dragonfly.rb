@@ -4,8 +4,8 @@ require 'dragonfly'
 Dragonfly.app.configure do
   plugin :imagemagick
 
-  if Rails.env.production?
-    require 'dragonfly/s3_data_store'
+  #if Rails.env.production?
+  #  require 'dragonfly/s3_data_store'
 
     # aws_credentials = BestAwsCredentials.new.resolve
 
@@ -25,7 +25,7 @@ Dragonfly.app.configure do
     # end
 
     # datastore :s3, **s3_options
-  else
+  #else
     path = Rails.root.join("public", "dragonfly", Rails.env)
 
     if Rails.env.test?
@@ -40,7 +40,7 @@ Dragonfly.app.configure do
     }
 
     datastore :file, file_options
-  end
+  #end
 end
 
 # Logger

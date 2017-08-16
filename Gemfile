@@ -8,6 +8,8 @@ gem 'pg'                                    # Talk to the database
 gem 'puma', '~> 3.7'                        # server
 gem 'rails', '~> 5.1.2'                     # Ruby on rails framework
 gem 'state_machines-activerecord'           # Allow models to have states (draft, published, deleted, etc)
+gem 'sass-rails'                            # Sass for rails. Obvs
+gem 'uglifier'                              # Uglify production JS
 
 group :development, :test, :build do
   gem 'factory_girl_rails'  # For testing
