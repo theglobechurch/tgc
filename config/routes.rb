@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'homepages#index'
+
   devise_for :users, skip: [:sessions]
   devise_for :users, path: '',
                      path_names: {

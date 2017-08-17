@@ -1,0 +1,67 @@
+<div class="site-container">
+
+  <section class="c-content-box">
+    <div>
+      <h1>Join us this Sunday</h1>
+      <h2>4pm at Wilcox House, 140-148 Borough High Street</h2>
+      <a href="#" class="u-link u-link--arrowed u-link--black">
+        <%= svg_tag('map') %>
+        <span>View on a map</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="vision-box">
+    
+    <div class="vision-box__boxouter">
+      <%# <img src="/assets/img/blocks/vision-box/img/jonty-960.jpg" srcset="/assets/img/blocks/vision-box/img/jonty-320.jpg 320w,/assets/img/blocks/vision-box/img/jonty-640.jpg 640w,/assets/img/blocks/vision-box/img/jonty-960.jpg 960w,/assets/img/blocks/vision-box/img/jonty-1280.jpg 1280w,/assets/img/blocks/vision-box/img/jonty-1920.jpg 1920w,/assets/img/blocks/vision-box/img/jonty-2560.jpg 2560w," alt="" class="vision-box__img" /> %>
+      <div class="vision-box__item vision-box__item--jesus">
+        <span class="vision-box__item__link">
+          <h1 class="vision-box__item__title">
+            The Globe Church is all about <strong>Jesus</strong>
+          </h1>
+        </span>
+      </div>
+    </div>
+
+    <div class="vision-box__boxouter">
+      <%# <img src="/assets/img/blocks/vision-box/img/people-960.jpg" srcset="/assets/img/blocks/vision-box/img/people-320.jpg 320w,/assets/img/blocks/vision-box/img/people-640.jpg 640w,/assets/img/blocks/vision-box/img/people-960.jpg 960w,/assets/img/blocks/vision-box/img/people-1280.jpg 1280w,/assets/img/blocks/vision-box/img/people-1920.jpg 1920w,/assets/img/blocks/vision-box/img/people-2560.jpg 2560w," alt="" class="vision-box__img" /> %>
+      <div class="vision-box__item vision-box__item--people">
+        <span class="vision-box__item__link">
+          <h1 class="vision-box__item__title">
+            Made up of all sorts of <strong>people</strong>
+          </h1>
+        </span>
+      </div>
+    </div>
+
+    <div class="vision-box__boxouter">
+      <%# <img src="/assets/img/blocks/vision-box/img/mission-960.jpg" srcset="/assets/img/blocks/vision-box/img/mission-320.jpg 320w,/assets/img/blocks/vision-box/img/mission-640.jpg 640w,/assets/img/blocks/vision-box/img/mission-960.jpg 960w,/assets/img/blocks/vision-box/img/mission-1280.jpg 1280w,/assets/img/blocks/vision-box/img/mission-1920.jpg 1920w,/assets/img/blocks/vision-box/img/mission-2560.jpg 2560w," alt="" class="vision-box__img" /> %>
+      <div class="vision-box__item vision-box__item--mission">
+        <span class="vision-box__item__link">
+          <h1 class="vision-box__item__title">
+            Involved in the greatest <strong>mission</strong>
+          </h1>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <%#= @latest_sermon.inspect %>
+
+  <section class="c-promo-box">
+    <%= responsive_image_tag(@latest_sermon.banner['image'],
+                             sizes: ['(min-width: 1200px) 1200px,', '100vw'],
+                             class: "c-promo-box__img",
+                             alt: @latest_sermon.title) %>
+    <%= link_to @latest_sermon, class: 'c-promo-box__content' do %>
+      <p class="c-promo-box__pretitle">Listen back to the latest recording</p>
+      <h1 class="c-promo-box__title"><%= @latest_sermon.title %></h1>
+      <span class="c-promo-box__btn u-btn u-btn--arrowed">
+        Go sermon recording
+      </span>
+    <% end %>
+  </section>
+
+</div>

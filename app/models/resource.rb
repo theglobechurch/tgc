@@ -30,4 +30,8 @@ class Resource < ApplicationRecord
     title
   end
 
+  def self.resource_type(rtype)
+    where(resource_type: rtype)
+  end
+
 end

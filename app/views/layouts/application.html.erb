@@ -11,8 +11,10 @@
     <%= render "globals/header" %>
 
     <main class="c-main" role="main">
-      <%= render "globals/banner" %>
-    <%= yield %>
+
+      <%= render "globals/banner" if banner != {} %>
+      
+      <%= yield %>
     </main>
 
     <%= render "globals/footer" %>

@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   helper_method :banner
 
   def banner
-    @banner || { 'title' => 'The Globe Church' }
+    @banner || {}
   end
 end
