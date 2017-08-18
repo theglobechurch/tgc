@@ -1,5 +1,4 @@
 <section class="c-banner">
-
   <%= responsive_image_tag(banner['image'],
                            sizes: ['100vw'],
                            class: "c-banner__img",
@@ -17,7 +16,7 @@
       <% end %>
 
       <% if banner['subtitle'] %>
-      <h2 class="c-banner__subtitle">A church for the Southbank</h2>
+      <h2 class="c-banner__subtitle"><%= banner['subtitle'] %></h2>
       <% end %>
     </div>
 

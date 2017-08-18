@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Globe</title>
+    <title>
+      <%= 'The Globe Church | ' if banner['title'] != 'The Globe Church'%>
+      <%= banner['title'] if banner['title'] %>
+    </title>
     <%= stylesheet_link_tag 'tgc-fractal', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
@@ -13,7 +16,7 @@
     <main class="c-main" role="main">
 
       <%= render "globals/banner" if banner != {} %>
-      
+      <%= yield(:page_title) %>
       <%= yield %>
     </main>
 

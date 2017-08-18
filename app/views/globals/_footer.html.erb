@@ -141,9 +141,7 @@
 
     <div class="c-footer-nav-list">
       <h2 class="c-footer-nav-list__title">
-        <a href="#">
-          Stay in touch
-        </a>
+        <%= link_to('Stay in touch', page_path('contact')) %>  
       </h2>
 
       <ul class="c-footer-nav-list__items">
@@ -154,9 +152,7 @@
         </li>
 
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Church news
-          </a>
+          <%= link_to('Church news', page_path('contact', anchor: "newsletter"))%>
         </li>
       </ul>
     </div>

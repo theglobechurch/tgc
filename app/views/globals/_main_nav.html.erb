@@ -1,15 +1,11 @@
 <div class="c-main-nav">
   <ul class="c-main-nav__list">
     <li class="c-main-nav__list__item">
-      <a href="#">
-        Home
-      </a>
+      <%= link_to('Home', root_path) %>
     </li>
 
     <li class="c-main-nav__list__item">
-      <a href="#">
-        About
-      </a>
+      <%= link_to('About', page_path('about')) %>
     </li>
 
     <li class="c-main-nav__list__item">
@@ -31,9 +27,7 @@
     </li>
 
     <li class="c-main-nav__list__item">
-      <a href="#">
-        Contact
-      </a>
+      <%= link_to('Contact', page_path('contact')) %>  
     </li>
   </ul>
   

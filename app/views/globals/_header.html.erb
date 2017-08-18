@@ -1,7 +1,8 @@
 <header class="c-header">
 
-  <%= svg_tag('tgc-logo-long', { class: 'c-header__logo' }) %>
-
+  <%= link_to(root_path, class: 'c-header__logo-link') do %>
+    <%= svg_tag('tgc-logo-long', { class: 'c-header__logo' }) %>
+  <% end %>
   <h1 class="c-header__title">
       The Globe Church
   </h1>
