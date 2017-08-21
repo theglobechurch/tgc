@@ -22,7 +22,15 @@ private
     when 'contact'
       {
         "title" => 'Get in touch',
-        "subtitle" => 'Got a question? New in the area? Just want to find out more? We\'d love talk.'
+        "subtitle" => 'Got a question? New in the area? Just want to find out more? We\'d love talk.',
+        "image" => {
+          "320": view_context.asset_url("static-banner/contact/contact_320.jpg"),
+          "640": view_context.asset_url("static-banner/contact/contact_640.jpg"),
+          "960": view_context.asset_url("static-banner/contact/contact_960.jpg"),
+          "1280": view_context.asset_url("static-banner/contact/contact_1280.jpg"),
+          "1920": view_context.asset_url("static-banner/contact/contact_1920.jpg"),
+          "2560": view_context.asset_url("static-banner/contact/contact_2560.jpg")
+        }
       }
     else
       {

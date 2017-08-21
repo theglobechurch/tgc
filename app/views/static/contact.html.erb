@@ -1,8 +1,18 @@
 <section class="c-description-box c-description-box--gold-braid">
   <div class="site-container c-description-box__inner">
     <div class="c-description-box__side">
-      <%# <img src="/assets/img/blocks/vision-box/img/jonty-960.jpg" srcset="/assets/img/blocks/vision-box/img/jonty-320.jpg 320w,/assets/img/blocks/vision-box/img/jonty-640.jpg 640w,/assets/img/blocks/vision-box/img/jonty-960.jpg 960w,/assets/img/blocks/vision-box/img/jonty-1280.jpg 1280w,/assets/img/blocks/vision-box/img/jonty-1920.jpg 1920w,/assets/img/blocks/vision-box/img/jonty-2560.jpg 2560w,"
-          alt="The Globe Church is all about Jesus…" class="c-description-box__img" /> %>
+      <%= responsive_image_tag(
+        {
+          "320": asset_url("static-banner/contact/social-media_320.jpg"),
+          "640": asset_url("static-banner/contact/social-media_640.jpg"),
+          "960": asset_url("static-banner/contact/social-media_960.jpg"),
+          "1280": asset_url("static-banner/contact/social-media_1280.jpg"),
+          "1920": asset_url("static-banner/contact/social-media_1920.jpg"),
+          "2560": asset_url("static-banner/contact/social-media_2560.jpg")
+        },
+        sizes: ['min-width(992px) 33%', 'min-width(1200px) 396px', '100vw'],
+        class: 'c-description-box__img'
+      ) %>
     </div>
 
     <div class="c-description-box__content">
