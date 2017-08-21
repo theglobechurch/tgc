@@ -19,6 +19,11 @@ private
       {
         "title" => 'All about Jesus…'
       }
+    when 'contact'
+      {
+        "title" => 'Get in touch',
+        "subtitle" => 'Got a question? New in the area? Just want to find out more? We\'d love talk.'
+      }
     else
       {
         "title" => 'The Globe Church',

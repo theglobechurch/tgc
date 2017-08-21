@@ -1,4 +1,4 @@
-<section class="c-description-box c-description-box--sockeye">
+<section class="c-description-box c-description-box--gold-braid">
   <div class="site-container c-description-box__inner">
     <div class="c-description-box__side">
       <%# <img src="/assets/img/blocks/vision-box/img/jonty-960.jpg" srcset="/assets/img/blocks/vision-box/img/jonty-320.jpg 320w,/assets/img/blocks/vision-box/img/jonty-640.jpg 640w,/assets/img/blocks/vision-box/img/jonty-960.jpg 960w,/assets/img/blocks/vision-box/img/jonty-1280.jpg 1280w,/assets/img/blocks/vision-box/img/jonty-1920.jpg 1920w,/assets/img/blocks/vision-box/img/jonty-2560.jpg 2560w,"
@@ -10,7 +10,7 @@
           Drop us a line
       </h1>
 
-      <p>Got a question? New in the area? Just want to find out more? We'd love talk. You can find us on various social media sites or you can ping us an email:</p>
+      <p>You can ping us an email, or find us on various social media sites:</p>
 
       <ul class="c-icon-list c-icon-list--block">
         <li class="c-icon-list__item">
@@ -55,8 +55,18 @@
 
   <div class="site-container c-description-box__inner">
     <div class="c-description-box__side">
-      <%# <img src="/assets/img/blocks/vision-box/img/mission-960.jpg" srcset="/assets/img/blocks/vision-box/img/mission-320.jpg 320w,/assets/img/blocks/vision-box/img/mission-640.jpg 640w,/assets/img/blocks/vision-box/img/mission-960.jpg 960w,/assets/img/blocks/vision-box/img/mission-1280.jpg 1280w,/assets/img/blocks/vision-box/img/mission-1920.jpg 1920w,/assets/img/blocks/vision-box/img/mission-2560.jpg 2560w,"
-          alt="Involved in the greatest mission" class="c-description-box__img" /> %>
+      <%= responsive_image_tag(
+        {
+          "320": asset_url("static-banner/contact/email-signup_320.jpg"),
+          "640": asset_url("static-banner/contact/email-signup_640.jpg"),
+          "960": asset_url("static-banner/contact/email-signup_960.jpg"),
+          "1280": asset_url("static-banner/contact/email-signup_1280.jpg"),
+          "1920": asset_url("static-banner/contact/email-signup_1920.jpg"),
+          "2560": asset_url("static-banner/contact/email-signup_2560.jpg")
+        },
+        sizes: ['min-width(992px) 33%', 'min-width(1200px) 396px', '100vw'],
+        class: 'c-description-box__img'
+      ) %>
     </div>
 
     <div class="c-description-box__content">
