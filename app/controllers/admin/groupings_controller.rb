@@ -46,7 +46,7 @@ private
 
   def grouping
     @grouping ||= groupings.slug_find(params[:id])
-    if (!@grouping)
+    unless @grouping
       redirect_to admin_groupings_path
     end
     @grouping

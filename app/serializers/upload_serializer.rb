@@ -4,5 +4,5 @@ class UploadSerializer < ActiveModel::Serializer
   def url
     object.file.try(:remote_url)
   end
-  
+
 end

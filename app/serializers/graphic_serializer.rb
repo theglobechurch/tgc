@@ -9,7 +9,7 @@ class GraphicSerializer < ActiveModel::Serializer
       '960': object.background_image_960.try(:remote_url),
       '1280': object.background_image_1280.try(:remote_url),
       '1920': object.background_image_1920.try(:remote_url),
-      '2560': object.background_image_2560.try(:remote_url)
+      '2560': object.background_image_2560.try(:remote_url),
     }
   end
 end

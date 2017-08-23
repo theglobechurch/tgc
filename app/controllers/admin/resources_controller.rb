@@ -52,7 +52,7 @@ private
 
   def resource
     @resource ||= resources.slug_find(params[:id])
-    if (!@resource)
+    unless @resource
       redirect_to admin_resources_path
     end
     @resource

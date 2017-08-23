@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/LineLength
 class PagesController < ApplicationController
   include HighVoltage::StaticPage
 
@@ -13,15 +14,15 @@ private
     when 'about'
       {
         "title" => 'About',
-        "subtitle" => 'The Globe Church is all about sharing the good news of Jesus Christ to those living and working on the Southbank of London.'
+        "subtitle" => 'The Globe Church is all about sharing the good news of Jesus Christ to those living and working on the Southbank of London.',
       }
     when 'about/jesus'
       {
-        "title" => 'All about Jesus…'
+        "title" => 'All about Jesus…',
       }
     when 'when-and-where'
       {
-        "title" => 'When and where'
+        "title" => 'When and where',
       }
     when 'contact'
       {
@@ -33,13 +34,13 @@ private
           "960": view_context.asset_url("static-banner/contact/contact_960.jpg"),
           "1280": view_context.asset_url("static-banner/contact/contact_1280.jpg"),
           "1920": view_context.asset_url("static-banner/contact/contact_1920.jpg"),
-          "2560": view_context.asset_url("static-banner/contact/contact_2560.jpg")
-        }
+          "2560": view_context.asset_url("static-banner/contact/contact_2560.jpg"),
+        },
       }
     else
       {
         "title" => 'The Globe Church',
-        "subtitle" => 'A church for the Southbank'
+        "subtitle" => 'A church for the Southbank',
       }
     end
   end

@@ -1,36 +1,35 @@
-<main class="login-form">
+<div class="site-container">
 
-  <div class="login-form__content">
 
-    The Globe Church
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="login-form__field">
-        <%= f.email_field :email, autofocus: true, placeholder: 'Email',
-          class: 'login-form__input' %>
-      </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'c-form') do |f| %>
+          <p class="c-form__field">
+            <%= f.label :email, class: 'c-form__label' %>
+            <%= f.email_field :email, autofocus: true, placeholder: 'Email',
+              class: 'c-form__input' %>
+          </p>
 
-      <div class="login-form__field">
-        <%= f.password_field :password, autocomplete: 'off',
-              placeholder: 'Password', class: 'login-form__input' %>
-      </div>
+          <p class="c-form__field">
+            <%= f.label :password, class: 'c-form__label' %>
+            <%= f.password_field :password, autocomplete: 'off',
+                  placeholder: 'Password', class: 'c-form__input' %>
+          </p>
 
-      <% if false && devise_mapping.rememberable? %>
-        <div class="login-form__field">
-          <%= f.check_box :remember_me, class: 'login-form__checkbox' %>
-          <%= f.label :remember_me, class: 'login-form__label' %>
-        </div>
-      <% end %>
+          <% if false && devise_mapping.rememberable? %>
+            <div class="login-form__field">
+              <%= f.check_box :remember_me, class: 'login-form__checkbox' %>
+              <%= f.label :remember_me, class: 'login-form__label' %>
+            </div>
+          <% end %>
 
-      <div class="login-form__field">
-        <%= f.submit 'Log in', class: 'login-form__button' %>
-      </div>
+          <div class="login-form__field">
+            <%= f.submit 'Log in', class: 'u-btn' %>
+          </div>
+        <% end %>
 
-    <% end %>
+        <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name),
+            class: 'login-form__forgot' %>
+        <% end %>
 
-    <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "Forgot your password?", new_password_path(resource_name),
-        class: 'login-form__forgot' %>
-    <% end %>
-  </div>
-</main>
+</div>

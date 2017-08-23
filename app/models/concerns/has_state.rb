@@ -13,7 +13,7 @@ module HasState
         end
 
         event :expunge do
-          transition [:draft, :published] => :expunged
+          transition %i[draft published] => :expunged
         end
 
         event :unexpunge do
@@ -28,12 +28,11 @@ module HasState
 
       end
 
-      %w(draft published expunged).each do |state|
+      %w[draft published expunged].each do |state|
         scope state, -> { with_state(state) }
       end
 
-      scope :non_deleted, -> {without_state(:expunged)}
-
+      scope :non_deleted, -> { without_state(:expunged) }
     end
   end
 

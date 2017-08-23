@@ -4,43 +4,43 @@ require 'dragonfly'
 Dragonfly.app.configure do
   plugin :imagemagick
 
-  #if Rails.env.production?
-  #  require 'dragonfly/s3_data_store'
+  # if Rails.env.production?
+  #   require 'dragonfly/s3_data_store'
 
-    # aws_credentials = BestAwsCredentials.new.resolve
+  #   aws_credentials = BestAwsCredentials.new.resolve
 
-    # s3_options = {
-    #   bucket_name: Rails.configuration.x.uploads.s3_bucket,
-    #   storage_headers: {'x-amz-acl' => 'public-read'},
-    #   url_scheme: 'https',
-    #   region: Rails.configuration.x.aws.region,
-    # }
+  #   s3_options = {
+  #     bucket_name: Rails.configuration.x.uploads.s3_bucket,
+  #     storage_headers: {'x-amz-acl' => 'public-read'},
+  #     url_scheme: 'https',
+  #     region: Rails.configuration.x.aws.region,
+  #   }
 
-    # if aws_credentials.is_a?(Aws::InstanceProfileCredentials)
-    #   s3_options[:use_iam_profile] = true
-    # else
-    #   aws_credentials = aws_credentials.credentials
-    #   s3_options[:access_key_id] = aws_credentials.access_key_id
-    #   s3_options[:secret_access_key] = aws_credentials.secret_access_key
-    # end
+  #   if aws_credentials.is_a?(Aws::InstanceProfileCredentials)
+  #     s3_options[:use_iam_profile] = true
+  #   else
+  #     aws_credentials = aws_credentials.credentials
+  #     s3_options[:access_key_id] = aws_credentials.access_key_id
+  #     s3_options[:secret_access_key] = aws_credentials.secret_access_key
+  #   end
 
-    # datastore :s3, **s3_options
-  #else
-    path = Rails.root.join("public", "dragonfly", Rails.env)
+  #   datastore :s3, **s3_options
+  # else
+  path = Rails.root.join("public", "dragonfly", Rails.env)
 
-    if Rails.env.test?
-      path.rmtree if path.exist?
-    end
+  if Rails.env.test?
+    path.rmtree if path.exist?
+  end
 
-    path.mkpath unless path.exist?
+  path.mkpath unless path.exist?
 
-    file_options = {
-      root_path: path.to_s,
-      server_root: path.dirname.dirname.to_s,
-    }
+  file_options = {
+    root_path: path.to_s,
+    server_root: path.dirname.dirname.to_s,
+  }
 
-    datastore :file, file_options
-  #end
+  datastore :file, file_options
+  # end
 end
 
 # Logger

@@ -16,8 +16,10 @@ class Grouping < ApplicationRecord
 
   validates :title, :group_type, presence: true
   validates :group_type,
-            inclusion: { in: GROUP_TYPES,
-                         message: "%{value} is not a valid type" },
+            inclusion: {
+              in: GROUP_TYPES,
+              message: "%{value} is not a valid type",
+            },
             allow_nil: false
 
   def to_s

@@ -74,6 +74,9 @@ Metrics/ClassLength:
 Metrics/AbcSize:
   Max: 40
 
+Metrics/BlockLength:
+  Max: 35
+
 Style/IfUnlessModifier:
   Enabled: false
 
@@ -81,4 +84,7 @@ Style/BlockDelimiters:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/FormatStringToken:
   Enabled: false

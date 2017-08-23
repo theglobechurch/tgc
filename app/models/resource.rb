@@ -1,6 +1,6 @@
 class Resource < ApplicationRecord
 
-  include HasSlug           # Validate slug and allow lookup by slug rather than id
+  include HasSlug           # Validate slug and lookup by slug rather than id
   include HasState          # Allow draft, published, deleted
   include HasResourceType   # Shares a list of resource types
 
@@ -18,12 +18,14 @@ class Resource < ApplicationRecord
 
   has_many :resource_grouping_joins
   has_many :groupings,
-           through: :resource_grouping_joins 
+           through: :resource_grouping_joins
 
   validates :title, :resource_type, presence: true
   validates :resource_type,
-            inclusion: { in: RESOURCE_TYPES,
-                         message: "%{value} is not a valid type" },
+            inclusion: {
+              in: RESOURCE_TYPES,
+              message: "%{value} is not a valid type",
+            },
             allow_nil: true
 
   def to_s

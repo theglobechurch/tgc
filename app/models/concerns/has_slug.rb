@@ -22,7 +22,7 @@ module HasSlug
   end
 
   def slug_can_be_changed?
-    !(state == 'published')
+    (state != 'published')
   end
 
   class_methods do

@@ -10,7 +10,8 @@ module ApplicationHelper
         '',
         'xlink:href': image_path("tgc-fractal.svg##{icon}"),
       ),
-      html_options)
+      html_options
+    )
   end
 
   def gravatar_url(email, **options)
