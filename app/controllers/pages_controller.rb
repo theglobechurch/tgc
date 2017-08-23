@@ -19,6 +19,10 @@ private
       {
         "title" => 'All about Jesus…'
       }
+    when 'when-and-where'
+      {
+        "title" => 'When and where'
+      }
     when 'contact'
       {
         "title" => 'Get in touch',

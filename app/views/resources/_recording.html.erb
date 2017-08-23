@@ -1,35 +1,39 @@
 <section class="c-content-box">
-  <div>
-    <p><%= @resource.introduction %></p>
-    <% if @resource.display_date %>
-    <p>Recorded: <%= l @resource.display_date.to_date, format: :long %>
+  <main class="c-content-box__main">
+    <div class="c-content-box__main__container">
+      <p><%= @resource.introduction %></p>
+      <% if @resource.display_date %>
+      <p>Recorded: <%= l @resource.display_date.to_date, format: :long %>
+      <% end %>
+    </div>
+
+    <% if !@resource.upload.nil? %>
+    <aside class="c-content-box__aside">
+      <ul class="c-icon-list">
+        <li class="c-icon-list__item">
+          <a href="#" class="u-link u-link--arrowed u-link--black js-audio-start-link">
+            <%= svg_tag('listen', { class: 'c-icon-list__item__icon' }) %>
+            <span>Listen now</span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a href="<%= @resource.upload.file.remote_url %>" download="TheGlobeChurch-<%= @resource.slug %>" class="u-link u-link--arrowed u-link--black">
+            <%= svg_tag('download', { class: 'c-icon-list__item__icon' }) %>
+            <span>Download</span>
+          </a>
+        </li>
+
+        <!--<li class="c-icon-list__item">
+          <a href="#" class="u-link u-link--arrowed u-link--black">
+            <%= svg_tag('subscribe', { class: 'c-icon-list__item__icon' }) %>
+            <span>Subscribe</span>
+          </a>
+        </li>-->
+      </ul>
+    </aside>
     <% end %>
-  </div>
-
-  <% if !@resource.upload.nil? %>
-  <ul class="c-icon-list">
-    <li class="c-icon-list__item">
-      <a href="#" class="u-link u-link--arrowed u-link--black js-audio-start-link">
-        <%= svg_tag('listen', { class: 'c-icon-list__item__icon' }) %>
-        <span>Listen now</span>
-      </a>
-    </li>
-
-    <li class="c-icon-list__item">
-      <a href="<%= @resource.upload.file.remote_url %>" download="TheGlobeChurch-<%= @resource.slug %>" class="u-link u-link--arrowed u-link--black">
-        <%= svg_tag('download', { class: 'c-icon-list__item__icon' }) %>
-        <span>Download</span>
-      </a>
-    </li>
-
-    <!--<li class="c-icon-list__item">
-      <a href="#" class="u-link u-link--arrowed u-link--black">
-        <%= svg_tag('subscribe', { class: 'c-icon-list__item__icon' }) %>
-        <span>Subscribe</span>
-      </a>
-    </li>-->
-  </ul>
-  <% end %>
+  </main>
 </section>
 
 <% if !@resource.upload.nil? && @resource.upload.meta['type'] == 'audio' %>
