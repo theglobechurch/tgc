@@ -50,20 +50,11 @@
 
   </div>
 
-  <%#= @latest_sermon.inspect %>
-
-  <section class="c-promo-box">
-    <%= responsive_image_tag(@latest_sermon.banner['image'],
-                             sizes: ['(min-width: 1200px) 1200px,', '100vw'],
-                             class: "c-promo-box__img",
-                             alt: @latest_sermon.title) %>
-    <%= link_to @latest_sermon, class: 'c-promo-box__content' do %>
-      <p class="c-promo-box__pretitle">Listen back to the latest recording</p>
-      <h1 class="c-promo-box__title"><%= @latest_sermon.title %></h1>
-      <span class="c-promo-box__btn u-btn u-btn--arrowed">
-        Go sermon recording
-      </span>
-    <% end %>
-  </section>
+  <%= render('/shared/promo_box',
+             img: @latest_sermon.banner['image'],
+             link: @latest_sermon,
+             title: @latest_sermon.title,
+             pretitle: 'Listen back to the latest recording',
+             cta: 'Go to sermon recording') %>
 
 </div>

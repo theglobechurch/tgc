@@ -1,1 +1,39 @@
-index
+<div class="site-container">
+
+  <section class="c-content-box">
+    <main class="c-content-box__main">
+      <div class="c-content-box__main__container">
+        <h1>Join us this Sunday</h1>
+        <h2>4pm at Wilcox House, 140-148 Borough High Street</h2>
+        <a href="#" class="u-link u-link--arrowed u-link--black">
+          <%= svg_tag('map') %>
+          <span>View on a map</span>
+        </a>
+      </div>
+    </main>
+  </section>
+
+  <% if @groups.count.positive? %>
+  <section class="c-series-list">
+
+    <% @groups.each do |g| %>
+      <a href="#" class="c-series-list__item">
+        <div class="c-series-list__img">
+          <img src="<%= g.graphic.background_image_thumbnail.try('remote_url') %>" alt="<%= g.title %>" />
+        </div>
+        <h1 class="c-series-list__title"><%= g.title %></h1>
+        <p class="c-series-list__daterange"><%= g.start_date %> – <%= g.end_date %></p>
+      </a>
+    <% end %>
+
+  </section>
+  <% end %>
+
+  <%= render('/shared/promo_box',
+            #img: @latest_sermon.banner['image'],
+            link: '/about/jesus',
+            title: 'Visit Globe Church this Sunday',
+            pretitle: '',
+            cta: 'Find out more') %>
+
+</div>

@@ -31,7 +31,9 @@ Rails.application.routes.draw do
     post :graphics, to: 'graphics#create'
   end
 
-  resources :resources, only: %i[index show]
+  resources :resources, only: %i[show]
+  get :resources, to: redirect('/preaching')
+  get :preaching, to: 'resources#index'
 
   get "/*id" => 'pages#show', as: :page, format: false
 end
