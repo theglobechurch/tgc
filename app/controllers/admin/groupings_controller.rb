@@ -41,7 +41,7 @@ class Admin::GroupingsController < AdminController
 private
 
   def groupings
-    @groupings ||= Grouping.all
+    @groupings ||= Grouping.unscoped.non_deleted
   end
 
   def grouping

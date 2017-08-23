@@ -1,0 +1,13 @@
+<section class="c-promo-box">
+  <%= responsive_image_tag(img,
+                            sizes: ['(min-width: 1200px) 1200px,', '100vw'],
+                            class: "c-promo-box__img",
+                            alt: title) if defined?(img) %>
+  <%= link_to link, class: 'c-promo-box__content' do %>
+    <p class="c-promo-box__pretitle"><%= pretitle %></p>
+    <h1 class="c-promo-box__title"><%= title %></h1>
+    <span class="c-promo-box__btn u-btn u-btn--arrowed">
+      <%= cta %>
+    </span>
+  <% end %>
+</section>

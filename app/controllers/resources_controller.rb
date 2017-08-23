@@ -1,7 +1,7 @@
 class ResourcesController < ApplicationController
 
   def index
-    @groups = Grouping.all
+    @groups = Grouping.all.decorate
     @banner = {
       "title" => 'Preaching',
       "image" => {

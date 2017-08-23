@@ -22,7 +22,7 @@
           <img src="<%= g.graphic.background_image_thumbnail.try('remote_url') %>" alt="<%= g.title %>" />
         </div>
         <h1 class="c-series-list__title"><%= g.title %></h1>
-        <p class="c-series-list__daterange"><%= g.start_date %> – <%= g.end_date %></p>
+        <p class="c-series-list__daterange"><%= g.date_range %></p>
       </a>
     <% end %>
 
@@ -31,7 +31,7 @@
 
   <%= render('/shared/promo_box',
             #img: @latest_sermon.banner['image'],
-            link: '/about/jesus',
+            link: '/when-and-where#section:sundays',
             title: 'Visit Globe Church this Sunday',
             pretitle: '',
             cta: 'Find out more') %>

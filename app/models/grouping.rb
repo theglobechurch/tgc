@@ -6,6 +6,8 @@ class Grouping < ApplicationRecord
 
   publishable
 
+  default_scope { published.order(start_date: :desc) }
+
   belongs_to :graphic,
              optional: true,
              foreign_key: :graphics_id
