@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-gb" dir="ltr">
   <head>
     <title>
       <%= 'The Globe Church | ' if banner['title'] != 'The Globe Church'%>
       <%= banner['title'] if banner['title'] %>
     </title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <%= stylesheet_link_tag 'tgc-fractal', media: 'all' %>
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList,es6,HTMLPictureElement,Element.prototype.dataset"></script>
     <%= csrf_meta_tags %>
   </head>
 
