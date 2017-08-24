@@ -49,8 +49,10 @@ class FeatureImageSelector extends React.Component {
         }
 
         <h2>Lead image</h2>
-        <img src={this.state.imageSrc} className={`${cssClassParent}__preview`} />
-        <button className={`${cssClassParent}__btn`}
+        { this.state.imageSrc && 
+          <img src={this.state.imageSrc} className={`${cssClassParent}__preview`} />
+        }
+        <button className="u-btn u-btn--100"
                 onClick={this.onTogglePopup.bind(this)}>
           {btnText}
         </button>

@@ -1,0 +1,83 @@
+.u-btn {
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid siteColor(petrel);
+  color: siteColor(petrel);
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all .2s;
+
+  &:hover {
+    background-color: siteColor(petrel);
+    color: white;
+  }
+  
+  &--primary {
+    border-color: darken(siteColor(lark-green), 10);
+    color: siteColor(lark-green);
+
+    &:hover {
+      background-color: siteColor(lark-green);
+    }
+  }
+
+  &--warning {
+    border-color: siteColor(gold-braid);
+    color: siteColor(gold-braid);
+
+    &:hover {
+      background-color: siteColor(gold-braid);
+    }
+  }
+
+  &--danger {
+    border-color: #b21f08;
+    color: #b21f08;
+
+    &:hover {
+      background-color: #b21f08;
+    }
+  }
+
+  &--100 {
+    width: 100%;
+  }
+}
+
+
+.alert {
+  animation: alertToggle 10s 1;
+  background: rgba(0, 0, 0, .75);
+  bottom: 0;
+  color: white;
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  max-width: calc(25% - 1px);
+  padding: 10px;
+  position: absolute;
+  right: -25%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  &-success {
+    background: rgba(siteColor(lark-green), .75);
+  }
+}
+
+@keyframes alertToggle {
+  0%, 100% {
+    right: -25%;
+  }
+  15%, 85% {
+    right: 0;
+  }
+}

@@ -37,15 +37,18 @@ class ResourceUploader extends React.Component {
     return (
       <div>
         { this.state.currentFilePath && (
-          <div>
+          <div className="m-resource-preview">
             { this.state.currentFileType == 'audio' && (
               <div>
                 <audio
                   src={this.state.currentFilePath}
                   preload='metadata'
                   controls
+                  className="m-resource-preview__audio"
                 />
-                <button onClick={this.onChangeUpload.bind(this)}>
+                <button
+                  onClick={this.onChangeUpload.bind(this)}
+                  className="u-btn">
                   Change
                 </button>
               </div>

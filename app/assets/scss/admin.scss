@@ -3,6 +3,7 @@
 @import 'reset';
 
 @import 'admin/base';
+@import 'admin/utilities';
 @import 'admin/admin-form';
 @import 'admin/admin-header';
 @import 'admin/admin-nav';
@@ -10,4 +11,5 @@
 @import 'admin/admin-preview';
 @import 'admin/admin-resource-type-picker';
 @import 'admin/react/dnd-uploader';
+@import 'admin/react/resource-upload';
 @import 'admin/react/feature-image-selector';

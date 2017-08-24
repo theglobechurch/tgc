@@ -3,7 +3,10 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  min-height: calc(100vh - 80px);
+  bottom: 0;
+  position: absolute;
+  top: 75px;
+  overflow: hidden;
 
   &--main {
     padding: 10px;
