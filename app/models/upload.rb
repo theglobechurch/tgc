@@ -15,7 +15,7 @@ class Upload < ApplicationRecord
     r.filesize = r.file.size
     r.meta = {
       'mime_type': r.file.mime_type,
-      'type': r.file.mime_type.match(%r{/[^\/]*/})[0],
+      'type': r.file.mime_type.match(/[^\/]*/)[0],
     }
   end
 

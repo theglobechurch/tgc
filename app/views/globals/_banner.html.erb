@@ -3,9 +3,9 @@
                            sizes: ['100vw'],
                            class: "c-banner__img",
                            alt: banner['title']) if banner['image'] %>
-                           
+  
+  <% unless banner['hide-text'] %>
   <div class="c-banner__text">
-
     <div class="site-container">
       <% if banner['pretitle'] %>
       <p class="c-banner__pretitle"><%= banner['pretitle'] %></p>
@@ -19,6 +19,7 @@
       <h2 class="c-banner__subtitle"><%= banner['subtitle'] %></h2>
       <% end %>
     </div>
-
   </div>
+  <% end %>
+  
 </section>

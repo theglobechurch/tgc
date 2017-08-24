@@ -6,7 +6,11 @@ class Resource < ApplicationRecord
 
   publishable
 
-  default_scope { non_deleted.order(resource_type: :asc) }
+  default_scope { published.order(resource_type: :asc) }
+
+  RESOURCE_TYPES.each do |g|
+    scope g, -> { where(resource_type: g) }
+  end
 
   belongs_to :upload,
              optional: true,

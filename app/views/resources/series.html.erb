@@ -1,0 +1,66 @@
+<div class="site-container site-container--first">
+
+  <section class="c-description-box c-description-box--lark-green">
+
+    <div class="site-container c-description-box__inner">
+
+      <div class="c-description-box__side">
+
+        <div class="img-square">
+          <%=
+            responsive_image_tag(
+              @group.banner['image'],
+              sizes: ['(min-width: 768px) 33.3vw', '(min-width: 1200px) calc(1200px / 3)' '100vw'],
+              alt: @group.title
+            )
+          %>
+        </div>
+
+        <div class="c-description-box__side__meta">
+          <p><%= @group.date_range %></p>
+          <p><%= pluralize(@recordings.length, 'recording') %></p>
+        </div>
+
+      </div>
+
+      <div class="c-description-box__content">
+        <h1 class="c-description-box__title">
+          <%= @group.title %>
+        </h1>
+
+        <% if @group.description %>
+        <p><%= @group.description %></p>
+        <% end %>
+
+        <ul class="c-sermon-list">
+
+          <% @recordings.each do |recording| %>
+            <%= link_to(recording, class: 'c-sermon-list__item') do %>
+              <div class="c-sermon-list__details">
+                <date class="c-sermon-list__details__date"><%= l recording.display_date.to_date, format: :long %></date>
+                <p class="c-sermon-list__details__title"><%= recording.title %></p>
+                <!--<small class="c-sermon-list__details__passage"><em>passage ref</em></small>-->
+              </div>
+
+              <div class="c-sermon-list__cta u-btn">
+                Listen
+              </div>
+            <% end %>
+          <% end %>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <%= render('/shared/promo_box',
+    #img: @latest_sermon.banner['image'],
+    link: preaching_path,
+    title: '',
+    pretitle: '',
+    cta: 'See more sermon series') %>
+
+</div>

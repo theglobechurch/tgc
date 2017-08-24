@@ -17,7 +17,7 @@
   <section class="c-series-list">
 
     <% @groups.each do |g| %>
-      <a href="#" class="c-series-list__item">
+      <%= link_to({controller: "resources", action: "series", id: g}, class: 'c-series-list__item') do %>
         <div class="c-series-list__img">
           <%=
             responsive_image_tag(
@@ -37,7 +37,7 @@
         </div>
         <h1 class="c-series-list__title"><%= g.title %></h1>
         <p class="c-series-list__daterange"><%= g.date_range %></p>
-      </a>
+      <% end %>
     <% end %>
 
   </section>

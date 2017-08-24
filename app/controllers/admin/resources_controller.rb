@@ -47,7 +47,7 @@ private
 
   def resources
     # Might want to filter by type here later
-    @resources ||= Resource.all
+    @resources ||= Resource.unscoped.non_deleted
   end
 
   def resource

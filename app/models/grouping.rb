@@ -8,6 +8,10 @@ class Grouping < ApplicationRecord
 
   default_scope { published.order(start_date: :desc) }
 
+  GROUP_TYPES.each do |g|
+    scope g, -> { where(group_type: g) }
+  end
+
   belongs_to :graphic,
              optional: true,
              foreign_key: :graphics_id

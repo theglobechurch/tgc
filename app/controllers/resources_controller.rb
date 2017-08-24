@@ -1,7 +1,8 @@
 class ResourcesController < ApplicationController
+  layout 'application', only: ['preview']
 
   def index
-    @groups = Grouping.all.decorate
+    @groups = groups.decorate
     @banner = {
       "title" => 'Preaching',
       "image" => {
@@ -13,6 +14,13 @@ class ResourcesController < ApplicationController
         "2560": view_context.asset_url("static-banner/southbank-2560.jpg"),
       },
     }
+  end
+
+  def series
+    @group = group.decorate
+    @banner = group.banner
+    @recordings = @group.resources.recording.order(display_date: :asc)
+    @banner['hide-text'] = true
   end
 
   def show
@@ -28,6 +36,14 @@ private
 
   def resource
     @resource ||= resources.slug_find(params[:id])
+  end
+
+  def groups
+    @groups ||= Grouping.series
+  end
+
+  def group
+    @group ||= groups.slug_find(params[:id])
   end
 
 end
