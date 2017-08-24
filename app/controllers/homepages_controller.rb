@@ -1,6 +1,6 @@
 class HomepagesController < ApplicationController
   def index
-    @latest_sermon = latest_sermon.decorate
+    @latest_sermon = latest_sermon.decorate if latest_sermon
     @banner = {
       "title" => 'The Globe Church',
       "subtitle" => 'A church for the Southbank',

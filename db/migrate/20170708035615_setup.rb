@@ -31,6 +31,7 @@ class Setup < ActiveRecord::Migration[5.1]
     create_table :graphics do |t|
       t.string :background_image_uid
       t.string :background_image_thumbnail_uid
+      t.string :background_image_thumbnail_2x_uid
       [320, 640, 960, 1280, 1920, 2560].each do |size|
         t.string :"background_image_#{size}_uid"
       end

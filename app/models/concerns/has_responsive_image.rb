@@ -20,6 +20,7 @@ module HasResponsiveImage
 
       dragonfly_accessor key do
         copy_to(:"#{key}_thumbnail") { |a| a.thumb('200x200#') }
+        copy_to(:"#{key}_thumbnail_2x") { |a| a.thumb('400x400#') }
 
         SIZES.each do |size|
           copy_to(:"#{key}_#{size}") do |a|
@@ -29,6 +30,7 @@ module HasResponsiveImage
       end
 
       dragonfly_accessor :"#{key}_thumbnail"
+      dragonfly_accessor :"#{key}_thumbnail_2x"
 
       SIZES.each do |size|
         dragonfly_accessor :"#{key}_#{size}"

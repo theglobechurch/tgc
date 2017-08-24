@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170708035615) do
   create_table "graphics", force: :cascade do |t|
     t.string "background_image_uid"
     t.string "background_image_thumbnail_uid"
+    t.string "background_image_thumbnail_2x_uid"
     t.string "background_image_320_uid"
     t.string "background_image_640_uid"
     t.string "background_image_960_uid"

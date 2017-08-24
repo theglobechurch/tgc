@@ -25,7 +25,9 @@ module ApplicationHelper
     srcset = graphic.map { |(k, v)| "#{URI.escape(v)} #{k}w" }
     kwargs = html_options.deep_merge(sizes:
       html_options.fetch(:sizes, []).join(', '))
-    image_tag URI.escape(graphic.try(:[], :"960")),
+    fallback = graphic.try(:[], :"960")
+    fallback = graphic.values[0] if fallback.nil?
+    image_tag URI.escape(fallback),
               srcset: srcset.join(', '),
               **kwargs
   end
