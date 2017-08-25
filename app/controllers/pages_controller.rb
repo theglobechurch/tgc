@@ -24,6 +24,10 @@ private
       {
         "title" => 'When and where',
       }
+    when 'get-involved'
+      {
+        "title" => 'Get involved',
+      }
     when 'contact'
       {
         "title" => 'Get in touch',

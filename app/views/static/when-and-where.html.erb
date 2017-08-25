@@ -13,21 +13,10 @@
   </section>
 </div>
 
-<div class="c-internal-nav" id="section:sundays">
-  <ul class="c-internal-nav__list">
-    <li class="c-internal-nav__item">
-      <a href="#section:sundays" class="c-internal-nav__link c-internal-nav__link--active">Sundays</a>
-    </li>
 
-    <li class="c-internal-nav__item">
-      <a href="#section:focus" class="c-internal-nav__link">Bible study</a>
-    </li>
-
-    <li class="c-internal-nav__item">
-      <a href="#section:central" class="c-internal-nav__link">Prayer meeting</a>
-    </li>
-  </ul>
-</div>
+<%= render('/shared/internal_nav',
+           sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
+           current: 'Sundays') %>
 
 
 <section class="c-content-box">
@@ -88,22 +77,9 @@
   </main>
 </section>
 
-<div class="c-internal-nav" id="section:focus">
-  <ul class="c-internal-nav__list">
-    <li class="c-internal-nav__item">
-      <a href="#section:sundays" class="c-internal-nav__link">Sundays</a>
-    </li>
-
-    <li class="c-internal-nav__item">
-      <a href="#section:focus" class="c-internal-nav__link c-internal-nav__link--active">Bible study</a>
-    </li>
-
-    <li class="c-internal-nav__item">
-      <a href="#section:central" class="c-internal-nav__link">Prayer meeting</a>
-    </li>
-  </ul>
-</div>
-
+<%= render('/shared/internal_nav',
+           sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
+           current: 'Bible Study') %>
 
 <section class="c-content-box">
   <header class="c-content-box__header">
@@ -165,21 +141,9 @@
 </section>
 
 
-<div class="c-internal-nav" id="section:central">
-  <ul class="c-internal-nav__list">
-    <li class="c-internal-nav__item">
-      <a href="#section:sundays" class="c-internal-nav__link">Sundays</a>
-    </li>
-
-    <li class="c-internal-nav__item">
-      <a href="#section:focus" class="c-internal-nav__link">Bible study</a>
-    </li>
-
-    <li class="c-internal-nav__item">
-      <a href="#section:central" class="c-internal-nav__link c-internal-nav__link--active">Prayer meeting</a>
-    </li>
-  </ul>
-</div>
+<%= render('/shared/internal_nav',
+           sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
+           current: 'Prayer Meeting') %>
 
 
 <section class="c-content-box">

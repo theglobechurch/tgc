@@ -10,7 +10,7 @@ class ResourceDecorator < Draper::Decorator
   end
 
   def pretitle
-    if object.groupings.count.positive?
+    if object.groupings.length.positive?
       object.groupings.first.title
     end
   end
@@ -18,7 +18,7 @@ class ResourceDecorator < Draper::Decorator
   def lead_image
     if !object.graphic.nil?
       object.graphic.background_image_size_urls
-    elsif object.groupings.count.positive? &&
+    elsif object.groupings.length.positive? &&
           !object.groupings.first.graphic.nil?
       object.groupings.first.graphic.background_image_size_urls
     end
