@@ -1,0 +1,24 @@
+language: ruby
+rvm:
+  - 2.3.3
+
+sudo: false
+
+cache:
+  bundler: true
+  directories:
+    - node_modules
+
+addons:
+  postgresql: "9.4"
+
+before_install:
+  - "psql -c 'create database globe_test;' -U postgres"
+  - "gem update --system"
+  - "gem update bundler"
+  - "bundle install"
+  - "npm install"
+  - 'bundle exec rake db:migrate RAILS_ENV=test'
+
+notifications:
+  email: false
