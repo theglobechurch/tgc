@@ -26,7 +26,7 @@ Dragonfly.app.configure do
 
   #   datastore :s3, **s3_options
   # else
-  path = Rails.root.join("public", "dragonfly", Rails.env)
+  path = Rails.root.join("public", "uploads", Rails.env)
 
   if Rails.env.test?
     path.rmtree if path.exist?
