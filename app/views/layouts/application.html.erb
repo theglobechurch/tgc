@@ -19,6 +19,10 @@
   <body>
 
     <%= render "globals/header" %>
+    <%= render "globals/alert_banner",
+               alert_type: 'alert',
+               alert_tag: 'beta',
+               alert_message: "".html_safe + "This site is under development – you can still view the previous " + link_to('Globe Church website', 'https://www.theglobechurch.org') + "." %>
 
     <main class="c-main" role="main">
 
