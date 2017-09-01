@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :allow_page_caching
   protect_from_forgery with: :exception
   respond_to :html
   layout 'application'
@@ -9,4 +10,11 @@ class ApplicationController < ActionController::Base
   def banner
     @banner || {}
   end
+
+private
+
+  def allow_page_caching
+    expires_in(30.minutes, public: true) if Rails.env.production?
+  end
+
 end
