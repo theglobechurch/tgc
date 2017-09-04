@@ -28,6 +28,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :people
+
     post :graphics, to: 'graphics#create'
   end
 
