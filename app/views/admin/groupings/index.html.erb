@@ -7,19 +7,25 @@
 
     <ul>
     <% @groupings.each do | group | %>
-      <li>
-        <label><%= group.group_type %></label>
-        <h2><%= group.title %></h2>
-        <p><%= group.state %></p>
-        <%= link_to "Preview", admin_grouping_path(group) %>
-        <%= link_to "Edit", edit_admin_grouping_path(group) %>
+      <li class="a-resource">
+        <div class="a-resource__details">
+          <label class="a-resource__type">
+            <%= group.group_type %>
+            <span class="a-resource__state a-resource__state--<%= group.state %>"><%= group.state %></span>
+          </label>
+          <h2 class="a-resource__title"><%= group.title %></h2>
+        </div>
+        <div class="a-resource__actions">
+          <%= link_to "Preview", admin_grouping_path(group), class: 'u-btn' %>
+          <%= link_to "Edit", edit_admin_grouping_path(group), class: 'u-btn' %>
+        </div>
       </li>
     <% end %>
     </ul>
   </section>
 
   <section class="m-admin-body--sidebar">
-    <%= link_to "Create new", new_admin_grouping_path() %>
+    <%= link_to "Create new", new_admin_grouping_path(), class: 'u-btn u-btn--primary' %>
   </section>
 
 </main>

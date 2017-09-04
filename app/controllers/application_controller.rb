@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 private
 
   def allow_page_caching
-    expires_in(30.minutes, public: true) if Rails.env.production?
+    expires_in(15.minutes, public: true) if Rails.env.production?
   end
 
 end

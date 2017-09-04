@@ -1,0 +1,34 @@
+.a-resource {
+  border-bottom: 1px solid siteColor(sockeye);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  &__type {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__state--published {
+    color: green;
+  }
+
+  &__state--draft {
+    color: red;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__actions {
+    width: 100px;
+  }
+}
