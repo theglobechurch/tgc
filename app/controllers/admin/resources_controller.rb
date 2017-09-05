@@ -69,6 +69,7 @@ private
                                      :display_date,
                                      :uploads_id,
                                      :graphics_id,
+                                     :people_id,
                                      grouping_ids: [])
   end
 

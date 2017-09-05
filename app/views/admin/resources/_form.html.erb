@@ -56,7 +56,16 @@
 <section class="m-admin-body--sidebar">
   <%= f.submit 'Save', class: 'form__submit u-btn u-btn--primary u-btn--100' %>
 
-  Author
+  <div class="form__field">
+    <%= f.label :people_id, 'Author', class: 'form__label form__check-box-label' %>
+    <div class="form__select">
+      <%= f.select :people_id,
+        Person.pluck(:display_name, :id),
+        { include_blank: true },
+        { class: 'form__input form__input--select' }  %>
+    </div>
+  </div>
+
 
   <hr />
 
@@ -64,7 +73,6 @@
     <%= f.label :display_date, class: 'form__label' %>
     <%= f.date_field :display_date, class: 'form__input' %>
   </div>
-
 
   <hr />
 

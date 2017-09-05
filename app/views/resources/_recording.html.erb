@@ -2,9 +2,22 @@
   <main class="c-content-box__main">
     <div class="c-content-box__main__container">
       <p><%= @resource.introduction %></p>
-      <% if @resource.display_date %>
-      <p>Recorded: <%= l @resource.display_date.to_date, format: :long %>
-      <% end %>
+
+      <ul class="c-icon-list c-icon-list--small">
+        <% if @resource.display_date %>
+        <li class="c-icon-list__item">
+          <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+          <span><%= l @resource.display_date.to_date, format: :long %></span>
+        </li>
+        <% end %>
+
+        <% if @resource.person %>
+        <li class="c-icon-list__item">
+          <%= svg_tag('person', class: 'c-icon-list__item__icon') %>
+          <span><%= @resource.person.display_name %></span>
+        </li>
+        <% end %>
+      </ul>
     </div>
 
     <% if !@resource.upload.nil? %>

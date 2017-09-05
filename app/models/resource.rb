@@ -16,6 +16,10 @@ class Resource < ApplicationRecord
              optional: true,
              foreign_key: :uploads_id
 
+  belongs_to :person,
+             optional: true,
+             foreign_key: :people_id
+
   belongs_to :graphic,
              optional: true,
              foreign_key: :graphics_id
