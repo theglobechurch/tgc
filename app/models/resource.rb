@@ -3,7 +3,9 @@ class Resource < ApplicationRecord
   include HasSlug           # Validate slug and lookup by slug rather than id
   include HasState          # Allow draft, published, deleted
   include HasResourceType   # Shares a list of resource types
+  include HasBibleReference
 
+  inc_bible_reference
   publishable
 
   default_scope { published.order(resource_type: :asc) }

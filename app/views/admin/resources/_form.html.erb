@@ -66,13 +66,17 @@
     </div>
   </div>
 
-
   <hr />
 
   <div class="form__field">
     <%= f.label :display_date, class: 'form__label' %>
     <%= f.date_field :display_date, class: 'form__input' %>
   </div>
+
+  <hr />
+
+  <%= f.label :bible_reference, class: 'form__label' %>
+  <%= reference_picker(f) %>
 
   <hr />
 

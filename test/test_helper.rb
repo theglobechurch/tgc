@@ -5,12 +5,15 @@ FactoryGirl::SyntaxRunner.class_eval do
   include ActionDispatch::TestProcess
 end
 
+Dir.glob(Rails.root.join('test', 'helpers', '*.rb')).each do |f|
+  require f
+end
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in
   # alphabetical order.
   fixtures :all
   include FactoryGirl::Syntax::Methods
-  # Add more helper methods to be used by all tests here...
 end
 
 # Monkey-patch dragonfly for speed

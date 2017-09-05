@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708035615) do
+ActiveRecord::Schema.define(version: 20170905084706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20170708035615) do
   create_table "graphics", force: :cascade do |t|
     t.string "background_image_uid"
     t.string "background_image_thumbnail_uid"
-    t.string "background_image_thumbnail_2x_uid"
     t.string "background_image_320_uid"
     t.string "background_image_640_uid"
     t.string "background_image_960_uid"
@@ -127,6 +126,7 @@ ActiveRecord::Schema.define(version: 20170708035615) do
     t.bigint "people_id"
     t.bigint "graphics_id"
     t.bigint "uploads_id"
+    t.jsonb "bible_reference_json"
     t.index ["graphics_id"], name: "index_resources_on_graphics_id"
     t.index ["people_id"], name: "index_resources_on_people_id"
     t.index ["resource_type"], name: "index_resources_on_resource_type"

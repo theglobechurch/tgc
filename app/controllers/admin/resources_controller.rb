@@ -1,6 +1,7 @@
 class Admin::ResourcesController < AdminController
 
   helper Admin::ResourceTypeHelper
+  helper Admin::BibleHelper
 
   layout 'application', only: [:preview]
 
@@ -35,7 +36,8 @@ class Admin::ResourcesController < AdminController
     resource.attributes = resource_params
     resource.save
     flash[:notice] = "Resource updated"
-    respond_with(:admin, @resource)
+    @groupings = Grouping.published
+    respond_with(:admin, resource)
   end
 
   def preview
@@ -70,6 +72,11 @@ private
                                      :uploads_id,
                                      :graphics_id,
                                      :people_id,
+                                     :reference_book,
+                                     :reference_book_start_ch,
+                                     :reference_book_end_ch,
+                                     :reference_book_start_v,
+                                     :reference_book_end_v,
                                      grouping_ids: [])
   end
 

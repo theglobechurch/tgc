@@ -18,6 +18,15 @@
       <% if banner['subtitle'] %>
       <h2 class="c-banner__subtitle"><%= banner['subtitle'] %></h2>
       <% end %>
+
+      <% if banner['biblereference'] %>
+      <p class="c-banner__reference">
+        <%= svg_tag('bible', { class: 'c-banner__reference__icon' }) %>
+        <%= link_to("https://www.biblegateway.com/passage/?search=#{banner['biblereference']}&version=NIVUK", {  }) do %>
+          <span><%= banner['biblereference'] %></span>
+        <% end %>
+      </p>
+      <% end %>
     </div>
   </div>
   <% end %>
