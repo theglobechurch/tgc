@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/LineLength
+# rubocop:disable Metrics/LineLength,Metrics/MethodLength,Metrics/AbcSize
 class PagesController < ApplicationController
   include HighVoltage::StaticPage
 
@@ -14,6 +14,14 @@ private
     when 'about'
       {
         "title" => 'About',
+        "image" => {
+          "320": view_context.asset_url("static-banner/the-globe-church-get-involved_320.jpg"),
+          "640": view_context.asset_url("static-banner/the-globe-church-get-involved_640.jpg"),
+          "960": view_context.asset_url("static-banner/the-globe-church-get-involved_960.jpg"),
+          "1280": view_context.asset_url("static-banner/the-globe-church-get-involved_1280.jpg"),
+          "1920": view_context.asset_url("static-banner/the-globe-church-get-involved_1920.jpg"),
+          "2560": view_context.asset_url("static-banner/the-globe-church-get-involved_2560.jpg"),
+        },
       }
     when 'about/jesus'
       {
@@ -22,10 +30,26 @@ private
     when 'when-and-where'
       {
         "title" => 'When and where',
+        "image" => {
+          "320": view_context.asset_url("static-banner/about_320.jpg"),
+          "640": view_context.asset_url("static-banner/about_640.jpg"),
+          "960": view_context.asset_url("static-banner/about_960.jpg"),
+          "1280": view_context.asset_url("static-banner/about_1280.jpg"),
+          "1920": view_context.asset_url("static-banner/about_1920.jpg"),
+          "2560": view_context.asset_url("static-banner/about_2560.jpg"),
+        },
       }
     when 'get-involved'
       {
         "title" => 'Get involved',
+        "image" => {
+          "320": view_context.asset_url("static-banner/the-globe-church-get-involved_320.jpg"),
+          "640": view_context.asset_url("static-banner/the-globe-church-get-involved_640.jpg"),
+          "960": view_context.asset_url("static-banner/the-globe-church-get-involved_960.jpg"),
+          "1280": view_context.asset_url("static-banner/the-globe-church-get-involved_1280.jpg"),
+          "1920": view_context.asset_url("static-banner/the-globe-church-get-involved_1920.jpg"),
+          "2560": view_context.asset_url("static-banner/the-globe-church-get-involved_2560.jpg"),
+        },
       }
     when 'contact'
       {

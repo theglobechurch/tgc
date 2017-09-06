@@ -3,7 +3,7 @@
     <main class="c-content-box__main">
       <div class="c-content-box__main__container">
         <h1>Join us this Sunday</h1>
-        <h2>4pm at Wilcox House, 140-148 Borough High Street</h2>
+        <h2>4.30pm at Willcox House, 140-148 Borough High Street</h2>
         <a href="#" class="u-link u-link--arrowed u-link--black">
           <%= svg_tag('map') %>
           <span>View on a map</span>
@@ -21,9 +21,24 @@
 
 <section class="c-content-box">
   <header class="c-content-box__header">
-      <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-          alt="Sunday services" class="c-content-box__header__img" />
-
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_url("when-and-where/the-globe-church-sunday_320.jpg"),
+            "640": asset_url("when-and-where/the-globe-church-sunday_640.jpg"),
+            "960": asset_url("when-and-where/the-globe-church-sunday_960.jpg"),
+            "1280": asset_url("when-and-where/the-globe-church-sunday_1280.jpg"),
+            "1920": asset_url("when-and-where/the-globe-church-sunday_1920.jpg"),
+            "2560": asset_url("when-and-where/the-globe-church-sunday_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
       <div class="c-content-box__header__container">
           <h1 class="c-content-box__header__title">Sunday services</h1>
           <h2 class="c-content-box__header__subtitle">Every week at 4.30pm</h2>
@@ -83,9 +98,24 @@
 
 <section class="c-content-box">
   <header class="c-content-box__header">
-      <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-          alt="Sunday services" class="c-content-box__header__img" />
-
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_url("when-and-where/the-globe-church-focus_320.jpg"),
+            "640": asset_url("when-and-where/the-globe-church-focus_640.jpg"),
+            "960": asset_url("when-and-where/the-globe-church-focus_960.jpg"),
+            "1280": asset_url("when-and-where/the-globe-church-focus_1280.jpg"),
+            "1920": asset_url("when-and-where/the-globe-church-focus_1920.jpg"),
+            "2560": asset_url("when-and-where/the-globe-church-focus_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
       <div class="c-content-box__header__container">
           <h1 class="c-content-box__header__title">Globe Focus: Bible Study</h1>
           <h2 class="c-content-box__header__subtitle">Each Wednesday and Thursday from 7.00pm</h2>
@@ -145,12 +175,26 @@
            sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
            current: 'Prayer Meeting') %>
 
-
 <section class="c-content-box">
   <header class="c-content-box__header">
-    <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-        alt="Sunday services" class="c-content-box__header__img" />
-
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("when-and-where/the-globe-church-central_320.jpg"),
+          "640": asset_url("when-and-where/the-globe-church-central_640.jpg"),
+          "960": asset_url("when-and-where/the-globe-church-central_960.jpg"),
+          "1280": asset_url("when-and-where/the-globe-church-central_1280.jpg"),
+          "1920": asset_url("when-and-where/the-globe-church-central_1920.jpg"),
+          "2560": asset_url("when-and-where/the-globe-church-central_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: ''
+      )
+    %>
     <div class="c-content-box__header__container">
         <h1 class="c-content-box__header__title">Globe Central: Prayer meeting</h1>
         <h2 class="c-content-box__header__subtitle">First Wednesday of the month</h2>

@@ -3,7 +3,7 @@
     <main class="c-content-box__main">
       <div class="c-content-box__main__container">
         <h1>Join us this Sunday</h1>
-        <h2>4pm at Wilcox House, 140-148 Borough High Street</h2>
+        <h2>4.30pm at Willcox House, 140-148 Borough High Street</h2>
         <a href="#" class="u-link u-link--arrowed u-link--black">
           <%= svg_tag('map') %>
           <span>View on a map</span>
@@ -13,8 +13,59 @@
   </section>
 </div>
 
+
 <%= render('/shared/internal_nav',
-           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Trainee scheme'],
+           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Serve at Globe Church', 'Trainee scheme'],
+           current: 'Join us on Sunday') %>
+
+<section class="c-content-box">
+
+  <header class="c-content-box__header">
+    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
+        alt="Membership" class="c-content-box__header__img" /> %>
+
+    <div class="c-content-box__header__container">
+      <h1 class="c-content-box__header__title">Join us on Sunday</h1>
+    </div>
+  </header>
+
+  <main class="c-content-box__main c-content-box__main--text-focus">
+
+    <div class="c-content-box__main__container">
+    
+    </div>
+
+  </main>
+</section>
+
+<%= render('/shared/internal_nav',
+           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Serve at Globe Church', 'Trainee scheme'],
+           current: 'Pray with us') %>
+
+<section class="c-content-box">
+
+  <header class="c-content-box__header">
+    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
+        alt="Membership" class="c-content-box__header__img" /> %>
+
+    <div class="c-content-box__header__container">
+      <h1 class="c-content-box__header__title">Pray with us</h1>
+    </div>
+  </header>
+
+  <main class="c-content-box__main c-content-box__main--text-focus">
+
+    <div class="c-content-box__main__container">
+      <p>The Bible is full of Christians in different places praying for each other. The Globe Church has been about partnership from its very beginnings with a whole host of different churches and individuals generously praying to see the church established and grow.</p>
+      <p>Would you consider joining in this gospel partnership by praying for us? Everyone is welcome to our monthly           <%= link_to('Globe Central', page_path('when-and-where', anchor: "section:bible-study")) %> prayer gathering. You can sign up to a prayer email where we’ll give you updates of what God is doing and how you can pray.</p>
+      <p>Thank you for considering praying for us!</p>
+    </div>
+
+  </main>
+</section>
+
+<%= render('/shared/internal_nav',
+           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Serve at Globe Church', 'Trainee scheme'],
            current: 'Membership') %>
 
 <section class="c-content-box">
@@ -54,6 +105,57 @@
 
       <p>Membership forms can be found at the back of church. If you are interested then fill in a form or chat to one of the elders.</p>
 
+    </div>
+
+  </main>
+</section>
+
+<%= render('/shared/internal_nav',
+           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Serve at Globe Church', 'Trainee scheme'],
+           current: 'Serve at Globe Church') %>
+
+<section class="c-content-box">
+
+  <header class="c-content-box__header">
+    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
+        alt="Membership" class="c-content-box__header__img" /> %>
+
+    <div class="c-content-box__header__container">
+      <h1 class="c-content-box__header__title">Serve at Globe Church</h1>
+    </div>
+  </header>
+
+  <main class="c-content-box__main c-content-box__main--text-focus">
+
+    <div class="c-content-box__main__container">
+      <p>The Bible describes the church as a body with many parts all uniquely gifted to serve. At The Globe Church we believe that everyone who joins us has been brought here by God to use their gifts in a whole variety of different ways. We need each other!</p>
+      <p>What does this look like? It can be anything from caring for someone going through a tough time to serving up a meal on Sunday; from being a small group leader to helping with our homeless outreach.</p>
+    </div>
+
+  </main>
+</section>
+
+<%= render('/shared/internal_nav',
+           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Serve at Globe Church', 'Trainee scheme'],
+           current: 'Trainee scheme') %>
+
+<section class="c-content-box">
+
+  <header class="c-content-box__header">
+    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
+        alt="Membership" class="c-content-box__header__img" /> %>
+
+    <div class="c-content-box__header__container">
+      <h1 class="c-content-box__header__title">Trainee scheme</h1>
+    </div>
+  </header>
+
+  <main class="c-content-box__main c-content-box__main--text-focus">
+
+    <div class="c-content-box__main__container">
+      <p>A large part of our role is to train up future gospel workers. Sometimes it is possible for someone to take a year to spend with the Globe Church team and get a closer look at what church based ministry looks like.</p>
+      <p>Our church apprentices work alongside the staff team in all sorts of ministry and practical ways. They receive training from the Cornhill training course and from the Co-Mission monthly workshop.</p>
+      <p>If you are interested in finding out more please <%= link_to('contact us', page_path('contact')) %>.</p>
     </div>
 
   </main>

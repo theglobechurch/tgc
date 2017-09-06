@@ -3,9 +3,7 @@
   <nav class="c-footer__meganav">
     <div class="c-footer-nav-list">
       <h2 class="c-footer-nav-list__title">
-        <a href="#">
-          About the church
-        </a>
+        <%= link_to('About the church', page_path('about')) %>
       </h2>
 
       <ul class="c-footer-nav-list__items">
@@ -37,103 +35,87 @@
 
     <div class="c-footer-nav-list">
       <h2 class="c-footer-nav-list__title">
-        <a href="#">
-          When &amp; where
-        </a>
+        <%= link_to('When & where', page_path('when-and-where')) %>
       </h2>
 
       <ul class="c-footer-nav-list__items">
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Sundays
-          </a>
+          <%= link_to('Sundays', page_path('when-and-where', anchor: "section:sundays")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Midweek
-          </a>
+          <%= link_to('Bible study', page_path('when-and-where', anchor: "section:bible-study")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
+          <%= link_to('Prayer meeting', page_path('when-and-where', anchor: "section:prayer-meeting")) %>
+        </li>
+
+        <!--<li class="c-footer-nav-list__item">
           <a href="#">
             Calendar
           </a>
-        </li>
+        </li>-->
       </ul>
     </div>
 
     <div class="c-footer-nav-list">
       <h2 class="c-footer-nav-list__title">
-        <a href="#">
-          Series &amp; resources
-        </a>
+        <%= link_to('Series & resources', page_path('preaching')) %>
       </h2>
 
       <ul class="c-footer-nav-list__items">
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            All series
-          </a>
+          <%= link_to('All series', page_path('preaching')) %>
         </li>
 
-        <li class="c-footer-nav-list__item">
+        <!--<li class="c-footer-nav-list__item">
           <a href="#">
             All resources
           </a>
-        </li>
+        </li>-->
 
-        <li class="c-footer-nav-list__item">
+        <!--<li class="c-footer-nav-list__item">
           <a href="#">
             Latest sermon
           </a>
-        </li>
+        </li>-->
 
-        <li class="c-footer-nav-list__item">
+        <!--<li class="c-footer-nav-list__item">
           <a href="#">
             Blog
           </a>
-        </li>
+        </li>-->
       </ul>
     </div>
 
     <div class="c-footer-nav-list">
       <h2 class="c-footer-nav-list__title">
-        <a href="#">
-          Get involved
-        </a>
+        <%= link_to('Get involved', page_path('get-involved')) %>
       </h2>
 
       <ul class="c-footer-nav-list__items">
 
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Pray
-          </a>
+          <%= link_to('Pray', page_path('get-involved', anchor: "section:pray-with-us")) %>
         </li>
 
-        <li class="c-footer-nav-list__item">
+        <!--<li class="c-footer-nav-list__item">
           <a href="#">
             Give
           </a>
+        </li>-->
+
+        <li class="c-footer-nav-list__item">
+          <%= link_to('Membership', page_path('get-involved', anchor: "section:membership")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Membership
-          </a>
+          <%= link_to('Serving', page_path('get-involved', anchor: "section:serve-at-globe-church")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Focus
-          </a>
-        </li>
-
-        <li class="c-footer-nav-list__item">
-          <a href="#">
-            Trainee scheme
-          </a>
+          <%= link_to('Trainee Scheme', page_path('get-involved', anchor: "section:trainee-scheme")) %>
         </li>
       </ul>
 
