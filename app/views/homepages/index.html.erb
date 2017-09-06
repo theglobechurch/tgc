@@ -16,8 +16,24 @@
   <div class="vision-box">
     
     <div class="vision-box__boxouter">
-      <%# <img src="/assets/img/blocks/vision-box/img/jonty-960.jpg" srcset="/assets/img/blocks/vision-box/img/jonty-320.jpg 320w,/assets/img/blocks/vision-box/img/jonty-640.jpg 640w,/assets/img/blocks/vision-box/img/jonty-960.jpg 960w,/assets/img/blocks/vision-box/img/jonty-1280.jpg 1280w,/assets/img/blocks/vision-box/img/jonty-1920.jpg 1920w,/assets/img/blocks/vision-box/img/jonty-2560.jpg 2560w," alt="" class="vision-box__img" /> %>
-      <%= link_to(page_path('about', anchor: "jesus"), class: 'vision-box__item vision-box__item--jesus') do %>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_url("home-page/the-globe-church-bible-study_320.jpg"),
+            "640": asset_url("home-page/the-globe-church-bible-study_640.jpg"),
+            "960": asset_url("home-page/the-globe-church-bible-study_960.jpg"),
+            "1280": asset_url("home-page/the-globe-church-bible-study_1280.jpg"),
+            "1920": asset_url("home-page/the-globe-church-bible-study_1920.jpg"),
+            "2560": asset_url("home-page/the-globe-church-bible-study_2560.jpg"),
+          },
+          sizes: [
+            '100vw'
+          ],
+          class: 'vision-box__img',
+          alt: ''
+        )
+      %>
+      <%= link_to(page_path('about', anchor: "section:jesus"), class: 'vision-box__item vision-box__item--jesus') do %>
         <span class="vision-box__item__link">
           <h1 class="vision-box__item__title">
             The Globe Church is all about <strong>Jesus</strong>
@@ -27,8 +43,24 @@
     </div>
 
     <div class="vision-box__boxouter">
-      <%# <img src="/assets/img/blocks/vision-box/img/people-960.jpg" srcset="/assets/img/blocks/vision-box/img/people-320.jpg 320w,/assets/img/blocks/vision-box/img/people-640.jpg 640w,/assets/img/blocks/vision-box/img/people-960.jpg 960w,/assets/img/blocks/vision-box/img/people-1280.jpg 1280w,/assets/img/blocks/vision-box/img/people-1920.jpg 1920w,/assets/img/blocks/vision-box/img/people-2560.jpg 2560w," alt="" class="vision-box__img" /> %>
-      <%= link_to(page_path('about', anchor: "people"), class: 'vision-box__item vision-box__item--people') do %>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_url("home-page/the-globe-church-people_320.jpg"),
+            "640": asset_url("home-page/the-globe-church-people_640.jpg"),
+            "960": asset_url("home-page/the-globe-church-people_960.jpg"),
+            "1280": asset_url("home-page/the-globe-church-people_1280.jpg"),
+            "1920": asset_url("home-page/the-globe-church-people_1920.jpg"),
+            "2560": asset_url("home-page/the-globe-church-people_2560.jpg"),
+          },
+          sizes: [
+            '100vw'
+          ],
+          class: 'vision-box__img',
+          alt: ''
+        )
+      %>
+      <%= link_to(page_path('about', anchor: "section:people"), class: 'vision-box__item vision-box__item--people') do %>
         <span class="vision-box__item__link">
           <h1 class="vision-box__item__title">
             Made up of all sorts of <strong>people</strong>
@@ -38,8 +70,24 @@
     </div>
 
     <div class="vision-box__boxouter">
-      <%# <img src="/assets/img/blocks/vision-box/img/mission-960.jpg" srcset="/assets/img/blocks/vision-box/img/mission-320.jpg 320w,/assets/img/blocks/vision-box/img/mission-640.jpg 640w,/assets/img/blocks/vision-box/img/mission-960.jpg 960w,/assets/img/blocks/vision-box/img/mission-1280.jpg 1280w,/assets/img/blocks/vision-box/img/mission-1920.jpg 1920w,/assets/img/blocks/vision-box/img/mission-2560.jpg 2560w," alt="" class="vision-box__img" /> %>
-      <%= link_to(page_path('about', anchor: "mission"), class: 'vision-box__item vision-box__item--mission') do %>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_url("home-page/the-globe-church-london-southwark_320.jpg"),
+            "640": asset_url("home-page/the-globe-church-london-southwark_640.jpg"),
+            "960": asset_url("home-page/the-globe-church-london-southwark_960.jpg"),
+            "1280": asset_url("home-page/the-globe-church-london-southwark_1280.jpg"),
+            "1920": asset_url("home-page/the-globe-church-london-southwark_1920.jpg"),
+            "2560": asset_url("home-page/the-globe-church-london-southwark_2560.jpg"),
+          },
+          sizes: [
+            '100vw'
+          ],
+          class: 'vision-box__img',
+          alt: ''
+        )
+      %>
+      <%= link_to(page_path('about', anchor: "section:mission"), class: 'vision-box__item vision-box__item--mission') do %>
         <span class="vision-box__item__link">
           <h1 class="vision-box__item__title">
             Involved in the greatest <strong>mission</strong>

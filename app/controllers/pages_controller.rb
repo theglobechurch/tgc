@@ -14,7 +14,6 @@ private
     when 'about'
       {
         "title" => 'About',
-        "subtitle" => 'The Globe Church is all about sharing the good news of Jesus Christ to those living and working on the Southbank of London.',
       }
     when 'about/jesus'
       {
