@@ -21,8 +21,24 @@
 <section class="c-content-box">
 
   <header class="c-content-box__header">
-    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-        alt="Membership" class="c-content-box__header__img" /> %>
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("get-involved/the-globe-church-sunday_320.jpg"),
+          "640": asset_url("get-involved/the-globe-church-sunday_640.jpg"),
+          "960": asset_url("get-involved/the-globe-church-sunday_960.jpg"),
+          "1280": asset_url("get-involved/the-globe-church-sunday_1280.jpg"),
+          "1920": asset_url("get-involved/the-globe-church-sunday_1920.jpg"),
+          "2560": asset_url("get-involved/the-globe-church-sunday_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: 'The Globe Church is made up of all sorts of people'
+      )
+    %>
 
     <div class="c-content-box__header__container">
       <h1 class="c-content-box__header__title">Join us on Sunday</h1>
@@ -32,7 +48,11 @@
   <main class="c-content-box__main c-content-box__main--text-focus">
 
     <div class="c-content-box__main__container">
-    
+      <p>Our Sunday gathering is the heartbeat of the life of The Globe Church. Everything else we do flows from the worship, preaching, and relationships enjoyed on a Sunday. </p>
+      <p>We prize singing together in weighty and joyful worship, praying as one, celebrating Christ’s death for us in communion, and hearing the voice of God through the reading and preaching of the Bible.</p>
+      <p>Church family is just that- family! So we love having children come and be part of our gathering. We provide a staffed creche for toddlers, and produce sheets to help children navigate their way through the preaching.</p>
+      <p>Our services are fairly informal and we enjoy a meal together afterwards.</p>
+      <p><%= link_to('When and where', page_path('when-and-where'), class: 'u-btn u-btn--arrowed u-btn--dark') %></p>
     </div>
 
   </main>
@@ -45,8 +65,24 @@
 <section class="c-content-box">
 
   <header class="c-content-box__header">
-    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-        alt="Membership" class="c-content-box__header__img" /> %>
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("get-involved/the-globe-church-prayer_320.jpg"),
+          "640": asset_url("get-involved/the-globe-church-prayer_640.jpg"),
+          "960": asset_url("get-involved/the-globe-church-prayer_960.jpg"),
+          "1280": asset_url("get-involved/the-globe-church-prayer_1280.jpg"),
+          "1920": asset_url("get-involved/the-globe-church-prayer_1920.jpg"),
+          "2560": asset_url("get-involved/the-globe-church-prayer_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: 'The Globe Church is made up of all sorts of people'
+      )
+    %>
 
     <div class="c-content-box__header__container">
       <h1 class="c-content-box__header__title">Pray with us</h1>
@@ -71,8 +107,24 @@
 <section class="c-content-box">
 
   <header class="c-content-box__header">
-    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-        alt="Membership" class="c-content-box__header__img" /> %>
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("get-involved/the-globe-church-membership_320.jpg"),
+          "640": asset_url("get-involved/the-globe-church-membership_640.jpg"),
+          "960": asset_url("get-involved/the-globe-church-membership_960.jpg"),
+          "1280": asset_url("get-involved/the-globe-church-membership_1280.jpg"),
+          "1920": asset_url("get-involved/the-globe-church-membership_1920.jpg"),
+          "2560": asset_url("get-involved/the-globe-church-membership_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: 'The Globe Church is made up of all sorts of people'
+      )
+    %>
 
     <div class="c-content-box__header__container">
       <h1 class="c-content-box__header__title">Membership</h1>
@@ -117,8 +169,24 @@
 <section class="c-content-box">
 
   <header class="c-content-box__header">
-    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-        alt="Membership" class="c-content-box__header__img" /> %>
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("get-involved/the-globe-church-serving_320.jpg"),
+          "640": asset_url("get-involved/the-globe-church-serving_640.jpg"),
+          "960": asset_url("get-involved/the-globe-church-serving_960.jpg"),
+          "1280": asset_url("get-involved/the-globe-church-serving_1280.jpg"),
+          "1920": asset_url("get-involved/the-globe-church-serving_1920.jpg"),
+          "2560": asset_url("get-involved/the-globe-church-serving_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: 'The Globe Church is made up of all sorts of people'
+      )
+    %>
 
     <div class="c-content-box__header__container">
       <h1 class="c-content-box__header__title">Serve at Globe Church</h1>
@@ -142,9 +210,24 @@
 <section class="c-content-box">
 
   <header class="c-content-box__header">
-    <%# <img src="/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg" srcset="/assets/img/templates/series-and-resources/img/series-and-resources-banner-320.jpg 320w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-640.jpg 640w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-960.jpg 960w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1280.jpg 1280w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-1920.jpg 1920w,/assets/img/templates/series-and-resources/img/series-and-resources-banner-2560.jpg 2560w,"
-        alt="Membership" class="c-content-box__header__img" /> %>
-
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("get-involved/the-globe-church-training_320.jpg"),
+          "640": asset_url("get-involved/the-globe-church-training_640.jpg"),
+          "960": asset_url("get-involved/the-globe-church-training_960.jpg"),
+          "1280": asset_url("get-involved/the-globe-church-training_1280.jpg"),
+          "1920": asset_url("get-involved/the-globe-church-training_1920.jpg"),
+          "2560": asset_url("get-involved/the-globe-church-training_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: 'The Globe Church is made up of all sorts of people'
+      )
+    %>
     <div class="c-content-box__header__container">
       <h1 class="c-content-box__header__title">Trainee scheme</h1>
     </div>
