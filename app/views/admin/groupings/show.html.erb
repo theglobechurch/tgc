@@ -6,22 +6,22 @@
   <section class="m-admin-body--sidebar">
     <h1><%= @grouping.title %></h1>
 
-    <%= link_to("Edit", edit_admin_grouping_path(@grouping)) %>
+    <%= link_to("Edit", edit_admin_grouping_path(@grouping), class: 'u-btn u-btn--primary u-btn--100') %>
 
     <%= btn_state_change('Publish',
                          @grouping,
                          :publish,
-                         class: 'btn') if @grouping.can_publish? %>
+                         class: 'u-btn u-btn--100') if @grouping.can_publish? %>
 
     <%= btn_state_change('Unpublish',
                          @grouping,
                          :unpublish,
-                         class: 'btn') if @grouping.can_unpublish? %>
+                         class: 'u-btn u-btn--100 u-btn--warning') if @grouping.can_unpublish? %>
 
     <%= btn_state_change('Delete',
                          @grouping,
                          :expunge,
-                         class: 'btn') if @grouping.can_expunge? %>
+                         class: 'u-btn u-btn--100 u-btn--danger') if @grouping.can_expunge? %>
 
     <hr />
 
