@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'test_helper'
 
 class HasBibleReferenceTest < ActiveSupport::TestCase
@@ -35,6 +36,21 @@ class HasBibleReferenceTest < ActiveSupport::TestCase
                     reference_book_end_ch: 'should be',
                     reference_book_end_v: 'numeric!')
       assert_not(c.save, "Record should not save")
+    end
+
+    if cls.included_modules.include?(HasState)
+      test "won't wipe bible reference on publish" do
+        c = build_cls(:draft,
+                      reference_book: "1 Corinthians",
+                      reference_book_start_ch: 1,
+                      reference_book_start_v: 1,
+                      reference_book_end_ch: 3,
+                      reference_book_end_v: 3)
+        c.save
+        assert_not_empty(c.bible_reference_json)
+        c.publish
+        assert_not_empty(c.bible_reference_json)
+      end
     end
 
   end

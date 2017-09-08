@@ -19,13 +19,15 @@ module HasBibleReference
                 }
 
       before_save do |r|
-        r.bible_reference_json = {
-          reference_book: reference_book,
-          reference_book_start_ch: reference_book_start_ch,
-          reference_book_start_v: reference_book_start_v,
-          reference_book_end_ch: reference_book_end_ch,
-          reference_book_end_v: reference_book_end_v,
-        }
+        if reference_book.present?
+          r.bible_reference_json = {
+            reference_book: reference_book,
+            reference_book_start_ch: reference_book_start_ch,
+            reference_book_start_v: reference_book_start_v,
+            reference_book_end_ch: reference_book_end_ch,
+            reference_book_end_v: reference_book_end_v,
+          }
+        end
       end
     end
 
