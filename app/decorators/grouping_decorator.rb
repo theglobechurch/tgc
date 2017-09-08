@@ -15,12 +15,14 @@ class GroupingDecorator < Draper::Decorator
   end
 
   def date_range
-    if object.start_date.year == object.end_date.year
-      "#{object.start_date.strftime('%B')} – "\
-      "#{object.end_date.strftime('%B %Y')}"
-    else
-      "#{object.start_date.strftime('%B %Y')} – "\
-      "#{object.end_date.strftime('%B %Y')}"
+    if object.start_date && object.end_date
+      if object.start_date.year == object.end_date.year
+        "#{object.start_date.strftime('%B')} – "\
+        "#{object.end_date.strftime('%B %Y')}"
+      else
+        "#{object.start_date.strftime('%B %Y')} – "\
+        "#{object.end_date.strftime('%B %Y')}"
+      end
     end
   end
 

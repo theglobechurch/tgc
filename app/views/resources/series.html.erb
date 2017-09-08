@@ -37,7 +37,9 @@
           <% @recordings.each do |recording| %>
             <%= link_to(recording, class: 'c-sermon-list__item') do %>
               <div class="c-sermon-list__details">
+                <% if recording.display_date %>
                 <date class="c-sermon-list__details__date"><%= l recording.display_date.to_date, format: :long %></date>
+                <% end %>
                 <p class="c-sermon-list__details__title"><%= recording.title %></p>
                 <!--<small class="c-sermon-list__details__passage"><em>passage ref</em></small>-->
               </div>
