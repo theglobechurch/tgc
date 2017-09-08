@@ -9,6 +9,7 @@
   overflow: hidden;
 
   &--main {
+    overflow-x: scroll;
     padding: 10px;
     width: 75%;
   }
