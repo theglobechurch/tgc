@@ -10,9 +10,11 @@
   }
 
   &__type {
+    display: block;
     font-size: 10px;
-    text-transform: uppercase;
     letter-spacing: 1px;
+    line-height: 12px;
+    text-transform: uppercase;
   }
 
   &__state--published {
@@ -30,5 +32,12 @@
 
   &__actions {
     width: 100px;
+  }
+
+  &__meta {
+    font-size: 10px;
+    li {
+      margin: 0;
+    }
   }
 }

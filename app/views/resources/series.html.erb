@@ -41,7 +41,9 @@
                 <date class="c-sermon-list__details__date"><%= l recording.display_date.to_date, format: :long %></date>
                 <% end %>
                 <p class="c-sermon-list__details__title"><%= recording.title %></p>
-                <!--<small class="c-sermon-list__details__passage"><em>passage ref</em></small>-->
+                <% if recording.bible_reference_json %>
+                <small class="c-sermon-list__details__date"><%= recording.reference_string %></small>
+                <% end %>
               </div>
 
               <div class="c-sermon-list__cta u-btn">

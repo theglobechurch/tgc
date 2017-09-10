@@ -14,6 +14,19 @@
             <span class="a-resource__state a-resource__state--<%= resource.state %>"><%= resource.state %></span>
           </label>
           <h2 class="a-resource__title"><%= resource.title %></h2>
+          <ul class="a-resource__meta">
+            <% if resource.display_date %>
+            <li><strong>Date:</strong> <%= l resource.display_date.to_date, format: :long %></li>
+            <% end %>
+
+            <% if resource.bible_reference_json %>
+            <li><strong>Passage:</strong> <%= resource.reference_string %></li>
+            <% end %>
+
+            <% if resource.people_id %>
+            <li><strong>Author:</strong> <%= resource.person.display_name %></li>
+            <% end %>
+          </ul>
         </div>
         <div class="a-resource__actions">
           <%= link_to "Preview", admin_resource_path(resource), class: 'u-btn' %>
