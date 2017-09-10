@@ -6,7 +6,7 @@ class Grouping < ApplicationRecord
 
   publishable
 
-  default_scope { published.order(start_date: :desc) }
+  default_scope { published.order('start_date DESC NULLS LAST') }
 
   GROUP_TYPES.each do |g|
     scope g, -> { where(group_type: g) }
