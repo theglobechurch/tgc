@@ -23,6 +23,15 @@ class HasBibleReferenceTest < ActiveSupport::TestCase
                    c.reference_string,
                    "Should have two chapters referenced")
 
+      c = create_cls(reference_book: "1 Corinthians",
+                     reference_book_start_ch: 1,
+                     reference_book_start_v: 1,
+                     reference_book_end_ch: 1,
+                     reference_book_end_v: 1)
+      assert_equal("1 Corinthians 1:1",
+                   c.reference_string,
+                   "Should only be showing one verse")
+
       c = create_cls(reference_book: "Genesis")
       assert_equal("Genesis",
                    c.reference_string,

@@ -46,6 +46,10 @@ module HasBibleReference
       br = bible_reference
       if br['reference_book_start_ch'].blank?
         br['reference_book'].to_s
+      elsif br['reference_book_start_ch'] == br['reference_book_end_ch'] \
+        && br['reference_book_start_v'] == br['reference_book_end_v']
+        "#{br['reference_book']} #{br['reference_book_start_ch']}:"\
+        "#{br['reference_book_start_v']}"
       elsif br['reference_book_start_ch'] == br['reference_book_end_ch']
         "#{br['reference_book']} #{br['reference_book_start_ch']}:"\
         "#{br['reference_book_start_v']}-#{br['reference_book_end_v']}"
