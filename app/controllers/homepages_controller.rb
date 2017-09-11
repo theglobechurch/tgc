@@ -18,7 +18,9 @@ class HomepagesController < ApplicationController
 private
 
   def latest_sermon
-    @latest_sermon ||= Resource.resource_type('recording').first
+    @latest_sermon ||= Resource.resource_type('recording').
+                       order(display_date: :desc).
+                       first
   end
 
 end

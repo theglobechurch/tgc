@@ -15,12 +15,13 @@ gem 'high_voltage', '~> 3.0.0'              # For static pages
 gem 'rack-rewrite'
 
 group :development, :test, :build do
-  gem 'factory_girl_rails'  # For testing
-  gem 'rubocop'             # Enforce styles
-  gem 'timecop'             # Test time cases
-  gem 'brakeman'            # security warnings
-  gem 'dotenv-rails'        # Env vars from .env file
-  gem 'bundler-audit'       # Beware of outdated gems
+  gem 'factory_girl_rails'        # For testing
+  gem 'rails-controller-testing'  # Does what it says
+  gem 'rubocop'                   # Enforce styles
+  gem 'timecop'                   # Test time cases
+  gem 'brakeman'                  # security warnings
+  gem 'dotenv-rails'              # Env vars from .env file
+  gem 'bundler-audit'             # Beware of outdated gems
 end
 
 group :development do
