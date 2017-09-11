@@ -1,67 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <title>Like the lost sheep… this page is missing</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">  <style>
+    body {
+      background-color: #292a39;
+      color: #ffffff;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 110%;
+    }
+    .error {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    svg {
+      width: 100%;
+      max-width: 500px;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    h1 {
+      font-size: 2em;
+      line-height: 1.5em;
+      letter-spacing: 1px;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    a {
+      border: 1px solid white;
+      display: inline-table;
+      padding: 12px 10px 10px;
+      color: white;
+      border-radius: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: color .2s, border-color .2s;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    a:hover {
+      color: #df5b3f;
+      border-color: #df5b3f;
+    }
+
+    .biblebox {
+      background-color: white;
+      color: #292A39;
+      border-radius: 2px;
+      margin-top: 30px;
+      padding: 20px 10px;
+    }
+
+    .biblebox h2 {
+      font-size: 2em;
+      letter-spacing: 2.5px;
+      margin: 0 0 0.5em;
+    }
+
+    .biblebox p {
+      font-size: 1em;
+      line-height: 1.2em;
+      letter-spacing: 1.5px;
+    }
+
+    .biblebox small {
+      display: block;
+      width: 100%;
+      max-width: 75%;
+    }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+<body>
+  <div class="error">
+    <svg xmlns="http://www.w3.org/2000/svg" width="676" height="251" viewBox="0 0 676 251">
+      <title>
+        The Globe Church
+      </title>
+      <g fill="none" fill-rule="evenodd">
+        <path fill="#D06348" d="M384 125.498C384 194.81 327.588 251 258 251c-69.587 0-126-56.19-126-125.502C132 56.188 188.413 0 258 0c69.588 0 126 56.19 126 125.498z"/>
+        <path fill="#FFF" d="M9.723 112.97H1.016c-.588 0-1.016-.478-1.016-1.004v-2.96c0-.53.428-1.006 1.016-1.006h22.97c.587 0 1.014.475 1.014 1.006v2.96c0 .526-.427 1.003-1.013 1.003h-8.71v31.025c0 .53-.48 1.005-1.012 1.005H10.74c-.535 0-1.017-.474-1.017-1.005V112.97M42 109.006c0-.53.472-1.006.994-1.006h3.45c.573 0 .992.475.992 1.006v14.747h19.128v-14.747c0-.53.42-1.006.995-1.006h3.448c.523 0 .992.475.992 1.006v34.99c0 .53-.47 1.004-.992 1.004h-3.45c-.575 0-.994-.474-.994-1.005V128.72H47.436v15.275c0 .53-.42 1.005-.992 1.005h-3.45c-.522 0-.994-.474-.994-1.005v-34.99M93 109.006c0-.53.42-1.006.997-1.006H115c.58 0 1 .475 1 1.006v2.96c0 .526-.42 1.003-1 1.003H98.407v10.783h14.022c.524 0 .995.476.995 1.002v2.96c0 .583-.47 1.006-.996 1.006H98.406v11.366H115c.58 0 1 .475 1 1.003v2.905c0 .53-.42 1.005-1 1.005H93.997c-.578 0-.997-.474-.997-1.005v-34.99M174.286 106c5.143 0 9.374 1.846 13.016 4.91.43.42.484 1.054.055 1.477-.805.844-1.607 1.635-2.413 2.48-.427.475-.856.42-1.392-.055-2.517-2.162-5.838-3.588-9.107-3.588-7.607 0-13.445 6.333-13.445 13.723 0 7.337 5.838 13.67 13.445 13.67 4.447 0 7.5-1.584 8.036-1.794v-5.912h-5.25c-.588 0-1.016-.42-1.016-.95v-3.06c0-.58.428-1 1.017-1h9.75c.536 0 .965.473.965 1 0 4.222.055 8.55.055 12.772 0 .263-.214.685-.43.844 0 0-5.518 3.484-13.284 3.484-10.662 0-19.286-8.39-19.286-18.946 0-10.556 8.624-19.054 19.286-19.054M207.012 108h3.518c.532 0 1.013.475 1.013 1.006v31.08h14.443c.588 0 1.014.475 1.014 1.003v2.905c0 .53-.426 1.005-1.014 1.005h-18.974c-.585 0-1.012-.474-1.012-1.005v-34.99c0-.53.427-1.005 1.012-1.005zM257.98 133.833c5.964 0 10.848-4.834 10.848-10.79 0-5.92-4.884-10.877-10.848-10.877-5.925 0-10.808 4.957-10.808 10.877 0 5.956 4.883 10.79 10.808 10.79zm0-25.833c8.344 0 15.02 6.708 15.02 15.043 0 8.333-6.676 14.957-15.02 14.957-8.345 0-14.98-6.624-14.98-14.957 0-8.335 6.635-15.043 14.98-15.043z"/>
+        <rect width="23" height="4" x="247" y="143" fill="#FFF" rx="1.75"/>
+        <path fill="#FFF" d="M309.552 124.07c3.39 0 5.457-2.487 5.457-5.66 0-3.22-2.07-5.44-5.458-5.44h-7.15v11.1h7.15zm.847 16.068c3.23 0 5.72-2.486 5.72-5.76 0-3.225-3.073-5.55-6.514-5.55h-7.258v11.31h8.05zM297 109.006c0-.53.423-1.006 1.005-1.006h11.864c6.41 0 11.017 4.228 11.017 9.778 0 4.07-3.018 6.977-5.51 8.406 2.81 1.163 6.623 3.754 6.623 8.616 0 5.92-4.874 10.2-11.547 10.2h-12.448c-.582 0-1.005-.474-1.005-1.005v-34.99zM340 109.006c0-.53.42-1.006 1-1.006h21.003c.578 0 .997.475.997 1.006v2.96c0 .526-.42 1.003-.997 1.003H345.41v10.783h14.02c.524 0 1 .476 1 1.002v2.96c0 .583-.476 1.006-1 1.006h-14.02v11.366h16.593c.578 0 .997.475.997 1.003v2.905c0 .53-.42 1.005-.997 1.005H341c-.58 0-1-.474-1-1.005v-34.99M419.933 106c5.295 0 9.125 1.794 12.69 4.91.472.42.472 1.054.052 1.477l-2.308 2.374c-.365.475-.84.475-1.31 0-2.466-2.162-5.822-3.536-9.074-3.536-7.497 0-13.16 6.333-13.16 13.723 0 7.388 5.713 13.67 13.214 13.67 3.828 0 6.503-1.53 9.02-3.484.47-.368.945-.316 1.26-.054l2.41 2.376c.42.368.316 1.055-.052 1.423-3.567 3.485-8.076 5.12-12.742 5.12-10.49 0-18.933-8.39-18.933-18.946 0-10.556 8.444-19.054 18.933-19.054M451 109.006c0-.53.47-1.006.992-1.006h3.452c.574 0 .992.475.992 1.006v14.747h19.128v-14.747c0-.53.418-1.006.994-1.006h3.447c.525 0 .995.475.995 1.006v34.99c0 .53-.47 1.004-.995 1.004h-3.447c-.576 0-.994-.474-.994-1.005V128.72h-19.128v15.275c0 .53-.418 1.005-.992 1.005h-3.452c-.522 0-.992-.474-.992-1.005v-34.99M503 109.02c0-.54.48-1.02 1.012-1.02h3.573c.588 0 1.014.48 1.014 1.02v22.102c0 5.352 3.41 9.526 8.846 9.526 5.492 0 8.955-4.122 8.955-9.42v-22.21c0-.537.428-1.018 1.015-1.018h3.573c.53 0 1.012.48 1.012 1.02v22.478c0 8.134-6.13 14.502-14.554 14.502-8.368 0-14.446-6.368-14.446-14.502v-22.48M568.013 125.972c3.446 0 6.47-2.908 6.47-6.554 0-3.435-3.024-6.292-6.47-6.292h-9.442v12.846h9.443zM553 109.006c0-.53.424-1.006 1.01-1.006h14.426c6.366 0 11.564 5.023 11.564 11.312 0 4.863-3.237 8.88-7.85 10.73l7.268 13.427c.37.685 0 1.53-.903 1.53h-4.138c-.424 0-.742-.262-.85-.474l-7.052-14.008h-8.01v13.477c0 .53-.477 1.005-1.01 1.005h-3.446c-.586 0-1.01-.474-1.01-1.005v-34.99zM613.932 106c5.297 0 9.127 1.794 12.693 4.91.47.42.47 1.054.052 1.477l-2.308 2.374c-.37.475-.84.475-1.31 0-2.468-2.162-5.823-3.536-9.075-3.536-7.5 0-13.162 6.333-13.162 13.723 0 7.388 5.715 13.67 13.216 13.67 3.826 0 6.502-1.53 9.02-3.484.47-.368.94-.316 1.257-.054l2.41 2.376c.42.368.317 1.055-.05 1.423-3.567 3.485-8.077 5.12-12.745 5.12-10.49 0-18.932-8.39-18.932-18.946 0-10.556 8.443-19.054 18.932-19.054M646 109.006c0-.53.47-1.006.992-1.006h3.452c.574 0 .992.475.992 1.006v14.747h19.128v-14.747c0-.53.418-1.006.994-1.006h3.447c.525 0 .995.475.995 1.006v34.99c0 .53-.47 1.004-.995 1.004h-3.447c-.576 0-.994-.474-.994-1.005V128.72h-19.128v15.275c0 .53-.418 1.005-.992 1.005h-3.452c-.522 0-.992-.474-.992-1.005v-34.99"/>
+      </g>
+    </svg>
+    
+    <h1>Sorry, the page you are looking for cannot be found.</h1>
+    <a href="/">Go to the homepage</a>
+    <div class="biblebox">
+      <h2>Luke 15v1-7</h2>
+      <p>Now the tax collectors and sinners were all gathering round to hear Jesus. But the Pharisees and the teachers of the law muttered, ‘This man welcomes sinners, and eats with them.’</p>
+      <p>Then Jesus told them this parable: ‘Suppose one of you has a hundred sheep and loses one of them. Doesn’t he leave the ninety-nine in the open country and go after the lost sheep until he finds it? And when he finds it, he joyfully puts it on his shoulders and goes home. Then he calls his friends and neighbours together and says, “Rejoice with me; I have found my lost sheep.” I tell you that in the same way there will be more rejoicing in heaven over one sinner who repents than over ninety-nine righteous people who do not need to repent.</p>
+      <small>Holy Bible, New International Version® Anglicized, NIV® Copyright © 1979, 1984, 2011 by Biblica, Inc.® Used by permission. All rights reserved worldwide.</small>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
