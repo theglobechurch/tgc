@@ -1,6 +1,6 @@
 <header class="c-header">
 
-  <%= link_to(root_path, class: 'c-header__logo-link') do %>
+  <%= link_to(root_path, class: 'c-header__logo-link', aria: { label: 'The Globe Church homepage' }) do %>
     <%= svg_tag('tgc-logo-long', { class: 'c-header__logo' }) %>
   <% end %>
   <h1 class="c-header__title">

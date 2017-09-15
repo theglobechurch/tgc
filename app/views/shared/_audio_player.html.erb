@@ -2,13 +2,13 @@
     <audio src="<%= audio.file.remote_url %>" preload="metadata"></audio>
 
     <div class="c-audio-player__big-button">
-      <button class="play">
+      <button class="play" aria-label="Play recording">
         <span class="left"></span>
         <span class="right"></span>
       </button>
     </div>
 
-    <input type="range" id="seek" value="0" max="" class="c-audio-player__progress-bar js-audio-player--progress" />
+    <input type="range" id="seek" value="0" max="" class="c-audio-player__progress-bar js-audio-player--progress"  aria-label="Recording progress" />
 
     <div class="c-audio-player__times">
       <span class="c-audio-player__times__played js-audio-player--played">00:00</span>
