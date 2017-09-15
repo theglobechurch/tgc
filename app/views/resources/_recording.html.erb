@@ -31,7 +31,7 @@
         </li>
 
         <li class="c-icon-list__item">
-          <a href="<%= @resource.upload.file.remote_url %>" download="TheGlobeChurch-<%= @resource.slug %>" class="u-link u-link--arrowed u-link--black"data-eventcategory="Audio Player" data-eventaction="Download" data-eventlabel="<%= "#{@resource.groupings.first.title}/#{@resource.title}" %>">
+          <a href="<%= @resource.upload.file.remote_url %>" download="TheGlobeChurch-<%= @resource.slug %>" class="u-link u-link--arrowed u-link--black" data-eventcategory="Audio Player" data-eventaction="Download" data-eventlabel="<%= "#{@resource.groupings.first.title}/#{@resource.title}" %>">
             <%= svg_tag('download', { class: 'c-icon-list__item__icon' }) %>
             <span>Download</span>
           </a>
