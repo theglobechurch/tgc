@@ -16,10 +16,17 @@
     <%= stylesheet_link_tag 'tgc-fractal', media: 'all' %>
     <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList,es6,Element.prototype.dataset,Array.prototype.forEach"></script>
     <%#= csrf_meta_tags %>
+
+    <% if Rails.env.production? %>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K5WB4B6');</script>
+    <% end %>
   </head>
 
   <body>
-
+    <% if Rails.env.production? %>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5WB4B6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <% end %>
+    
     <%= render "globals/header" %>
     <%= render "globals/alert_banner",
                alert_type: 'alert',
