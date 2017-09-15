@@ -22,7 +22,7 @@
       <% if banner['biblereference'] %>
       <p class="c-banner__reference">
         <%= svg_tag('bible', { class: 'c-banner__reference__icon' }) %>
-        <%= link_to("https://www.biblegateway.com/passage/?search=#{banner['biblereference']}&version=NIVUK", {  }) do %>
+        <%= link_to("https://www.biblegateway.com/passage/?search=#{banner['biblereference']}&version=NIVUK", {target: "_blank", rel: "noopener"}) do %>
           <span><%= banner['biblereference'] %></span>
         <% end %>
       </p>
