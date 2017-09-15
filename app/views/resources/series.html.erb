@@ -61,9 +61,16 @@
   </section>
 
   <%= render('/shared/promo_box',
-    #img: @latest_sermon.banner['image'],
+    img: {
+      "320": asset_url("static-banner/the-globe-church-preaching_320.jpg"),
+      "640": asset_url("static-banner/the-globe-church-preaching_640.jpg"),
+      "960": asset_url("static-banner/the-globe-church-preaching_960.jpg"),
+      "1280": asset_url("static-banner/the-globe-church-preaching_1280.jpg"),
+      "1920": asset_url("static-banner/the-globe-church-preaching_1920.jpg"),
+      "2560": asset_url("static-banner/the-globe-church-preaching_2560.jpg"),
+    },
     link: preaching_path,
-    title: '',
+    title: 'All preaching from The Globe Church',
     pretitle: '',
     cta: 'See more sermon series') %>
 

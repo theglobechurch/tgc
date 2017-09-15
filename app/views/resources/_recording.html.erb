@@ -52,3 +52,13 @@
 <% if !@resource.upload.nil? && @resource.upload.meta['type'] == 'audio' %>
   <%= render 'shared/audio_player', audio: @resource.upload %>
 <% end %>
+
+<% unless @resource.groupings.nil? %>
+  <%= render('/shared/promo_box',
+    img: @resource.groupings.first.graphic.background_image_size_urls,
+    link: "#{preaching_path()}/#{@resource.groupings.first.slug}",
+    title: @resource.groupings.first.title,
+    pretitle: 'This recording is part of…',
+    cta: 'Go to full sermon series') %>
+
+<% end %>

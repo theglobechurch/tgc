@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  layout 'application', only: ['preview']
+  layout 'application'
 
   def index
     img_location = 'static-banner/the-globe-church-preaching_'
@@ -15,6 +15,7 @@ class ResourcesController < ApplicationController
         "2560": view_context.asset_url("#{img_location}2560.jpg"),
       },
     }
+    @latest_sermon = latest_sermon.decorate if latest_sermon
   end
 
   def series
@@ -37,6 +38,12 @@ private
 
   def resource
     @resource ||= resources.slug_find(params[:id])
+  end
+
+  def latest_sermon
+    @latest_sermon ||= resources.resource_type('recording').
+                       order('display_date DESC NULLS LAST').
+                       first
   end
 
   def groups
