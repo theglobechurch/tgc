@@ -16,6 +16,12 @@ class HomepagesControllerTest < ActionController::TestCase
            title: 'old sermon',
            display_date: '2016-01-10')
 
+    create(:resource,
+           :recording,
+           :published,
+           title: 'sermon with no date',
+           display_date: nil)
+
     get :index
 
     assert_response(:success)
