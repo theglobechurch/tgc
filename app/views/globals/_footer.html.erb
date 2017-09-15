@@ -7,7 +7,7 @@
       </h2>
 
       <ul class="c-footer-nav-list__items">
-        <li class="c-footer-nav-list__item">
+        <!--<li class="c-footer-nav-list__item">
           <a href="#">
             Church leadership
           </a>
@@ -23,12 +23,18 @@
           <a href="#">
             Affiliations
           </a>
+        </li>-->
+
+        <li class="c-footer-nav-list__item">
+          <%= link_to('Jesus', page_path('about', anchor: "section:jesus")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
-          <a href="#">
-            Mission
-          </a>
+          <%= link_to('People', page_path('about', anchor: "section:people")) %>
+        </li>
+
+        <li class="c-footer-nav-list__item">
+          <%= link_to('Mission', page_path('about', anchor: "section:mission")) %>
         </li>
       </ul>
     </div>
@@ -148,8 +154,13 @@
     </div>
 
     <div class="c-footer__affiliation">
-      <%= svg_tag('comission-themed', { class: 'c-footer__affiliation__comisson' }) %>
-      <%= svg_tag('fiec-themed', { class: 'c-footer__affiliation__fiec' }) %>
+      <a href="https://co-mission.org/" target="_blank">
+        <%= svg_tag('comission-themed', { class: 'c-footer__affiliation__comisson' }) %>
+      </a>
+
+      <a href="https://fiec.org.uk/" target="_blank">
+        <%= svg_tag('fiec-themed', { class: 'c-footer__affiliation__fiec' }) %>
+      </a>
     </div>
   </div>
 
