@@ -1,0 +1,18 @@
+/* TEAM */
+                            
+Name: James Doc  
+Role: Developer               
+URL: jamesdoc.com     
+Twitter: @jamesdoc
+
+Name: Melody Raines
+Role: Editor
+URL: moregreat.com
+
+Name: Jonty Allcock
+Role: Writer
+Twitter: https://twitter.com/jontyallcock
+
+Name: Phil Tinker
+Role: Writer
+Twitter: https://twitter.com/phil_tinker
