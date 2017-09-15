@@ -24,14 +24,14 @@
     <aside class="c-content-box__aside">
       <ul class="c-icon-list">
         <li class="c-icon-list__item">
-          <a href="#" class="u-link u-link--arrowed u-link--black js-audio-start-link">
+          <a href="#" class="u-link u-link--arrowed u-link--black js-audio-start-link" data-eventcategory="Audio Player" data-eventaction="Play/Pause" data-eventlabel="<%= "#{@resource.groupings.first.title}/#{@resource.title}" %>">
             <%= svg_tag('listen', { class: 'c-icon-list__item__icon' }) %>
             <span>Listen now</span>
           </a>
         </li>
 
         <li class="c-icon-list__item">
-          <a href="<%= @resource.upload.file.remote_url %>" download="TheGlobeChurch-<%= @resource.slug %>" class="u-link u-link--arrowed u-link--black">
+          <a href="<%= @resource.upload.file.remote_url %>" download="TheGlobeChurch-<%= @resource.slug %>" class="u-link u-link--arrowed u-link--black"data-eventcategory="Audio Player" data-eventaction="Download" data-eventlabel="<%= "#{@resource.groupings.first.title}/#{@resource.title}" %>">
             <%= svg_tag('download', { class: 'c-icon-list__item__icon' }) %>
             <span>Download</span>
           </a>
@@ -50,14 +50,14 @@
 </section>
 
 <% if !@resource.upload.nil? && @resource.upload.meta['type'] == 'audio' %>
-  <%= render 'shared/audio_player', audio: @resource.upload %>
+  <%= render 'shared/audio_player', audio: @resource.upload, title: @resource.title %>
 <% end %>
 
 <% unless @resource.groupings.nil? %>
   <%= render('/shared/promo_box',
     img: @resource.groupings.first.graphic.background_image_size_urls,
     link: "#{preaching_path()}/#{@resource.groupings.first.slug}",
-    title: @resource.groupings.first.title,
+    title: "#{@resource.groupings.first.title}/#{@resource.title}",
     pretitle: 'This recording is part of…',
     cta: 'Go to full sermon series') %>
 

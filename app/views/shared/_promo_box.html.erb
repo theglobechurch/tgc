@@ -5,7 +5,7 @@
                            class: "c-promo-box__img",
                            alt: title) if img.present? %>
   <% end %>
-  <%= link_to link, class: 'c-promo-box__content' do %>
+  <%= link_to(link, {class: 'c-promo-box__content', data: {eventcategory: "Promobox", eventaction: cta, eventlabel: title}}) do %>
     <p class="c-promo-box__pretitle"><%= pretitle %></p>
     <h1 class="c-promo-box__title"><%= title %></h1>
     <span class="c-promo-box__btn u-btn u-btn--arrowed">
