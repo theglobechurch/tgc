@@ -1,0 +1,14 @@
+<meta name="description" content="<%= banner['description'] || "The Globe Church is all about Jesus, made up of all sorts of people, involved in the greatest mission…" %>"/>
+<meta property="og:locale" content="en_GB" />
+<meta property="og:title" content="<%= banner['title'] %>" />
+<meta property="og:description" content="<%= banner['description'] || "The Globe Church is all about Jesus, made up of all sorts of people, involved in the greatest mission…" %>" />
+<meta property="og:site_name" content="The Globe Church" />
+<meta property="article:publisher" content="https://www.facebook.com/theglobechurch" />
+<% if banner['image'] %><meta property="og:image" content="<%= banner['image'].try(:[], :"960") %>" /><% end %>
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="<%= banner['description'] || "The Globe Church is all about Jesus, made up of all sorts of people, involved in the greatest mission…" %>" />
+<meta name="twitter:title" content="<%= banner['title'] %>" />
+<% if banner['image'] %><meta name="twitter:image" content="<%= banner['image'].try(:[], :"960") %>" /><% end %>
+<meta name="twitter:site" content="@theglobechurch" />
+<meta name="twitter:creator" content="@theglobechurch" />

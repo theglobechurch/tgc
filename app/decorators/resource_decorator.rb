@@ -8,6 +8,7 @@ class ResourceDecorator < Draper::Decorator
       "pretitle" => pretitle,
       "image" => lead_image,
       "biblereference" => reference_string,
+      "description" => object.introduction,
     }
   end
 
