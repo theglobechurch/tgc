@@ -70,6 +70,12 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+    <script>
+      window.__assets = {
+        externalSirTrevorIcons: '<%= asset_path('sir-trevor-icons.svg') %>'
+      };
+    </script>
+
     <% if Rails.env.development? %>
     <%= javascript_include_tag 'vendors' %>
     <% end %>

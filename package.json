@@ -8,6 +8,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "sir-trevor": "^0.6.6",
     "slugger": "^1.0.1"
   },
   "version": "0.0.0",

@@ -13,6 +13,7 @@ gem 'uglifier', '>= 1.3.0'                  # Uglify production JS
 gem 'therubyracer', platforms: :ruby
 gem 'high_voltage', '~> 3.0.0'              # For static pages
 gem 'rack-rewrite'
+gem 'sir_trevor_rails'
 
 group :development, :test, :build do
   gem 'factory_girl_rails'        # For testing
