@@ -39,5 +39,7 @@ Rails.application.routes.draw do
   resources :resources, only: %i[show]
   get :resources, to: redirect('/preaching')
 
+  resources :people, only: %i[show]
+
   get "/*id" => 'pages#show', as: :page, format: false
 end

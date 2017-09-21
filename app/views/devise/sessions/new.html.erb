@@ -1,35 +1,51 @@
+<section class="c-banner js-object-fit-container c-banner--small">
+  <%= responsive_image_tag({
+                             "320": asset_url("static-banner/the-globe-church-preaching_320.jpg"),
+                             "640": asset_url("static-banner/the-globe-church-preaching_640.jpg"),
+                             "960": asset_url("static-banner/the-globe-church-preaching_960.jpg"),
+                             "1280": asset_url("static-banner/the-globe-church-preaching_1280.jpg"),
+                             "1920": asset_url("static-banner/the-globe-church-preaching_1920.jpg"),
+                             "2560": asset_url("static-banner/the-globe-church-preaching_2560.jpg"),
+                           },
+                           sizes: ['100vw'],
+                           class: "c-banner__img",
+                           alt: 'login') %>
+                           
+  <div class="c-banner__text">
+    <div class="site-container">
+      <h1 class="c-banner__title">Login</h1>
+    </div>
+  </div>
+</section>
+
 <div class="site-container">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'c-form') do |f| %>
+    <p class="c-form__field">
+      <%= f.label :email, class: 'c-form__label' %>
+      <%= f.email_field :email, autofocus: true, placeholder: 'Email',
+        class: 'c-form__input' %>
+    </p>
 
+    <p class="c-form__field">
+      <%= f.label :password, class: 'c-form__label' %>
+      <%= f.password_field :password, autocomplete: 'off',
+            placeholder: 'Password', class: 'c-form__input' %>
+    </p>
 
+    <% if false && devise_mapping.rememberable? %>
+      <div class="login-form__field">
+        <%= f.check_box :remember_me, class: 'login-form__checkbox' %>
+        <%= f.label :remember_me, class: 'login-form__label' %>
+      </div>
+    <% end %>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'c-form') do |f| %>
-          <p class="c-form__field">
-            <%= f.label :email, class: 'c-form__label' %>
-            <%= f.email_field :email, autofocus: true, placeholder: 'Email',
-              class: 'c-form__input' %>
-          </p>
+    <div class="login-form__field">
+      <%= f.submit 'Log in', class: 'u-btn' %>
+    </div>
+  <% end %>
 
-          <p class="c-form__field">
-            <%= f.label :password, class: 'c-form__label' %>
-            <%= f.password_field :password, autocomplete: 'off',
-                  placeholder: 'Password', class: 'c-form__input' %>
-          </p>
-
-          <% if false && devise_mapping.rememberable? %>
-            <div class="login-form__field">
-              <%= f.check_box :remember_me, class: 'login-form__checkbox' %>
-              <%= f.label :remember_me, class: 'login-form__label' %>
-            </div>
-          <% end %>
-
-          <div class="login-form__field">
-            <%= f.submit 'Log in', class: 'u-btn' %>
-          </div>
-        <% end %>
-
-        <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <%= link_to "Forgot your password?", new_password_path(resource_name),
-            class: 'login-form__forgot' %>
-        <% end %>
-
+  <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name),
+      class: 'login-form__forgot' %>
+  <% end %>
 </div>

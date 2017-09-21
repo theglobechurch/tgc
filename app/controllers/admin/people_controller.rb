@@ -55,6 +55,7 @@ private
                                    :job_title,
                                    :biography_short,
                                    :biography,
+                                   :avatar_original,
                                    :page,
                                    :slug)
   end

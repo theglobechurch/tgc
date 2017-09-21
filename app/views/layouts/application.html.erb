@@ -36,8 +36,8 @@
                alert_tag: 'We\'re moving',
                alert_message: "".html_safe + "From the 1st October, Sunday services will meet in the Hodgkin Building on Guy's Campus. " + link_to('See a map', 'https://goo.gl/maps/Qc3bUfA2arP2') + "." %>
 
-    <main class="c-main" role="main">
-      <%= render "globals/banner" if banner != {} %>
+    <main class="c-main<%= ' c-main--no-banner' if banner['size'] == 'none' %>" role="main">
+      <%= render "globals/banner" if banner != {} && banner['size'] != 'none' %>
       <%= yield %>
     </main>
 
