@@ -14,7 +14,8 @@ default: &default
 development:
   <<: *default
   database: globe_development
-  username: postgres
+  username: rails
+  password: secret
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

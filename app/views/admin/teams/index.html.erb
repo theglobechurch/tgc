@@ -1,0 +1,26 @@
+<main class="m-admin-body">
+
+  <section class="m-admin-body--main">
+    <header>
+      <h1>Teams</h1>
+    </header>
+
+    <ul>
+    <% @teams.each do | team | %>
+      <li class="a-resource">
+        <div class="a-resource__details">
+          <h2 class="a-resource__title"><%= team.name %></h2>
+        </div>
+        <div class="a-resource__actions">
+          <%= link_to "Edit", edit_admin_team_path(team), class: 'u-btn' %>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+  </section>
+
+  <section class="m-admin-body--sidebar">
+    <%= link_to "Create new", new_admin_team_path(), class: 'u-btn u-btn--primary' %>
+  </section>
+
+</main>

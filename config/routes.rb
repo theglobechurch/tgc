@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     end
 
     resources :people
+    resources :teams
 
     post :graphics, to: 'graphics#create'
   end

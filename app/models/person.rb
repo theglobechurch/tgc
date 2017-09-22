@@ -16,6 +16,10 @@ class Person < ApplicationRecord
 
   has_many :resources
 
+  has_many :people_team
+  has_many :team,
+           through: :people_team
+
   sir_trevor_content :biography
 
   SIZES.each do |size|
