@@ -32,9 +32,9 @@
     
     <%= render "globals/header" %>
     <%= render "globals/alert_banner",
-               alert_type: 'alert',
-               alert_tag: 'beta',
-               alert_message: "".html_safe + "This site is under development – you can still view the previous " + link_to('Globe Church website', 'https://www.theglobechurch.org') + "." %>
+               alert_type: 'warn',
+               alert_tag: 'We\'re moving',
+               alert_message: "".html_safe + "From the 1st October, Sunday services will meet in the Hodgkin Building on Guy's Campus. " + link_to('See a map', 'https://goo.gl/maps/Qc3bUfA2arP2') + "." %>
 
     <main class="c-main" role="main">
       <%= render "globals/banner" if banner != {} %>
