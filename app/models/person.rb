@@ -10,7 +10,8 @@ class Person < ApplicationRecord
 
   include HasSlug # Validate slug and lookup by slug rather than id
 
-  default_scope { order(last_name: :asc) }
+  default_scope { order(last_name: :asc, first_name: :asc) }
+  scope :team, ->(team_name) { includes(:team).where(teams: {name: team_name}) }
 
   validates :first_name, :last_name, presence: true
 

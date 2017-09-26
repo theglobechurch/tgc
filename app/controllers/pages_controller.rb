@@ -7,7 +7,22 @@ class PagesController < ApplicationController
 
   @banner = :banner
 
+  helper_method :additional
+
+  def additional
+    @additional = page_data
+  end
+
 private
+
+  def page_data
+    if params[:id] == 'about'
+      {
+        'eldership': Person.team('Eldership'),
+        'staff': Person.team('Staff'),
+      }
+    end
+  end
 
   def banner
     case params[:id]
@@ -23,9 +38,11 @@ private
           "2560": view_context.asset_url("static-banner/church_2560.jpg"),
         },
       }
-    when 'about/jesus'
+    when 'about/doctrinal-basis'
       {
-        "title" => 'All about Jesus…',
+        "title" => 'What we believe',
+        "subtitle" => 'Doctrinal basis',
+        "size" => 'small',
       }
     when 'when-and-where'
       {

@@ -1,4 +1,5 @@
-<%= content_tag( :div, class: 'c-internal-nav', id: "section:#{current.parameterize}") do %>
+<% classes = 'c-internal-nav' if local_assigns[:classes].nil? %>
+<%= content_tag( :div, class: classes, id: "section:#{current.parameterize}") do %>
   <ul class="c-internal-nav__list">
     <% sections.each do |s| %>
     <li class="c-internal-nav__item">

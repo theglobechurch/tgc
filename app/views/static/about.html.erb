@@ -90,11 +90,48 @@
       <p>God’s plan is to save a great diversity of people.</p>
       <p>Human history is littered with examples of racism and exclusion. But the church is to be different. Here is a radical, diverse, and yet united body of people displaying God’s power to the world.</p>
       <p>It does not matter our social or ethnic or economic or educational backgrounds. We want The Globe Church to be a place where anyone can find a home. </p>
-
-      <!--<p>
-        <%= link_to('Find out more', page_path('about/people'), class: 'u-btn u-btn--block u-btn--dark') %>
-      </p>-->
     </div>
+
+    <div class="c-content-box__expandable js-content-box-expandable" data-label="More about people">
+      <%= render('/shared/internal_nav',
+           sections: ['Training', 'Eldership', 'Staff'],
+           current: 'Training',
+           classes: 'c-internal-nav c-internal-nav--content-box') %>
+
+      <section class="c-content-box__main__subsection">
+        <h2>Training</h2>
+        <p>Many of our church family will be with us for only a short time. That is the nature of Central London. So at The Globe Church, we want to use our time with people efficiently by training them to serve God effectively, whatever their future holds.</p>
+        <p>We encourage everyone to join a Focus group (a small midweek Bible study group). Some people are then encouraged to take on the leadership of their group under the direction and support of the church leadership team.</p>
+        <p>We train people through one-to-one ministry. An older Christian reads the Bible with a newer Christian to help them understand the gospel and grow in their faith. Our aim is to build up and train people to take on one-to-one ministry themselves.</p>
+        <p>We run a training course called Globe Equip that is open to all. In this course, we train people how to study and teach the Bible skillfully.</p>
+        <p>The elders of the church seek to train up potential new leaders through appointing church members to the Leadership Team. This team exposes members to a taste of the privilege and responsibility of church leadership.</p>
+      </section>
+
+      <%= render('/shared/internal_nav',
+           sections: ['Training', 'Eldership', 'Staff'],
+           current: 'Eldership',
+           classes: 'c-internal-nav c-internal-nav--content-box') %>
+
+      <section class="c-content-box__main__subsection">
+        <h2>Eldership</h2>
+        <p>The elders have the joy and responsibility, under God, for prayerfully leading The Globe Church, setting the vision and direction, and ensuring that we remain firmly true to the Bible in all that we do. Through the preaching and teaching, we seek to clearly point to Jesus, applying his Word for people in all stages of life and faith.</p>
+        <p>The elders have overall pastoral concern for the spiritual and practical needs of the church family. We are also passionate about training and equipping others both to serve Jesus in the church, and to live for him through all of life.  We long to see God use us all at Globe Church to show Jesus to those we meet day by day.</p>
+        <p>We would love to welcome you into our church family and for you to be ‘at home’ here.  We always want to be approachable. Please come and find one (or more!) of us for a friendly conversation so we can get to know you better.</p>
+        <%= render('/shared/people_grid', people: additional[:eldership]) %>
+      </section>
+
+      <%= render('/shared/internal_nav',
+           sections: ['Training', 'Eldership', 'Staff'],
+           current: 'Staff',
+           classes: 'c-internal-nav c-internal-nav--content-box') %>
+
+      <section class="c-content-box__main__subsection">
+        <h2>Staff</h2>
+        <p>The Globe Church is about the whole church family living as disciples of Christ, but a few people have especially committed to serve the church and work to see its vision flourish. We call them our Staff Team.</p>
+        <%= render('/shared/people_grid', people: additional[:staff]) %>
+      </section>
+    </div>
+
   </main>
 </section>
 
@@ -125,7 +162,7 @@
     %>
 
     <div class="c-content-box__header__container">
-      <h1 class="c-content-box__header__title">Involved in the greatest mission.</h1>
+      <h1 class="c-content-box__header__title">Involved in the greatest mission</h1>
     </div>
   </header>
 
