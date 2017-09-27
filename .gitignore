@@ -34,3 +34,4 @@ public/uploads/*
 !/app/assets/css/.keep
 !/app/assets/js/.keep
 !/app/assets/svg/.keep
+!/app/assets/svg/sir-trevor-icons.svg
