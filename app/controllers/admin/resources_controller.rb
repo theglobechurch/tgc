@@ -49,7 +49,9 @@ private
 
   def resources
     # Might want to filter by type here later
-    @resources ||= Resource.unscoped.non_deleted
+    @resources ||= Resource.unscoped.
+                   non_deleted.
+                   order('display_date DESC NULLS LAST')
   end
 
   def resource

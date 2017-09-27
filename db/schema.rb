@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905084706) do
+ActiveRecord::Schema.define(version: 20170922160030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170905084706) do
   create_table "graphics", force: :cascade do |t|
     t.string "background_image_uid"
     t.string "background_image_thumbnail_uid"
+    t.string "background_image_thumbnail_2x_uid"
     t.string "background_image_320_uid"
     t.string "background_image_640_uid"
     t.string "background_image_960_uid"
@@ -102,6 +103,14 @@ ActiveRecord::Schema.define(version: 20170905084706) do
     t.index ["slug"], name: "index_people_on_slug"
   end
 
+  create_table "people_teams", force: :cascade do |t|
+    t.bigint "person_id", null: false
+    t.bigint "team_id", null: false
+    t.jsonb "meta"
+    t.index ["person_id"], name: "index_people_teams_on_person_id"
+    t.index ["team_id"], name: "index_people_teams_on_team_id"
+  end
+
   create_table "resource_grouping_joins", force: :cascade do |t|
     t.integer "resource_id"
     t.integer "grouping_id"
@@ -142,6 +151,13 @@ ActiveRecord::Schema.define(version: 20170905084706) do
     t.index ["resources_id"], name: "index_resources_meta_on_resources_id"
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "teams_id"
+    t.index ["teams_id"], name: "index_teams_on_teams_id"
+  end
+
   create_table "uploads", force: :cascade do |t|
     t.string "file_uid", null: false
     t.string "filesize"
@@ -179,4 +195,5 @@ ActiveRecord::Schema.define(version: 20170905084706) do
   add_foreign_key "resources", "people", column: "people_id"
   add_foreign_key "resources", "uploads", column: "uploads_id"
   add_foreign_key "resources_meta", "resources", column: "resources_id"
+  add_foreign_key "teams", "teams", column: "teams_id"
 end

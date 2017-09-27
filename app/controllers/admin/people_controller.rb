@@ -8,10 +8,12 @@ class Admin::PeopleController < AdminController
 
   def new
     @person = Person.new
+    @teams = Team.all
   end
 
   def edit
     @person = person
+    @teams = Team.all
   end
 
   def create
@@ -55,8 +57,10 @@ private
                                    :job_title,
                                    :biography_short,
                                    :biography,
+                                   :avatar_original,
                                    :page,
-                                   :slug)
+                                   :slug,
+                                   team_ids: [])
   end
 
 end

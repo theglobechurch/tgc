@@ -2,12 +2,13 @@
   "name": "the-globe-church",
   "private": true,
   "dependencies": {
-    "globe-fractal": "theglobechurch/fractal#e2394de",
+    "globe-fractal": "theglobechurch/fractal#88db37c",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-svgmin": "^1.2.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "sir-trevor": "^0.6.6",
     "slugger": "^1.0.1"
   },
   "version": "0.0.0",

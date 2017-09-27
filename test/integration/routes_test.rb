@@ -2,7 +2,7 @@
 require 'test_helper'
 
 class RoutesTest < ActionDispatch::IntegrationTest
-  test "route test" do
+  test "static pages have routes" do
     assert_generates(
       "/",
       controller: "homepages",
@@ -37,5 +37,11 @@ class RoutesTest < ActionDispatch::IntegrationTest
       id: "contact",
     )
 
+  end
+
+  test "people should not have an index page" do
+    assert_raises(ActionController::RoutingError) do
+      get '/people'
+    end
   end
 end
