@@ -12,6 +12,7 @@ class HomepagesController < ApplicationController
         "1920": view_context.asset_url("static-banner/southbank-1920.jpg"),
         "2560": view_context.asset_url("static-banner/southbank-2560.jpg"),
       },
+      "size"=> 'none'
     }
   end
 

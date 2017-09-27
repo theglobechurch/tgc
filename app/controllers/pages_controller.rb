@@ -46,7 +46,7 @@ private
       }
     when 'when-and-where'
       {
-        "title" => 'When and where',
+        "title" => 'What we do',
         "image" => {
           "320": view_context.asset_url("static-banner/about_320.jpg"),
           "640": view_context.asset_url("static-banner/about_640.jpg"),

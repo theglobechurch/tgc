@@ -1,5 +1,8 @@
+  <%= render('/shared/vision_box', uncontained: true) %>
 <div class="site-container">
+</div>
 
+<div class="site-container">
   <section class="c-content-box">
     <main class="c-content-box__main">
       <div class="c-content-box__main__container">
@@ -12,8 +15,6 @@
       </div>
     </main>
   </section>
-
-  <%= render('/shared/vision_box') %>
 
   <%= render('/shared/promo_box',
              img: @latest_sermon.banner['image'],

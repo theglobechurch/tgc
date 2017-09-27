@@ -1,10 +1,16 @@
 <meta name="description" content="<%= banner['description'] || "The Globe Church is all about Jesus, made up of all sorts of people, involved in the greatest mission…" %>"/>
 <meta property="og:locale" content="en_GB" />
 <meta property="og:title" content="<%= banner['title'] %>" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_GB" />
 <meta property="og:description" content="<%= banner['description'] || "The Globe Church is all about Jesus, made up of all sorts of people, involved in the greatest mission…" %>" />
 <meta property="og:site_name" content="The Globe Church" />
 <meta property="article:publisher" content="https://www.facebook.com/theglobechurch" />
-<% if banner['image'] %><meta property="og:image" content="<%= banner['image'].try(:[], :"960") %>" /><% end %>
+<% if banner['image'] %>
+  <meta property="og:image" content="<%= banner['image'].try(:[], :"960") %>" />
+  <meta property="og:image:width" content="960" />
+  <meta property="og:image:height" content="640" />
+<% end %>
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:description" content="<%= banner['description'] || "The Globe Church is all about Jesus, made up of all sorts of people, involved in the greatest mission…" %>" />
