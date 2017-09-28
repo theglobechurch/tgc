@@ -1,8 +1,6 @@
 <section class="c-content-box">
   <main class="c-content-box__main">
     <div class="c-content-box__main__container">
-      <p><%= @resource.introduction %></p>
-
       <ul class="c-icon-list c-icon-list--small">
         <% if @resource.display_date %>
         <li class="c-icon-list__item">
@@ -18,6 +16,7 @@
         </li>
         <% end %>
       </ul>
+      <p><%= @resource.introduction %></p>
     </div>
 
     <% if !@resource.upload.nil? %>
