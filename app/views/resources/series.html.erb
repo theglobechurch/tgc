@@ -32,27 +32,13 @@
         <p><%= @group.description %></p>
         <% end %>
 
-        <ul class="c-sermon-list">
+        <%= render('/shared/sermon_list',
+          list: @recordings) if @recordings.present? %>
 
-          <% @recordings.each do |recording| %>
-            <%= link_to(recording, class: 'c-sermon-list__item') do %>
-              <div class="c-sermon-list__details">
-                <% if recording.display_date %>
-                <date class="c-sermon-list__details__date"><%= l recording.display_date.to_date, format: :long %></date>
-                <% end %>
-                <p class="c-sermon-list__details__title"><%= recording.title %></p>
-                <% if recording.bible_reference_json %>
-                <small class="c-sermon-list__details__date"><%= recording.reference_string %></small>
-                <% end %>
-              </div>
-
-              <div class="c-sermon-list__cta u-btn">
-                Listen
-              </div>
-            <% end %>
-          <% end %>
-
-        </ul>
+        <%= render('/shared/sermon_list',
+          list: @blogs, 
+          list_title: 'Related blog posts',
+          verb: 'Read') if @blogs.present? %>
 
       </div>
 

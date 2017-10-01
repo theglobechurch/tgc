@@ -60,6 +60,7 @@ class ResourceUploader extends React.Component {
           <DnDUploader
               validTypes={this.props.validTypes}
               uploadPath='/admin/resources/upload'
+              uploadType='audio_file'
               onComplete={this.setSelectedResource.bind(this)}
             />
         )}

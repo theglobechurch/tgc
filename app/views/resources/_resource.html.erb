@@ -4,4 +4,8 @@
     <%= render 'resources/recording' %>
   <% end %>
   
+  <% if @resource.resource_type == "blog" %>
+    <%= render 'resources/blog' %>
+  <% end %>
+  
 </div>

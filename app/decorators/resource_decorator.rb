@@ -9,6 +9,7 @@ class ResourceDecorator < Draper::Decorator
       "image" => lead_image,
       "biblereference" => reference_string,
       "description" => object.introduction,
+      "subtitle" => subtitle,
     }
   end
 
@@ -16,6 +17,10 @@ class ResourceDecorator < Draper::Decorator
     if object.groupings.length.positive?
       object.groupings.first.title
     end
+  end
+
+  def subtitle
+    object.introduction if object.resource_type == 'blog' && object.introduction
   end
 
   def lead_image
