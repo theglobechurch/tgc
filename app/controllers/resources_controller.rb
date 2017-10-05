@@ -22,6 +22,7 @@ class ResourcesController < ApplicationController
     @group = group.decorate
     @banner = group.banner
     @recordings = @group.resources.recording.order(display_date: :asc)
+    @blogs = @group.resources.blog.order(display_date: :asc)
     @banner['hide-text'] = true
   end
 

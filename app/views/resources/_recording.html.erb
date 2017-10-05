@@ -56,8 +56,7 @@
   <%= render('/shared/promo_box',
     img: @resource.groupings.first.graphic.background_image_size_urls,
     link: "#{preaching_path()}/#{@resource.groupings.first.slug}",
-    title: "#{@resource.groupings.first.title}/#{@resource.title}",
+    title: "#{@resource.groupings.first.title}",
     pretitle: 'This recording is part of…',
     cta: 'Go to full sermon series') %>
-
 <% end %>

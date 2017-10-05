@@ -38,6 +38,8 @@ class Resource < ApplicationRecord
             },
             allow_nil: true
 
+  sir_trevor_content :body
+
   def to_s
     title
   end

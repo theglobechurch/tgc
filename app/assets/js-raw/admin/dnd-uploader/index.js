@@ -107,6 +107,7 @@ export default class DnDUploader extends React.Component {
         const data = new FormData();
         const uid = ['fileupload', (new Date()).getTime(), 'raw'].join('-');
 
+        data.append('upload_type', this.props.uploadType);
         data.append('attachment[file]', f);
         data.append('attachment[name]', f.name);
         data.append('attachment[uid]', uid);
@@ -209,5 +210,6 @@ DnDUploader.defaultProps = {
 DnDUploader.propTypes = {
   onComplete: PropTypes.func.isRequired,
   uploadPath: PropTypes.string.isRequired,
+  uploadType: PropTypes.string,
   validTypes: PropTypes.string
 };

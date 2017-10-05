@@ -1,0 +1,18 @@
+<div class="site-container">
+  <section class="c-content-box">
+    <main class="c-content-box__main c-content-box__main--text-focus">
+      <div class="c-content-box__main__container">
+        <%= render @resource.body %>
+      </div>
+    </main>
+  </section>
+</div>
+
+<% unless @resource.groupings.count == 0 %>
+  <%= render('/shared/promo_box',
+    img: @resource.groupings.first.graphic.background_image_size_urls,
+    link: "#{preaching_path()}/#{@resource.groupings.first.slug}",
+    title: "#{@resource.groupings.first.title}",
+    pretitle: 'This blog post is part of…',
+    cta: 'Go to full series') %>
+<% end %>
