@@ -2,13 +2,12 @@ Rails.application.routes.draw do
 
   root 'homepages#index'
 
-  devise_for :users, skip: %i[sessions]
-  devise_for :users,
-             path: '',
-             path_names: {
-               sign_in: 'login',
-               sign_out: 'logout',
-             }
+  devise_for :users, skip: [:sessions]
+  as :user do
+    get 'login', to: 'devise/sessions#new', as: :new_user_session
+    post 'login', to: 'devise/sessions#create', as: :user_session
+    get 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
 
   resources :admin, only: %i[index]
   namespace :admin do
