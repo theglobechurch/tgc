@@ -3,6 +3,39 @@
     <main class="c-content-box__main c-content-box__main--text-focus">
       <div class="c-content-box__main__container">
         <%= render @resource.body %>
+
+        <% if @resource.people_id %>
+        <div class="blog-footer">
+          <date class="blog-footer__date">- <%= l @resource.display_date.to_date, format: :long %> -</date>
+          <div class="blog-footer__author">
+              <div class="blog-footer__author__img img-container img-container--circle">
+                <%=
+                  responsive_image_tag(
+                    {
+                      "150": @resource.person.avatar_150.try('remote_url'),
+                      "300": @resource.person.avatar_300.try('remote_url'),
+                      "600": @resource.person.avatar_600.try('remote_url')
+                    },
+                    sizes: [
+                      '(min-width: 500px) 33vw',
+                      '(min-width: 768px) 150px',
+                      '50vw'
+                    ],
+                    alt: @resource.person.display_name
+                  )
+                %>
+              </div>
+              <p class="blog-footer__author__name">Author: <%= @resource.person.display_name %></p>
+              <p class="blog-footer__author__description">
+                <%= @resource.person.biography_short %>
+                <% if @resource.person.page && @resource.person.biography %>
+                  <%= link_to('Find out more…', person_path(@resource.person)) %>
+                <% end %>
+              </p>
+          </div>
+        </div>
+        <% end %>
+
       </div>
     </main>
   </section>
