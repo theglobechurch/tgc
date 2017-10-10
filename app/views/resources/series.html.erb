@@ -34,17 +34,16 @@
 
         <%= render('/shared/sermon_list',
           list: @recordings) if @recordings.present? %>
-
-        <%= render('/shared/sermon_list',
-          list: @blogs, 
-          list_title: 'Related blog posts',
-          verb: 'Read') if @blogs.present? %>
-
       </div>
 
     </div>
 
   </section>
+
+  <%= render('/shared/blog_list',
+    list: @blogs, 
+    list_title: 'Related blog posts',
+    verb: 'Read') if @blogs.present? %>
 
   <%= render('/shared/promo_box',
     img: {
