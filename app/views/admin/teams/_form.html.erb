@@ -1,16 +1,5 @@
 <%= form_for([:admin, @team], html: { class: 'form m-admin-body' }) do |f| %>
 <section class="m-admin-body--main">
-  <% if @team.errors.any? %>
-    <div>
-      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this <%= @team.class.to_s.downcase %> from being saved:</h2>
-      <ul>
-      <% @team.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="form__field form__field--main" data-name="name">
     <%= f.label :name, class: 'form__label' %>
     <%= f.text_field :name, class: 'form__input' %>
@@ -24,6 +13,7 @@
 </section>
 
 <section class="m-admin-body--sidebar">
+  <%= render('admin/shared/form_errors', m: @team) %>
   <%= f.submit 'Save', class: 'form__submit u-btn u-btn--primary u-btn--100' %>
 
   <hr />

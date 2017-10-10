@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
 
   root 'homepages#index'
@@ -24,6 +25,12 @@ Rails.application.routes.draw do
     resources :groupings do
       member do
         get 'preview'
+      end
+    end
+
+    resource :user, only: [:edit] do
+      collection do
+        patch 'update_password'
       end
     end
 

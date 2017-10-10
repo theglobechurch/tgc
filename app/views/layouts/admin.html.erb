@@ -23,8 +23,8 @@
                       alt: 'My account') %>
         
         <ul class="m-admin-header--user--subnav">
-          <li>Sign out</li>
-          <li>Change password</li>
+          <li><%= link_to "Sign out", destroy_user_session_path %></li>
+          <li><%= link_to "Change your password", edit_admin_user_path %></li>
         </ul>
       </div>
     </header>

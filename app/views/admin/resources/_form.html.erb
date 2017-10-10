@@ -1,16 +1,5 @@
 <%= form_for([:admin, @resource], html: { class: 'form m-admin-body' }) do |f| %>
 <section class="m-admin-body--main">
-  <% if @resource.errors.any? %>
-    <div>
-      <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this <%= @resource.class.to_s.downcase %> from being saved:</h2>
-      <ul>
-      <% @resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= resource_type_picker(f, :resource_type, %w(page)) %>
 
   <div class="form__field js-resource-field" data-name="title">
@@ -54,6 +43,7 @@
 </section>
 
 <section class="m-admin-body--sidebar">
+  <%= render('admin/shared/form_errors', m: @resource) %>
   <%= f.submit 'Save', class: 'form__submit u-btn u-btn--primary u-btn--100' %>
 
   <div class="form__field">
