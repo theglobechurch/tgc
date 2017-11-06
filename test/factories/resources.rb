@@ -24,6 +24,14 @@ FactoryGirl.define do
       resource_type 'recording'
     end
 
+    trait :blog do
+      resource_type 'blog'
+    end
+
+    trait :with_author do
+      person
+    end
+
     trait :link do
       resource_type 'link'
     end

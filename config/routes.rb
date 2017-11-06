@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     post :graphics, to: 'graphics#create'
   end
 
+  get :blog, to: 'resources#blog'
   get 'preaching/:id', to: 'resources#series'
   get :preaching, to: 'resources#index'
 

@@ -3,7 +3,6 @@ Rails.application.configure do
   config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
     # Will be replaced with new features soon
     r302 %r[^/calendar/?$], '/when-and-where'
-    r302 %r[^/blog/?$], '/'
 
     # Welcome pack links
     r301 %r[^/sundays?/?$], '/when-and-where#section:sundays'

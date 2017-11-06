@@ -29,4 +29,20 @@ class ResourcesControllerTest < ActionController::TestCase
     assert_equal('latest sermon', assigns(:latest_sermon).title)
   end
 
+  test "returns blogs" do
+
+    create(:resource,
+           :blog,
+           :published,
+           :with_author,
+           title: 'this is a blog post')
+
+    get :blog
+
+    assert_response(:success)
+    assert_not_nil(assigns(:blogs))
+    assert_equal('this is a blog post', assigns(:blogs).first.title)
+
+  end
+
 end
