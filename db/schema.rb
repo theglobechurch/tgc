@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922160030) do
+ActiveRecord::Schema.define(version: 20171116113040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,7 +136,9 @@ ActiveRecord::Schema.define(version: 20170922160030) do
     t.bigint "graphics_id"
     t.bigint "uploads_id"
     t.jsonb "bible_reference_json"
+    t.integer "parent_resource_id"
     t.index ["graphics_id"], name: "index_resources_on_graphics_id"
+    t.index ["parent_resource_id"], name: "index_resources_on_parent_resource_id"
     t.index ["people_id"], name: "index_resources_on_people_id"
     t.index ["resource_type"], name: "index_resources_on_resource_type"
     t.index ["slug"], name: "index_resources_on_slug"

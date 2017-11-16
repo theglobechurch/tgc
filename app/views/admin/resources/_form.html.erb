@@ -73,15 +73,20 @@
   <div class="r-featureImageSelector"
       data-inputId="resource_graphics_id"
       data-selectImageId=""
-      data-selectedImageThumbnail=""></div>
+      data-selectedImageThumbnail="<%= @resource.graphic.background_image_960.try('remote_url') if @resource.graphic %>"></div>
   
-  <%= f.text_field :graphics_id %>
+  <%= f.hidden_field :graphics_id %>
 
   <hr />
 
   <div class="form__field">
     <%= f.label :grouping, class: 'form__label' %>
     <%= f.select :grouping_ids, @groupings.pluck(:title, :id), { include_blank: 'Ungrouped' }, class: 'form__input form__input--multiselect', multiple: true %>
+  </div>
+
+  <div class="form__field">
+    <%= f.label :resource_parent, class: 'form__label' %>
+    <%= f.select :parent_resource_id, @resources.pluck(:title, :id), { include_blank: 'Unlinked' }, class: 'form__input' %>
   </div>
 
   <hr />

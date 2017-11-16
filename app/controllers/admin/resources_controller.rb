@@ -17,6 +17,7 @@ class Admin::ResourcesController < AdminController
     @uploads = Upload.all
     @groupings = Grouping.published
     @resource = Resource.new
+    @resources = resources
   end
 
   def edit
@@ -79,6 +80,7 @@ private
                                      :reference_book_end_ch,
                                      :reference_book_start_v,
                                      :reference_book_end_v,
+                                     :parent_resource_id,
                                      grouping_ids: [])
   end
 
