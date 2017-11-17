@@ -3,6 +3,7 @@ import adminSlugger from './admin/admin-slugger';
 import resourceTypeSelector from './admin/admin-resource-type-selector';
 import renderResourceUploader from './admin/admin-resource-uploader';
 import renderFeatureImageSelector from './admin/feature_image_selector';
+import renderResourceSelector from './admin/admin-resource-selector';
 import SirTrevor from 'sir-trevor';
 import ButtonBlock from './admin/sir-trev/button_block';
 import ImageBlock from './admin/sir-trev/image_block';
@@ -12,6 +13,7 @@ resourceTypeSelector();
 
 renderFeatureImageSelector('.r-featureImageSelector');
 renderResourceUploader('.r-resource-upload');
+renderResourceSelector('.r-resourceSelector');
 
 const slugFields = document.querySelectorAll('.js-slug-field');
 if (slugFields) {

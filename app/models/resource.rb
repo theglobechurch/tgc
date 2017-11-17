@@ -4,11 +4,18 @@ class Resource < ApplicationRecord
   include HasState          # Allow draft, published, deleted
   include HasResourceType   # Shares a list of resource types
   include HasBibleReference
+  include PgSearch
 
   inc_bible_reference
   publishable
 
   default_scope { published.order(resource_type: :asc) }
+
+  pg_search_scope :search,
+                  against: [:title],
+                  using: {
+                    tsearch: {prefix: true},
+                  }
 
   RESOURCE_TYPES.each do |g|
     scope g, -> { where(resource_type: g) }
@@ -28,7 +35,8 @@ class Resource < ApplicationRecord
 
   belongs_to :resource_parent,
              class_name: "Resource",
-             optional: true
+             optional: true,
+             foreign_key: :parent_resource_id
 
   has_many :resource_grouping_joins
   has_many :groupings,

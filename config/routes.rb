@@ -34,6 +34,12 @@ Rails.application.routes.draw do
       end
     end
 
+    resource :api do
+      member do
+        get 'resource', to: 'api#resource'
+      end
+    end
+
     resources :people
     resources :teams
 

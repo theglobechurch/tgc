@@ -17,7 +17,6 @@ class ResourceUploader extends React.Component {
 
   setSelectedResource (id, json, ev) {
     if (ev) { ev.preventDefault(); }
-    console.log(id, json);
     this.setState({
       currentFilePath: json.url,
       currentFileType: json.meta.type

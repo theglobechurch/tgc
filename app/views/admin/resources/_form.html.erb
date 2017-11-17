@@ -84,10 +84,11 @@
     <%= f.select :grouping_ids, @groupings.pluck(:title, :id), { include_blank: 'Ungrouped' }, class: 'form__input form__input--multiselect', multiple: true %>
   </div>
 
-  <div class="form__field">
-    <%= f.label :resource_parent, class: 'form__label' %>
-    <%= f.select :parent_resource_id, @resources.pluck(:title, :id), { include_blank: 'Unlinked' }, class: 'form__input' %>
-  </div>
+  <div class="r-resourceSelector"
+    data-inputId="resource_parent_resource_id"
+    data-resourceTitle="<%= @resource.resource_parent.title if @resource.resource_parent %>"></div>
+  
+  <%= f.hidden_field :parent_resource_id %>
 
   <hr />
  
