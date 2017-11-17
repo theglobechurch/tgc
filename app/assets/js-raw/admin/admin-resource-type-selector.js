@@ -1,3 +1,6 @@
+import sirTrevorInit from './sir-trev/sirtrev_setup';
+let stInstance = null;
+
 export default function () {
   
   const resourceTypeSelectorBtns = document.querySelectorAll('.js-resource-type-button');
@@ -40,7 +43,8 @@ function pageChanges(resourceType = null) {
     "recording":  ['title', 'upload', 'introduction'],
     "blog":       ['title', 'body', 'introduction'],
     "download":   ['title', 'upload', 'introduction'],
-    "link":       ['title', 'external_reference', 'introduction']
+    "link":       ['title', 'external_reference', 'introduction'],
+    "121":        ['title', 'body']
   }
   const allResourceFields = document.querySelectorAll('.js-resource-field');
 
@@ -58,4 +62,22 @@ function pageChanges(resourceType = null) {
     });
   }
 
+  sirTrevSetUp(resourceType);
+}
+
+function sirTrevSetUp(resourceType = null) {
+  const blocksForType = {
+    "blog": ['Text', 'List', 'Quote', 'Image', 'Video', 'Button'],
+    "121":  ['Text', 'Question']
+  };
+
+  if (stInstance !== null) {
+    stInstance.destroy();
+    document.querySelector('.js-st').value = "";
+    stInstance = null;
+  }
+
+  if (!(resourceType in blocksForType)) { return; }
+
+  stInstance = sirTrevorInit('.js-st', blocksForType[resourceType]);
 }
