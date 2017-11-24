@@ -1,27 +1,111 @@
 import SirTrevor from 'sir-trevor';
 import React from 'react'
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-const cssClassParent = "m-121-questions";
+const cssClassParent = "stb-questions";
 
 class One21Question extends React.Component {
 
-  coreQuestionChange (ev) {
-    console.log(ev.target);
+  constructor(props) {
+    super(props);
+    const subQuestions = this.props.subQuestions || [];
+    this.state = { subQuestions: subQuestions };
+  }
+
+  preventNewLine (ev) {
+    if (ev.which === 13) { ev.preventDefault(); }
+  }
+
+  saveCoreQuestion (ev) {
+    const coreQuestion = ev.target.innerHTML;
+    this.props.updateData({ coreQuestion });
+  }
+
+  saveSubQuestion (i, ev) {
+    ev.preventDefault();
+    if (ev.which === 13) { ev.preventDefault(); }
+    const subQuestions = this.state.subQuestions;
+    subQuestions[i] = ev.target.value;
+    this.updateSubQuestions(subQuestions, true);
+  }
+
+  removeSubQuestion(i, ev) {
+    // BUG: defaultValue doesn't rerender on state change
+    ev.preventDefault();
+    const subQuestions = this.state.subQuestions;
+    subQuestions.splice(i, 1);
+    this.updateSubQuestions(subQuestions, true);
+  }
+
+  addNewSubQuestion (ev) {
+    ev.preventDefault();
+    const subQuestions = this.state.subQuestions;
+    subQuestions.push("")
+    this.updateSubQuestions(subQuestions, false);
+  }
+
+  updateSubQuestions(subQuestions, updateData = false) {
+    this.setState({ subQuestions });
+
+    if (updateData) {
+      this.props.updateData({ subQuestions });
+    }
   }
 
   render() {
     return (
       <div className={cssClassParent}>
+        <label className="form__label">
+          Main question
+        </label>
+
         <div
+          className={`${cssClassParent}__mainQuestion`}
           contentEditable="true"
-          onKeyUp={this.coreQuestionChange.bind(this)}
+          onKeyPress={this.preventNewLine.bind(this)}
+          onKeyUp={this.saveCoreQuestion.bind(this)}
         >
+          {this.props.coreQuestion}
         </div>
-        <a>Add subquestion</a>
+        
+        {this.state.subQuestions.length !== 0 && (
+          <div>
+            <label className="form__label">
+              Subquestions
+            </label>
+
+            <ol className={`${cssClassParent}__subQuestions`}>
+              {this.state.subQuestions.map((q, i) => (
+                <li key={i} className={`${cssClassParent}__subQuestion`}>
+                  <input
+                    type="text"
+                    defaultValue={this.state.subQuestions[i]}
+                    onKeyUp={this.saveSubQuestion.bind(this, i)}
+                  />
+                  <button
+                    className={`${cssClassParent}__subQuestion__remove`}
+                    onClick={this.removeSubQuestion.bind(this, i)}
+                  >
+                    x
+                  </button>
+                </li>
+              ))}
+            </ol>
+            
+          </div>
+        )}
+
+        {this.state.subQuestions.length <= 3 && (
+          <a
+            className="u-btn u-btn--mini"
+            onClick={this.addNewSubQuestion.bind(this)}
+          >
+            Add subquestion
+          </a>
+        )}
       </div>
-    );
+    )
   }
 }
 
