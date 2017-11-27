@@ -81,6 +81,19 @@ private
           "2560": view_context.asset_url("static-banner/contact/contact_2560.jpg"),
         },
       }
+    when 'christmas'
+      {
+        "title" => 'Christmas 2017',
+        "subtitle" => 'Carol services near London Bridge and Waterloo',
+        "image" => {
+          "320": view_context.asset_url("static-banner/christmas/christmas_320.jpg"),
+          "640": view_context.asset_url("static-banner/christmas/christmas_640.jpg"),
+          "960": view_context.asset_url("static-banner/christmas/christmas_960.jpg"),
+          "1280": view_context.asset_url("static-banner/christmas/christmas_1280.jpg"),
+          "1920": view_context.asset_url("static-banner/christmas/christmas_1920.jpg"),
+          "2560": view_context.asset_url("static-banner/christmas/christmas_2560.jpg"),
+        },
+      }
     else
       {
         "title" => 'The Globe Church',
