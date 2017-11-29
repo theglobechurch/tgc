@@ -46,6 +46,13 @@ Rails.application.routes.draw do
     post :graphics, to: 'graphics#create'
   end
 
+  resource :api, only: [:index] do
+    member do
+      get 'one21', to: 'api#one21'
+      get 'resource', to: 'api#resource'
+    end
+  end
+
   get :blog, to: 'resources#blog'
   get 'preaching/:id', to: 'resources#series'
   get :preaching, to: 'resources#index'

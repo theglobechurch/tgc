@@ -1,7 +1,7 @@
 module HasResourceType
   extend ActiveSupport::Concern
 
-  RESOURCE_TYPES = %w[recording page blog download link 121].freeze
+  RESOURCE_TYPES = %w[recording page blog download link one21].freeze
 
   included do
     delegate :RESOURCE_TYPES, to: :class
