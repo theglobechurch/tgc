@@ -1,6 +1,7 @@
 class ResourceDecorator < Draper::Decorator
   delegate_all
   decorates_association :grouping
+  decorates_association :resource_parent
 
   def banner
     {

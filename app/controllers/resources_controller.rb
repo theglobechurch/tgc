@@ -45,6 +45,9 @@ class ResourcesController < ApplicationController
 
   def show
     @resource = resource.decorate
+    if @resource.resource_type == '121'
+      raise ActionController::RoutingError.new('Not Found')
+    end
     @banner = @resource.banner
   end
 
