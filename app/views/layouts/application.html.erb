@@ -34,7 +34,7 @@
     <%= render "globals/alert_banner",
                alert_type: 'danger',
                alert_tag: 'Christmas 2017',
-               alert_message: "".html_safe + "Traditional carol service and after work carol this December. " + link_to('Find out more', '/christmas') + "." %>
+               alert_message: "".html_safe + "Join us this Christmas for a traditional carol service and evening carols this December. " + link_to('Find out more', '/christmas') + "." %>
 
     <main class="c-main<%= ' c-main--no-banner' if banner['size'] == 'none' %>" role="main">
       <%= render "globals/banner" if banner != {} && banner['size'] != 'none' %>
