@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/LineLength,Metrics/MethodLength,Metrics/AbcSize
+# rubocop:disable Metrics/LineLength,Metrics/MethodLength,Metrics/AbcSize,Metrics/CyclomaticComplexity
 class PagesController < ApplicationController
   include HighVoltage::StaticPage
 
