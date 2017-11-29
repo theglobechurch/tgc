@@ -239,3 +239,54 @@
 
   </main>
 </section>
+
+<%= render('/shared/internal_nav',
+           sections: ['Join us on Sunday', 'Pray with us', 'Membership', 'Serve at Globe Church', 'Trainee scheme'],
+           current: 'Giving') %>
+
+<section class="c-content-box">
+
+  <header class="c-content-box__header js-object-fit-container">
+    <%=
+      responsive_image_tag(
+        {
+          "320": asset_url("static-banner/the-globe-church-preaching_320.jpg"),
+          "640": asset_url("static-banner/the-globe-church-preaching_640.jpg"),
+          "960": asset_url("static-banner/the-globe-church-preaching_960.jpg"),
+          "1280": asset_url("static-banner/the-globe-church-preaching_1280.jpg"),
+          "1920": asset_url("static-banner/the-globe-church-preaching_1920.jpg"),
+          "2560": asset_url("static-banner/the-globe-church-preaching_2560.jpg"),
+        },
+        sizes: [
+          '(max-width: 1200px) 1200px',
+          '100vw'
+        ],
+        class: 'c-content-box__header__img',
+        alt: 'The Globe Church'
+      )
+    %>
+    <div class="c-content-box__header__container">
+      <h1 class="c-content-box__header__title">Giving to The Globe Church</h1>
+    </div>
+  </header>
+
+  <main class="c-content-box__main c-content-box__main--text-focus">
+
+    <div class="c-content-box__main__container">
+      <blockquote class="st-blockquote">
+        <div class="st-blockquote__body">
+          <p>Each man should give what he has decided in his heart to give, not reluctantly or under compulsion, for God loves a cheerful giver. And God is able to make all grace abound to you, so that in all things at all times; having all that you need, you will abound in every good work.</p>
+        </div>
+
+        <footer class="st-blockquote__footer">
+          - <cite>2 Corinthians 9:7-8</cite>
+        </footer>
+      </blockquote>
+
+      <p>We're really grateful that you would consider donating to the ongoing gospel ministry through The Globe Church.</p>
+      <p>There are different ways to give; we have an offering on the first Sunday of the month in our services, or you give though bank transfer or by setting up a standing order to <em>The Globe Church</em>, sort code <em>20</em>-<em>80</em>-<em>57</em>, account number <em>2016</em> <em>8556</em>. Gift aid forms are also avalible.</p>
+      <p>If you have any questions about giving to the church, please <%= link_to('contact us', page_path('contact')) %>.</p>
+    </div>
+
+  </main>
+</section>
