@@ -21,6 +21,13 @@ class Resource < ApplicationRecord
     scope g, -> { where(resource_type: g) }
   end
 
+  before_validation do
+    if resource_type == 'one21'
+      self.title = "#{resource_parent.title} - One21"
+      self.slug = "#{resource_parent.slug}-one21"
+    end
+  end
+
   belongs_to :upload,
              optional: true,
              foreign_key: :uploads_id
@@ -52,6 +59,12 @@ class Resource < ApplicationRecord
               message: "%{value} is not a valid type",
             },
             allow_nil: true
+  validates :parent_resource_id,
+            presence: {
+              message: lambda do |_object, _data|
+                " - One21 questions must have a parent resource"
+              end,
+            }, if: :one21?
 
   sir_trevor_content :body
 
@@ -61,6 +74,10 @@ class Resource < ApplicationRecord
 
   def self.resource_type(rtype)
     where(resource_type: rtype)
+  end
+
+  def one21?
+    resource_type == "one21"
   end
 
 end

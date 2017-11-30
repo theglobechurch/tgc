@@ -46,7 +46,7 @@
   <%= render('admin/shared/form_errors', m: @resource) %>
   <%= f.submit 'Save', class: 'form__submit u-btn u-btn--primary u-btn--100' %>
 
-  <div class="form__field">
+  <div class="form__field js-resource-field" data-name="author">
     <%= f.label :people_id, 'Author', class: 'form__label form__check-box-label' %>
     <div class="form__select">
       <%= f.select :people_id,
@@ -56,30 +56,24 @@
     </div>
   </div>
 
-  <hr />
-
-  <div class="form__field">
+  <div class="form__field js-resource-field" data-name="display_date">
     <%= f.label :display_date, class: 'form__label' %>
     <%= f.date_field :display_date, class: 'form__input' %>
   </div>
 
-  <hr />
+  <div class="form__field js-resource-field" data-name="bible_ref">
+    <%= f.label :bible_reference, class: 'form__label' %>
+    <%= reference_picker(f) %>
+  </div>
 
-  <%= f.label :bible_reference, class: 'form__label' %>
-  <%= reference_picker(f) %>
-
-  <hr />
-
-  <div class="r-featureImageSelector"
+  <div class="r-featureImageSelector form__field js-resource-field"
+      data-name="lead_image"
       data-inputId="resource_graphics_id"
       data-selectImageId=""
       data-selectedImageThumbnail="<%= @resource.graphic.background_image_960.try('remote_url') if @resource.graphic %>"></div>
-  
   <%= f.hidden_field :graphics_id %>
 
-  <hr />
-
-  <div class="form__field">
+  <div class="form__field js-resource-field" data-name="grouping">
     <%= f.label :grouping, class: 'form__label' %>
     <%= f.select :grouping_ids, @groupings.pluck(:title, :id), { include_blank: 'Ungrouped' }, class: 'form__input form__input--multiselect', multiple: true %>
   </div>
@@ -93,7 +87,7 @@
   <hr />
  
   <% if @resource.slug_can_be_changed? %>
-    <div class="form__field">
+    <div class="form__field js-resource-field" data-name="slug">
       <%= f.label :slug, class: 'form__label' %>
       <%= f.text_field :slug, class: 'form__input js-slug-field', data: {'from-input-id': 'resource_title'} %>
     </div>
