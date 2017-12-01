@@ -28,9 +28,13 @@ class Admin::ResourcesController < AdminController
 
   def create
     @resource = Resource.new(resource_params)
-    @resource.save
-    flash[:notice] = "Resource saved"
-    respond_with(:admin, @resource)
+    if @resource.save
+      flash[:notice] = "Resource saved"
+      respond_with(:admin, @resource)
+    else
+      @groupings = Grouping.published
+      render 'new'
+    end
   end
 
   def update

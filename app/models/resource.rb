@@ -21,12 +21,7 @@ class Resource < ApplicationRecord
     scope g, -> { where(resource_type: g) }
   end
 
-  before_validation do
-    if resource_type == 'one21'
-      self.title = "#{resource_parent.title} - One21"
-      self.slug = "#{resource_parent.slug}-one21"
-    end
-  end
+  before_validation :one21title, if: proc { |r| r.resource_type == 'one21' }
 
   belongs_to :upload,
              optional: true,
@@ -78,6 +73,19 @@ class Resource < ApplicationRecord
 
   def one21?
     resource_type == "one21"
+  end
+
+private
+
+  def one21title
+    if resource_parent.present?
+      self.title = "#{resource_parent.title} - One21"
+      self.slug = "#{resource_parent.slug}-one21"
+    else
+      r = (0...8).map { (65 + rand(26)).chr }.join
+      self.title = "#{r} - One21"
+      self.slug = "#{r.downcase}-one21"
+    end
   end
 
 end
