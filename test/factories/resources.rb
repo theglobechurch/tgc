@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 FactoryGirl.define do
   factory :resource do
     title "Philemon: For Love's Sake"
@@ -7,6 +8,11 @@ FactoryGirl.define do
       "ever imagine."
     resource_type %w[recording link blog download].sample
     display_date "2017-07-02 00:00:00"
+    bible_reference_json '{"reference_book": "Philemon",'\
+                         '"reference_book_end_v": "1",'\
+                         '"reference_book_end_ch": "1",'\
+                         '"reference_book_start_v": "1",'\
+                         '"reference_book_start_ch": "1"}'
 
     sequence :slug do |n|
       "philemon-for-loves-sake-#{n}"
@@ -22,6 +28,12 @@ FactoryGirl.define do
 
     trait :recording do
       resource_type 'recording'
+    end
+
+    trait :one21 do
+      resource_type 'one21'
+      body Rails.root.join('test', 'fixtures', 'files', 'one21.json').read
+      association :resource_parent, :published, factory: :resource
     end
 
     trait :blog do

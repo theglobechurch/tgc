@@ -17,6 +17,7 @@ class Admin::ResourcesController < AdminController
     @uploads = Upload.all
     @groupings = Grouping.published
     @resource = Resource.new
+    @resources = resources
   end
 
   def edit
@@ -27,9 +28,13 @@ class Admin::ResourcesController < AdminController
 
   def create
     @resource = Resource.new(resource_params)
-    @resource.save
-    flash[:notice] = "Resource saved"
-    respond_with(:admin, @resource)
+    if @resource.save
+      flash[:notice] = "Resource saved"
+      respond_with(:admin, @resource)
+    else
+      @groupings = Grouping.published
+      render 'new'
+    end
   end
 
   def update
@@ -79,6 +84,7 @@ private
                                      :reference_book_end_ch,
                                      :reference_book_start_v,
                                      :reference_book_end_v,
+                                     :parent_resource_id,
                                      grouping_ids: [])
   end
 

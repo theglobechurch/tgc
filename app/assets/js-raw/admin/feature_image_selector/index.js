@@ -61,11 +61,6 @@ class FeatureImageSelector extends React.Component {
   }
 }
 
-// Make something better for this please:
-FeatureImageSelector.defaultProps = {
-  imageSrc: 'http://eadb.org/wp-content/uploads/2013/09/placeholder.jpg'
-}
-
 FeatureImageSelector.propTypes = {
   imageSrc: PropTypes.string,
   imageId: PropTypes.number
@@ -164,6 +159,7 @@ export default function (selector) {
     <FeatureImageSelector
       {...container.dataset}
       onPickImage={callback}
+      imagesrc={container.dataset.selectedimagethumbnail}
     />
   , container);
 }

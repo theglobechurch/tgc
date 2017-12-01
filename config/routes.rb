@@ -34,10 +34,23 @@ Rails.application.routes.draw do
       end
     end
 
+    resource :api do
+      member do
+        get 'resource', to: 'api#resource'
+      end
+    end
+
     resources :people
     resources :teams
 
     post :graphics, to: 'graphics#create'
+  end
+
+  resource :api, only: [:index] do
+    member do
+      get 'one21', to: 'api#one21'
+      get 'resource', to: 'api#resource'
+    end
   end
 
   get :blog, to: 'resources#blog'

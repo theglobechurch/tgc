@@ -52,6 +52,15 @@
   <%= render 'shared/audio_player', audio: @resource.upload, title: @resource.title %>
 <% end %>
 
+<% if @resource.children.length > 0 %>
+
+  <%= render('/shared/blog_list',
+    list: @resource.children.find_all{ |c| c.resource_type == 'blog' }, 
+    list_title: 'Related blog posts',
+    verb: 'Read') if @resource.children.count{ |c| c.resource_type == 'blog' } %>
+    
+<% end %>
+
 <% unless @resource.groupings.nil? %>
   <%= render('/shared/promo_box',
     img: @resource.groupings.first.graphic.background_image_size_urls,

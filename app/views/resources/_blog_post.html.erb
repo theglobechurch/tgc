@@ -41,11 +41,26 @@
   </section>
 </div>
 
-<% unless @resource.groupings.count == 0 %>
+<% if @resource.parent_resource_id != nil %>
+
+  <% cta = @resource.resource_parent.resource_type == 'recording' ? 'Listen now' : 'Read now'%>
+
   <%= render('/shared/promo_box',
-    img: @resource.groupings.first.graphic.background_image_size_urls,
-    link: "#{preaching_path()}/#{@resource.groupings.first.slug}",
-    title: "#{@resource.groupings.first.title}",
-    pretitle: 'This blog post is part of…',
-    cta: 'Go to full series') %>
+    img: @resource.resource_parent.lead_image,
+    link: "#{resources_path()}/#{@resource.resource_parent.slug}",
+    title: "#{@resource.resource_parent.title}",
+    pretitle: 'This blog is in response to…',
+    cta: cta) %>
+
+<% else %>
+
+  <% unless @resource.groupings.count == 0 %>
+    <%= render('/shared/promo_box',
+      img: @resource.groupings.first.graphic.background_image_size_urls,
+      link: "#{preaching_path()}/#{@resource.groupings.first.slug}",
+      title: "#{@resource.groupings.first.title}",
+      pretitle: 'This blog post is part of…',
+      cta: 'Go to full series') %>
+  <% end %>
+
 <% end %>

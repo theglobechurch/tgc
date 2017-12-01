@@ -1,3 +1,6 @@
+import sirTrevorInit from './sir-trev/sirtrev_setup';
+let stInstance = null;
+
 export default function () {
   
   const resourceTypeSelectorBtns = document.querySelectorAll('.js-resource-type-button');
@@ -37,10 +40,11 @@ function pageChanges(resourceType = null) {
 
   // Different resource types need to have different fields displayed
   const displayedFields = {
-    "recording":  ['title', 'upload', 'introduction'],
-    "blog":       ['title', 'body', 'introduction'],
-    "download":   ['title', 'upload', 'introduction'],
-    "link":       ['title', 'external_reference', 'introduction']
+    "recording":['title', 'upload', 'introduction', 'author', 'display_date', 'bible_ref', 'grouping', 'slug'],
+    "blog":     ['title', 'body', 'introduction', 'author', 'display_date', 'bible_ref', 'grouping', 'slug'],
+    "download": ['title', 'upload', 'introduction', 'bible_ref', 'lead_image', 'grouping'],
+    "link":     ['title', 'external_reference', 'introduction', 'bible_ref', 'grouping'],
+    "one21":    ['body']
   }
   const allResourceFields = document.querySelectorAll('.js-resource-field');
 
@@ -58,4 +62,22 @@ function pageChanges(resourceType = null) {
     });
   }
 
+  sirTrevSetUp(resourceType);
+}
+
+function sirTrevSetUp(resourceType = null) {
+  const blocksForType = {
+    "blog": ['Text', 'List', 'Quote', 'Image', 'Video', 'Button'],
+    "one21":['Text', 'Question']
+  };
+
+  if (stInstance !== null) {
+    stInstance.destroy();
+    document.querySelector('.js-st').value = "";
+    stInstance = null;
+  }
+
+  if (!(resourceType in blocksForType)) { return; }
+
+  stInstance = sirTrevorInit('.js-st', blocksForType[resourceType]);
 }
