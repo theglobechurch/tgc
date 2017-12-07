@@ -17,6 +17,12 @@ class One21Question extends React.Component {
     if (ev.which === 13) { ev.preventDefault(); }
   }
 
+  subQuestionReturn (ev) {
+    if (ev.which === 13 && this.state.subQuestions.length <= 3) {
+      this.addNewSubQuestion(ev)
+    }
+  }
+
   saveCoreQuestion (ev) {
     const coreQuestion = ev.target.innerHTML;
     this.props.updateData({ coreQuestion });
@@ -28,6 +34,14 @@ class One21Question extends React.Component {
     const subQuestions = this.state.subQuestions;
     subQuestions[i] = ev.target.value;
     this.updateSubQuestions(subQuestions, true);
+  }
+
+  mainQuestionPaste (ev) {
+    ev.preventDefault();
+    const text = (ev.originalEvent || ev).clipboardData.getData("text/plain");
+    const temp = document.createElement("div");
+    temp.innerHTML = text;
+    document.execCommand("insertHTML", false, temp.textContent);
   }
 
   removeSubQuestion(i, ev) {
@@ -63,6 +77,7 @@ class One21Question extends React.Component {
         <div
           className={`${cssClassParent}__mainQuestion`}
           contentEditable="true"
+          onPaste={this.mainQuestionPaste.bind(this)}
           onKeyPress={this.preventNewLine.bind(this)}
           onKeyUp={this.saveCoreQuestion.bind(this)}
         >
@@ -81,7 +96,9 @@ class One21Question extends React.Component {
                   <input
                     type="text"
                     defaultValue={this.state.subQuestions[i]}
+                    onKeyPress={this.subQuestionReturn.bind(this)}
                     onKeyUp={this.saveSubQuestion.bind(this, i)}
+                    className={`${cssClassParent}__subQuestion__field`}
                   />
                   <button
                     className={`${cssClassParent}__subQuestion__remove`}
