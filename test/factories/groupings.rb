@@ -29,5 +29,9 @@ FactoryGirl.define do
       group_type 'resource'
     end
 
+    trait :with_graphic do
+      association :graphic
+    end
+
   end
 end

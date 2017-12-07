@@ -1,5 +1,6 @@
 class One21Serializer < ActiveModel::Serializer
-  attributes :name, :date, :slug, :passage, :url, :questions
+  attributes :name, :date, :slug, :description,
+             :image, :passage, :url, :questions
 
   def name
     object.resource_parent.title
@@ -17,8 +18,16 @@ class One21Serializer < ActiveModel::Serializer
     object.resource_parent.reference_string
   end
 
+  def description
+    object.resource_parent.introduction
+  end
+
   def url
     "http://globe.church#{view_context.resource_path(object.resource_parent)}"
+  end
+
+  def image
+    object.lead_image
   end
 
   def questions

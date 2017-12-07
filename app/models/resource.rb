@@ -71,8 +71,14 @@ class Resource < ApplicationRecord
     where(resource_type: rtype)
   end
 
-  def one21?
-    resource_type == "one21"
+  def lead_image
+    if graphic
+      graphic.background_image_size_urls
+    elsif resource_parent.graphic
+      resource_parent.graphic.background_image_size_urls
+    elsif resource_parent.groupings[0] && resource_parent.groupings[0].graphic
+      resource_parent.groupings[0].graphic.background_image_size_urls
+    end
   end
 
 private
@@ -86,6 +92,10 @@ private
       self.title = "#{r} - One21"
       self.slug = "#{r.downcase}-one21"
     end
+  end
+
+  def one21?
+    resource_type == "one21"
   end
 
 end

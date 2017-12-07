@@ -33,7 +33,14 @@ FactoryGirl.define do
     trait :one21 do
       resource_type 'one21'
       body Rails.root.join('test', 'fixtures', 'files', 'one21.json').read
-      association :resource_parent, :published, factory: :resource
+      association :resource_parent,
+                  :published,
+                  :with_graphic,
+                  factory: :resource
+    end
+
+    trait :with_graphic do
+      association :graphic
     end
 
     trait :blog do
