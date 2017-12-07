@@ -41,7 +41,7 @@ function pageChanges(resourceType = null) {
   // Different resource types need to have different fields displayed
   const displayedFields = {
     "recording":['title', 'upload', 'introduction', 'author', 'display_date', 'bible_ref', 'grouping', 'slug'],
-    "blog":     ['title', 'body', 'introduction', 'author', 'display_date', 'bible_ref', 'grouping', 'slug'],
+    "blog":     ['title', 'body', 'introduction', 'author', 'display_date', 'lead_image', 'bible_ref', 'grouping', 'slug'],
     "download": ['title', 'upload', 'introduction', 'bible_ref', 'lead_image', 'grouping'],
     "link":     ['title', 'external_reference', 'introduction', 'bible_ref', 'grouping'],
     "one21":    ['body']
