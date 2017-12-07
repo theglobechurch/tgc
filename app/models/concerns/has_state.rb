@@ -3,6 +3,10 @@ module HasState
 
   def before_publishing
     self.published_at = Time.zone.now
+    
+    unless self.display_date
+      self.display_date = Time.zone.now
+    end
   end
 
   class_methods do

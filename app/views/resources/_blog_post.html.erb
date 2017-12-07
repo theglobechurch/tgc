@@ -6,7 +6,11 @@
 
         <% if @resource.people_id %>
         <div class="blog-footer">
+        
+          <% if @resource.display_date %>
           <date class="blog-footer__date">- <%= l @resource.display_date.to_date, format: :long %> -</date>
+          <% end %>
+
           <div class="blog-footer__author">
               <div class="blog-footer__author__img img-container img-container--circle">
                 <%=
