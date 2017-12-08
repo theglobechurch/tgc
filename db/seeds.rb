@@ -21,3 +21,9 @@ Grouping.create(title: "Philemon: For Love's Sake",
                 state: "published",
                 group_type: "series",
                 slug: "philemon-for-loves-sake")
+
+People.create(first_name: "Jonty",
+              last_name: "Allcock",
+              display_name: "Jonty Allcock",
+              job_title: "Pastor",
+              biography_short: "Jonty is one of the pastors at The Globe Church")
