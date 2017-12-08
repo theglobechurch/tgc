@@ -4,7 +4,7 @@ module HasState
   def before_publishing
     self.published_at = Time.zone.now
 
-    unless display_date
+    if defined?(display_date) && display_date.nil?
       self.display_date = Time.zone.now
     end
   end
