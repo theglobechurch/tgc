@@ -1,0 +1,66 @@
+<%= render('/shared/join_us') %>
+
+<section class="c-content-box">
+  <header class="c-content-box__header js-object-fit-container">
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_url("static-banner/wonder/mountains_320.jpg"),
+            "640": asset_url("static-banner/wonder/mountains_640.jpg"),
+            "960": asset_url("static-banner/wonder/mountains_960.jpg"),
+            "1280": asset_url("static-banner/wonder/mountains_1280.jpg"),
+            "1920": asset_url("static-banner/wonder/mountains_1920.jpg"),
+            "2560": asset_url("static-banner/wonder/mountains_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
+      <div class="c-content-box__header__container">
+        <h1 class="c-content-box__header__title">Have you ever wondered?</h1>
+      </div>
+  </header>
+
+  <main class="c-content-box__main c-content-box__main--text-focus">
+
+    <div class="c-content-box__main__container">
+      <p>Do you remember when something as simple as unwrapping a present or seeing fireworks splashed across the sky would cause your jaw to drop and your mind to wonder at what was in front of you?</p>
+      <p>Now we’ve grown up, but sometimes we still have those moments when we’re captivated by something bigger, something deeper. </p>
+      <p>Holding a new born baby in our hands; experiencing the unexplainable in a relationship; even feeling the depths of human pain and fragility- these moments take us beyond the hum drum of life to something else, something significant. But we’re not sure what.</p>
+      <p>These moments might make us stop and wonder: What is life about? Who am I in this universe? Is there a God? Is there a Heaven? Is there something more to life?</p>
+      <blockquote class="st-blockquote">
+        <div class="st-blockquote__body">
+          <p>The world will never starve for want of wonders; but only for want of wonder.</p>
+        </div>
+        <footer class="st-blockquote__footer">
+          - <cite>G.K. Chesterton</cite>
+        </footer>
+      </blockquote>
+      <p>Our wonder evokes these questions.</p>
+      <p>What if those big questions had real answers?</p>
+      <p>Jesus Christ came because on our own we can’t find the answers. Every now and then, in a moment of wonder, we might guess at what life is about, we might give God a passing thought. But we need more than that, we were made for more than that.</p>
+      <blockquote class="st-blockquote">
+        <div class="st-blockquote__body">
+          <p>I have come that they may have life, and have it to the full.</p>
+        </div>
+        <footer class="st-blockquote__footer">
+          - <cite>Jesus. Recorded in the Bible (John 10 v10)</cite>
+        </footer>
+      </blockquote>
+      <p>We are here for something bigger, something deeper: a life with God. He made us, knows us, and loves us. Losing wonder isn’t the worst of our problems. We’ve lost a relationship with God as we’ve tried to go at life on our own. We’ve shut ourselves off from the person our hearts were made to wonder at and live for.</p>
+      <p>But God hasn’t left it at that. God’s Son, Jesus, came into the world because there is a life beyond what we can imagine that we can have through him. Jesus is the one who can connect us back to God to enjoy life with him forever. </p>
+      <p>Jesus did this by something you may never have wondered at before- by dying on the cross. Jesus gave his life so that we can have full life knowing God. He died in our place so that we can be forgiven for shutting God out. And by rising from the dead Jesus gives us the gift of eternal life with him.</p>
+      <p>If that’s true, then that’s something to make our jaws drop and our minds to wonder at what’s in front of us: a relationship with the God who made us, life with him forever, all through what Jesus has done for us.</p>
+      <p>Will you let your wonder turn into trust? Will you accept a new life with God, the life you were made for?</p>
+    </div>
+
+  </main>
+</section>
+
+<div class="site-container">
+  <%= render('/shared/vision_box', uncontained: false) %>
+</div>
