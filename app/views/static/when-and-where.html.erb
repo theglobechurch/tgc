@@ -1,23 +1,8 @@
-<div class="site-container">
-  <section class="c-content-box">
-    <main class="c-content-box__main">
-      <div class="c-content-box__main__container">
-        <h1>Join us this Sunday</h1>
-        <h2>4.30pm in the Hodgkin Building, on Guy's Campus (Newcomen Street, SE1 1UL)</h2>
-        <a href="https://goo.gl/maps/Qc3bUfA2arP2" class="u-link u-link--arrowed u-link--black">
-          <%= svg_tag('map') %>
-          <span>View on a map</span>
-        </a>
-      </div>
-    </main>
-  </section>
-</div>
-
+<%= render('/shared/join_us') %>
 
 <%= render('/shared/internal_nav',
            sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
            current: 'Sundays') %>
-
 
 <section class="c-content-box">
   <header class="c-content-box__header js-object-fit-container">
@@ -40,8 +25,8 @@
         )
       %>
       <div class="c-content-box__header__container">
-          <h1 class="c-content-box__header__title">Sunday services</h1>
-          <h2 class="c-content-box__header__subtitle">Every week at 4.30pm</h2>
+        <h1 class="c-content-box__header__title">Sunday services</h1>
+        <h2 class="c-content-box__header__subtitle">Every week at 4.30pm</h2>
       </div>
   </header>
 

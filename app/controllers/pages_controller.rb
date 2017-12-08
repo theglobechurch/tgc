@@ -94,6 +94,19 @@ private
           "2560": view_context.asset_url("static-banner/christmas/christmas_2560.jpg"),
         },
       }
+    when 'wonder'
+      {
+        "title" => 'Have You Ever Wondered?',
+        "subtitle" => 'When we were kids, there was one thing we used to be good at: WONDER',
+        "image" => {
+          "320": view_context.asset_url("static-banner/wonder/have-you-ever-wondered_320.jpg"),
+          "640": view_context.asset_url("static-banner/wonder/have-you-ever-wondered_640.jpg"),
+          "960": view_context.asset_url("static-banner/wonder/have-you-ever-wondered_960.jpg"),
+          "1280": view_context.asset_url("static-banner/wonder/have-you-ever-wondered_1280.jpg"),
+          "1920": view_context.asset_url("static-banner/wonder/have-you-ever-wondered_1920.jpg"),
+          "2560": view_context.asset_url("static-banner/wonder/have-you-ever-wondered_2560.jpg"),
+        },
+      }
     else
       {
         "title" => 'The Globe Church',
