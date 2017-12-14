@@ -15,4 +15,11 @@ class ApiControllerTest < ActionController::TestCase
     assert_equal(1, body[0]['questions'].count { |q| q['type'] == 'pause' })
   end
 
+  test "one21 CORS header" do
+    get :one21
+    assert_response(:success)
+    assert_equal('*', @response.header['Access-Control-Allow-Origin'])
+    assert_equal('GET', @response.header['Access-Control-Allow-Methods'])
+  end
+
 end
