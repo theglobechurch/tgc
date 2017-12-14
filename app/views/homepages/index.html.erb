@@ -2,21 +2,7 @@
 
 <div class="site-container">
   <%= render('/shared/join_us') %>
-
-  <%= render('/shared/promo_box',
-             img: {
-              "320": asset_url("static-banner/christmas/christmas_320.jpg"),
-              "640": asset_url("static-banner/christmas/christmas_640.jpg"),
-              "960": asset_url("static-banner/christmas/christmas_960.jpg"),
-              "1280": asset_url("static-banner/christmas/christmas_1280.jpg"),
-              "1920": asset_url("static-banner/christmas/christmas_1920.jpg"),
-              "2560": asset_url("static-banner/christmas/christmas_2560.jpg"),
-            },
-             link: '/christmas',
-             pretitle: 'Christmas 2017',
-             title: 'Carol services near the Southbank',
-             cta: 'Find out more') if @latest_sermon %>
-  <br /><br />
+  
   <%= render('/shared/promo_box',
              img: @latest_sermon.banner['image'],
              link: @latest_sermon,
