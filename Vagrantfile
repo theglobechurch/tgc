@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "TGC" do |tgc|
     tgc.vm.box = "ubuntu/xenial64"
     tgc.vm.network :private_network, ip: "192.168.33.151"
-    tgc.vm.hostname = "globe.dev"
+    tgc.vm.hostname = "globe.local"
 
     # Forward the Rails server default port to the host
     tgc.vm.network :forwarded_port, guest: 3000, host: 3000
