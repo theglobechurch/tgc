@@ -7,12 +7,12 @@ class ResourcesController < ApplicationController
     @banner = {
       "title" => 'Preaching',
       "image" => {
-        "320": view_context.asset_url("#{img_location}320.jpg"),
-        "640": view_context.asset_url("#{img_location}640.jpg"),
-        "960": view_context.asset_url("#{img_location}960.jpg"),
-        "1280": view_context.asset_url("#{img_location}1280.jpg"),
-        "1920": view_context.asset_url("#{img_location}1920.jpg"),
-        "2560": view_context.asset_url("#{img_location}2560.jpg"),
+        "320": view_context.asset_path("#{img_location}320.jpg"),
+        "640": view_context.asset_path("#{img_location}640.jpg"),
+        "960": view_context.asset_path("#{img_location}960.jpg"),
+        "1280": view_context.asset_path("#{img_location}1280.jpg"),
+        "1920": view_context.asset_path("#{img_location}1920.jpg"),
+        "2560": view_context.asset_path("#{img_location}2560.jpg"),
       },
     }
     @latest_sermon = latest_sermon.decorate if latest_sermon
@@ -33,12 +33,12 @@ class ResourcesController < ApplicationController
       "title" => "Blog",
       "size" => "small",
       "image" => {
-        # "320": view_context.asset_url("#{img_location}320.jpg"),
-        "640": view_context.asset_url("#{img_location}640.jpg"),
-        "960": view_context.asset_url("#{img_location}960.jpg"),
-        "1280": view_context.asset_url("#{img_location}1280.jpg"),
-        "1920": view_context.asset_url("#{img_location}1920.jpg"),
-        "2560": view_context.asset_url("#{img_location}2560.jpg"),
+        # "320": view_context.asset_path("#{img_location}320.jpg"),
+        "640": view_context.asset_path("#{img_location}640.jpg"),
+        "960": view_context.asset_path("#{img_location}960.jpg"),
+        "1280": view_context.asset_path("#{img_location}1280.jpg"),
+        "1920": view_context.asset_path("#{img_location}1920.jpg"),
+        "2560": view_context.asset_path("#{img_location}2560.jpg"),
       },
     }
   end
