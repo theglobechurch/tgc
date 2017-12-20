@@ -27,7 +27,7 @@ class One21Serializer < ActiveModel::Serializer
   end
 
   def base_url
-    "http://globe.church"
+    "https://www.globe.church"
   end
 
   def images
