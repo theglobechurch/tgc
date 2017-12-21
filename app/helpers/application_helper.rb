@@ -16,7 +16,7 @@ module ApplicationHelper
 
   def gravatar_url(email, **options)
     hash = Digest::MD5.hexdigest(email.strip.downcase)
-    URI("http://www.gravatar.com/avatar/" << hash).tap do |uri|
+    URI("https://www.gravatar.com/avatar/" << hash).tap do |uri|
       uri.query = options.to_query
     end.to_s
   end
