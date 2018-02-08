@@ -6,10 +6,11 @@ gem 'draper'                                # Decorate models
 gem 'dragonfly', '~> 1.1.3'                 # File uploads
 gem 'pg'                                    # Talk to the database
 gem 'puma', '~> 3.7'                        # server
-gem 'rails', '~> 5.1.2'                     # Ruby on rails framework
+gem 'rails', '~> 5.1.4'                     # Ruby on rails framework
 gem 'state_machines-activerecord'           # Allow models to have states (draft, published, deleted, etc)
 gem 'sass-rails', '~> 5.0'                  # Sass for rails. Obvs
 gem 'uglifier', '>= 1.3.0'                  # Uglify production JS
+gem 'nokogiri', '>=1.8.2'
 gem 'therubyracer', platforms: :ruby
 gem 'high_voltage', '~> 3.0.0'              # For static pages
 gem 'rack-rewrite'
