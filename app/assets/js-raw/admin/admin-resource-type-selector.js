@@ -67,7 +67,7 @@ function pageChanges(resourceType = null) {
 
 function sirTrevSetUp(resourceType = null) {
   const blocksForType = {
-    "blog": ['Text', 'List', 'Quote', 'Image', 'Video', 'Button'],
+    "blog": ['Text', 'List', 'Quote', 'Image', 'Video', 'Button', 'Divider'],
     "one21":['Text', 'Question']
   };
 

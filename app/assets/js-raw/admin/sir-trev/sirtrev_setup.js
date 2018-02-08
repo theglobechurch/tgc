@@ -2,6 +2,7 @@ import SirTrevor from 'sir-trevor';
 import ButtonBlock from './button_block';
 import ImageBlock from './image_block';
 import QuestionBlock from './question_block';
+import DividerBlock from './divider_block';
 
 const defaultBlockTypes = [
   'Text',
@@ -24,6 +25,7 @@ export default function (el, blockTypes) {
     SirTrevor.Blocks.Button = ButtonBlock;
     SirTrevor.Blocks.Button = ButtonBlock;
     SirTrevor.Blocks.Question = QuestionBlock;
+    SirTrevor.Blocks.Divider = DividerBlock;
 
     SirTrevor.setDefaults({
       iconUrl: window.__assets.externalSirTrevorIcons,
