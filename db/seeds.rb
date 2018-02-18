@@ -31,10 +31,16 @@ gra = Graphic.create(
   )
 )
 
+gt = GroupingType.create(title: "Preaching")
+GroupingType.create(title: "Focus")
+GroupingType.create(title: "Resources")
+GroupingType.create(title: "Misc")
+
 gro = Grouping.create(title: "Philemon: For Love's Sake",
                       description: "In the book of Philemon, Paul writes to a local church leader calling him to gospel love. In this series we’re going to see that gospel love will push us further and deeper than we could ever imagine.",
                       state: "published",
-                      group_type: "test",
+                      grouping_types: [gt],
+                      group_type: 'series', # migrate away later
                       slug: "philemon-for-loves-sake",
                       graphic: gra)
 

@@ -2,14 +2,18 @@ class Grouping < ApplicationRecord
 
   include HasSlug
   include HasState
-  include HasGroupType
 
   publishable
 
   default_scope { published.order('start_date DESC NULLS LAST') }
 
-  GROUP_TYPES.each do |g|
-    scope g, -> { where(group_type: g) }
+  # Create a scope for each of the grouping types (eg Grouping.preaching)
+  gt = GroupingType.all.select("slug").map { |g| g.slug }
+  gt.each do |g|
+    scope g, lambda {
+      eager_load(:grouping_types).
+        where("grouping_types.slug": g)
+    }
   end
 
   belongs_to :graphic,
@@ -20,13 +24,16 @@ class Grouping < ApplicationRecord
   has_many :resources,
            through: :resource_grouping_joins
 
-  validates :title, :group_type, presence: true
-  validates :group_type,
-            inclusion: {
-              in: GROUP_TYPES,
-              message: "%{value} is not a valid type",
-            },
-            allow_nil: false
+  has_many :group_type_links
+  has_many :grouping_types,
+           through: :group_type_links
+
+  has_many :group_event_links
+  has_many :events,
+           through: :group_event_links
+
+  validates :title, presence: true
+  validates :grouping_types, presence: true
 
   def to_s
     title

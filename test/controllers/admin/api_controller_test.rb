@@ -5,7 +5,7 @@ class Admin::ApiControllerTest < ActionController::TestCase
 
   setup do
     @request.env["devise.mapping"] = Devise.mappings[:admin]
-    sign_in FactoryGirl.create(:admin)
+    sign_in FactoryBot.create(:admin)
   end
 
   test "resources without query returns null" do

@@ -1,5 +1,5 @@
 # rubocop:disable Metrics/BlockLength
-FactoryGirl.define do
+FactoryBot.define do
   factory :resource do
     title "Philemon: For Love's Sake"
     introduction "In the book of Philemon, Paul writes to a local church "\
@@ -28,6 +28,10 @@ FactoryGirl.define do
 
     trait :recording do
       resource_type 'recording'
+      groupings {
+        [Grouping.where(title: 'Sermon Series').take ||
+          create(:grouping, :preaching, title: 'Sermon Series')]
+      }
     end
 
     trait :one21 do

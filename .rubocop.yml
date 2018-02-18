@@ -33,6 +33,9 @@ Style/OptionHash:
 Style/Send:
   Enabled: true
 
+Style/SymbolProc:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 

@@ -43,6 +43,7 @@ class Resource < ApplicationRecord
   has_many :resource_grouping_joins
   has_many :groupings,
            through: :resource_grouping_joins
+
   has_many :children,
            class_name: "Resource",
            foreign_key: :parent_resource_id

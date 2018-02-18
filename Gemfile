@@ -16,9 +16,10 @@ gem 'high_voltage', '~> 3.0.0'              # For static pages
 gem 'rack-rewrite'
 gem 'sir_trevor_rails'
 gem 'pg_search'
+gem 'migration_data'
 
 group :development, :test, :build do
-  gem 'factory_girl_rails'        # For testing
+  gem 'factory_bot_rails'         # For testing
   gem 'rails-controller-testing'  # Does what it says
   gem 'rubocop'                   # Enforce styles
   gem 'timecop'                   # Test time cases

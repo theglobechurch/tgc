@@ -1,7 +1,13 @@
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+# Rails.application.load_seed
 
-FactoryGirl::SyntaxRunner.class_eval do
+# Simple seed data
+GroupingType.delete_all
+GroupingType.create(title: 'Preaching')
+GroupingType.create(title: 'Focus')
+
+FactoryBot::SyntaxRunner.class_eval do
   include ActionDispatch::TestProcess
 end
 
@@ -13,7 +19,7 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in
   # alphabetical order.
   fixtures :all
-  include FactoryGirl::Syntax::Methods
+  include FactoryBot::Syntax::Methods
 end
 
 # Monkey-patch dragonfly for speed

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116113040) do
+ActiveRecord::Schema.define(version: 20180212095951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,15 +30,16 @@ ActiveRecord::Schema.define(version: 20171116113040) do
     t.index ["slug"], name: "index_event_instances_on_slug"
   end
 
-  create_table "event_series", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "slug"
     t.bigint "location_id"
     t.bigint "graphics_id"
-    t.index ["graphics_id"], name: "index_event_series_on_graphics_id"
-    t.index ["location_id"], name: "index_event_series_on_location_id"
-    t.index ["slug"], name: "index_event_series_on_slug"
+    t.string "state", default: "draft"
+    t.index ["graphics_id"], name: "index_events_on_graphics_id"
+    t.index ["location_id"], name: "index_events_on_location_id"
+    t.index ["slug"], name: "index_events_on_slug"
   end
 
   create_table "graphics", force: :cascade do |t|
@@ -53,6 +54,26 @@ ActiveRecord::Schema.define(version: 20171116113040) do
     t.string "background_image_2560_uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "group_event_links", id: false, force: :cascade do |t|
+    t.integer "grouping_id", null: false
+    t.integer "event_id", null: false
+    t.index ["event_id", "grouping_id"], name: "index_group_event_links_on_event_id_and_grouping_id"
+    t.index ["grouping_id", "event_id"], name: "index_group_event_links_on_grouping_id_and_event_id"
+  end
+
+  create_table "group_type_links", id: false, force: :cascade do |t|
+    t.integer "grouping_id", null: false
+    t.integer "grouping_type_id", null: false
+    t.index ["grouping_id", "grouping_type_id"], name: "index_group_type_links_on_grouping_id_and_grouping_type_id"
+    t.index ["grouping_type_id", "grouping_id"], name: "index_group_type_links_on_grouping_type_id_and_grouping_id"
+  end
+
+  create_table "grouping_types", force: :cascade do |t|
+    t.string "title"
+    t.string "slug"
+    t.index ["slug"], name: "index_grouping_types_on_slug"
   end
 
   create_table "groupings", force: :cascade do |t|
@@ -186,11 +207,11 @@ ActiveRecord::Schema.define(version: 20171116113040) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "event_instances", "event_series"
+  add_foreign_key "event_instances", "events", column: "event_series_id"
   add_foreign_key "event_instances", "graphics", column: "graphics_id"
   add_foreign_key "event_instances", "locations"
-  add_foreign_key "event_series", "graphics", column: "graphics_id"
-  add_foreign_key "event_series", "locations"
+  add_foreign_key "events", "graphics", column: "graphics_id"
+  add_foreign_key "events", "locations"
   add_foreign_key "groupings", "graphics", column: "graphics_id"
   add_foreign_key "people", "locations"
   add_foreign_key "resources", "graphics", column: "graphics_id"

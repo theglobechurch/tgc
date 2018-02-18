@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :person do
     first_name %w[Tom Dick Harry].sample
     last_name %w[Smith Jones Davis].sample

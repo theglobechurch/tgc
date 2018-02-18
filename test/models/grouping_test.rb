@@ -2,13 +2,13 @@ require 'test_helper'
 
 class GroupingTest < ActiveSupport::TestCase
   test "Group type scope" do
-    create_list(:grouping, 3, :published, :series)
-    create_list(:grouping, 2, :published, :resource)
+    create_list(:grouping, 3, :published, :preaching)
+    create_list(:grouping, 2, :published, :focus)
 
-    s = Grouping.series
+    s = Grouping.preaching
     assert_equal(3, s.length)
 
-    r = Grouping.resource
+    r = Grouping.focus
     assert_equal(2, r.length)
   end
 

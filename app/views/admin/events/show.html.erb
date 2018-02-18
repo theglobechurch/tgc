@@ -1,0 +1,34 @@
+<main class="m-admin-body">
+  <section class="m-admin-body--main m-admin-preview">
+    <iframe class="m-admin-preview__iframe" src="<%#= preview_admin_event_path(@event) %>"></iframe>
+  </section>
+  
+  <section class="m-admin-body--sidebar">
+
+    <%= link_to("Edit", edit_admin_event_path(@event), class: 'u-btn u-btn--primary u-btn--100') %>
+
+    <%= btn_state_change('Publish',
+                         @event,
+                         :publish,
+                         class: 'u-btn u-btn--100') if @event.can_publish? %>
+
+    <%= btn_state_change('Unpublish',
+                         @event,
+                         :unpublish,
+                         class: 'u-btn u-btn--100 u-btn--warning') if @event.can_unpublish? %>
+
+    <%= btn_state_change('Delete',
+                         @event,
+                         :expunge,
+                         class: 'u-btn u-btn--100 u-btn--danger') if @event.can_expunge? %>
+
+    <hr />
+
+    <h1><%= @event.title %></h1>
+    <% if @event.state == 'published' %>
+      <!-- copy to clipboard via https://davidwalsh.name/clipboard -->
+      Share link: <%= @event.slug %>
+    <% end %>
+
+  </section>
+</main>
