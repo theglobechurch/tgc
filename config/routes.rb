@@ -27,7 +27,13 @@ Rails.application.routes.draw do
         get 'preview'
       end
     end
-
+    
+    resources :events do
+      member do
+        get 'preview'
+      end
+    end
+      
     resource :user, only: [:edit] do
       collection do
         patch 'update_password'

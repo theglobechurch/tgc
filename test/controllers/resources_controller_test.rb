@@ -3,7 +3,6 @@ require 'test_helper'
 class ResourcesControllerTest < ActionController::TestCase
 
   test "latest sermon should be on the preaching" do
-
     create(:resource,
            :recording,
            :published,

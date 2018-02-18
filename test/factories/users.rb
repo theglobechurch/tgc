@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :admin, class: 'User' do
 
     sequence :email do |n|
