@@ -1,5 +1,372 @@
 <%= render('/shared/join_us') %>
 
+<section class="c-content-box" id="themarkdrama">
+  <header class="c-content-box__header js-object-fit-container">
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("static-banner/mark-drama_320.jpg"),
+            "640": asset_path("static-banner/mark-drama_640.jpg"),
+            "960": asset_path("static-banner/mark-drama_960.jpg"),
+            "1280": asset_path("static-banner/mark-drama_1280.jpg"),
+            "1920": asset_path("static-banner/mark-drama_1920.jpg"),
+            "2560": asset_path("static-banner/mark-drama_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
+      <div class="c-content-box__header__container">
+        <h1 class="c-content-box__header__title">The Mark Drama</h1>
+        <h2 class="c-content-box__header__subtitle">Saturday 10th March 2018</h2>
+      </div>
+  </header>
+
+  <main class="c-content-box__main">
+
+    <div class="c-content-box__main__container">
+      <p><strong>Experience the story of Jesus, as told by Mark in 90 minutes</strong></p>
+      <p>On Saturday 10th March watch the narrative of Jesus performed in theatre-in-the-round by 15 people.</p>
+      <p>The audience is sat all around the stage- the action is happening in front of you, next to you, behind you, and all around you so you very much feel that you're a part of what is going on. You feel like you're in the crowd watching Jesus, you feel like you are a part of the feeding of the five thousand, you feel like you are in the temple courts watching him teaching about why he came.</p>
+    </div>
+
+    <aside class="c-content-box__aside">
+      <ul class="c-icon-list">
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+            <span>
+              Saturday 10th March
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
+            <span>
+              7.30pm
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
+            <address>
+              <strong>The Warehouse,</strong><br />
+              13 Theed St,<br />
+              Lambeth,<br />
+              London,<br />
+              SE1 8ST
+            </address>
+          </a>
+        </li>
+      </ul>
+
+      <a href="https://www.eventbrite.com/e/the-mark-drama-tickets-42989512790?aff=tgcwonder" class="u-btn u-btn--dark u-btn--block" target="_blank">Get tickets</a>
+    </aside>
+
+  </main>
+</section>
+
+<section class="c-content-box" id="storyslam">
+  <header class="c-content-box__header js-object-fit-container">
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("hyew/story-slam_320.jpg"),
+            "640": asset_path("hyew/story-slam_640.jpg"),
+            "960": asset_path("hyew/story-slam_960.jpg"),
+            "1280": asset_path("hyew/story-slam_1280.jpg"),
+            "1920": asset_path("hyew/story-slam_1920.jpg"),
+            "2560": asset_path("hyew/story-slam_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
+      <div class="c-content-box__header__container">
+        <h1 class="c-content-box__header__title">Story Slam</h1>
+        <h2 class="c-content-box__header__subtitle">Saturday 17th March 2018</h2>
+      </div>
+  </header>
+
+  <main class="c-content-box__main">
+
+    <div class="c-content-box__main__container">
+      <p><strong>This is a great event for anyone who loves a good story, either to tell or to listen.</strong> It’s happening on Saturday 17th March. The theme of the evening will be “speechless” and people will be invited to give a short story of any kind on that theme, whether a true experience from our lives or something we’ve made up. We’ll be laying on drinks, nibbles, and some live music too.</p>
+      <p>This is quite a low key evening, especially good for friends who may have never been to a church event before. There won’t be a talk, but perhaps the things that matter to us as Christians will come through in some of our stories. 7.30pm, Wilcox House.</p>
+    </div>
+
+    <aside class="c-content-box__aside">
+      <ul class="c-icon-list">
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+            <span>
+              Saturday 17th March
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
+            <span>
+              7.30pm
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
+            <address>
+              <strong>Willcox House,</strong><br />
+              140-148 Borough High Street,<br />
+              London
+            </address>
+          </a>
+        </li>
+      </ul>
+
+      <a href="https://www.google.co.uk/maps/place/140-148+Borough+High+St,+London+SE1" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
+    </aside>
+
+  </main>
+</section>
+
+<section class="c-content-box" id="cafe">
+  <header class="c-content-box__header js-object-fit-container">
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("hyew/cafe_320.jpg"),
+            "640": asset_path("hyew/cafe_640.jpg"),
+            "960": asset_path("hyew/cafe_960.jpg"),
+            "1280": asset_path("hyew/cafe_1280.jpg"),
+            "1920": asset_path("hyew/cafe_1920.jpg"),
+            "2560": asset_path("hyew/cafe_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
+      <div class="c-content-box__header__container">
+        <h1 class="c-content-box__header__title">Have You Ever Wondered Café</h1>
+        <h2 class="c-content-box__header__subtitle">Monday 19th and 26th March 2018</h2>
+      </div>
+  </header>
+
+  <main class="c-content-box__main">
+
+    <div class="c-content-box__main__container">
+      <p><strong>Over the last two years we’ve had a number of these events and they’ve been a great to explore some of the bigger questions in life. We host it in Café Piazza who provide us with a great buffet meal.</strong></p>
+      <p>This time around we’re going to be asking Have you Ever Wondered about God? (Monday 19th March) and Have you Ever Wondered about Eternity? (Monday 26th March). There’s a talk, someone will tell their story of being a Christian, and there’s a time for questions.</p>
+    </div>
+
+    <aside class="c-content-box__aside">
+      <ul class="c-icon-list">
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+            <span>
+              Monday 19th March<br />
+              Monday 26th March
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
+            <span>
+              7.30pm
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
+            <address>
+              <strong>Café Piazza,</strong><br />
+              Hay's Galleria<br />
+              London<br />
+              SE1 2HD
+            </address>
+          </a>
+        </li>
+      </ul>
+
+      <a href="https://goo.gl/maps/ncQCrKUBKc52" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
+    </aside>
+
+  </main>
+</section>
+
+<section class="c-content-box" id="river">
+  <header class="c-content-box__header js-object-fit-container">
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("hyew/river_320.jpg"),
+            "640": asset_path("hyew/river_640.jpg"),
+            "960": asset_path("hyew/river_960.jpg"),
+            "1280": asset_path("hyew/river_1280.jpg"),
+            "1920": asset_path("hyew/river_1920.jpg"),
+            "2560": asset_path("hyew/river_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
+      <div class="c-content-box__header__container">
+        <h1 class="c-content-box__header__title">Wonder by the River</h1>
+        <h2 class="c-content-box__header__subtitle">Tuesday and Thursdays during March 2018</h2>
+      </div>
+  </header>
+
+  <main class="c-content-box__main">
+
+    <div class="c-content-box__main__container">
+      <p><strong>This will be happening each Tuesday and Thursday morning on the Southbank.</strong></p>
+      <p>We’re going to be going out and using creative ways to get chatting to people along the river about what they believe and talking about Jesus. Please join us near The Globe Theatre.</p>
+    </div>
+
+    <aside class="c-content-box__aside">
+      <ul class="c-icon-list">
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+            <span>
+              Tuesdays and Thursdays throughout March
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
+            <span>
+              9.45am
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
+            <address>
+              <strong>New Globe Walk,</strong><br />
+              London<br />
+              SE1 9DT
+            </address>
+          </a>
+        </li>
+      </ul>
+
+      <a href="https://goo.gl/maps/yEfVXkaTdYt" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
+    </aside>
+
+  </main>
+</section>
+
+<section class="c-content-box" id="christianityexplored">
+  <header class="c-content-box__header js-object-fit-container">
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("hyew/christianity-explored_320.jpg"),
+            "640": asset_path("hyew/christianity-explored_640.jpg"),
+            "960": asset_path("hyew/christianity-explored_960.jpg"),
+            "1280": asset_path("hyew/christianity-explored_1280.jpg"),
+            "1920": asset_path("hyew/christianity-explored_1920.jpg"),
+            "2560": asset_path("hyew/christianity-explored_2560.jpg"),
+          },
+          sizes: [
+            '(max-width: 1200px) 1200px',
+            '100vw'
+          ],
+          class: 'c-content-box__header__img',
+          alt: ''
+        )
+      %>
+      <div class="c-content-box__header__container">
+        <h1 class="c-content-box__header__title">Christianity Explored</h1>
+        <h2 class="c-content-box__header__subtitle">Each Wednesday, from 18th April</h2>
+      </div>
+  </header>
+
+  <main class="c-content-box__main">
+
+    <div class="c-content-box__main__container">
+      <p><strong>after Easter we’ll be running Christianity Explored, a fantastic course which takes people step by step through Mark’s gospel and the basics of Christianity.</strong></p>
+      <p>t will run at the same time as Wednesday Focus or Central over seven weeks. If you’ve got friends asking questions and wanting to explore more, this will be perfect for them. If you want to go with them rather than be in your Focus study that’s fine. Wednesdays, 18th April-30th May, 7pm for meal, 7.45 start.</p>
+    </div>
+
+    <aside class="c-content-box__aside">
+      <ul class="c-icon-list">
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+            <span>
+              Each Wednesday,<br />
+              starting 18th April
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
+            <span>
+              7.00pm for a meal<br />
+              7.45pm to start
+            </span>
+          </a>
+        </li>
+
+        <li class="c-icon-list__item">
+          <a>
+            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
+            <address>
+              <strong>Willcox House,</strong>
+              140–148 Borough High Street,<br />
+              London
+            </address>
+          </a>
+        </li>
+      </ul>
+
+      <a href="https://www.google.co.uk/maps/place/140-148+Borough+High+St,+London+SE1" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
+    </aside>
+
+  </main>
+</section>
+
 <section class="c-content-box">
   <header class="c-content-box__header js-object-fit-container">
       <%=
