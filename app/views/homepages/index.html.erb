@@ -3,28 +3,28 @@
 <div class="site-container">
   <%= render('/shared/join_us') %>
   
-  <section class="c-content-box">
-  <%= render('/shared/promo_box',
-             img: {
-              "320": asset_path("hyew/cafe_320.jpg"),
-              "640": asset_path("hyew/cafe_640.jpg"),
-              "960": asset_path("hyew/cafe_960.jpg"),
-              "1280": asset_path("hyew/cafe_1280.jpg"),
-              "1920": asset_path("hyew/cafe_1920.jpg"),
-              "2560": asset_path("hyew/cafe_2560.jpg")
-            },
-             link: "/wonder#cafe",
-             title: 'Have You Ever Wondered About Eternity?',
-             pretitle: 'Monday 26th March',
-             has_new_window: 0,
-             cta: 'Find out more') %>
-  </section>
-
   <%= render('/shared/promo_box',
              img: @latest_sermon.banner['image'],
              link: @latest_sermon,
              title: @latest_sermon.title,
              pretitle: 'Listen back to the latest recording',
              cta: 'Go to sermon recording') if @latest_sermon %>
+
+  <section class="c-content-box">
+  <%= render('/shared/promo_box',
+             img: {
+              "320": asset_path("hyew/christianity-explored_320.jpg"),
+              "640": asset_path("hyew/christianity-explored_640.jpg"),
+              "960": asset_path("hyew/christianity-explored_960.jpg"),
+              "1280": asset_path("hyew/christianity-explored_1280.jpg"),
+              "1920": asset_path("hyew/christianity-explored_1920.jpg"),
+              "2560": asset_path("hyew/christianity-explored_2560.jpg")
+            },
+             link: "/wonder#christianityexplored",
+             title: 'Christianity Explored',
+             pretitle: 'Starting Wednesday 18th April',
+             has_new_window: 0,
+             cta: 'Find out more') %>
+  </section>
 
 </div>
