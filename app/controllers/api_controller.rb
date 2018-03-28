@@ -1,12 +1,23 @@
 class ApiController < ApplicationController
-  serialization_scope :view_context
   before_action :set_headers
 
   def one21
     @resources = Resource.joins(:resource_parent).
                  one21.
                  order('resource_parents_resources.display_date DESC')
-    render json: @resources, each_serializer: One21Serializer
+    
+    data = {
+      name: "The Globe Church",
+      slug: "the-globe-church",
+      url: "https://www.globe.church",
+      image: "http://localhost:3000/images/globe-banner-960.jpg",
+      studies: ActiveModel::SerializableResource.new(
+        @resources,
+        each_serializer: One21Serializer
+      ).serializable_hash
+    }
+
+    render json: data
   end
 
 private
