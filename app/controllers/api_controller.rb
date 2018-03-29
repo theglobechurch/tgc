@@ -5,16 +5,20 @@ class ApiController < ApplicationController
     @resources = Resource.joins(:resource_parent).
                  one21.
                  order('resource_parents_resources.display_date DESC')
-    
+
+    img_banner = view_context.asset_path(
+      "static-banner/the-globe-church-logo_960.jpg"
+    )
+
     data = {
       name: "The Globe Church",
       slug: "the-globe-church",
       url: "https://www.globe.church",
-      image: "http://localhost:3000/images/globe-banner-960.jpg",
-      studies: ActiveModel::SerializableResource.new(
+      image: "https://www.globe.church#{img_banner}",
+      studies: ActiveModelSerializers::SerializableResource.new(
         @resources,
         each_serializer: One21Serializer
-      ).serializable_hash
+      ).serializable_hash,
     }
 
     render json: data

@@ -1,16 +1,17 @@
 class HomepagesController < ApplicationController
   def index
+    img_path = 'static-banner/the-globe-church-logo'
     @latest_sermon = latest_sermon.decorate if latest_sermon
     @banner = {
       "title" => 'The Globe Church',
       "subtitle" => 'A church for the Southbank',
       "image" => {
-        "320": view_context.asset_path("static-banner/the-globe-church-logo_320.jpg"),
-        "640": view_context.asset_path("static-banner/the-globe-church-logo_640.jpg"),
-        "960": view_context.asset_path("static-banner/the-globe-church-logo_960.jpg"),
-        "1280": view_context.asset_path("static-banner/the-globe-church-logo_1280.jpg"),
-        "1920": view_context.asset_path("static-banner/the-globe-church-logo_1920.jpg"),
-        "2560": view_context.asset_path("static-banner/the-globe-church-logo_2560.jpg"),
+        "320": view_context.asset_path("#{img_path}_320.jpg"),
+        "640": view_context.asset_path("#{img_path}_640.jpg"),
+        "960": view_context.asset_path("#{img_path}_960.jpg"),
+        "1280": view_context.asset_path("#{img_path}_1280.jpg"),
+        "1920": view_context.asset_path("#{img_path}_1920.jpg"),
+        "2560": view_context.asset_path("#{img_path}_2560.jpg"),
       },
       "size" => 'none',
     }
