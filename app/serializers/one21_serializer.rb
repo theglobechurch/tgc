@@ -1,4 +1,5 @@
 class One21Serializer < ActiveModel::Serializer
+  include Rails.application.routes.url_helpers
   attributes :name, :date, :slug, :description, :images,
              :image, :passage, :url, :questions, :base_url
 
@@ -23,7 +24,7 @@ class One21Serializer < ActiveModel::Serializer
   end
 
   def url
-    view_context.resource_path(object.resource_parent)
+    base_url + resource_path(object.resource_parent)
   end
 
   def base_url
@@ -31,11 +32,13 @@ class One21Serializer < ActiveModel::Serializer
   end
 
   def images
-    object.lead_image
+    object.lead_image.map do |k, str|
+      [k, base_url + str]
+    end.to_h
   end
 
   def image
-    object.lead_image[:'960']
+    base_url + object.lead_image[:'960']
   end
 
   def questions

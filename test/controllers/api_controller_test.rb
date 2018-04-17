@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ApiControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
 
   test "one21" do
     create(:resource,
@@ -9,10 +10,17 @@ class ApiControllerTest < ActionController::TestCase
     get :one21
     assert_response(:success)
     body = JSON.parse(response.body)
-    assert_equal(1, body.count)
-    assert_equal(4, body[0]['questions'].count)
-    assert_equal(3, body[0]['questions'].count { |q| q['type'] == 'question' })
-    assert_equal(1, body[0]['questions'].count { |q| q['type'] == 'pause' })
+    studies = body['studies']
+    assert_equal(1, studies.count)
+    assert_equal(4, studies[0]['questions'].count)
+    assert_equal(
+      3,
+      studies[0]['questions'].count { |q| q['type'] == 'question' }
+    )
+    assert_equal(
+      1,
+      studies[0]['questions'].count { |q| q['type'] == 'pause' }
+    )
   end
 
   test "one21 CORS header" do
