@@ -107,6 +107,11 @@ private
           "2560": view_context.asset_path("static-banner/wonder/have-you-ever-wondered_2560.jpg"),
         },
       }
+    when 'privacy'
+      {
+        "title" => 'Privacy Policy',
+        "subtitle" => 'Where your data is kept and how it is used…'
+      }
     else
       {
         "title" => 'The Globe Church',
