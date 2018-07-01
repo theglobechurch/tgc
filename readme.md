@@ -6,11 +6,19 @@
 
 - `git clone`
 - `npm install && npm run dev`
+
+### With Vagrant…
 - `vagrant up`
 - `vagrant ssh`
 - `cd /srv/tgc`
 - `bundle exec rails db:migrate && bundle exec rails db:seed`
 - `./run-dev`
+
+### With Docker…
+- `docker-compose run web rake db:create`
+- `docker-compose run web rake db:migrate`
+- `docker-compose run web rake db:seed`
+- `docker-compose up`
 
 ## PSequel
 

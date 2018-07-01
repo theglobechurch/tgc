@@ -9,13 +9,12 @@ default: &default
   encoding: UTF-8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  host: localhost
+  host: db
+  username: postgres
 
 development:
   <<: *default
   database: globe_development
-  username: rails
-  password: secret
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,3 +27,4 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+  host: localhost
