@@ -4,12 +4,14 @@ Rails.application.configure do
     # Will be replaced with new features soon
     r302 %r[^/calendar/?$], '/when-and-where'
     r302 %r[^/markdrama/?$], 'https://www.eventbrite.com/e/the-mark-drama-tickets-42989512790?aff=tgc'
+    r302 %r[^/stewardship/?$], 'https://www.give.net/20181404'
 
     # Welcome pack links
     r301 %r[^/sundays?/?$], '/when-and-where#section:sundays'
     r301 %r[^/focus/?$], '/when-and-where#section:bible-study'
     r301 %r[^/prayer/?$], '/when-and-where#section:prayer-meeting'
     r301 %r[^/membership/?$], '/get-involved#section:membership'
+    r301 %r[^/giving/?$], '/get-involved#section:giving'
 
     # Old site redirects
     r301 %r[^/join-us/?$], '/about'
