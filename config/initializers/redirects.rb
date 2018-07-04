@@ -12,6 +12,7 @@ Rails.application.configure do
     r301 %r[^/prayer/?$], '/when-and-where#section:prayer-meeting'
     r301 %r[^/membership/?$], '/get-involved#section:membership'
     r301 %r[^/giving/?$], '/get-involved#section:giving'
+    r301 %r[^/one21/?$], '/resources/one21-launch'
 
     # Old site redirects
     r301 %r[^/join-us/?$], '/about'
