@@ -2,7 +2,7 @@ class PodcastsController < ApplicationController
   layout 'application'
 
   def index
-    @recordings = resources.recording.order(display_date: :desc).limit(10)
+    @recordings = resources.recording.where.not(display_date: nil).order(display_date: :desc).limit(10)
 
     respond_to do |format|
       format.rss  { render layout: false }
