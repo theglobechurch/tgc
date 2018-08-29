@@ -110,7 +110,7 @@ private
     when 'privacy'
       {
         "title" => 'Privacy Policy',
-        "subtitle" => 'Where your data is kept and how it is used…'
+        "subtitle" => 'Where your data is kept and how it is used…',
       }
     else
       {
