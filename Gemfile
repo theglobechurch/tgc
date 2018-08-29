@@ -10,7 +10,7 @@ gem 'rails', '~> 5.1.5'                     # Ruby on rails framework
 gem 'state_machines-activerecord'           # Allow models to have states (draft, published, deleted, etc)
 gem 'sass-rails', '~> 5.0'                  # Sass for rails. Obvs
 gem 'uglifier', '>= 1.3.0'                  # Uglify production JS
-gem 'nokogiri', '>=1.8.2'
+gem 'nokogiri', '>=1.8.4'
 gem 'therubyracer', platforms: :ruby
 gem 'high_voltage', '~> 3.0.0'              # For static pages
 gem 'rack-rewrite'
