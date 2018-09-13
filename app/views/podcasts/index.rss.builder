@@ -4,6 +4,11 @@ description = "The Globe Church is all about Jesus. The Globe Church is made up 
 keywords = "The Globe Church, Sermon, Recordings, Church"
 email = "info@globe.church"
 image = root_url + "assets/podcast-cover.jpg"
+if @artwork != nil
+  image = root_url + @artwork 
+end
+
+p @artwork
 
 xml.instruct! :xml, version: "1.0"
 xml.rss "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",

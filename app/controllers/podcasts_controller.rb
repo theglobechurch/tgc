@@ -14,7 +14,17 @@ class PodcastsController < ApplicationController
 
   def show
     @recording = series
-    respond
+    if @recording.length >= 1
+      @artwork = @recording.
+                 first.
+                 groupings.
+                 first.
+                 graphic.
+                 background_image_thumbnail_2x.try('remote_url')
+      respond
+    else
+      redirect_to preaching_path
+    end
   end
 
 private
