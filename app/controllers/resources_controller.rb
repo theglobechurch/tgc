@@ -68,7 +68,7 @@ private
   end
 
   def groups
-    @groups ||= Grouping.series
+    @groups ||= Grouping.where(group_type: %w[series focus])
   end
 
   def group

@@ -1,7 +1,7 @@
 module HasGroupType
   extend ActiveSupport::Concern
 
-  GROUP_TYPES = %w[series resource].freeze
+  GROUP_TYPES = %w[series resource focus].freeze
 
   included do
     delegate :GROUP_TYPES, to: :class

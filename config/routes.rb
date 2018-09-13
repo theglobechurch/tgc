@@ -57,7 +57,12 @@ Rails.application.routes.draw do
   get 'preaching/:id', to: 'resources#series'
   get :preaching, to: 'resources#index'
 
-  resources :podcasts, only: %i[index], path: :podcast
+  resources :podcasts, path: :podcast do
+    collection do
+      get 'sermon'
+    end
+  end
+
   resources :resources, only: %i[show]
   get :resources, to: redirect('/preaching')
 
