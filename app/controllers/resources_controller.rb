@@ -62,7 +62,10 @@ private
   end
 
   def latest_sermon
-    @latest_sermon ||= resources.resource_type('recording').
+    @latest_sermon ||= resources.
+                       joins(:groupings).
+                       where('groupings.group_type': 'series').
+                       resource_type('recording').
                        order('display_date DESC NULLS LAST').
                        first
   end
