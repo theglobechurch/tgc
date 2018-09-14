@@ -20,7 +20,7 @@ class HomepagesController < ApplicationController
 private
 
   def latest_sermon
-    @latest_sermon ||= resources.
+    @latest_sermon ||= Resource.
                        joins(:groupings).
                        where('groupings.group_type': 'series').
                        resource_type('recording').
