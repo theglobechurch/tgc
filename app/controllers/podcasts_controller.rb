@@ -2,12 +2,15 @@ class PodcastsController < ApplicationController
   layout 'application'
   # render template: "podcasts/index"
 
+  
   def index
+    @title = "All recordings from The Globe Church"
     @recordings = all_recordings
     respond
   end
 
   def sermon
+    @title = "The Globe Church Sermons"
     @recordings = sermons
     respond
   end
@@ -15,6 +18,7 @@ class PodcastsController < ApplicationController
   def show
     @recording = series
     if @recording.length >= 1
+      @title = "The Globe Church: " + @recording.first.groupings.first.title
       @artwork = @recording.
                  first.
                  groupings.

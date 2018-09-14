@@ -1,4 +1,3 @@
-title = "Recordings from The Globe Church"
 author = "The Globe Church"
 description = "The Globe Church is all about Jesus. The Globe Church is made up of all sorts of people. The Globe Church is involved in the greatest mission."
 keywords = "The Globe Church, Sermon, Recordings, Church"
@@ -8,8 +7,6 @@ if @artwork != nil
   image = root_url + @artwork 
 end
 
-p @artwork
-
 xml.instruct! :xml, version: "1.0"
 xml.rss "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
         "xmlns:media": "http://search.yahoo.com/mrss/",
@@ -17,7 +14,7 @@ xml.rss "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
         "xmlns:atom": "http://www.w3.org/2005/Atom",
         :version => "2.0" do
   xml.channel do
-    xml.title title
+    xml.title @title
     xml.description description
     xml.language 'en-gb'
     xml.pubDate @recordings.first.display_date.to_s(:rfc822)
@@ -25,7 +22,7 @@ xml.rss "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
     xml.link root_url
     xml.image do
       xml.url image
-      xml.title title
+      xml.title @title
       xml.link root_url
     end
     xml.itunes :author, author
