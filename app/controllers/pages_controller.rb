@@ -16,7 +16,7 @@ class PagesController < ApplicationController
 private
 
   def page_data
-    if params[:id] == 'about'
+    if params[:id] == 'about/team'
       {
         'eldership': Person.team('Eldership'),
         'staff': Person.team('Staff'),
@@ -29,13 +29,27 @@ private
     when 'about'
       {
         "title" => 'About',
+        "subtitle" => 'The Globe Church is all about sharing the good news of Jesus Christ to those living, working or visiting the Southbank of London.',
         "image" => {
-          "320": view_context.asset_path("static-banner/church_320.jpg"),
-          "640": view_context.asset_path("static-banner/church_640.jpg"),
-          "960": view_context.asset_path("static-banner/church_960.jpg"),
-          "1280": view_context.asset_path("static-banner/church_1280.jpg"),
-          "1920": view_context.asset_path("static-banner/church_1920.jpg"),
-          "2560": view_context.asset_path("static-banner/church_2560.jpg"),
+          "320": view_context.asset_path("static-banner/about/mark-drama_320.jpg"),
+          "640": view_context.asset_path("static-banner/about/mark-drama_640.jpg"),
+          "960": view_context.asset_path("static-banner/about/mark-drama_960.jpg"),
+          "1280": view_context.asset_path("static-banner/about/mark-drama_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/about/mark-drama_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/about/mark-drama_2560.jpg"),
+        },
+      }
+    when 'about/team'
+      {
+        "title" => 'Elders and Staff',
+        "subtitle" => 'The Globe Church is about the whole church family living as disciples of Christ, but a few people have especially committed to serve the church and work to see its vision flourish…',
+        "image" => {
+          "320": view_context.asset_path("static-banner/about/staff_320.jpg"),
+          "640": view_context.asset_path("static-banner/about/staff_640.jpg"),
+          "960": view_context.asset_path("static-banner/about/staff_960.jpg"),
+          "1280": view_context.asset_path("static-banner/about/staff_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/about/staff_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/about/staff_2560.jpg"),
         },
       }
     when 'about/doctrinal-basis'
@@ -43,6 +57,14 @@ private
         "title" => 'What we believe',
         "subtitle" => 'Doctrinal basis',
         "size" => 'small',
+        "image" => {
+          "320": view_context.asset_path("static-banner/the-globe-church-blog_320.jpg"),
+          "640": view_context.asset_path("static-banner/the-globe-church-blog_640.jpg"),
+          "960": view_context.asset_path("static-banner/the-globe-church-blog_960.jpg"),
+          "1280": view_context.asset_path("static-banner/the-globe-church-blog_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/the-globe-church-blog_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/the-globe-church-blog_2560.jpg"),
+        },
       }
     when 'when-and-where'
       {

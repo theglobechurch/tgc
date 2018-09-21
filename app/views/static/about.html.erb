@@ -1,13 +1,257 @@
 <div class="site-container">
   <section class="c-content-box">
-    <main class="c-content-box__main">
+    <main class="c-content-box__main c-content-box__main--text-focus">
       <div class="c-content-box__main__container">
-        <h2>The Globe Church is all about sharing the good news of Jesus Christ to those living and working on the Southbank of London.</h2>
+        <p>We live in an amazing city. London is buzzing with life and culture. There are millions of people are constantly coming and going…</p>
+        <p>But there is also much that is deeply wrong. It is clear from the Bible that God is concerned for people who do not know him. So he must be concerned for London.</p>
+        <p>The vision of The Globe Church is to glorify God in the heart of this city by being relational, discipling, missional and generous…</p>
       </div>
     </main>
   </section>
 </div>
 
+<section class="c-churchValue c-churchValue--relational">
+
+  <div class="c-churchValue__background">
+    <%= image_tag('static-banner/about/relational_320.jpg', alt: '', class: 'c-churchValue__background__blur') %>
+    
+    <div>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("static-banner/about/relational_320.jpg"),
+            "640": asset_path("static-banner/about/relational_640.jpg"),
+            "960": asset_path("static-banner/about/relational_960.jpg"),
+            "1280": asset_path("static-banner/about/relational_1280.jpg"),
+            "1920": asset_path("static-banner/about/relational_1920.jpg"),
+            "2560": asset_path("static-banner/about/relational_2560.jpg"),
+          },
+          sizes: [
+            '(min-width: 1200px) 800px',
+            '(min-width: 500px) 66%',
+            '100vw'
+          ],
+          class: 'c-churchValue__background__img',
+          alt: ''
+        )
+      %>
+    </div>
+  </div>
+
+  <div class="c-churchValue__body">
+    <div><h1 class="c-churchValue__body__title c-churchValue__huggedText"><span>1. Relational</span></h1></div>
+    <div><p class="c-churchValue__body__tag c-churchValue__huggedText">Embracing and overcoming city life to be family</p></div>
+    <div><p class="c-churchValue__body__detail c-churchValue__huggedText">We love being a church in the heart of London. And while we might live in different parts of the city, we're committed to living life as family- caring for each other, building relationships, and helping each other live for Christ.</p></div>
+  </div>
+</section>
+
+<section class="c-churchValue c-churchValue--discipling">
+
+  <div class="c-churchValue__background">
+    <%= image_tag('static-banner/about/discipling_320.jpg', alt: '', class: 'c-churchValue__background__blur') %>
+    <div>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("static-banner/about/discipling_320.jpg"),
+            "640": asset_path("static-banner/about/discipling_640.jpg"),
+            "960": asset_path("static-banner/about/discipling_960.jpg"),
+            "1280": asset_path("static-banner/about/discipling_1280.jpg"),
+            "1920": asset_path("static-banner/about/discipling_1920.jpg"),
+            "2560": asset_path("static-banner/about/discipling_2560.jpg"),
+          },
+          sizes: [
+            '(min-width: 1200px) 800px',
+            '(min-width: 500px) 66%',
+            '100vw'
+          ],
+          class: 'c-churchValue__background__img',
+          alt: ''
+        )
+      %>
+    </div>
+  </div>
+
+  <div class="c-churchValue__body">
+    <div><h1 class="c-churchValue__body__title c-churchValue__huggedText"><span>2. Discipling</span></h1></div>
+    <div><p class="c-churchValue__body__tag c-churchValue__huggedText">Equipping a generation to live all of life for Jesus</p></div>
+    <div><p class="c-churchValue__body__detail c-churchValue__huggedText">There are two things that we talk a lot about at The Globe Church: Christ and the Bible. We're convinced that by going deeper into who Christ is and what he's done as we discover in the Bible we can grow together and be able to live for him.</p></div>
+  </div>
+</section>
+<section class="c-churchValue c-churchValue--missional">
+
+  <div class="c-churchValue__background">
+    <%= image_tag('static-banner/about/missional_320.jpg', alt: '', class: 'c-churchValue__background__blur') %>
+    <div>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("static-banner/about/missional_320.jpg"),
+            "640": asset_path("static-banner/about/missional_640.jpg"),
+            "960": asset_path("static-banner/about/missional_960.jpg"),
+            "1280": asset_path("static-banner/about/missional_1280.jpg"),
+            "1920": asset_path("static-banner/about/missional_1920.jpg"),
+            "2560": asset_path("static-banner/about/missional_2560.jpg"),
+          },
+          sizes: [
+            '(min-width: 1200px) 800px',
+            '(min-width: 500px) 66%',
+            '100vw'
+          ],
+          class: 'c-churchValue__background__img',
+          alt: ''
+        )
+      %>
+    </div>
+  </div>
+
+  <div class="c-churchValue__body">
+    <div><h1 class="c-churchValue__body__title c-churchValue__huggedText"><span>3. Missional</span></h1></div>
+    <div><p class="c-churchValue__body__tag c-churchValue__huggedText">Confidently living to make Christ known to all people.</p></div>
+    <div><p class="c-churchValue__body__detail c-churchValue__huggedText">The good news about Jesus is the only thing that can change people's lives and bring them life with God. So, we're passionate about telling people about Jesus through our everyday lives and together as a church.</p></div>
+  </div>
+</section>
+<section class="c-churchValue c-churchValue--generous">
+
+  <div class="c-churchValue__background">
+    <%= image_tag('static-banner/about/generous_320.jpg', alt: '', class: 'c-churchValue__background__blur') %>
+    <div>
+      <%=
+        responsive_image_tag(
+          {
+            "320": asset_path("static-banner/about/generous_320.jpg"),
+            "640": asset_path("static-banner/about/generous_640.jpg"),
+            "960": asset_path("static-banner/about/generous_960.jpg"),
+            "1280": asset_path("static-banner/about/generous_1280.jpg"),
+            "1920": asset_path("static-banner/about/generous_1920.jpg"),
+            "2560": asset_path("static-banner/about/generous_2560.jpg"),
+          },
+          sizes: [
+            '(min-width: 1200px) 800px',
+            '(min-width: 500px) 66%',
+            '100vw'
+          ],
+          class: 'c-churchValue__background__img',
+          alt: ''
+        )
+      %>
+    </div>
+  </div>
+
+  <div class="c-churchValue__body">
+    <div><h1 class="c-churchValue__body__title c-churchValue__huggedText"><span>4. Generous</span></h1></div>
+    <div><p class="c-churchValue__body__tag c-churchValue__huggedText">Committed to sharing resources to be a blessing to others.</p></div>
+    <div><p class="c-churchValue__body__detail c-churchValue__huggedText">We don't exist to build a name for ourselves, but to be part of God's wider church to make Christ known. God's generosity in Christ drives us to want to be generous in prayer, with our people, and any other resources that can serve the wider church.</p></div>
+  </div>
+</section>
+
+<br style="clear: both" />
+
+<div class="site-container">
+
+  <section class="c-blog-list">
+
+    <header class="c-blog-list__header">
+      <h1>Where next?</h1>
+    </header>
+
+    <%= link_to(page_path('when-and-where'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">When and where?</h2>
+
+        <p class="c-blog-list__item__teaser">
+          Find out more about what’s happening in the life of The Globe Church. Join us on a Sunday afternoon, or midweek…
+        </p>
+
+        <div class="u-btn" href="#">Join us</div>
+      </div>
+
+      
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+        <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/about_320.jpg"),
+              "640": asset_path("static-banner/about_640.jpg"),
+              "960": asset_path("static-banner/about_960.jpg"),
+              "1280": asset_path("static-banner/about_1280.jpg"),
+              "1920": asset_path("static-banner/about_1920.jpg"),
+              "2560": asset_path("static-banner/about_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+    <%= link_to(page_path('about/team'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">Eldership and staff team</h2>
+
+        <p class="c-blog-list__item__teaser">
+          The Globe Church is about the whole church family living as disciples of Christ, but a few people have especially committed to serve the church and work to see its vision flourish…
+        </p>
+
+        <div class="u-btn" href="#">Find out more</div>
+      </div>
+
+
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+          <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/about/staff_320.jpg"),
+              "640": asset_path("static-banner/about/staff_640.jpg"),
+              "960": asset_path("static-banner/about/staff_960.jpg"),
+              "1280": asset_path("static-banner/about/staff_1280.jpg"),
+              "1920": asset_path("static-banner/about/staff_1920.jpg"),
+              "2560": asset_path("static-banner/about/staff_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+    <%= link_to(page_path('about/doctrinal-basis'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">What we believe</h2>
+
+        <p class="c-blog-list__item__teaser">
+          As a church it’s important to know what we believe. We have a list of our core doctrinal beliefs.
+        </p>
+
+        <div class="u-btn" href="#">Keep reading</div>
+      </div>
+
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+        <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/the-globe-church-blog_320.jpg"),
+              "640": asset_path("static-banner/the-globe-church-blog_640.jpg"),
+              "960": asset_path("static-banner/the-globe-church-blog_960.jpg"),
+              "1280": asset_path("static-banner/the-globe-church-blog_1280.jpg"),
+              "1920": asset_path("static-banner/the-globe-church-blog_1920.jpg"),
+              "2560": asset_path("static-banner/the-globe-church-blog_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+  </section>
+
+</div>
+
+<!--
 <%= render('/shared/internal_nav',
            sections: ['Jesus', 'People', 'Mission'],
            current: 'Jesus') %>
@@ -117,7 +361,7 @@
         <p>The elders have the joy and responsibility, under God, for prayerfully leading The Globe Church, setting the vision and direction, and ensuring that we remain firmly true to the Bible in all that we do. Through the preaching and teaching, we seek to clearly point to Jesus, applying his Word for people in all stages of life and faith.</p>
         <p>The elders have overall pastoral concern for the spiritual and practical needs of the church family. We are also passionate about training and equipping others both to serve Jesus in the church, and to live for him through all of life.  We long to see God use us all at Globe Church to show Jesus to those we meet day by day.</p>
         <p>We would love to welcome you into our church family and for you to be ‘at home’ here.  We always want to be approachable. Please come and find one (or more!) of us for a friendly conversation so we can get to know you better.</p>
-        <%= render('/shared/people_grid', people: additional[:eldership]) if additional[:eldership].present? %>
+        <%#= render('/shared/people_grid', people: additional[:eldership]) if additional[:eldership].present? %>
       </section>
 
       <%= render('/shared/internal_nav',
@@ -128,7 +372,7 @@
       <section class="c-content-box__main__subsection">
         <h2>Staff</h2>
         <p>The Globe Church is about the whole church family living as disciples of Christ, but a few people have especially committed to serve the church and work to see its vision flourish. We call them our Staff Team.</p>
-        <%= render('/shared/people_grid', people: additional[:staff]) if additional[:staff].present? %>
+        <%#= render('/shared/people_grid', people: additional[:staff]) if additional[:staff].present? %>
       </section>
     </div>
 
@@ -173,10 +417,7 @@
       <p>That means going. Not sitting around and waiting for people to come to us, but going into our community. Into our workplaces. Into the hard places. Into our world.</p>
       <p>And we go with the clear aim of making disciples. We are unashamed of the fact that Jesus is a great king. We are convinced that God’s kingdom is glorious. So we want to call people to follow this king. Come and learn from him. Come and find forgiveness in him. Come and find rest and purpose and freedom in him. Come and be a disciple.</p>
       <p>There are lots of other good things we can be involved in, but making disciples is the reason The Globe Church exists.</p>
-
-      <!--<p>
-        <%= link_to('Find out more', page_path('about/mission'), class: 'u-btn u-btn--block u-btn--dark') %>
-      </p>-->
     </div>
   </main>
 </section>
+-->

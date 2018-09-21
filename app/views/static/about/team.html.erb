@@ -1,0 +1,121 @@
+<div class="site-container">
+  <section class="c-content-box">
+    <main class="c-content-box__main c-content-box__main--text-focus">
+      <div class="c-content-box__main__container">
+        <div class="c-content-box__main__subsection">
+          <h2>Eldership</h2>
+          <p>The elders have the joy and responsibility, under God, for prayerfully leading The Globe Church, setting the vision and direction, and ensuring that we remain firmly true to the Bible in all that we do. Through the preaching and teaching, we seek to clearly point to Jesus, applying his Word for people in all stages of life and faith.</p>
+          <p>The elders have overall pastoral concern for the spiritual and practical needs of the church family. We are also passionate about training and equipping others both to serve Jesus in the church, and to live for him through all of life.  We long to see God use us all at Globe Church to show Jesus to those we meet day by day.</p>
+          <p>We would love to welcome you into our church family and for you to be ‘at home’ here.  We always want to be approachable. Please come and find one (or more!) of us for a friendly conversation so we can get to know you better.</p>
+          <%= render('/shared/people_grid', people: additional[:eldership]) if additional[:eldership].present? %>
+        </div>
+
+        <div class="c-content-box__main__subsection">
+          <h2>Staff</h2>
+          <p>The Globe Church is about the whole church family living as disciples of Christ, but a few people have especially committed to serve the church and work to see its vision flourish. We call them our Staff Team.</p>
+          <%= render('/shared/people_grid', people: additional[:staff]) if additional[:staff].present? %>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section class="c-blog-list">
+
+    <header class="c-blog-list__header">
+      <h1>Where next?</h1>
+    </header>
+
+    <%= link_to(page_path('when-and-where'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">When and where?</h2>
+
+        <p class="c-blog-list__item__teaser">
+          Find out more about what’s happening in the life of The Globe Church. Join us on a Sunday afternoon, or midweek…
+        </p>
+
+        <div class="u-btn" href="#">Join us</div>
+      </div>
+
+      
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+        <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/about_320.jpg"),
+              "640": asset_path("static-banner/about_640.jpg"),
+              "960": asset_path("static-banner/about_960.jpg"),
+              "1280": asset_path("static-banner/about_1280.jpg"),
+              "1920": asset_path("static-banner/about_1920.jpg"),
+              "2560": asset_path("static-banner/about_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+    <%= link_to(page_path('about'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">About The Globe Church</h2>
+
+        <p class="c-blog-list__item__teaser">
+          The Globe Church is all about sharing the good news of Jesus Christ to those living, working or visiting the Southbank of London.
+        </p>
+
+        <div class="u-btn" href="#">Find out more</div>
+      </div>
+
+
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+          <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/about/mark-drama_320.jpg"),
+              "640": asset_path("static-banner/about/mark-drama_640.jpg"),
+              "960": asset_path("static-banner/about/mark-drama_960.jpg"),
+              "1280": asset_path("static-banner/about/mark-drama_1280.jpg"),
+              "1920": asset_path("static-banner/about/mark-drama_1920.jpg"),
+              "2560": asset_path("static-banner/about/mark-drama_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+    <%= link_to(page_path('about/doctrinal-basis'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">What we believe</h2>
+
+        <p class="c-blog-list__item__teaser">
+          As a church it’s important to know what we believe. We have a list of our core doctrinal beliefs.
+        </p>
+
+        <div class="u-btn" href="#">Keep reading</div>
+      </div>
+
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+        <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/the-globe-church-blog_320.jpg"),
+              "640": asset_path("static-banner/the-globe-church-blog_640.jpg"),
+              "960": asset_path("static-banner/the-globe-church-blog_960.jpg"),
+              "1280": asset_path("static-banner/the-globe-church-blog_1280.jpg"),
+              "1920": asset_path("static-banner/the-globe-church-blog_1920.jpg"),
+              "2560": asset_path("static-banner/the-globe-church-blog_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+  </section>
+</div>
