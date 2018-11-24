@@ -129,6 +129,19 @@ private
           "2560": view_context.asset_path("static-banner/wonder/have-you-ever-wondered_2560.jpg"),
         },
       }
+    when 'weekofprayer'
+      {
+        "title" => 'Week of Prayer',
+        "subtitle" => '3rd – 8th December',
+        "image" => {
+          "320": view_context.asset_path("static-banner/weekofprayer_320.jpg"),
+          "640": view_context.asset_path("static-banner/weekofprayer_640.jpg"),
+          "960": view_context.asset_path("static-banner/weekofprayer_960.jpg"),
+          "1280": view_context.asset_path("static-banner/weekofprayer_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/weekofprayer_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/weekofprayer_2560.jpg"),
+        },
+      }
     when 'privacy'
       {
         "title" => 'Privacy Policy',
