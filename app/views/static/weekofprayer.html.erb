@@ -6,7 +6,17 @@
         <h1>Join The Globe Church's Week of Prayer</h1>
         <p>It has become our practice each year as we head into December to set aside a week on the calendar to call our church family to pray.</p>
         <p>Each year we have come together in the morning for breakfast, we have met in small groups and large gatherings when we could, individually on our own, setting time in our day to come before our God in praise and prayer.</p>
+        <p>Throughout the week we'll be focusing on the theme of prayer showing our dependence on God. Jesus spent his mornings coming to God in prayer, the Lord's Prayer calls us to come and ask God for our daily bread. Prayer in it's essence is a display of dependance on our heavenly Father. Over <a href="https://www.globe.church/resources/delighting-in-dependence">on the blog</a> Yusuf has shared more about how this theme is so central to our week. <a href="https://www.globe.church/resources/delighting-in-dependence">Read it now</a>.</p> 
         <p>Will you commit to joining us this year? We pray it will be significant in developing our relationship with our Father.</p>
+        <p><a href="#mc-embedded-subscribe-form" class="u-btn u-btn--dark u-btn--arrowed">Commit to pray now</a></p>
+
+        <hr class="st-divider" />
+
+        <h1>The Schedule</h1>
+
+        <figure class="st-image st-image--inline">
+          <img srcset="https://www.globe.church/uploads/production/2018/11/27/1rladknrvi_week_of_prayer_details.jpg 320w, https://www.globe.church/uploads/production/2018/11/27/6f0r5dnma5_week_of_prayer_details.jpg 640w, https://www.globe.church/uploads/production/2018/11/27/2z47l001p1_week_of_prayer_details.jpg 960w, https://www.globe.church/uploads/production/2018/11/27/3ryd1ufze2_week_of_prayer_details.jpg 1280w, https://www.globe.church/uploads/production/2018/11/27/96tcvepu5n_week_of_prayer_details.jpg 1920w, https://www.globe.church/uploads/production/2018/11/27/1uyiz9bkbj_week_of_prayer_details.jpg 2560w" sizes="(min-width: 650px) 650px, calc(100vw - 120px)" alt="" src="https://www.globe.church/uploads/production/2018/11/27/2z47l001p1_week_of_prayer_details.jpg" />
+        </figure>
 
         <hr class="st-divider" />
 
@@ -61,5 +71,44 @@
     </main>
   </section>
 
-    <%= render('/shared/vision_box', uncontained: false) %>
+  <section class="c-blog-list">
+
+    <header class="c-blog-list__header">
+      <h1>Related blog posts</h1>
+    </header>
+
+    <%= link_to(page_path('resources/delighting-in-dependence'), class: 'c-blog-list__item') do %>
+      <div class="c-blog-list__item__body">
+        <h2 class="c-blog-list__item__title">Delighting in Prayer</h2>
+
+        <p class="c-blog-list__item__teaser">
+          In the first week of December our church family is devoting the week to prayer, both privately and together. But why is this so important, and why should we be excited about it? 
+        </p>
+
+        <div class="u-btn" href="#">Keep reading</div>
+      </div>
+
+      
+      <div class="c-blog-list__item__image js-object-fit-container">
+        <span></span>
+        <%=
+          responsive_image_tag(
+            {
+              "320": asset_path("static-banner/weekofprayer_320.jpg"),
+              "640": asset_path("static-banner/weekofprayer_640.jpg"),
+              "960": asset_path("static-banner/weekofprayer_960.jpg"),
+              "1280": asset_path("static-banner/weekofprayer_1280.jpg"),
+              "1920": asset_path("static-banner/weekofprayer_1920.jpg"),
+              "2560": asset_path("static-banner/weekofprayer_2560.jpg"),
+            },
+            sizes:['50vw'],
+            alt: ''
+          )
+        %>
+      </div>
+    <% end %>
+
+  </section>
+
+  <%= render('/shared/vision_box', uncontained: false) %>
 </div>
