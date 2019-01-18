@@ -11,14 +11,13 @@
     <%= f.text_area :description, class: 'form__textarea' %>
   </div>
 
-  <div class="r-eventInstance"></div>
+  <div class="js-event_instances">
+    <%= f.fields_for :event_instances do |ei| %>
+      <%= render 'event_instance', f: ei %>
+    <% end %>
+  </div>
 
-  <%= f.fields_for :event_instances do |ff| %>
-    <div>
-      <%= ff.label :title %>
-      <%= ff.text_field :title %>
-    </div>
-  <% end %>
+  <%= link_to_add_row('Add Event Occurance', f, :event_instances, class: '') %>
 
 </section>
 
@@ -34,6 +33,8 @@
       <%= f.text_field :slug, class: 'form__input js-slug-field', data: {'from-input-id': 'event_title'} %>
     </div>
   <% end %>
+
+  <%= @event.event_instances.inspect %>
 
 </section>
 

@@ -1,5 +1,7 @@
 class Admin::EventsController < AdminController
 
+  helper Admin::EventFormHelper
+
   def index
     @events = events
   end
@@ -10,10 +12,16 @@ class Admin::EventsController < AdminController
 
   def edit
     @event = event
+    1.times do
+      @event.event_instances.build
+    end
   end
 
   def new
     @event = Event.unscoped.new
+    3.times do
+      @event.event_instances.build
+    end
   end
 
   def create
@@ -22,12 +30,18 @@ class Admin::EventsController < AdminController
       flash[:notice] = "Event saved"
       respond_with(:admin, @event)
     else
-      render 'new'
+      render :new
     end
   end
 
   def update
-
+    event.attributes = event_params
+    if event.save
+      flash[:notice] = "#{event} updated"
+      redirect_to action: "index"
+    else
+      respond_with(:admin, event)
+    end
   end
 
   def preview
@@ -50,6 +64,7 @@ private
                                   :slug,
                                   :state_event,
                                   :location_id,
-                                  :graphics_id)
+                                  :graphics_id,
+                                  event_instances_attributes: EventInstance.attribute_names.map(&:to_sym).push(:_destroy))
   end
 end

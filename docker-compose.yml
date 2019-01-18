@@ -11,5 +11,6 @@ services:
       - .:/the-globe-church
     ports:
       - "3000:3000"
+      - "5432:5432"
     depends_on:
       - db
