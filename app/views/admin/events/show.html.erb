@@ -1,5 +1,8 @@
 <main class="m-admin-body">
   <section class="m-admin-body--main m-admin-preview">
+    <%= @event.inspect %>
+    <hr />
+    <%= @event.event_instances.inspect %>
     <iframe class="m-admin-preview__iframe" src="<%#= preview_admin_event_path(@event) %>"></iframe>
   </section>
   

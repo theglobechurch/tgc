@@ -2,6 +2,7 @@
 class AddCalendar < ActiveRecord::Migration[5.1]
   def change
     rename_table :event_series, :events
+    rename_column :event_instances, :event_series_id, :event_id
 
     create_table :grouping_types do |t|
       t.string :title

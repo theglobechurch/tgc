@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180212095951) do
   enable_extension "plpgsql"
 
   create_table "event_instances", force: :cascade do |t|
-    t.bigint "event_series_id"
+    t.bigint "event_id"
     t.bigint "location_id"
     t.bigint "graphics_id"
     t.datetime "start_datetime"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180212095951) do
     t.string "title"
     t.text "description"
     t.string "slug"
-    t.index ["event_series_id"], name: "index_event_instances_on_event_series_id"
+    t.index ["event_id"], name: "index_event_instances_on_event_id"
     t.index ["graphics_id"], name: "index_event_instances_on_graphics_id"
     t.index ["location_id"], name: "index_event_instances_on_location_id"
     t.index ["slug"], name: "index_event_instances_on_slug"
@@ -207,7 +207,7 @@ ActiveRecord::Schema.define(version: 20180212095951) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "event_instances", "events", column: "event_series_id"
+  add_foreign_key "event_instances", "events"
   add_foreign_key "event_instances", "graphics", column: "graphics_id"
   add_foreign_key "event_instances", "locations"
   add_foreign_key "events", "graphics", column: "graphics_id"

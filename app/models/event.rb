@@ -2,14 +2,13 @@ class Event < ApplicationRecord
 
   include HasSlug
   include HasState
-
-  accepts_nested_attributes_for :event_instance
-
+  
   publishable
-
+  
   default_scope { published }
-
-  has_many :event_instances
+  
+  has_many :event_instances, dependent: :destroy
+  accepts_nested_attributes_for :event_instances, allow_destroy: true, reject_if: proc { |att| att['title'].blank? }
 
   has_many :group_event_links
   has_many :groupings,
