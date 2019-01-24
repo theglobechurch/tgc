@@ -11,6 +11,15 @@
     <%= f.text_area :description, class: 'form__textarea' %>
   </div>
 
+  <div class="r-featureImageSelector form__field js-event-field"
+      data-name="lead_image"
+      data-inputId="event_graphics_id"
+      data-selectImageId=""
+      data-selectedImageThumbnail="<%= @event.graphic.background_image_960.try('remote_url') if @event.graphic %>"></div>
+  <%= f.hidden_field :graphics_id %>
+
+  <hr />
+
   <div class="js-event_instances">
     <%= f.fields_for :event_instances do |ei| %>
       <%= render 'event_instance', f: ei %>
