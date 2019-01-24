@@ -18,11 +18,16 @@
     <%= f.hidden_field :_destroy, class: "js-delete-#{tmp}" %>
     <%= link_to 'Delete', '#', class: 'js-remove-event-instance-btn', data: {ei: tmp} %>
   </div>
-  
+
   <div class="">
     <div class="form__field form__field--main" data-name="title">
       <%= f.label :title, class: 'form__label' %>
       <%= f.text_field :title, class: 'form__input' %>
+    </div>
+
+    <div class="form__field form__field--main" data-name="description">
+      <%= f.label :description, class: 'form__label' %>
+      <%= f.text_field :description, class: 'form__input' %>
     </div>
   </div>
 </div>

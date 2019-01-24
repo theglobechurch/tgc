@@ -4,6 +4,10 @@ class EventInstance < ApplicationRecord
 
   belongs_to :event, optional: true
 
+  belongs_to :graphic,
+             optional: true,
+             foreign_key: :graphics_id
+
   validate :end_after_start
   validates :start_datetime, :end_datetime, :presence => true
 

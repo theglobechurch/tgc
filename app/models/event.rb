@@ -14,6 +14,10 @@ class Event < ApplicationRecord
   has_many :groupings,
            through: :group_event_links
 
+  belongs_to :graphic,
+             optional: true,
+             foreign_key: :graphics_id
+
   def to_s
     title
   end
