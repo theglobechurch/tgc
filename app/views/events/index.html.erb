@@ -1,0 +1,18 @@
+<div class="site-container">
+
+  <section class="c-content-box">
+    <main class="c-content-box__main">
+      <div class="c-content-box__main__container">
+        <p>We believe that the Bible is the Word of God. It is utterly true, relevant and life transforming. God speaks to us today as we carefully and humbly listen to His Word.</p>
+        <p>That is why preaching is so central to all we do at The Globe Church. As God’s Word is unfolded and applied then we understand God’s Word to us. It isn’t just preaching though… in small groups, one to one, individually, we are serious about being changed by what God says in the Bible.</p>
+      </div>
+    </main>
+  </section>
+
+  <% @events.each do |event_instance| %>
+    <h1><%=event_instance.start_datetime%></h1>
+    <h2><%= event_instance.event.title %>: <%= event_instance.title %></h2>
+    <hr />
+  <% end %>
+
+</div>
