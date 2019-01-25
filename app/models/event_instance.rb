@@ -1,6 +1,6 @@
 class EventInstance < ApplicationRecord
 
-  include HasSlug
+  # include HasSlug
 
   belongs_to :event, optional: true
 
