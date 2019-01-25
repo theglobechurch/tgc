@@ -104,8 +104,8 @@ class Popup extends React.Component {
 
   render () {
     return (
-      <div className={`${cssClassParent}__popup`}>
-
+      <div className={`${cssClassParent}__popup`} onClick={this.onCancelSelection.bind(this)}>
+      
         { this.state.selectedImageId && this.state.selectedImageData && (
           <ConfirmPreview
             previewImage={this.state.selectedImageData['960']}

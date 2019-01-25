@@ -1,32 +1,35 @@
 <%= form_for([:admin, @event], html: { class: 'form m-admin-body' }) do |f| %>
-<section class="m-admin-body--main">
+<section class="m-admin-body--main m-admin-body--main--events admin-event">
 
-  <div class="form__field form__field--main" data-name="title">
-    <%= f.label :title, class: 'form__label' %>
-    <%= f.text_field :title, class: 'form__input' %>
+  <div class="admin-event__basics">
+    <h2>Event Basics</h2>
+    <div class="form__field form__field--main" data-name="title">
+      <%= f.label :title, class: 'form__label' %>
+      <%= f.text_field :title, class: 'form__input' %>
+    </div>
+
+    <div class="form__field form__field--main" data-name="description">
+      <%= f.label :description, class: 'form__label' %>
+      <%= f.text_area :description, class: 'form__textarea' %>
+    </div>
+
+    <div class="r-featureImageSelector form__field js-event-field"
+        data-name="lead_image"
+        data-inputId="event_graphics_id"
+        data-selectImageId=""
+        data-selectedImageThumbnail="<%= @event.graphic.background_image_960.try('remote_url') if @event.graphic %>"></div>
+    <%= f.hidden_field :graphics_id %>
   </div>
 
-  <div class="form__field form__field--main" data-name="description">
-    <%= f.label :description, class: 'form__label' %>
-    <%= f.text_area :description, class: 'form__textarea' %>
+  <div class="admin-event__occurances">
+    <h2>Event Occurances</h2>
+    <div class="js-event_instances">
+      <%= f.fields_for :event_instances do |ei| %>
+        <%= render 'event_instance', f: ei %>
+      <% end %>
+    </div>
+    <%= link_to_add_row('Add New', f, :event_instances, class: 'u-btn') %>
   </div>
-
-  <div class="r-featureImageSelector form__field js-event-field"
-      data-name="lead_image"
-      data-inputId="event_graphics_id"
-      data-selectImageId=""
-      data-selectedImageThumbnail="<%= @event.graphic.background_image_960.try('remote_url') if @event.graphic %>"></div>
-  <%= f.hidden_field :graphics_id %>
-
-  <hr />
-
-  <div class="js-event_instances">
-    <%= f.fields_for :event_instances do |ei| %>
-      <%= render 'event_instance', f: ei %>
-    <% end %>
-  </div>
-
-  <%= link_to_add_row('Add Event Occurance', f, :event_instances, class: '') %>
 
 </section>
 
@@ -42,8 +45,6 @@
       <%= f.text_field :slug, class: 'form__input js-slug-field', data: {'from-input-id': 'event_title'} %>
     </div>
   <% end %>
-
-  <%= @event.event_instances.inspect %>
 
 </section>
 

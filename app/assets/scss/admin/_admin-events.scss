@@ -1,0 +1,30 @@
+.admin-event {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+
+  h2 {
+    color: siteColor(petrel);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+}
+
+.admin-event__basic {
+  border-right: 1px solid siteColor(petrel);
+  padding-right: 50px;
+}
+
+.admin-event__occurances__occur__main {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-column-gap: 25px;
+  align-items: end;
+}
+
+.admin-event__occurances__occur__extra {
+  border-left: 10px solid siteColor(lark-green);
+  padding-left: 15px;
+}

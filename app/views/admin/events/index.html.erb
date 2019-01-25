@@ -9,9 +9,13 @@
     <% @events.each do | event | %>
       <li class="a-resource">
         <div class="a-resource__details">
+          <label class="a-resource__type">
+            <span class="a-resource__state a-resource__state--<%= event.state %>"><%= event.state %></span>
+          </label>
           <h2 class="a-resource__title"><%= event.title %></h2>
         </div>
         <div class="a-resource__actions">
+          <%= link_to "Preview", admin_event_path(event), class: 'u-btn' %>
           <%= link_to "Edit", edit_admin_event_path(event), class: 'u-btn' %>
         </div>
       </li>
@@ -20,7 +24,7 @@
   </section>
 
   <section class="m-admin-body--sidebar">
-    <%= link_to "Create new", new_admin_event_path(), class: 'u-btn u-btn--primary' %>
+    <%= link_to "Create new", new_admin_event_path(), class: 'u-btn u-btn--primary u-btn--100' %>
   </section>
 
 </main>

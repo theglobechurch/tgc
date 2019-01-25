@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   default_scope { published }
   
   has_many :event_instances, dependent: :destroy
-  accepts_nested_attributes_for :event_instances, allow_destroy: true, reject_if: proc { |att| att['title'].blank? }
+  accepts_nested_attributes_for :event_instances, allow_destroy: true, reject_if: proc { |att| att['start_datetime'].blank? }
 
   has_many :group_event_links
   has_many :groupings,
