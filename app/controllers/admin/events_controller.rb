@@ -12,14 +12,11 @@ class Admin::EventsController < AdminController
 
   def edit
     @event = event
-    1.times do
-      @event.event_instances.build
-    end
   end
 
   def new
     @event = Event.unscoped.new
-    3.times do
+    2.times do
       @event.event_instances.build
     end
   end
@@ -51,7 +48,8 @@ class Admin::EventsController < AdminController
 private
 
   def events
-    @events ||= Event.unscoped.all
+    @events ||= Event.unscoped.
+                non_deleted
   end
 
   def event

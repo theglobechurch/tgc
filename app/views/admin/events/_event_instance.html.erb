@@ -1,25 +1,28 @@
 <% tmp=f.options[:child_index] %>
-<div class="ani-slide js-event_instance js-ei-<%=tmp%>">
+<div class="admin-event__occurances__occur ani-slide js-event_instance js-ei-<%=tmp%>">
 
-  <div class="">
+  <div class="admin-event__occurances__occur__main">
     <div class="form__field form__field--main" data-name="start_datetime">
-      <%= f.label :start_datetime, class: 'form__label' %>
+      <%= f.label :start_datetime, 'Start', class: 'form__label' %>
       <%= f.hidden_field :start_datetime, class: "js-start-#{tmp}" %>
       <div class="r-datetimePicker" data-inputid="js-start-<%= tmp %>">
       </div>
     </div>
 
     <div class="form__field form__field--main" data-name="end_datetime">
-      <%= f.label :end_datetime, class: 'form__label' %>
+      <%= f.label :end_datetime, 'End', class: 'form__label' %>
       <%= f.hidden_field :end_datetime, class: "js-end-#{tmp}" %>
       <div class="r-datetimePicker" data-inputid="js-end-<%= tmp %>"></div>
     </div>
 
-    <%= f.hidden_field :_destroy, class: "js-delete-#{tmp}" %>
-    <%= link_to 'Delete', '#', class: 'js-remove-event-instance-btn', data: {ei: tmp} %>
+    <div>
+      <%= f.hidden_field :_destroy, class: "js-delete-#{tmp}" %>
+      <%= link_to 'Delete', '#', class: 'js-remove-event-instance-btn u-btn u-btn--danger', data: {ei: tmp} %>
+    </div>
+
   </div>
 
-  <div class="">
+  <div class="admin-event__occurances__occur__extra js-event-overrides-<%= tmp %> ani-slide">
     <div class="form__field form__field--main" data-name="title">
       <%= f.label :title, class: 'form__label' %>
       <%= f.text_field :title, class: 'form__input' %>
@@ -27,7 +30,9 @@
 
     <div class="form__field form__field--main" data-name="description">
       <%= f.label :description, class: 'form__label' %>
-      <%= f.text_field :description, class: 'form__input' %>
+      <%= f.text_area :description, class: 'form__textarea' %>
     </div>
   </div>
+
+  <p><a href="#" class="js-toggle-event-details" data-ei="<%= tmp %>">Hide event details</a></p> 
 </div>

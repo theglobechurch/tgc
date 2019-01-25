@@ -65,7 +65,12 @@ export default function (el) {
 
   event_instance_container.addEventListener('click',function(e){
     if(e.target && e.target.classList.contains('js-remove-event-instance-btn')){
-      removeEventInstance(e)
+      removeEventInstance(e);
+    }
+
+    if(e.target && e.target.classList.contains('js-toggle-event-details')){
+      toggleEventInstanceDetails(e.target);
+      return e.preventDefault();
     }
   });
 
@@ -97,4 +102,12 @@ function createDatePickers(els) {
       el
     );
   });
+}
+
+function toggleEventInstanceDetails(el) {
+  const ei = el.dataset.ei;
+  const lbl = el.innerHTML === 'Hide event details' ? 'Show event details' : 'Hide event details';
+  document.querySelector(`.js-event-overrides-${ei}`).classList.toggle('ani-slide--closed');
+  el.innerHTML = lbl;
+  
 }
