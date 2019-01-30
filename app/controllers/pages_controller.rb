@@ -66,6 +66,18 @@ private
           "2560": view_context.asset_path("static-banner/the-globe-church-blog_2560.jpg"),
         },
       }
+    when 'about/jobs'
+      {
+        "title" => 'Jobs at The Globe Church',
+        "image" => {
+          "320": view_context.asset_path("static-banner/the-globe-church-preaching_320.jpg"),
+          "640": view_context.asset_path("static-banner/the-globe-church-preaching_640.jpg"),
+          "960": view_context.asset_path("static-banner/the-globe-church-preaching_960.jpg"),
+          "1280": view_context.asset_path("static-banner/the-globe-church-preaching_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/the-globe-church-preaching_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/the-globe-church-preaching_2560.jpg"),
+        },
+      }
     when 'when-and-where'
       {
         "title" => 'What we do',
