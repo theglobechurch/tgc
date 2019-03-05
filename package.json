@@ -2,7 +2,7 @@
   "name": "the-globe-church",
   "private": true,
   "dependencies": {
-    "globe-fractal": "theglobechurch/fractal#31c42e5",
+    "globe-fractal": "theglobechurch/fractal#83346f2",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-svgmin": "^1.2.4",
     "moment": "^2.22.2",
@@ -28,9 +28,9 @@
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-util": "^3.0.8",
     "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-util": "^3.0.8",
     "vinyl-source-stream": "^1.1.0"
   }
 }
