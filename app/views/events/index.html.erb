@@ -1,3 +1,5 @@
+<% d = nil %>
+
 <div class="site-container">
 
   <section class="c-content-box">
@@ -9,10 +11,64 @@
     </main>
   </section>
 
-  <% @events.each do |event_instance| %>
-    <h1><%=event_instance.start_datetime%></h1>
-    <h2><%= event_instance.event.title %>: <%= event_instance.title %></h2>
-    <hr />
-  <% end %>
+   <%= render('core_events') %>
+
+  <section class="c-content-box">
+
+    <header class="c-content-box__header c-content-box__header--empty">
+        <div class="c-content-box__header__container">
+            <h1 class="c-content-box__header__title">Next seven days</h1>
+            <h2 class="c-content-box__header__subtitle"><%= (Time.now).to_formatted_s(:short_ordinal) %> – <%= (Time.now + 1.week).to_formatted_s(:short_ordinal) %></h2>
+        </div>
+    </header>
+
+    <div class="c-event-list c-content-box__main">
+      <% @events.each do |event_instance| %>
+
+        <% if d != event_instance.start_datetime.to_formatted_s(:short_ordinal) %>
+        <h2 class="c-event-list__heading">
+          <%= event_instance.start_datetime.to_formatted_s(:short_ordinal) %>
+        </h2>
+        <% end %>
+
+        <% d = event_instance.start_datetime.to_formatted_s(:short_ordinal) %>
+
+        <div class="c-event-list__event" itemscope itemtype="http://schema.org/Event">
+          <h3>
+            <span itemprop="name">
+              <%= event_instance.event.title %>
+              <% if event_instance.title != "" && event_instance.event.title != "" %>
+              : 
+              <% end %>
+              <%= event_instance.title %>
+            </span>
+          </h3>
+
+          <p class="c-event-list__event__time-location">
+            <span itemprop="startDate" content="2018-10-10T19:00:00">
+              <%= event_instance.start_datetime.to_formatted_s(:just_time) %>
+            </span>
+            
+            <% if event_instance.location_id %>
+            at
+
+            <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <%= event_instance.location_id %>
+            </span>
+
+            <% end %>
+          </p>
+
+          <% if event_instance.description != "" %>
+          <a class="c-event-list__event__infoLink" href="#">More information</a>
+          <% end %>
+
+        </div>
+
+      <% end %>
+    </div>
+
+  </section>
+
 
 </div>

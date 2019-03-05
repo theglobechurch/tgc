@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = events
+    @today = Time.now
   end
 
 private
