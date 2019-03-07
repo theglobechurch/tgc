@@ -1,6 +1,8 @@
+<% further_nav = false if local_assigns[:further_nav].nil? %>
+
 <section class="m-event-section-link">
 
-    <a href="#" class="m-event-section-link__block">
+    <a href="#section:sundays" class="m-event-section-link__block">
       <%= responsive_image_tag({
                                  "320": asset_path("when-and-where/the-globe-church-service_320.jpg"),
                                  "640": asset_path("when-and-where/the-globe-church-service_640.jpg"),
@@ -20,7 +22,7 @@
       <h2 class="m-event-section-link__block__subtitle">Church Service</h2>
     </a>
 
-    <a href="#" class="m-event-section-link__block">
+    <a href="#section:bible-study" class="m-event-section-link__block">
       <%= responsive_image_tag({
                                  "320": asset_path("static-banner/church_320.jpg"),
                                  "640": asset_path("static-banner/church_640.jpg"),
@@ -40,7 +42,7 @@
       <h2 class="m-event-section-link__block__subtitle">Small Group Bible Studies</h2>
     </a>
 
-    <a href="#" class="m-event-section-link__block">
+    <a href="#section:prayer-meeting" class="m-event-section-link__block">
         <%= responsive_image_tag({
                                   "320": asset_path("when-and-where/the-globe-church-prayer_320.jpg"),
                                   "640": asset_path("when-and-where/the-globe-church-prayer_640.jpg"),
@@ -60,10 +62,11 @@
       <h2 class="m-event-section-link__block__subtitle">Prayer Gathering</h2>
     </a>
 
+    <% if @this_week && further_nav %>
     <ul class="m-event-section-link__additional-nav">
 
         <li>
-            <a href="#">Next Seven Days</a>
+            <a href="#next-seven">Next Seven Days</a>
         </li>
 
         <li>
@@ -71,6 +74,7 @@
         </li>
 
     </ul>
+    <% end %>
 
 </section>
 

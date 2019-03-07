@@ -1,20 +1,14 @@
-<%= render('/shared/join_us') %>
-
-<%= render('/shared/internal_nav',
-           sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
-           current: 'Sundays') %>
-
-<section class="c-content-box">
+<section class="c-content-box" id="section:sundays">
   <header class="c-content-box__header js-object-fit-container">
       <%=
         responsive_image_tag(
           {
-            "320": asset_path("when-and-where/the-globe-church-sunday_320.jpg"),
-            "640": asset_path("when-and-where/the-globe-church-sunday_640.jpg"),
-            "960": asset_path("when-and-where/the-globe-church-sunday_960.jpg"),
-            "1280": asset_path("when-and-where/the-globe-church-sunday_1280.jpg"),
-            "1920": asset_path("when-and-where/the-globe-church-sunday_1920.jpg"),
-            "2560": asset_path("when-and-where/the-globe-church-sunday_2560.jpg"),
+            "320": asset_path("when-and-where/the-globe-church-choose-life_320.jpg"),
+            "640": asset_path("when-and-where/the-globe-church-choose-life_640.jpg"),
+            "960": asset_path("when-and-where/the-globe-church-choose-life_960.jpg"),
+            "1280": asset_path("when-and-where/the-globe-church-choose-life_1280.jpg"),
+            "1920": asset_path("when-and-where/the-globe-church-choose-life_1920.jpg"),
+            "2560": asset_path("when-and-where/the-globe-church-choose-life_2560.jpg"),
           },
           sizes: [
             '(max-width: 1200px) 1200px',
@@ -78,11 +72,7 @@
   </main>
 </section>
 
-<%= render('/shared/internal_nav',
-           sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
-           current: 'Bible Study') %>
-
-<section class="c-content-box">
+<section class="c-content-box" id="section:bible-study">
   <header class="c-content-box__header js-object-fit-container">
       <%=
         responsive_image_tag(
@@ -154,12 +144,7 @@
   </main>
 </section>
 
-
-<%= render('/shared/internal_nav',
-           sections: ['Sundays', 'Bible Study', 'Prayer Meeting'],
-           current: 'Prayer Meeting') %>
-
-<section class="c-content-box">
+<section class="c-content-box" id="section:prayer-meeting">
   <header class="c-content-box__header js-object-fit-container">
     <%=
       responsive_image_tag(

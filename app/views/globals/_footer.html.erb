@@ -27,20 +27,20 @@
 
     <div class="c-footer-nav-list">
       <h2 class="c-footer-nav-list__title">
-        <%= link_to('What we do', page_path('when-and-where')) %>
+        <%= link_to('Calendar', page_path('events')) %>
       </h2>
 
       <ul class="c-footer-nav-list__items">
         <li class="c-footer-nav-list__item">
-          <%= link_to('Sundays', page_path('when-and-where', anchor: "section:sundays")) %>
+          <%= link_to('Sundays', page_path('events', anchor: "section:sundays")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
-          <%= link_to('Bible study', page_path('when-and-where', anchor: "section:bible-study")) %>
+          <%= link_to('Bible study', page_path('events', anchor: "section:bible-study")) %>
         </li>
 
         <li class="c-footer-nav-list__item">
-          <%= link_to('Prayer meeting', page_path('when-and-where', anchor: "section:prayer-meeting")) %>
+          <%= link_to('Prayer meeting', page_path('events', anchor: "section:prayer-meeting")) %>
         </li>
 
         <!--<li class="c-footer-nav-list__item">
