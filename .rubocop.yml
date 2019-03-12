@@ -42,7 +42,11 @@ Style/Documentation:
 Style/HashSyntax:
   Enabled: true
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
   Enabled: true
 
@@ -64,7 +68,6 @@ Style/ClassAndModuleChildren:
 Style/AndOr:
   EnforcedStyle: conditionals
   Enabled: true
-
 
 Metrics/MethodLength:
   CountComments: false
@@ -93,4 +96,7 @@ Style/FormatStringToken:
   Enabled: false
 
 Style/RegexpLiteral:
+  Enabled: false
+
+Lint/MissingCopEnableDirective:
   Enabled: false

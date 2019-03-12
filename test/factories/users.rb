@@ -5,7 +5,7 @@ FactoryBot.define do
       "admin#{n}@example.com"
     end
 
-    password "asdfasdfasdf"
+    password { "asdfasdfasdf" }
     password_confirmation { password }
   end
 end
