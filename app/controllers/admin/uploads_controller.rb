@@ -5,9 +5,9 @@ class Admin::UploadsController < AdminController
     up = create_attachment(params[:upload_type],
                            params[:attachment][:file])
     if up.save
-      render json: up, status: 200
+      render json: up, status: :ok
     else
-      render json: up.errors.full_messages, status: 500
+      render json: up.errors.full_messages, status: :internal_server_error
     end
   end
 

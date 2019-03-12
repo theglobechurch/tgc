@@ -4,10 +4,12 @@ class Admin::LocationsController < AdminController
   def create
     location = Location.new(location_params)
     if location.save
-      p location.to_s
-      render json: { id: location.id, location_str: location.to_s }, status: 200
+      render json: {
+        id: location.id,
+        location_str: location.to_s,
+      }, status: :ok
     else
-      render json: location, status: 500
+      render json: location, status: :internal_server_error
     end
   end
 

@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   end
 
 private
+
   def this_week
     @this_week ||= EventInstance.all
                     .joins(:event)

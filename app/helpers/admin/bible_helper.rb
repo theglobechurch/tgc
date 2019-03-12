@@ -40,7 +40,7 @@ module Admin::BibleHelper
     "Revelation"
   ].freeze
 
-  def book_picker(f, testaments = 'both')
+  def book_picker(form, testaments = 'both')
     if testaments != 'both'
       books = OT if testaments == 'ot'
       books = NT if testaments == 'nt'
@@ -48,39 +48,44 @@ module Admin::BibleHelper
       books = OT + NT
     end
 
-    f.select("reference_book",
-             books,
-             {selected: f.object.bible_reference['reference_book'],
-              include_blank: true},
-             class: 'form__input form__input--select')
+    form.select(
+      "reference_book",
+      books,
+      {
+        selected: form.object.bible_reference['reference_book'],
+        include_blank: true,
+      },
+      class: 'form__input form__input--select'
+    )
   end
 
-  def reference_picker(f, html_options = {})
+  def reference_picker(form, html_options = {})
+    ref = form.object.bible_reference
     content_tag(:div, html_options) do
-      concat(book_picker(f))
+      concat(book_picker(form))
       concat(
-        f.text_field(:reference_book_start_ch,
-                     value: f.object.bible_reference['reference_book_start_ch'],
-                     class: 'form__input',
-                     placeholder: 'Start chapter')
+        form.text_field(:reference_book_start_ch,
+                        value: ref['reference_book_start_ch'],
+                        class: 'form__input',
+                        placeholder: 'Start chapter')
       )
       concat(
-        f.text_field(:reference_book_start_v,
-                     value: f.object.bible_reference['reference_book_start_v'],
-                     class: 'form__input',
-                     placeholder: 'Start verse')
+        form.text_field(:reference_book_start_v,
+                        value: ref['reference_book_start_v'],
+                        class: 'form__input',
+                        placeholder: 'Start verse')
       )
       concat(
-        f.text_field(:reference_book_end_ch,
-                     value: f.object.bible_reference['reference_book_end_ch'],
-                     class: 'form__input',
-                     placeholder: 'End chapter')
+        form.text_field(:reference_book_end_ch,
+                        value: ref['reference_book_end_ch'],
+                        class: 'form__input',
+                        placeholder: 'End chapter')
       )
       concat(
-        f.text_field(:reference_book_end_v,
-                     value: f.object.bible_reference['reference_book_end_v'],
-                     class: 'form__input',
-                     placeholder: 'End verse')
+        form.text_field(:reference_book_end_v,
+                        value: ref['reference_book_end_v'],
+                        class: 'form__input',
+                        placeholder: 'End verse')
       )
     end
   end

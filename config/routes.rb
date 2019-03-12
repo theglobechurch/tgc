@@ -27,13 +27,13 @@ Rails.application.routes.draw do
         get 'preview'
       end
     end
-    
+
     resources :events do
       member do
         get 'preview'
       end
     end
-      
+ 
     resource :user, only: [:edit] do
       collection do
         patch 'update_password'
@@ -72,9 +72,9 @@ Rails.application.routes.draw do
 
   resources :resources, only: %i[show]
   get :resources, to: redirect('/preaching')
-  
+
   resources :events, only: %i[index]
-  
+
   resources :people, only: %i[show]
 
   get "/*id" => 'pages#show', as: :page, format: false

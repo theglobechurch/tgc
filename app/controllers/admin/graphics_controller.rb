@@ -5,9 +5,9 @@ class Admin::GraphicsController < AdminController
     graphic = Graphic.new(background_image: params[:attachment][:file])
 
     if graphic.save
-      render json: graphic, status: 200
+      render json: graphic, status: :ok
     else
-      render json: graphic, status: 500
+      render json: graphic, status: :internal_server_error
     end
   end
 

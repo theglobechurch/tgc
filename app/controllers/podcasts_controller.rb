@@ -2,7 +2,6 @@ class PodcastsController < ApplicationController
   layout 'application'
   # render template: "podcasts/index"
 
-  
   def index
     @title = "All recordings from The Globe Church"
     @recordings = all_recordings
