@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import NewLocation from './new_location';
 
-class LocationField extends React.Component {
+export class LocationField extends React.Component {
 
   constructor(props) {
     super(props);
