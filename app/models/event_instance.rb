@@ -14,6 +14,9 @@ class EventInstance < ApplicationRecord
   validate :end_after_start
   validates :start_datetime, :end_datetime, :presence => true
 
+  default_scope { order('start_datetime ASC NULLS LAST') }
+  scope :future, -> { where("start_datetime >= ?", Time.now) }
+
   def to_s
     title
   end

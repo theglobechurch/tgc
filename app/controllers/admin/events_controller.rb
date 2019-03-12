@@ -55,7 +55,11 @@ private
   end
 
   def event
-    @event ||= events.slug_find(params[:id])
+    @event ||= events.
+                 includes(:event_instances).
+                 references(:event_instances).
+                 where("end_datetime >= ?", Time.now).
+                 slug_find(params[:id])
   end
 
   def event_params
