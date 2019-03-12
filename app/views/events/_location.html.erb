@@ -1,0 +1,30 @@
+at
+
+<a href="https://www.google.com/maps?hl=en&q=<%= l %>" target="_blank" rel="noopener">
+  <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+
+    <% if l.name != "" %>
+      <span itemprop="name"><%= l.name %></span>, 
+    <% end %>
+
+    <% if l.address_line_1 != "" || l.address_line_2 != "" %>
+      <span itemprop="streetAddress">
+        <% if l.address_line_1 != "" %>
+          <%= l.address_line_1 %>, 
+        <% end %>
+
+        <% if l.address_line_2 != "" %>
+          <%= l.address_line_2 %>, 
+        <% end %>
+      </span>
+    <% end %>
+
+    <% if l.city != "" %>
+      <span itemprop="addressLocality"><%= l.city %></span>, 
+    <% end %>
+
+    <% if l.code != "" %>
+      <span itemprop="postalCode"><%= l.code %></span>
+    <% end %>
+  </span>
+</a>

@@ -3,6 +3,8 @@ class Location < ApplicationRecord
 
   default_scope { order('name ASC') }
 
+  has_many :events
+
   before_validation do |l|
     l.name = l.name.titleize
     l.address_line_1 = l.address_line_1.titleize

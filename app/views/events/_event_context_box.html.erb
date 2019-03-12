@@ -26,13 +26,8 @@
           <%= event_instance.start_datetime.to_formatted_s(:just_time) %>
         </span>
         
-        <% if event_instance.location_id %>
-        at
-
-        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <%= event_instance.location_id %>
-        </span>
-
+        <% if event_instance.event.location_id %>
+          <%= render('location', l: event_instance.event.location)%>
         <% end %>
       </p>
 
