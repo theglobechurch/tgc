@@ -21,6 +21,8 @@ class Event < ApplicationRecord
              optional: true,
              foreign_key: :graphics_id
 
+  validates :title, :presence => true
+
   def to_s
     title
   end
