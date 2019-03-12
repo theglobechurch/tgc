@@ -134,5 +134,4 @@ function toggleEventInstanceDetails(el) {
   const lbl = el.innerHTML === 'Hide event details' ? 'Show event details' : 'Hide event details';
   document.querySelector(`.js-event-overrides-${ei}`).classList.toggle('ani-slide--closed');
   el.innerHTML = lbl;
-  
 }
