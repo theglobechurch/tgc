@@ -26,7 +26,9 @@
           <%= event_instance.start_datetime.to_formatted_s(:just_time) %>
         </span>
         
-        <% if event_instance.event.location_id %>
+        <% if event_instance.location_id %>
+          <%= render('location', l: event_instance.location)%>
+        <% elsif event_instance.event.location_id %>
           <%= render('location', l: event_instance.event.location)%>
         <% end %>
       </p>
