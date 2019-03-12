@@ -1,4 +1,5 @@
 <% tmp=f.options[:child_index] %>
+
 <div class="admin-event__occurances__occur ani-slide js-event_instance js-ei-<%=tmp%>">
 
   <div class="admin-event__occurances__occur__main">
@@ -32,6 +33,15 @@
       <%= f.label :description, class: 'form__label' %>
       <%= f.text_area :description, class: 'form__textarea' %>
     </div>
+
+    <div class="r-ei-locationPicker form__field js-location-field"
+         data-name="Location"
+         data-inputId="event_event_instances_attributes_<%= tmp %>_location_id"
+         data-currentLocationId="<%= f.object.location_id %>"
+         data-locations="<%= @location_json %>">
+    </div>
+    <%= f.hidden_field :location_id %>    
+
   </div>
 
   <p><a href="#" class="js-toggle-event-details" data-ei="<%= tmp %>">Hide event details</a></p> 

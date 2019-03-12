@@ -4,6 +4,9 @@ class EventInstance < ApplicationRecord
 
   belongs_to :event, optional: true
 
+  belongs_to :location,
+              optional: true
+
   belongs_to :graphic,
              optional: true,
              foreign_key: :graphics_id

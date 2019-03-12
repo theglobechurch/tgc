@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import moment from 'moment';
 import {DatetimePickerTrigger} from 'rc-datetime-picker';
+import {LocationField} from './location_field';
 
 class Picker extends React.Component {
   constructor(props) {
@@ -38,10 +39,13 @@ class Picker extends React.Component {
   }
 }
 
-export default function (el) {
+export default function () {
+  const dtPicker = document.querySelectorAll('.r-datetimePicker');
+  createDatePickers(dtPicker);
 
-  const containers = document.querySelectorAll(el);
-  createDatePickers(containers);
+  const locationPickers = document.querySelectorAll('.r-ei-locationPicker');
+  createLocationPickers(locationPickers)
+
 
   const addBtn = document.querySelector('.js-add-event-instance-btn');
   if (addBtn === null) { return false; }
@@ -59,6 +63,8 @@ export default function (el) {
     event_instance_container.appendChild(fields);
     const els = fields.querySelectorAll('.r-datetimePicker');
     createDatePickers(els);
+    const locationPickers = document.querySelectorAll('.r-ei-locationPicker');
+    createLocationPickers(locationPickers)
     
     return e.preventDefault();
   });
@@ -101,6 +107,25 @@ function createDatePickers(els) {
       />,
       el
     );
+  });
+}
+
+function createLocationPickers(els) {
+  if (!els) { return; }
+
+  els.forEach((el) => {
+    function callback(location_id) {
+      document.getElementById(el.dataset.inputid).value = location_id;
+    }
+
+    ReactDOM.render(
+      <LocationField
+        {...el.dataset}
+        locations={(JSON.parse(el.dataset.locations) || [])}
+        locationId={(parseInt(el.dataset.currentlocationid) || 0)}
+        confirmLocation={callback}
+      />
+    , el)
   });
 }
 
