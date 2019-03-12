@@ -13,6 +13,9 @@ class Event < ApplicationRecord
   has_many :group_event_links
   has_many :groupings,
            through: :group_event_links
+  
+  belongs_to :location,
+             optional: true
 
   belongs_to :graphic,
              optional: true,
