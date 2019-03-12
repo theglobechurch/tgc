@@ -13,11 +13,20 @@
       <%= f.text_area :description, class: 'form__textarea' %>
     </div>
 
+    <div class="r-locationSelector form__field js-location-field"
+         data-name="Location"
+         data-inputId="event_location_id"
+         data-currentLocationId="<%= @event.location_id %>"
+         data-locations="<%= @location_json %>">
+    </div>
+    <%= f.hidden_field :location_id %>    
+
     <div class="r-featureImageSelector form__field js-event-field"
-        data-name="lead_image"
-        data-inputId="event_graphics_id"
-        data-selectImageId=""
-        data-selectedImageThumbnail="<%= @event.graphic.background_image_960.try('remote_url') if @event.graphic %>"></div>
+         data-name="lead_image"
+         data-inputId="event_graphics_id"
+         data-selectImageId=""
+         data-selectedImageThumbnail="<%= @event.graphic.background_image_960.try('remote_url') if @event.graphic %>">
+    </div>
     <%= f.hidden_field :graphics_id %>
   </div>
 

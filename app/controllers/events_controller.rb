@@ -17,7 +17,6 @@ class EventsController < ApplicationController
     }
     @this_week = this_week
     @future_events = future_events
-
   end
 
 private

@@ -1,0 +1,13 @@
+.r-overlay {
+  background: rgba(siteColor(petrel), .95);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 20px);
+  margin: 10px 0;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 20px);
+  z-index: 1;
+}

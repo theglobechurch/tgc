@@ -12,10 +12,12 @@ class Admin::EventsController < AdminController
 
   def edit
     @event = event
+    @location_json = location_json
   end
 
   def new
     @event = Event.unscoped.new
+    @location_json = location_json
     2.times do
       @event.event_instances.build
     end
@@ -64,5 +66,10 @@ private
                                   :location_id,
                                   :graphics_id,
                                   event_instances_attributes: EventInstance.attribute_names.map(&:to_sym).push(:_destroy))
+  end
+
+  def location_json
+    @location_json ||= Location.all.to_json(only: [:id],
+                                            methods: [:location_str])
   end
 end

@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     resources :teams
 
     post :graphics, to: 'graphics#create'
+    post :locations, to: 'locations#create'
   end
 
   resource :api, only: [:index] do
