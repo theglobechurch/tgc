@@ -44,8 +44,11 @@ export default function () {
   createDatePickers(dtPicker);
 
   const locationPickers = document.querySelectorAll('.r-ei-locationPicker');
-  createLocationPickers(locationPickers)
+  createLocationPickers(locationPickers);
 
+  // Hide all additional info by default
+  const hideBtn = document.querySelectorAll('.js-toggle-event-details');
+  hideBtn.forEach((el) => toggleEventInstanceDetails(el))
 
   const addBtn = document.querySelector('.js-add-event-instance-btn');
   if (addBtn === null) { return false; }

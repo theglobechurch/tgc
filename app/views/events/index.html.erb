@@ -33,6 +33,10 @@
   </section>
   <% end # End if future events %>
 
+  <% if !@events # Remove this after deploy %>
+    <br />
+  <% end %>
+
   <%= render('when-and-where') %>
 
 </div>
