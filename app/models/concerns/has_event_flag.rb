@@ -7,7 +7,8 @@ module HasEventFlag
       comission: "Co-Mission",
       fiec: "FIEC",
       monthly: "Monthly",
-      social: "Social"
+      social: "Social",
+      special: "Special event"
     }, _prefix: :flag
 
     def event_tag
