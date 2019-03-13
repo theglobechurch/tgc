@@ -15,6 +15,7 @@ class EventsController < ApplicationController
         "2560": view_context.asset_path("#{img_location}2560.jpg"),
       },
     }
+    @featured = EventInstance.future.flag_featured.first
     @this_week = this_week
     @future_events = future_events
   end
