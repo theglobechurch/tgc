@@ -5,7 +5,7 @@ import DnDUploader from '../dnd-uploader'
 
 const cssClassParent = "m-featureImageSelector";
 
-class FeatureImageSelector extends React.Component {
+export class FeatureImageSelector extends React.Component {
 
   constructor(props) {
     super(props);

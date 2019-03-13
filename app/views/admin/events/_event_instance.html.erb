@@ -54,6 +54,14 @@
                    {include_blank: true},
                    class: 'form__input form__input--select' %>
     </div>
+    
+    <div class="r-ei-imagePicker form__field js-event-field"
+         data-name="lead_image"
+         data-inputId="event_event_instances_attributes_<%= tmp %>_graphics_id"
+         data-selectImageId=""
+         data-selectedImageThumbnail="<%= f.object.graphic.background_image_960.try('remote_url') if f.object.graphics_id %>">
+    </div>
+    <%= f.hidden_field :graphics_id %>
 
   </div>
 

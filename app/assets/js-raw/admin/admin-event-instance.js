@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import moment from 'moment';
-import {DatetimePickerTrigger} from 'rc-datetime-picker';
-import {LocationField} from './location_field';
+import { DatetimePickerTrigger } from 'rc-datetime-picker';
+import { LocationField } from './location_field';
+import { FeatureImageSelector } from './feature_image_selector';
 
 class Picker extends React.Component {
   constructor(props) {
@@ -46,6 +47,9 @@ export default function () {
   const locationPickers = document.querySelectorAll('.r-ei-locationPicker');
   createLocationPickers(locationPickers);
 
+  const imagePickers = document.querySelectorAll('.r-ei-imagePicker');
+  createFeaturedImagePickers(imagePickers);
+
   // Hide all additional info by default
   const hideBtn = document.querySelectorAll('.js-toggle-event-details');
   hideBtn.forEach((el) => toggleEventInstanceDetails(el))
@@ -64,10 +68,15 @@ export default function () {
     fields = new DOMParser().parseFromString(fields, 'text/html');
     fields = fields.body.firstChild
     event_instance_container.appendChild(fields);
+
     const els = fields.querySelectorAll('.r-datetimePicker');
     createDatePickers(els);
+
     const locationPickers = document.querySelectorAll('.r-ei-locationPicker');
-    createLocationPickers(locationPickers)
+    createLocationPickers(locationPickers);
+
+    const imagePickers = document.querySelectorAll('.r-ei-imagePicker');
+    createFeaturedImagePickers(imagePickers);  
     
     return e.preventDefault();
   });
@@ -129,6 +138,24 @@ function createLocationPickers(els) {
         confirmLocation={callback}
       />
     , el)
+  });
+}
+
+function createFeaturedImagePickers(els) {
+  if (!els) { return; }
+
+  els.forEach((el) => {
+    function callback(graphic_id) {
+      document.getElementById(el.dataset.inputid).value = graphic_id;
+    }
+
+    ReactDOM.render(
+      <FeatureImageSelector
+          {...el.dataset}
+          onPickImage={callback}
+          imagesrc={el.dataset.selectedimagethumbnail}
+        />
+      , el);
   });
 }
 
