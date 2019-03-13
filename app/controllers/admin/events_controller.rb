@@ -39,6 +39,7 @@ class Admin::EventsController < AdminController
       flash[:notice] = "#{event} updated"
       redirect_to action: "index"
     else
+      @location_json = location_json
       respond_with(:admin, event)
     end
   end
@@ -69,6 +70,7 @@ private
                                   :state_event,
                                   :location_id,
                                   :graphics_id,
+                                  :link_url,
                                   event_instances_attributes: EventInstance.attribute_names.map(&:to_sym).push(:_destroy))
   end
 

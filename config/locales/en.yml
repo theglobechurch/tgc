@@ -40,3 +40,10 @@ en:
   time:
     formats:
       default: "%d/%m/%Y %H:%M"
+
+  helpers:
+    label:
+      event:
+        link_url: "Information URL"
+      event_instance:
+        link_url: "Information URL"

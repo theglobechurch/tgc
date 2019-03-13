@@ -2,6 +2,9 @@ class Event < ApplicationRecord
 
   include HasSlug
   include HasState
+  include HasUrlField
+
+  url_field :link_url
   
   publishable
   

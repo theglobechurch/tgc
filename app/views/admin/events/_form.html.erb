@@ -19,7 +19,12 @@
          data-currentLocationId="<%= @event.location_id %>"
          data-locations="<%= @location_json %>">
     </div>
-    <%= f.hidden_field :location_id %>    
+    <%= f.hidden_field :location_id %>
+
+    <div class="form_field form__field--main" data-name="more-info">
+      <%= f.label :link_url, class: 'form__label' %>
+      <%= f.text_field :link_url, class: 'form__input' %>
+    </div>
 
     <div class="r-featureImageSelector form__field js-event-field"
          data-name="lead_image"

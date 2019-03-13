@@ -29,8 +29,10 @@
         <% end %>
       </p>
 
-      <% if event_instance.description != "" %>
-      <a class="c-event-list__event__infoLink" href="#">More information</a>
+      <% if !event_instance.link_url.blank? %>
+        <a class="c-event-list__event__infoLink" href="<%= event_instance.link_url %>">More information</a>
+      <% elsif !event_instance.event.link_url.blank? %>
+        <a class="c-event-list__event__infoLink" href="<%= event_instance.event.link_url %>">More information</a>
       <% end %>
 
     </div>
