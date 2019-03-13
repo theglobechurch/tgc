@@ -5,7 +5,7 @@
   <%= render('core_events', further_nav: true) %>
 
   <% if @this_week.length > 0 %>
-  <section class="c-content-box" id="next-seven">
+  <section class="c-content-box" id="section:next-seven">
 
     <header class="c-content-box__header c-content-box__header--empty">
         <div class="c-content-box__header__container">
@@ -20,7 +20,7 @@
   <% end # End if next seven events %>
 
   <% if @future_events.length > 0 %>
-  <section class="c-content-box" id="next-seven">
+  <section class="c-content-box" id="section:future-events">
 
     <header class="c-content-box__header c-content-box__header--empty">
         <div class="c-content-box__header__container">
