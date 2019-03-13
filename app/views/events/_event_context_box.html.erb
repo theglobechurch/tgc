@@ -30,9 +30,9 @@
       </p>
 
       <% if !event_instance.link_url.blank? %>
-        <a class="c-event-list__event__infoLink" href="<%= event_instance.link_url %>">More information</a>
+        <a class="c-event-list__event__infoLink" href="<%= event_instance.link_url %>" target="_blank" rel="noopener">More information</a>
       <% elsif !event_instance.event.link_url.blank? %>
-        <a class="c-event-list__event__infoLink" href="<%= event_instance.event.link_url %>">More information</a>
+        <a class="c-event-list__event__infoLink" href="<%= event_instance.event.link_url %>" target="_blank" rel="noopener">More information</a>
       <% end %>
 
     </div>
