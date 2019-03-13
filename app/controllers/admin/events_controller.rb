@@ -71,6 +71,7 @@ private
                                   :location_id,
                                   :graphics_id,
                                   :link_url,
+                                  :flag,
                                   event_instances_attributes: EventInstance.attribute_names.map(&:to_sym).push(:_destroy))
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_130446) do
+ActiveRecord::Schema.define(version: 2019_03_13_145017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2019_03_13_130446) do
     t.text "description"
     t.string "slug"
     t.text "link_url"
+    t.string "flag"
     t.index ["event_id"], name: "index_event_instances_on_event_id"
+    t.index ["flag"], name: "index_event_instances_on_flag"
     t.index ["graphics_id"], name: "index_event_instances_on_graphics_id"
     t.index ["location_id"], name: "index_event_instances_on_location_id"
     t.index ["slug"], name: "index_event_instances_on_slug"
@@ -40,6 +42,8 @@ ActiveRecord::Schema.define(version: 2019_03_13_130446) do
     t.string "state", default: "draft"
     t.datetime "published_at"
     t.text "link_url"
+    t.string "flag"
+    t.index ["flag"], name: "index_events_on_flag"
     t.index ["graphics_id"], name: "index_events_on_graphics_id"
     t.index ["location_id"], name: "index_events_on_location_id"
     t.index ["slug"], name: "index_events_on_slug"

@@ -1,6 +1,8 @@
 class EventInstance < ApplicationRecord
 
   # include HasSlug
+  include HasEventFlag
+  include HasUrlField
 
   belongs_to :event, optional: true
 

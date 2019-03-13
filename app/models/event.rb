@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   include HasSlug
   include HasState
   include HasUrlField
+  include HasEventFlag
 
   url_field :link_url
   

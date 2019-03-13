@@ -26,6 +26,14 @@
       <%= f.text_field :link_url, class: 'form__input' %>
     </div>
 
+    <div class="form_field form__field--main" data-name="flag">
+      <%= f.label :flag, class: 'form__label' %>      
+      <%= f.select :flag,
+                   Event.flags.map{ |f| [f[1], f[0]]},
+                   {include_blank: true},
+                   class: 'form__input form__input--select' %>
+    </div>
+    
     <div class="r-featureImageSelector form__field js-event-field"
          data-name="lead_image"
          data-inputId="event_graphics_id"

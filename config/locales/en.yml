@@ -45,5 +45,7 @@ en:
     label:
       event:
         link_url: "Information URL"
+        flag: "Event tag"
       event_instance:
         link_url: "Information URL"
+        flag: "Event tag"

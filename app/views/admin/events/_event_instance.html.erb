@@ -47,6 +47,14 @@
       <%= f.text_field :link_url, class: 'form__input' %>
     </div>
 
+    <div class="form_field form__field--main" data-name="flag">
+      <%= f.label :flag, class: 'form__label' %>      
+      <%= f.select :flag,
+                   Event.flags.map{ |f| [f[1], f[0]]},
+                   {include_blank: true},
+                   class: 'form__input form__input--select' %>
+    </div>
+
   </div>
 
   <p><a href="#" class="js-toggle-event-details" data-ei="<%= tmp %>">Hide event details</a></p> 

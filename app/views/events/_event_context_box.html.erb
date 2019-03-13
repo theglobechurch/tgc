@@ -15,6 +15,16 @@
         <span itemprop="name">
           <strong><%= event_instance.event.title %></strong><% if event_instance.event.title != "" %>: <%= event_instance.title %><% end %>
         </span>
+
+        <% if event_instance.flag || event_instance.event.flag %>
+        <span class="u-tag u-tag--nudged">
+          <% if event_instance.flag %>
+            <%= event_instance.event_tag %>
+          <% else %>
+            <%= event_instance.event.event_tag %>
+          <% end %>
+        </span>
+        <% end %>
       </h3>
 
       <p class="c-event-list__event__time-location">
