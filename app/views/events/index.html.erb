@@ -24,6 +24,7 @@
             link: @featured.link_url,
             title: @featured.title,
             pretitle: @featured.event.title,
+            has_new_window: 1,
             cta: 'Find out more') if @featured && @featured.graphics_id %>
 
   <% if @future_events.length > 0 %>
