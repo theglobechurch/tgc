@@ -48,7 +48,7 @@ class FeatureImageSelector extends React.Component {
           />
         }
 
-        <h2 className="form__label">Lead image</h2>
+        <label className="form__label">Lead image</label>
         { this.state.imageSrc && 
           <img src={this.state.imageSrc} className={`${cssClassParent}__preview`} />
         }
