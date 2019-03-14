@@ -6,14 +6,14 @@
     <div class="form__field form__field--main" data-name="start_datetime">
       <%= f.label :start_datetime, 'Start', class: 'form__label' %>
       <%= f.hidden_field :start_datetime, class: "js-start-#{tmp}" %>
-      <div class="r-datetimePicker" data-inputid="js-start-<%= tmp %>">
+      <div class="r-datetimePicker js-date-start" data-inputid="js-start-<%= tmp %>">
       </div>
     </div>
 
     <div class="form__field form__field--main" data-name="end_datetime">
       <%= f.label :end_datetime, 'End', class: 'form__label' %>
       <%= f.hidden_field :end_datetime, class: "js-end-#{tmp}" %>
-      <div class="r-datetimePicker" data-inputid="js-end-<%= tmp %>"></div>
+      <div class="r-datetimePicker js-date-end" data-inputid="js-end-<%= tmp %>"></div>
     </div>
 
     <div>

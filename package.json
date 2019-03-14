@@ -8,9 +8,9 @@
     "moment": "^2.22.2",
     "natives": "^1.1.6",
     "prop-types": "^15.5.10",
-    "rc-datetime-picker": "^1.6.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.8.4",
+    "react-datepicker": "^2.2.0",
+    "react-dom": "^16.8.4",
     "sir-trevor": "^0.6.6",
     "slugger": "^1.0.1"
   },

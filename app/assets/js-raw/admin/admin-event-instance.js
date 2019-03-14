@@ -1,41 +1,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import moment from 'moment';
-import { DatetimePickerTrigger } from 'rc-datetime-picker';
+import DatePicker from 'react-datepicker';
 import { LocationField } from './location_field';
 import { FeatureImageSelector } from './feature_image_selector';
 
 class Picker extends React.Component {
   constructor(props) {
     super(props);
-    let mo = '';
+    let dt = '';
 
     if (this.props.initVal !== undefined && this.props.initVal != "") {
-      mo = moment(this.props.initVal, 'YYYY-MM-DD HH:mm:ss');
+      dt = moment(this.props.initVal, 'YYYY-MM-DD HH:mm:ss').toDate();
     }
-    
-    this.state = {
-      moment: mo
-    };
+
+    this.state = { dt };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(moment){
-    this.setState({
-      moment
-    });
-    this.props.onComplete(moment.format('YYYY-MM-DD HH:mm'));
+  handleChange(dt) {
+    this.setState({ dt });
+    this.props.onComplete(moment(dt).format('YYYY-MM-DD HH:mm'));
   }
 
   render() {
-    const mo = this.state.moment;
-    const display = mo ? mo.format('DD MMM YYYY HH:mm') : "";
-
+   
+    // Future: https://reactdatepicker.com/#example-22
+    const inputProps = {
+      // [this.props.pickerRange]: true,
+    }
+    
     return (
-      <DatetimePickerTrigger
-        moment={mo ? mo : moment()}
-        onChange={this.handleChange.bind(this)}>
-        <input type="text" value={display} readOnly className="form__input" />
-      </DatetimePickerTrigger>
+      <DatePicker
+          { ...inputProps }
+          className="form__input"
+          selected={this.state.dt || new Date()}
+          onChange={this.handleChange}
+          showTimeSelect
+          timeFormat= "HH:mm"
+          dateFormat= "d MMM YYYY HH:mm"
+          timeIntervals={15}
+          timeCaption='Time'
+      />
     );
   }
 }
@@ -105,8 +111,11 @@ function removeEventInstance(e) {
 function createDatePickers(els) {
   if (!els) { return; }
 
+  console.log(els);
+
   els.forEach((el) => {
     const targetInput = document.querySelector('.' + el.dataset.inputid);
+    const startStop = el.classList.contains('js-date-start') ? 'selectsStart' : 'selectsEnd'
 
     function callback(dt) {
       targetInput.value = dt;
@@ -114,6 +123,7 @@ function createDatePickers(els) {
 
     ReactDOM.render(
       <Picker
+        pickerRange={startStop}
         initVal={targetInput.value}
         onComplete={callback}
       />,
