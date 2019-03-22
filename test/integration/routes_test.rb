@@ -24,13 +24,6 @@ class RoutesTest < ActionDispatch::IntegrationTest
     )
 
     assert_generates(
-      "/when-and-where",
-      controller: "pages",
-      action: "show",
-      id: "when-and-where",
-    )
-
-    assert_generates(
       "/contact",
       controller: "pages",
       action: "show",
