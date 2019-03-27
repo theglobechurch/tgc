@@ -73,7 +73,7 @@ Rails.application.routes.draw do
   resources :resources, only: %i[show]
   get :resources, to: redirect('/preaching')
 
-  resources :events, only: %i[index]
+  resources :events, only: %i[index show]
 
   resources :people, only: %i[show]
 

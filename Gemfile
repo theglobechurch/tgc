@@ -17,6 +17,7 @@ gem 'rack-rewrite'
 gem 'sir_trevor_rails'
 gem 'pg_search'
 gem 'migration_data'
+gem 'redcarpet', '~>3.4.0'                  # Markdown rendering
 
 group :development, :test, :build do
   gem 'factory_bot_rails'         # For testing

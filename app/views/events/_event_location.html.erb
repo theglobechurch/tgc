@@ -1,0 +1,35 @@
+<div class="c-content-box__aside__meta">
+  <% if location.name.present? %>
+    <p class="c-content-box__aside__meta__title">
+      <%= location.name %>
+    </p>
+  <% end %>
+  <p class="c-content-box__aside__meta__subtitle">
+
+    <% if location.address_line_1.present? %>
+      <%= location.address_line_1 %><br />
+    <% end %>
+
+    <% if location.address_line_2.present? %>
+      <%= location.address_line_2 %><br />
+    <% end %>
+
+    <% if location.city.present? %>
+      <%= location.city %><br />
+    <% end %>
+
+    <% if location.code.present? %>
+      <%= location.code %>
+    <% end %>
+  <%# <p class="c-content-box__aside__meta__small">London Bridge / Borough</p> %>
+</div>
+
+<div class="c-map">
+
+  <div class="c-map__map js-map" data-address="<%= location %>" data-zoom="13">
+  </div>
+
+  <a class="c-map__link" href="https://www.google.com/maps?hl=en&q=<%= url_encode(location) %>" target="_blank" rel="noopener">
+    Get directions
+  </a>
+</div>

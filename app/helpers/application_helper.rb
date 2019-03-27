@@ -2,6 +2,10 @@ require 'digest'
 
 module ApplicationHelper
 
+  def markdown(text)
+    MarkdownRenderer.new.to_markdown(text)
+  end
+
   def svg_tag(icon, html_options = {})
     content_tag(
       :svg,

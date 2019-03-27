@@ -14,7 +14,7 @@ class Location < ApplicationRecord
   end
 
   def to_s
-    "#{name}, #{address_line_1}, #{address_line_2}, #{city}, #{code}"
+    [name, address_line_1, address_line_2, city, code].reject(&:blank?).join(', ')
   end
 
   def location_str

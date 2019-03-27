@@ -24,6 +24,19 @@ class EventsController < ApplicationController
     @future_events = future_events
   end
 
+  def show
+    @event = event
+
+    @banner = {
+      'title' => @event.title,
+      'size' => 'blurred'
+    }
+
+    if @event.graphic
+      @banner['image'] = @event.graphic.background_image_size_urls
+    end
+  end
+
 private
 
   def this_week
@@ -42,5 +55,13 @@ private
                         .where("end_datetime >= ?", Time.now + 1.week)
                         .order(:start_datetime)
 
+  end
+
+  def events
+    @events ||= Event.all
+  end
+
+  def event
+    @event ||= events.slug_find(params[:id])
   end
 end
