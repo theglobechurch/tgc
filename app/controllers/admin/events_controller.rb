@@ -59,7 +59,8 @@ private
     @event ||= events.
                  includes(:event_instances).
                  references(:event_instances).
-                 where("end_datetime >= ?", Time.now).
+                #  where("end_datetime >= ?", Time.now).
+                 order("start_datetime").
                  slug_find(params[:id])
   end
 
