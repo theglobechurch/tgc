@@ -66,14 +66,14 @@ private
   def latest_sermon
     @latest_sermon ||= resources.
                        joins(:groupings).
-                       where('groupings.group_type': 'series').
+                       where('groupings.group_type': 'Preaching').
                        resource_type('recording').
                        order('display_date DESC NULLS LAST').
                        first
   end
 
   def groups
-    @groups ||= Grouping.where(group_type: %w[series focus])
+    @groups ||= Grouping.all
   end
 
   def group

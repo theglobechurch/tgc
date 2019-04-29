@@ -33,7 +33,6 @@ class Grouping < ApplicationRecord
            through: :group_event_links
 
   validates :title, presence: true
-  validates :grouping_types, presence: true
 
   def to_s
     title

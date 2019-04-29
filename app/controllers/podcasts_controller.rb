@@ -50,7 +50,7 @@ private
   def sermons
     @recordings ||= all_recordings.
                     joins(:groupings).
-                    where('groupings.group_type': 'series')
+                    where('groupings.group_type': 'Preaching')
   end
 
   def series

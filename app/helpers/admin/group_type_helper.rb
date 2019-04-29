@@ -1,6 +1,6 @@
 module Admin::GroupTypeHelper
   def group_type_picker(form, field, exclude = [], html_options = {})
-    display_types = form.object.class.available_group_types.reject do |t|
+    display_types = GroupingType.all.reject do |t|
       exclude.include?(t)
     end
 
