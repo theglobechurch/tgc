@@ -15,6 +15,7 @@ Rails.application.configure do
     r301 %r[^/one21/?$], '/resources/one21-launch'
 
     # Old site redirects
+    r301 %r[^/jobs/?$], '/about/jobs'
     r301 %r[^/join-us/?$], '/about'
     r301 %r[^/directions/?$], '/events'
     r301 %r[^/partner-with-us/?$], '/get-involved'
