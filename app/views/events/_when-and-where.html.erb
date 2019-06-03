@@ -48,7 +48,7 @@
           <a>
             <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
             <span>
-              4.30pm
+              <%= @sunday_service.start_datetime.to_formatted_s(:just_time)  %>
             </span>
           </a>
         </li>
@@ -57,16 +57,13 @@
           <a>
             <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
             <span>
-              New Hunt's House Building,<br />
-              Guy's Campus<br />
-              Newcomen Street<br />
-              SE1 1UL
+              <%= @sunday_service.address_html_formatted.html_safe %>
             </span>
           </a>
         </li>
       </ul>
 
-      <a href="https://goo.gl/maps/zrP9SfbiRZH2" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
+      <a href="https://www.google.com/maps?hl=en&q=<%= u @sunday_service.address %>" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
     </aside>
 
   </main>

@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     img_location = 'static-banner/the-globe-church-preaching_'
+    @sunday_service = sunday_service.decorate
     @banner = {
       "title" => 'Church life',
       "subtitle" => 'Join us at one of the upcoming events at The Globe Church',
@@ -63,5 +64,13 @@ private
 
   def event
     @event ||= events.slug_find(params[:id])
+  end
+
+  def sunday_service
+    @sunday_service ||= EventInstance.
+                        future.
+                        joins(:event).
+                        where('events.church_service': true).
+                        first
   end
 end

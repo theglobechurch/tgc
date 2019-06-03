@@ -2,6 +2,7 @@ class HomepagesController < ApplicationController
   def index
     img_path = 'static-banner/the-globe-church-logo'
     @latest_sermon = latest_sermon.decorate if latest_sermon
+    @sunday_service = sunday_service.decorate
     @banner = {
       "title" => 'The Globe Church',
       "subtitle" => 'A church for the Southbank',
@@ -26,6 +27,14 @@ private
                        resource_type('recording').
                        order('display_date DESC NULLS LAST').
                        first
+  end
+
+  def sunday_service
+    @sunday_service ||= EventInstance.
+                        future.
+                        joins(:event).
+                        where('events.church_service': true).
+                        first
   end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_145017) do
+ActiveRecord::Schema.define(version: 2019_06_03_092245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_145017) do
     t.datetime "published_at"
     t.text "link_url"
     t.string "flag"
+    t.boolean "church_service"
     t.index ["flag"], name: "index_events_on_flag"
     t.index ["graphics_id"], name: "index_events_on_graphics_id"
     t.index ["location_id"], name: "index_events_on_location_id"

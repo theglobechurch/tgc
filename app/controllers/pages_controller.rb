@@ -167,4 +167,12 @@ private
     end
   end
 
+  def sunday_service
+    @sunday_service ||= EventInstance.
+                        future.
+                        joins(:event).
+                        where('events.church_service': true).
+                        first
+  end
+
 end
