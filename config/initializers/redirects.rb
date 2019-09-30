@@ -5,6 +5,7 @@ Rails.application.configure do
     r302 %r[^/calendar/?$], '/events'
     r302 %r[^/markdrama/?$], 'https://www.eventbrite.com/e/the-mark-drama-tickets-42989512790?aff=tgc'
     r302 %r[^/stewardship/?$], 'https://www.give.net/20181404'
+    r302 %r[^/getaway/?$], 'https://docs.google.com/forms/d/e/1FAIpQLSfJ9DUuvrfUqd89Tceecq-uKJ4KDvsB9FT9pC9viEAMDDBCIQ/viewform'
 
     # Welcome pack links
     r301 %r[^/sundays?/?$], '/events#section:sundays'
