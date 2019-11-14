@@ -1,7 +1,8 @@
 version: '3'
 services:
   db:
-    image: postgres
+    image: postgres:10-alpine
+    hostname: db
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     ports: 
