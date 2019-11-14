@@ -2,7 +2,7 @@ class HomepagesController < ApplicationController
   def index
     img_path = 'static-banner/the-globe-church-logo'
     @latest_sermon = latest_sermon.decorate if latest_sermon
-    @sunday_service = sunday_service.decorate
+    @sunday_service = sunday_service.decorate if sunday_service
     @banner = {
       "title" => 'The Globe Church',
       "subtitle" => 'A church for the Southbank',

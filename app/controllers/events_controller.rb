@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     img_location = 'static-banner/the-globe-church-preaching_'
-    @sunday_service = sunday_service.decorate
+    @sunday_service = sunday_service.decorate if sunday_service
     @banner = {
       "title" => 'Church life',
       "subtitle" => 'Join us at one of the upcoming events at The Globe Church',

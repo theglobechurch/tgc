@@ -44,6 +44,7 @@
           </a>
         </li>
 
+        <% if @sunday_service %>
         <li class="c-icon-list__item">
           <a>
             <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
@@ -61,9 +62,12 @@
             </span>
           </a>
         </li>
+        <% end %>
       </ul>
 
+      <% if @sunday_service %>
       <a href="https://www.google.com/maps?hl=en&q=<%= u @sunday_service.address %>" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
+      <% end %>
     </aside>
 
   </main>
