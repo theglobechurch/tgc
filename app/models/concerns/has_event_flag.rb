@@ -8,7 +8,8 @@ module HasEventFlag
       fiec: "FIEC",
       monthly: "Monthly",
       social: "Social",
-      special: "Special event"
+      special: "Special event",
+      cancelled: "Cancelled"
     }, _prefix: :flag
 
     def event_tag
