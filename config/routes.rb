@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   get :blog, to: 'resources#blog'
   get 'preaching/:id', to: 'resources#series'
   get :preaching, to: 'resources#index'
+  get :live, to: 'livestreams#index'
 
   resources :podcasts, path: :podcast do
     collection do
