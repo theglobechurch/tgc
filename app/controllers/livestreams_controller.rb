@@ -1,10 +1,10 @@
 class LivestreamsController < ApplicationController
   def index
-    @stream_url = 'https://www.youtube.com/embed/wIWt0kTtp3U'
+    youtubeId = 'UVNRmfV4GXs'
     @banner = {
       'title' => 'Live Stream',
       'size' => 'video',
-      'video' => 'https://www.youtube.com/embed/wIWt0kTtp3U',
+      'video' => "https://www.youtube.com/embed/#{youtubeId}",
       'hide-text' => true,
     }
   end

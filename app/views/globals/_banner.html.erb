@@ -1,6 +1,6 @@
 <section class="c-banner<%= " c-banner--#{banner['size']}" if banner['size'] %> js-object-fit-container">
   <% if banner['video'] %>
-    <iframe class="c-banner__img" src="<%=@stream_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="c-banner__img" src="<%=banner['video']%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <% else %>
   <%= responsive_image_tag(banner['image'],
                            sizes: ['100vw'],
