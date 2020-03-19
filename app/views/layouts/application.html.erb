@@ -31,10 +31,11 @@
     <% end %>
     
     <%= render "globals/header" %>
-    <%#= render "globals/alert_banner",
+
+    <%= render "globals/alert_banner",
                alert_type: 'danger',
-               alert_tag: 'Change of Venue',
-               alert_message: "".html_safe + "On Sunday 18 November we'll be meeting in the Hodgkin Building on Guy's Campus" %>
+               alert_message: "During Covid-19 we'll be live streaming weekday mornings and Sunday afternoons. <a href='/live'>Find out more</a>.".html_safe,
+               alert_tag: 'Live Stream' if !current_page?('/live') %>
 
     <main class="c-main<%= ' c-main--no-banner' if banner['size'] == 'none' %>" role="main">
       <%= render "globals/banner" if banner != {} && banner['size'] != 'none' %>
