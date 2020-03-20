@@ -1,6 +1,6 @@
 class LivestreamsController < ApplicationController
   def index
-    youtubeId = 'UVNRmfV4GXs'
+    youtubeId = '0ojwfQVPtmA'
     @banner = {
       'title' => 'Live Stream',
       'size' => 'video',
