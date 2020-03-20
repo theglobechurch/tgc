@@ -1,0 +1,26 @@
+<main class="m-admin-body">
+
+  <section class="m-admin-body--main">
+    <header>
+      <h1>Livestream</h1>
+    </header>
+
+     <ul>
+      <% @livestreams.each do | group | %>
+        <li class="a-resource">
+          <div class="a-resource__details">
+            <h3 class="a-resource__title"><%= l group.live_at.to_time, format: :long %></h3>
+          </div>
+          <div class="a-resource__actions">
+            <%= link_to "Edit", edit_admin_livestream_path(group), class: 'u-btn' %>
+          </div>
+        </li>
+      <% end %>
+      </ul>
+  </section>
+
+  <section class="m-admin-body--sidebar">
+    <%= link_to "Create new", new_admin_livestream_path(), class: 'u-btn u-btn--primary u-btn--100' %>
+  </section>
+
+</main>

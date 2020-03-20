@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_092245) do
+ActiveRecord::Schema.define(version: 2020_03_20_001058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,13 @@ ActiveRecord::Schema.define(version: 2019_06_03_092245) do
     t.index ["graphics_id"], name: "index_groupings_on_graphics_id"
     t.index ["group_type"], name: "index_groupings_on_group_type"
     t.index ["slug"], name: "index_groupings_on_slug"
+  end
+
+  create_table "livestreams", force: :cascade do |t|
+    t.string "youtubeId"
+    t.datetime "live_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|

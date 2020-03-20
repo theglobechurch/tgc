@@ -48,6 +48,7 @@ Rails.application.routes.draw do
 
     resources :people
     resources :teams
+    resources :livestreams
 
     post :graphics, to: 'graphics#create'
     post :locations, to: 'locations#create'

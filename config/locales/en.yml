@@ -40,6 +40,7 @@ en:
   time:
     formats:
       default: "%d/%m/%Y %H:%M"
+      long: "%A, %-d %B %Y - %H:%M"
 
   helpers:
     label:
@@ -49,3 +50,6 @@ en:
       event_instance:
         link_url: "Information URL"
         flag: "Event tag"
+      livestream:
+        youtubeId: 'Youtube Video ID'
+        live_at: 'Livestream goes live at'
