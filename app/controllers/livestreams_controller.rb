@@ -16,10 +16,7 @@ class LivestreamsController < ApplicationController
 private
 
   def main_stream
-    @main_stream ||= Livestream.all
-                       .where("live_at >= ?", Time.now - 8.hour)
-                       .where("live_at <= ?", Time.now + 8.hour)
-                       .first
+    @main_stream ||= Livestream.next_stream(Time.now) || Livestream.last_stream()
   end
 
   def previous_streams

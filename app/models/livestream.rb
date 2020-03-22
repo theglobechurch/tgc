@@ -9,4 +9,14 @@ class Livestream < ApplicationRecord
   def to_s
     youtubeId
   end
+
+  def self.next_stream(time)
+    where("live_at >= ?", time - 8.hour)
+    .first
+  end
+
+  def self.last_stream()
+    order(live_at: :desc)
+    .first
+  end
 end 
