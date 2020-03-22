@@ -18,6 +18,21 @@
       </div>
     </main>
   </section>
+
+  <section class="c-content-box">
+    <main class="c-content-box__main">
+      <div class="c-content-box__main__container">
+        <h1>Previous streams</h1>
+        <ul>
+          <% @previous_streams.each do |item| %>
+          <li>
+            <%= link_to "#{l item.live_at.to_time, format: :long}", "https://www.youtube.com/watch?v=#{item.youtubeId}", target: "_blank", rel: "noopener" %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </main>
+  </section>
 </div>
 
 <%= render('/resources/podcast_link') %>
