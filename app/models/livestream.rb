@@ -12,6 +12,8 @@ class Livestream < ApplicationRecord
 
   def self.next_stream(time)
     where("live_at >= ?", time - 8.hour)
+    .where("live_at <= ?", time + 8.hour)
+    .order(live_at: :asc)
     .first
   end
 
