@@ -3,6 +3,8 @@ class LivestreamsController < ApplicationController
     @main_stream = main_stream
     @previous_streams = previous_streams
 
+    @latest_sermon = latest_sermon.decorate if latest_sermon
+
     @banner = {
       'title' => 'Live Stream',
       'size' => 'video',
@@ -23,5 +25,14 @@ private
     @previous_streams ||= Livestream.all
                             .where("live_at <= ?", Time.now)
                             .order(:live_at)
+  end
+
+  def latest_sermon
+    @latest_sermon ||= Resource.
+                       joins(:groupings).
+                       where('groupings.group_type': 'Preaching').
+                       resource_type('recording').
+                       order('display_date DESC NULLS LAST').
+                       first
   end
 end

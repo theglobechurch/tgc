@@ -33,6 +33,15 @@
       </div>
     </main>
   </section>
+
+  <%= render('/shared/promo_box',
+              img: @latest_sermon.banner['image'],
+              link: @latest_sermon,
+              title: @latest_sermon.title,
+              pretitle: 'Listen back to the latest recording',
+              cta: 'Go to sermon recording') if @latest_sermon %>
+              
 </div>
+
 
 <%= render('/resources/podcast_link') %>
