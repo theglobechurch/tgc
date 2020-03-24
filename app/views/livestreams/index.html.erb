@@ -19,19 +19,23 @@
     </main>
   </section>
 
-  <section class="c-content-box">
-    <main class="c-content-box__main">
-      <div class="c-content-box__main__container">
-        <h1>Previous streams</h1>
-        <ul>
-          <% @previous_streams.each do |item| %>
-          <li>
-            <%= link_to "#{l item.live_at.to_time, format: :long}", "https://www.youtube.com/watch?v=#{item.youtubeId}", target: "_blank", rel: "noopener" %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </main>
+  <section class="c-livestreamLinks">
+    <h1 class="c-livestreamLinks__title">Previous streams</h1>
+    <div class="c-livestreamLinks__list">
+      <% @previous_streams.each do |item| %>
+
+        <%= link_to "https://www.youtube.com/watch?v=#{item.youtubeId}", class: "c-videoPreview", target: "_blank", rel: "noopener" do %>
+          <div class="c-videoPreview__img">
+            <img src="https://i3.ytimg.com/vi/<%= item.youtubeId %>/hqdefault.jpg" alt="Livestream for <%= l item.live_at.to_time, format: :long %>" />
+          </div>
+
+          <div class="c-videoPreview__caption">
+            <%= l item.live_at.to_time, format: :long %>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
   </section>
 
   <%= render('/shared/promo_box',
