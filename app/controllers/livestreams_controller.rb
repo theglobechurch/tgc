@@ -9,7 +9,7 @@ class LivestreamsController < ApplicationController
       'title' => 'Live Stream',
       'size' => 'video',
       'description' => 'Church is about gathering together as God’s people. We think that is a precious and wonderful thing. There are occasions when gathering is not possible and at those times a livestream can help us until we can gather again…',
-      'video' => "https://www.youtube.com/embed/#{@main_stream.youtubeId}",
+      'video' => "https://www.youtube.com/embed/#{@main_stream.youtubeId}?modestbranding=1&rel=0",
       'hide-text' => true,
       'socialImg' => '/assets/live-og.jpg',
     }
