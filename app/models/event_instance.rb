@@ -19,8 +19,24 @@ class EventInstance < ApplicationRecord
   default_scope { order('start_datetime ASC NULLS LAST') }
   scope :future, -> { where("start_datetime >= ?", Time.now).order('start_datetime ASC NULLS LAST') }
 
+  before_validation do |r|
+    r.slug = r.title.parameterize if r.slug.blank? && !r.title.blank?
+  end
+
   def to_s
     title
+  end
+
+  def instance_path
+    if slug
+      return "/events/#{event.slug}/#{slug}"
+    else
+      return "/events/#{event.slug}/#{start_datetime.strftime("%F")}"
+    end
+  end
+
+  def siblings
+    event.event_instances.where.not(id:self.id)
   end
 
 private

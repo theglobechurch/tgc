@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     @banner || {}
   end
 
+  def render_not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
 private
 
   def allow_page_caching

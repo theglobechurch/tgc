@@ -39,10 +39,16 @@
         <% end %>
       </p>
 
-      <% if !event_instance.link_url.blank? %>
-        <a class="c-event-list__event__info-link" href="<%= event_instance.link_url %>" target="_blank" rel="noopener">More information</a>
-      <% elsif !event_instance.event.link_url.blank? %>
-        <a class="c-event-list__event__info-link" href="<%= event_instance.event.link_url %>" target="_blank" rel="noopener">More information</a>
+      <% if event_instance.description %>
+        <a href="<%= event_instance.instance_path %>">
+          More information
+        </a>
+      <% else %>
+        <% if !event_instance.link_url.blank? %>
+          <a class="c-event-list__event__info-link" href="<%= event_instance.link_url %>" target="_blank" rel="noopener">More information</a>
+        <% elsif !event_instance.event.link_url.blank? %>
+          <a class="c-event-list__event__info-link" href="<%= event_instance.event.link_url %>" target="_blank" rel="noopener">More information</a>
+        <% end %>
       <% end %>
 
     </div>

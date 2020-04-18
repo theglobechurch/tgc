@@ -26,16 +26,19 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = event
+    @event = event.decorate
+    @banner = @event.banner
+  end
 
-    @banner = {
-      'title' => @event.title,
-      'size' => 'blurred'
-    }
+  def instance
+    @event_instance = event_instance.decorate
 
-    if @event.graphic
-      @banner['image'] = @event.graphic.background_image_size_urls
+    if (@event_instance.nil?)
+      render_not_found
     end
+
+    @banner = @event_instance.banner
+    @banner['size'] = "blurred"
   end
 
 private
@@ -66,11 +69,26 @@ private
     @event ||= events.slug_find(params[:id])
   end
 
+  def event_instance
+    # if it doesn't have a slug then look up by date
+    if !params[:date].nil?
+      @event_instance ||= EventInstance.joins(:event)
+                            .where("events.slug = ?", params[:id])
+                            .where("to_date(event_instances.start_datetime::text, 'YYYY-MM-DD') = ?", params[:date].to_date)
+                            .first
+    else 
+      @event_instance ||= EventInstance.joins(:event)
+                            .where("events.slug = ?", params[:id])
+                            .where("event_instances.slug = ?", params[:instance_id])
+                            .first
+    end
+  end
+
   def sunday_service
-    @sunday_service ||= EventInstance.
-                        future.
-                        joins(:event).
-                        where('events.church_service': true).
-                        first
+    @sunday_service ||= EventInstance
+                          .future
+                          .joins(:event)
+                          .where('events.church_service': true)
+                          .first
   end
 end

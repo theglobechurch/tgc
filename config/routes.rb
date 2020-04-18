@@ -75,7 +75,13 @@ Rails.application.routes.draw do
   resources :resources, only: %i[show]
   get :resources, to: redirect('/preaching')
 
-  resources :events, only: %i[index show]
+  resources :events, only: %i[index show] do
+    member do
+      # instances _might_ not have slugs, and that's okay.
+      get '/:date', constraints: { date: /\d{4}-\d{2}-\d{2}/}, to: 'events#instance'
+      get '/:instance_id', to: 'events#instance'
+    end
+  end
 
   resources :people, only: %i[show]
 

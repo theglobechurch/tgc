@@ -2,35 +2,24 @@
 
   <section class="c-content-box">
 
-      <main class="c-content-box__main">
+    <main class="c-content-box__main">
+      <% if @event.description %>
+      <div class="c-content-box__main__container">
+        <%= markdown(@event.description) %>
+      </div>
+      <% end %>
 
-        <div class="c-content-box__main__container">
-
-            <% if @event.graphic %>
-            <div class="c-content-box__main__container__img-container js-object-fit-container">
-              <img src="<%= @event.graphic.background_image_960.try('remote_url') %>" alt="" />
-            </div>
-            <% end %>
-
-            <%= markdown(@event.description) %>
-
-        </div>
-
-        <aside class="c-content-box__aside">
-
-          <div class="c-content-box__aside__meta">
-            <p class="c-content-box__aside__meta__title">Every Sunday</p>
-            <p class="c-content-box__aside__meta__subtitle">4.30–6.00pm</p>
-            <p class="c-content-box__aside__meta__small">You're invited to a meal after the service</p>
-          </div>
-
-          <% if @event.location %>
-            <%= render('event_location', location: @event.location) %>
-          <% end %>
-
-        </aside>
-
-      </main>
+      <ul class="c-content-box__aside">
+        <% @event.event_instances.where("end_datetime >= ?", Time.now).each do |instance| %>
+          <li>
+            <strong><%= instance.title %></strong><br />
+            <%= instance.start_datetime.to_formatted_s(:short_ordinal) %><br />
+            <a href="<%= instance.instance_path %>">
+              Find out more…
+            </a><br /><br />
+          </li>
+        <% end %>
+      </ul>
+    </main>
   </section>
-
 </div>
