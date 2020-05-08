@@ -5,8 +5,7 @@
     <main class="c-content-box__main">
       <% if @event.description %>
       <div class="c-content-box__main__container">
-        <%#= markdown(@event.description) %>
-        <%= @event.description %>
+        <%= markdown(@event.description) %>
       </div>
       <% end %>
 
