@@ -36,7 +36,7 @@
     
     <%= render "globals/header" %>
 
-    <%= render "globals/alert_banner",
+    <%#= render "globals/alert_banner",
                alert_type: 'danger',
                alert_message: "During Covid-19 we'll be live streaming weekday mornings and Sunday afternoons. <a href='/live'>Find out more</a>.".html_safe,
                alert_tag: 'Live Stream' if !current_page?('/live') %>
