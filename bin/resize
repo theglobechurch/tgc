@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -e
-for SIZE in 320 640 960 1280 1920 2560; do
-  f=$(dirname "$1")/$(basename "$1" | cut -d. -f1)_"$SIZE".jpg
-  echo "copying to $f"
-  convert "$1" -quality 70 -interlace plane -resize "$SIZE"x "$f"
-done

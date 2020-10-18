@@ -1,5 +1,0 @@
----
-- name: "Install Gems"
-  bundler:
-    state: present
-    gemfile: /srv/tgc/Gemfile

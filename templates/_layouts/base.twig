@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+  <head>
+    <title>
+      The Globe Church
+    </title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="preconnect" href="https://cdn.polyfill.io" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+
+    <link rel="stylesheet" href="{{ mix('app.css') }}" />
+
+    {% if craft.app.config.general.devMode == false %}
+      <!-- GTM CODE PLS -->
+    {% endif %}
+
+    <link rel="author" href="humans.txt" />
+  </head>
+
+  <body>
+    {% if craft.app.config.general.devMode == false %}
+    <!-- GTM CODE PLS -->
+    {% endif %}
+
+    {% block header %}{% endblock %}
+
+    {% block banner %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}{% endblock %}
+
+    <script src="{{ mix('app.js') }}"></script>
+  </body>
+
+</html>

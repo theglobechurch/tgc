@@ -1,1 +1,0 @@
-../../node_modules/globe-fractal/dist/js/tgc-fractal.js

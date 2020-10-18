@@ -1,9 +1,0 @@
-#!/bin/sh
-echo
-echo "If you have installed the Vagrant plugin HostManager you can visit"
-echo "Visit http://globe.local:3000/"
-echo
-echo "Otherwise..."
-echo "Visit http://192.168.33.151:3000/"
-echo
-exec bundle exec rails server -b 0.0.0.0
