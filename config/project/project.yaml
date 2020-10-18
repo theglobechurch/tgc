@@ -1,10 +1,14 @@
-dateModified: 1603038426
+dateModified: 1603041037
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
   dashboard-begone:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  dospaces:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -24,7 +28,8 @@ system:
   timeZone: UTC
 users:
   allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
+  defaultGroup: ''
+  photoSubpath: /avatars
+  photoVolumeUid: fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0
   requireEmailVerification: true
+  suspendByDefault: false
