@@ -1,4 +1,4 @@
-dateModified: 1603041037
+dateModified: 1603093121
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
@@ -19,6 +19,10 @@ plugins:
     settings:
       assetPath: cr-assets
       publicPath: web
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
 system:
   edition: pro
   live: true

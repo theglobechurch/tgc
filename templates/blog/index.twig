@@ -1,0 +1,24 @@
+{% set entries = craft.entries.section('blog').
+                 orderBy('postDate desc').all() %}
+
+{% extends '/_layouts/base' %}
+
+{% block header %}
+Blog
+{% endblock %}
+
+{% block content %}
+
+
+{% for entry in entries %}
+  <div>
+    {{ entry.title }}
+
+    {# {% if entry.leadImage.one() %} #}
+      <img src="{{ entry.leadImage[0].url() }}" alt="{{ entry.leadImage[0].title }}" />
+    {# {% endif %} #}
+  </div>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: leadImage
+instructions: ''
+name: 'Lead Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0'
+  defaultUploadLocationSubpath: /lead-image
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: 'Add a lead image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0'
+  singleUploadLocationSubpath: leadImage
+  source: null
+  sources:
+    - 'volume:fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

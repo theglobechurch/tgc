@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: liveStreams
+name: 'Live Streams'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  cd87a5c6-673c-4d81-82dd-77a22e5131e8:
+    enabledByDefault: true
+    hasUrls: true
+    template: live/entry
+    uriFormat: 'live/{youtubeId}'
+type: channel

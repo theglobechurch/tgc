@@ -1,0 +1,45 @@
+fieldLayouts:
+  b73cad2c-344a-479e-afec-b5fb09901a1e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: general
+hasUrls: true
+name: General
+settings:
+  bucket: $SPACES_BUCKET
+  contentDisposition: inline
+  endpoint: $SPACES_ENDPOINT
+  expires: '99 years'
+  keyId: $SPACES_API_KEY
+  region: $SPACES_REGION
+  secret: $SPACES_SECRET
+  subfolder: general
+sortOrder: 1
+type: vaersaagod\dospaces\Volume
+url: 'https://assets.globe.church/'

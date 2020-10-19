@@ -1,0 +1,45 @@
+fieldLayouts:
+  a415ac01-380f-4b99-8d1f-3998cc4b7e8e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: recordings
+hasUrls: true
+name: Recordings
+settings:
+  bucket: $SPACES_BUCKET
+  contentDisposition: attachment
+  endpoint: $SPACES_ENDPOINT
+  expires: '99 years'
+  keyId: $SPACES_API_KEY
+  region: $SPACES_REGION
+  secret: $SPACES_SECRET
+  subfolder: recordings
+sortOrder: 2
+type: vaersaagod\dospaces\Volume
+url: 'https://assets.globe.church'

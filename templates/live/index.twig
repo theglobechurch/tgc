@@ -1,0 +1,20 @@
+{% set streams = craft.entries.section('liveStreams').
+                 orderBy('postDate desc').all() %}
+
+{% extends '/_layouts/base' %}
+
+{% block header %}
+Live Stream
+{% endblock %}
+
+{% block content %}
+
+
+{% for stream in streams %}
+  <div>
+    <a href="/live/{{ stream.youtubeId }}">{{ stream.youtubeId }}</a>
+  </div>
+{% endfor %}
+
+
+{% endblock %}

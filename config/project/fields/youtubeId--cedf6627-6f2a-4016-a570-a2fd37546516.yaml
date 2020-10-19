@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: youtubeId
+instructions: 'The ID letters and numbers at the end of a YouTube URL'
+name: 'YouTube ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: '1'
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
