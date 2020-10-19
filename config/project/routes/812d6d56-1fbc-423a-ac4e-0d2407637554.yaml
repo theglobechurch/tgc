@@ -1,0 +1,9 @@
+siteUid: null
+sortOrder: 1
+template: blog/_year
+uriParts:
+  - blog/
+  -
+    - year
+    - '\d{4}'
+uriPattern: 'blog/<year:\d{4}>'

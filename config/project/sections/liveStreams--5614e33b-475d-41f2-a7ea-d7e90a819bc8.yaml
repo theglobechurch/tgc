@@ -18,6 +18,6 @@ siteSettings:
   cd87a5c6-673c-4d81-82dd-77a22e5131e8:
     enabledByDefault: true
     hasUrls: true
-    template: live/entry
+    template: live/_entry
     uriFormat: 'live/{youtubeId}'
 type: channel

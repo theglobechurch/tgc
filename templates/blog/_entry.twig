@@ -1,1 +1,13 @@
-{{ entry.title }}
+
+{% extends '/_layouts/base' %}
+
+{% block content %}
+
+  {% if entry.leadImage.one() %}
+    <img src="{{ entry.leadImage[0].url() }}" alt="{{ entry.leadImage[0].title }}" />
+  {% endif %}
+
+  {{ entry.title }}
+
+
+{% endblock %}

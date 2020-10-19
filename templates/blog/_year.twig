@@ -1,10 +1,12 @@
 {% set entries = craft.entries.section('blog').
+                 after(year).
+                 before(year + 1).
                  orderBy('postDate desc').all() %}
 
 {% extends '/_layouts/base' %}
 
 {% block header %}
-Blog
+Blog posts from {{ year }}
 {% endblock %}
 
 {% block content %}
