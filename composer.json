@@ -1,6 +1,7 @@
 {
   "require": {
     "aelvan/imager": "^2.3",
+    "aelvan/imager-do-spaces-driver": "1.0.0",
     "craftcms/cms": "^3.5.10",
     "craftcms/redactor": "2.8.1",
     "jalendport/craft-readtime": "1.6.0",

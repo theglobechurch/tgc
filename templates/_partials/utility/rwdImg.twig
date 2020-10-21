@@ -1,0 +1,47 @@
+{% if img %}
+
+  {% set transformed = [] %}
+  {% set fallbackFormat = 'jpg' %}
+  {% set position = null %}
+  {% set title = img.title|default('') %}
+
+  {% if img.focalPoint is defined %}
+    {% set position = img.focalPoint.x * 100 ~  '% ' ~ img.focalPoint.y * 100 ~ '%' %}
+  {% endif %}
+
+  {% if not formats is defined %}
+    {% set formats = ['webp', 'jpg'] %}
+  {% endif %}
+
+  {% for i, format in formats %}
+
+    {% set transformed = transformed|merge({(format): craft.imager.transformImage(img,
+      imgSizes|default([ { width: 512, ratio: 1/2 }]),
+      {
+        format: format,
+        allowUpscale: false,
+        mode: 'crop',
+        position: position,
+        interlace: true,
+        effects: imgEffects|default({}),
+      })}) %}
+
+    {% if format != 'webp' %}
+      {% set fallbackFormat = format %}
+    {% endif %}
+
+  {% endfor %}
+
+  <picture class="{{ class|default() }}">
+  {% for format in formats %}
+    <source
+      sizes="{{ displaySizes|default('100vw') }}"
+      srcset="{{ craft.imager.srcset(transformed[(format)]) }}"
+      type="image/{{ format }}"
+    >
+  {% endfor %}
+
+    <img src="{{ transformed[(fallbackFormat)][0].url }}" alt="{{ title }}" {{ attributes|default() }} class="{{ class|default() }}" />
+  </picture>
+
+{% endif %}

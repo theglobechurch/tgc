@@ -9,18 +9,24 @@
 
 {% block content %}
 
-  <ul>
-      {% nav category in entries %}
-          <li>
-              <a href="{{ category.url }}">{{ category.title }}</a>
-              {% ifchildren %}
-                  <ul>
-                      {% children %}
-                  </ul>
-              {% endifchildren %}
-          </li>
-      {% endnav %}
-  </ul>
+
+  {% nav category in entries %}
+    <a class="block border m-2 p-2" href="{{ category.url }}">
+      <h2>{{ category.title }}</h2>
+      {{ category.leadImage.one().url }}
+
+      {% include '/_partials/utility/rwdImg' with {
+        img: category.leadImage.one() ?? null,
+        imgSizes: [
+          { width: 250, ratio: 1/1 },
+          { width: 400, ratio: 1/1 },
+        ],
+        displaySizes: '400px',
+        class: 'absolute w-full h-full object-cover',
+        attributes: 'loading="lazy"'
+      } %}
+    </a>
+  {% endnav %}
 
 
 {% endblock %}

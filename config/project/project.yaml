@@ -1,4 +1,4 @@
-dateModified: 1603102121
+dateModified: 1603259867
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
@@ -9,6 +9,14 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   dospaces:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  imager-do-spaces-driver:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
