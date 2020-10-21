@@ -4,15 +4,13 @@
 {% extends '/_layouts/base' %}
 
 {% block header %}
-Blog
+  Blog
 {% endblock %}
 
 {% block content %}
 
-
-{% for entry in entries %}
-  {% include '_partials/blogPreview' %}
-{% endfor %}
-
+  {% for entry in entries %}
+    {% include '_partials/blogPreview' %}
+  {% endfor %}
 
 {% endblock %}

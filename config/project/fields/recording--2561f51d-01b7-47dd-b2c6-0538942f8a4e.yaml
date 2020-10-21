@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: recording
+instructions: ''
+name: Recording
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - audio
+  defaultUploadLocationSource: 'volume:fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: 'Add a recording'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:b9be74d1-5a3b-4a45-b9b6-690e0a03e6d4'
+  singleUploadLocationSubpath: '{postDate|date(''Y'')}/{slug}'
+  source: null
+  sources:
+    - 'volume:b9be74d1-5a3b-4a45-b9b6-690e0a03e6d4'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

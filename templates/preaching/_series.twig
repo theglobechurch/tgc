@@ -1,0 +1,15 @@
+{% set entries = craft.entries.relatedTo(category).all() %}
+
+{% extends '/_layouts/base' %}
+
+{% block header %}
+  Sermon series
+{% endblock %}
+
+{% block content %}
+
+{% for entry in entries %}
+    <a class="block m-2 p-2 border" href="{{ entry.url }}">{{ entry.title }} ({{ entry.type }})</a>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% set entries = craft.categories().
+                 group('series').all() %}
+
+{% extends '/_layouts/base' %}
+
+{% block header %}
+  Sermon series
+{% endblock %}
+
+{% block content %}
+
+  <ul>
+      {% nav category in entries %}
+          <li>
+              <a href="{{ category.url }}">{{ category.title }}</a>
+              {% ifchildren %}
+                  <ul>
+                      {% children %}
+                  </ul>
+              {% endifchildren %}
+          </li>
+      {% endnav %}
+  </ul>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends '/_layouts/base' %}
+
+{% block header %}
+  <h1>{{ entry.title }}</h1>
+{% endblock %}
+
+{% block content %}
+  <a href="{{ entry.relatedSeries[0].url }}">
+    {{ entry.relatedSeries[0].title }}
+  </a>
+{% endblock %}
