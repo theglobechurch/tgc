@@ -1,6 +1,9 @@
-/.env
-/.idea
-/vendor
+.env
+.idea
+vendor
 .DS_Store
 node_modules
 tmp
+web/cpresources
+web/cr-assets
+web/imager
