@@ -1,4 +1,4 @@
-dateModified: 1603259867
+dateModified: 1603435432
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
@@ -38,10 +38,3 @@ system:
   retryDuration: null
   schemaVersion: 3.5.13
   timeZone: UTC
-users:
-  allowPublicRegistration: false
-  defaultGroup: ''
-  photoSubpath: /avatars
-  photoVolumeUid: fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0
-  requireEmailVerification: true
-  suspendByDefault: false
