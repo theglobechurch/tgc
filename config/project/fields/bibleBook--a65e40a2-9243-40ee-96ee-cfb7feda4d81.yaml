@@ -1,0 +1,748 @@
+contentColumnType: string
+fieldGroup: adbac511-4a77-4d9c-b525-cdad8c659c51
+handle: bibleBook
+instructions: ''
+name: Book
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Old Testament'
+    -
+      __assoc__:
+        -
+          - label
+          - Genesis
+        -
+          - value
+          - genesis
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Exodus
+        -
+          - value
+          - exodus
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Leviticus
+        -
+          - value
+          - leviticus
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Numbers
+        -
+          - value
+          - numbers
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Deuteronomy
+        -
+          - value
+          - deuteronomy
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Joshua
+        -
+          - value
+          - joshua
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Judges
+        -
+          - value
+          - judges
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Ruth
+        -
+          - value
+          - ruth
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Samuel'
+        -
+          - value
+          - 1Samuel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Samuel'
+        -
+          - value
+          - 2Samuel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Kings'
+        -
+          - value
+          - 1Kings
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Kings'
+        -
+          - value
+          - 2Kings
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Chronicles'
+        -
+          - value
+          - 1Chronicles
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Chronicles'
+        -
+          - value
+          - 2Chronicles
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Ezra
+        -
+          - value
+          - ezra
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Nehemiah
+        -
+          - value
+          - nehemiah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Esther
+        -
+          - value
+          - esther
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Job
+        -
+          - value
+          - job
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Psalms
+        -
+          - value
+          - psalms
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Proverbs
+        -
+          - value
+          - proverbs
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Ecclesiastes
+        -
+          - value
+          - ecclesiastes
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Song of Solomon'
+        -
+          - value
+          - songOfSolomon
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Isaiah
+        -
+          - value
+          - isaiah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Jeremiah
+        -
+          - value
+          - jeremiah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Lamentations
+        -
+          - value
+          - lamentations
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Ezekiel
+        -
+          - value
+          - ezekiel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Daniel
+        -
+          - value
+          - daniel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hosea
+        -
+          - value
+          - hosea
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Joel
+        -
+          - value
+          - joel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Amos
+        -
+          - value
+          - amos
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Obadiah
+        -
+          - value
+          - obadiah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Jonah
+        -
+          - value
+          - jonah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Micah
+        -
+          - value
+          - micah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Nahum
+        -
+          - value
+          - nahum
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Habakkuk
+        -
+          - value
+          - habakkuk
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Zephaniah
+        -
+          - value
+          - zephaniah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Haggai
+        -
+          - value
+          - haggai
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Zechariah
+        -
+          - value
+          - zechariah
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Malachi
+        -
+          - value
+          - malachi
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'New Testament'
+    -
+      __assoc__:
+        -
+          - label
+          - Matthew
+        -
+          - value
+          - matthew
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Mark
+        -
+          - value
+          - mark
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Luke
+        -
+          - value
+          - luke
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - John
+        -
+          - value
+          - john
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Acts
+        -
+          - value
+          - acts
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Romans
+        -
+          - value
+          - romans
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Corinthians'
+        -
+          - value
+          - 1Corinthians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Corinthians'
+        -
+          - value
+          - 2Corinthians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Galatians
+        -
+          - value
+          - galatians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Ephesians
+        -
+          - value
+          - ephesians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Philippians
+        -
+          - value
+          - philippians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Colossians
+        -
+          - value
+          - colossians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Thessalonians'
+        -
+          - value
+          - 1Thessalonians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Thessalonians'
+        -
+          - value
+          - 2Thessalonians
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Timothy'
+        -
+          - value
+          - 1Timothy
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Timothy'
+        -
+          - value
+          - 2Timothy
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Titus
+        -
+          - value
+          - titus
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Philemon
+        -
+          - value
+          - philemon
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hebrews
+        -
+          - value
+          - hebrews
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - James
+        -
+          - value
+          - james
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 Peter'
+        -
+          - value
+          - 1Peter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 Peter'
+        -
+          - value
+          - 2Peter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '1 John'
+        -
+          - value
+          - 1John
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '2 John'
+        -
+          - value
+          - 2John
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '3 John'
+        -
+          - value
+          - 3John
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Jude
+        -
+          - value
+          - jude
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Revelation
+        -
+          - value
+          - revelation
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

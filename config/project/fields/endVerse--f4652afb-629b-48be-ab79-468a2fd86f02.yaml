@@ -1,0 +1,19 @@
+contentColumnType: smallint(3)
+fieldGroup: adbac511-4a77-4d9c-b525-cdad8c659c51
+handle: endVerse
+instructions: ''
+name: 'End Verse'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: '176'
+  min: '1'
+  prefix: Verse
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

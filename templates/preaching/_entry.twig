@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block content %}
-  <a href="{{ entry.relatedSeries[0].url }}">
-    {{ entry.relatedSeries[0].title }}
+
+  <div>
+    {% include '/_partials/utility/biblePassage' with { item: entry } %}
+  </div>
+
+  <a class="block border m-2 p-2" href="{{ entry.relatedSeries[0].url }}">
+    Series: {{ entry.relatedSeries[0].title }}
   </a>
 {% endblock %}
