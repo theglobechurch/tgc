@@ -1,0 +1,76 @@
+fieldLayouts:
+  6a8776a3-9db0-4837-bb5f-270ea4e03739:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 78b0d1b4-1cb4-484d-9e2a-b58675024383
+            instructions: 'Is this a ''real'' place, or not (eg online)?'
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: 'Eg: GlobeSpace'
+            label: 'Venue Name'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 44860858-935e-4476-80b4-2cd7966d2002
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a30c5297-47e2-4664-b3ba-09b97bd23aa9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0928832c-65cd-4288-8140-b449c490027c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: location
+name: Location
+siteSettings:
+  cd87a5c6-673c-4d81-82dd-77a22e5131e8:
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 2329bc17-f3a9-4a6e-b4c0-f9811746500e

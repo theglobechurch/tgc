@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 30b75af0-c1c0-44d6-83c6-38f1d0a6dd50
+handle: city
+instructions: ''
+name: 'Town / City'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

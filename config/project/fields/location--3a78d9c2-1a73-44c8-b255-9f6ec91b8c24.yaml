@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: location
+instructions: ''
+name: Location
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Add address'
+  showSiteMenu: true
+  source: 'group:03d99e6d-584e-4fa1-8740-c81098614663'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

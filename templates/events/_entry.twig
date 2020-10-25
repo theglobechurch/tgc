@@ -1,0 +1,13 @@
+{% extends '/_layouts/base' %}
+
+{% block header %}
+  <h1 class="text-xl">{{ entry.title}}</h1>
+{% endblock %}
+
+{% block content %}
+  <p>{{entry.description}}</p>
+  <p>Next happening: {{ entry.dateAndTime.next|date('Y-m-d H:i') }}</p>
+  <a href="{{ entry.dateAndTime.getIcsUrl }}">Add to calendar</a>
+
+  {{ entry.pageBody }}
+{% endblock %}

@@ -1,0 +1,44 @@
+contentColumnType: string
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: linkType
+instructions: ''
+name: 'Link type'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Ticket Booking'
+        -
+          - value
+          - ticketBooking
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Zoom Link'
+        -
+          - value
+          - zoom
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Other
+        -
+          - value
+          - other
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

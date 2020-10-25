@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: dateAndTime
+instructions: ''
+name: 'Date and time'
+searchable: false
+settings:
+  allDay: false
+  endDate: null
+  endRepeat: null
+  endRepeatDate: null
+  months: null
+  repeatType: null
+  repeats: false
+  startDate: null
+translationKeyFormat: null
+translationMethod: none
+type: unionco\calendarize\fields\CalendarizeField

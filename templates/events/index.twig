@@ -1,0 +1,20 @@
+{% extends '/_layouts/base' %}
+
+{% block header %}
+  Events at the Globe Church
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="border-b p-2 m-2">This term</h1>
+
+  {% set monthStart = '2020-08-01' %}
+  {% set monthEnd = '2020-12-31' %}
+  {% set occurrences = craft.calendarize.between(monthStart, monthEnd, { section: ['events'] }) %}
+  {% for occurrence in occurrences %}
+    <a href="{{occurrence.url }}" class="block border m-2 p-2">
+      {{ occurrence.title }} - {{ occurrence.next | date('Y-m-d H:i') }}
+    </a>
+  {% endfor %}
+
+{% endblock %}
