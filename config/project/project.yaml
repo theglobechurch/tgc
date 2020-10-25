@@ -1,9 +1,13 @@
-dateModified: 1603435432
+dateModified: 1603617127
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  calendarize:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.3.0
   dashboard-begone:
     edition: standard
     enabled: true
