@@ -1,6 +1,6 @@
 siteUid: null
 sortOrder: 1
-template: blog/_year
+template: /blog/_year
 uriParts:
   - blog/
   -

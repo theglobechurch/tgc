@@ -1,0 +1,9 @@
+siteUid: null
+sortOrder: 2
+template: /people/_entry
+uriParts:
+  - people/
+  -
+    - slug
+    - '[^\/]+'
+uriPattern: 'people/<slug:[^\/]+>'

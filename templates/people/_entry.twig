@@ -1,0 +1,43 @@
+{% set entry = craft.users.username(slug).one() %}
+
+{% extends '/_layouts/base' %}
+
+{% block header %}
+  <h1>{{ entry.name }}</h1>
+  <h2>{{ entry.subtitle }}</h2>
+{% endblock %}
+
+{% block content %}
+
+  <p>{{ entry.description }}</p>
+
+  {%
+    include '/_partials/utility/rwdImg' with {
+      img: entry.photo ?? null,
+      imgSizes: [
+        { width: 250, ratio: 1/1 },
+        { width: 400, ratio: 1/1 },
+      ],
+      displaySizes: '400px',
+      class: 'block rounded-full',
+      attributes: 'loading="lazy"'
+    }
+  %}
+
+  {{ entry.summary }}
+
+  {% if entry.servingTeams|length == 1 %}
+
+    <p>{{ entry.firstName }} serves with the {{ entry.servingTeams.one().title }} team.</p>
+
+  {% elseif entry.servingTeams|length > 1 %}
+
+    <p>{{ entry.firstName }} serves with the following teams:</p>
+
+    {% for team in entry.servingTeams.all() %}
+      <li>{{ team.title }}</li>
+    {% endfor %}
+
+  {% endif %}
+
+{% endblock %}
