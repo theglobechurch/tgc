@@ -1,0 +1,5 @@
+---
+- name: Provision
+  hosts: "web"
+  roles:
+    - site-globe

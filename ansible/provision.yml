@@ -1,0 +1,10 @@
+---
+- name: Provision
+  hosts: "web"
+  roles:
+    - node
+    - certbot
+    - mariadb
+    - php
+    - nginx
+    - site-globe

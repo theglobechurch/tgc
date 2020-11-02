@@ -1,0 +1,17 @@
+---
+- name: "MariaDB: Create Globe database"
+  mysql_db:
+    name: "{{ mysql_globe_database }}"
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+    login_host: localhost
+    state: present
+
+- name: "MariaDB: Create Globe database user"
+  mysql_user:
+    name: "{{ mysql_globe_user }}"
+    password: "{{ mysql_globe_password }}"
+    priv: "{{ mysql_globe_database }}.*:ALL"
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+    state: present

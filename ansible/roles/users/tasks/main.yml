@@ -1,0 +1,24 @@
+---
+- name: "Allow admin users to sudo without a password"
+  lineinfile:
+    dest: "/etc/sudoers"
+    state: "present"
+    regexp: "^%admin"
+    line: "%admin ALL=(ALL) NOPASSWD: ALL"
+
+- name: Create a login user
+  user:
+    name: "{{ item['username'] }}"
+    groups: "{{ item['groups'] }}"
+    state: present
+    shell: /bin/bash
+    system: no
+    createhome: yes
+  loop: "{{ users }}"
+
+- name: "Set authorized keys"
+  authorized_key:
+    user: "{{ item['username'] }}"
+    state: present
+    key: "{{ item['ssh_key'] }}"
+  loop: "{{ users }}"
