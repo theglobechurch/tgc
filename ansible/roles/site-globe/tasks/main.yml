@@ -1,0 +1,127 @@
+---
+- name: Set up database
+  include: database.yml
+
+- name: "Globe: Set deploy time"
+  set_fact:
+    timestamp: "{{ lookup('pipe', 'date +%Y%m%d%H%M%SZ') }}"
+
+- name: "Globe: Register deploy location"
+  set_fact:
+    deploy_location: "{{ deploy_root }}{{ sites.globe.directory }}/deploy/{{ timestamp }}"
+
+- name: "Globe: Register live location"
+  set_fact:
+    live_location: "{{ deploy_root }}{{ sites.globe.directory }}/live"
+
+- name: "Globe: Create directories"
+  file:
+    path: "{{ deploy_location }}"
+    state: directory
+    recurse: yes
+    group: www-data
+
+- debug:
+    msg: "Deploying to: {{ deploy_location }}"
+
+# - name: Copy hello world site
+#   template:
+#     src: index.php
+#     dest: "{{ deploy_location }}"
+
+- name: "Clone: Pull the repo"
+  git:
+    dest: "{{ deploy_location }}"
+    clone: yes
+    repo: "{{ sites.globe.repo }}"
+    force: yes
+    version: "{{ sites.globe.branch }}"
+
+- name: "Create env file"
+  template:
+    src: "production.env.j2"
+    dest: "{{ deploy_location }}/.env"
+    group: www-data
+
+## TODO: Migrate the craft Db?
+
+- name: "Check for composer.json"
+  stat:
+    path: "{{ deploy_location }}/composer.lock"
+  register: composerlock
+
+- name: Composer install
+  shell: composer install
+  args:
+    chdir: "{{ deploy_location }}"
+  when: composerlock.stat.exists
+
+- name: "Check for package.json"
+  stat:
+    path: "{{ deploy_location }}/package.json"
+  register: packagejson
+
+- name: "NPM install"
+  npm:
+    path: "{{ deploy_location }}"
+  when: packagejson.stat.exists
+
+- name: Build production assets
+  shell: npm run production
+  args:
+    chdir: "{{ deploy_location }}"
+  when: packagejson.stat.exists
+
+- name: Craft functions…
+  shell: php craft migrate/all && php craft project-config/apply --force
+  args:
+    chdir: "{{ deploy_location }}"
+
+- name: "Set group"
+  file:
+    path: "{{ deploy_location }}"
+    recurse: yes
+    group: www-data
+
+- name: "Remove cache folder"
+  file:
+    path: "{{ deploy_location }}/web/cpresources"
+    state: absent
+
+
+- name: "Set storage folder permissions"
+  file:
+    path: "{{ deploy_location }}{{ item }}"
+    mode: "774"
+    recurse: yes
+  loop:
+    - /storage
+    - /config/project
+    - /vendor
+
+- name: "Globe: Copy php-fpm configuration"
+  template:
+    src: globe_fpm_pool.j2
+    dest: /etc/php/7.4/fpm/pool.d/globe_fpm_pool.conf
+  notify: reload fpm
+
+- name: "Globe: Copy nginx configuration"
+  template:
+    src: "{{ sites.globe.domain }}.j2"
+    dest: /etc/nginx/sites-available/{{ sites.globe.domain }}.conf
+  become: true
+
+- name: "Globe: Enable nginx record"
+  file:
+    src: "/etc/nginx/sites-available/{{ sites.globe.domain }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ sites.globe.domain }}.conf"
+    state: link
+  become: true
+
+- name: "Globe: Symlink it to live"
+  file:
+    src: "{{ deploy_location }}"
+    dest: "{{ live_location }}"
+    state: link
+    group: www-data
+  notify: reload nginx

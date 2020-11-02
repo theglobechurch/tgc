@@ -1,0 +1,56 @@
+---
+- name: "Install Nginx"
+  apt:
+    name: "{{ packages }}"
+    state: present
+  become: yes
+  vars:
+    packages:
+      - nginx
+      - php-fpm
+      - php-mysql
+      - php-pear
+      - php-cgi
+
+- name: (NGINX) Remove the default Websites
+  file:
+    path: "{{ item }}"
+    state: absent
+  become: yes
+  loop:
+    - /etc/nginx/sites-enabled/default
+    - /etc/nginx/sites-available/default
+  notify: reload nginx
+
+- name: Ensure /srv group and permissions
+  file:
+    path: /srv
+    group: www-data
+    mode: "g+rwx"
+  become: true
+
+- name: Ensures srv/default dir exists
+  file:
+    path: /srv/default
+    state: directory
+    recurse: yes
+
+- name: Copy hello world site
+  template:
+    src: index.htm
+    dest: /srv/default/index.htm
+  notify: reload nginx
+
+- name: Copy nginx configuration
+  template:
+    src: default.j2
+    dest: /etc/nginx/sites-available/default.conf
+  become: yes
+
+- name: Create symbolic link
+  file:
+    src: "/etc/nginx/sites-available/default.conf"
+    dest: "/etc/nginx/sites-enabled/default.conf"
+    state: link
+  become: yes
+  notify: reload nginx

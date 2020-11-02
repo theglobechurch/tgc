@@ -1,0 +1,41 @@
+---
+- name: Apt get update
+  apt:
+    update_cache: yes
+
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+
+- name: Generate the server locale
+  locale_gen:
+    name: "{{ locale }}"
+    state: present
+
+- name: Set locale
+  lineinfile:
+    dest: /etc/default/locale
+    regexp: "^LANG"
+    line: "LANG={{ locale }}"
+
+- name: Reload locale
+  raw: . /etc/default/locale
+
+- name: Set timezone
+  timezone:
+    name: "{{ timezone }}"
+
+- name: Install additional software
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - dnsutils
+      - git
+      - vim
+      - ntp
+      - at
+      - lvm2
+      - build-essential

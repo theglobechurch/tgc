@@ -1,0 +1,25 @@
+---
+- name: "Certbot - Install"
+  apt:
+    name: "{{ packages }}"
+    state: present
+  become: true
+  vars:
+    packages:
+      - certbot
+      - python3-certbot-nginx
+
+- name: Certbot - Check that the cert pemfile exists
+  stat:
+    path: /etc/ssl/certs/dhparam.pem
+  register: stat_result
+
+- name: Certbot - Generate dhparams file
+  shell: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+  when: not stat_result.stat.exists
+  become: true
+
+- name: Certbot - Get certs
+  shell: certbot certonly --nginx --email {{ item['email'] }} --agree-tos -d {{ item['domain'] }} --keep-until-expiring;
+  loop: "{{ ssl }}"
+  become: true

@@ -1,0 +1,5 @@
+---
+- name: reload mariadb
+  service:
+    name: mariadb
+    state: reloaded

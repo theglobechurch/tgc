@@ -1,0 +1,4 @@
+- name: reload fpm
+  service:
+    name: php7.4-fpm
+    state: reloaded

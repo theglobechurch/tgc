@@ -1,0 +1,50 @@
+ansible_python_interpreter: /usr/bin/python3
+locale: en_GB.UTF-8
+timezone: Europe/London
+users:
+  - username: "ansible_control"
+    groups: "admin, www-data"
+    ssh_key: "https://github.com/jamesdoc.keys"
+  - username: "jamesdoc"
+    groups: "admin, www-data"
+    ssh_key: "https://github.com/jamesdoc.keys"
+  - username: "richardbray"
+    groups: "admin, www-data"
+    ssh_key: "https://github.com/RichardBray.keys"
+  - username: "kenanberker"
+    groups: "admin, www-data"
+    ssh_key: "https://github.com/kbberker.keys"
+
+# PHP
+
+# Maria DB
+mysql_root_password: "{{ vault_mysql_root_password }}"
+mysql_globe_database: "{{ vault_mysql_globe_db_name }}"
+mysql_globe_user: "{{ vault_mysql_globe_user }}"
+mysql_globe_password: "{{ vault_mysql_globe_password }}"
+
+# Craft
+craft_security_key: "{{ vault_craft_security_key }}"
+do_spaces_key: "{{ vault_do_spaces_key }}"
+do_spaces_secret: "{{ vault_do_spaces_secret }}"
+
+# Deploy location
+releases_to_keep: 5
+deploy_root: /srv/
+
+sites:
+  {
+    globe:
+      {
+        domain: "next.globe.church",
+        directory: "next.globe.church",
+        repo: "https://github.com/theglobechurch/tgc.git",
+        branch: "craft/deploy",
+      },
+  }
+
+# Nginx
+nginx_cache: /tmp/nginx_cache
+
+# LetsEncrypt
+ssl: [{ email: "james@globe.church", domain: "next.globe.church" }]

@@ -1,0 +1,16 @@
+server {
+  listen 80 default_server;
+  root /srv/default;
+
+  client_max_body_size 64M;
+
+  index index.php index.html index.htm;
+
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+  location ~* \.(gif|jpg|jpeg|png|css|js)$ {
+    expires max;
+  }
+}

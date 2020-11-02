@@ -1,0 +1,8 @@
+---
+- name: Basics
+  hosts: "web"
+  become: true
+  roles:
+    - general
+    - firewall
+    - users

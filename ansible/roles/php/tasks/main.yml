@@ -1,0 +1,33 @@
+---
+- name: "Install"
+  apt:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - php
+      - php-cli
+      - php-fpm
+      - php-json
+      - php-common
+      - php-mysql
+      - php-zip
+      - php-gd
+      - php-mbstring
+      - php-curl
+      - php-xml
+      - php-pear
+      - php-bcmath
+
+- name: "PHP-FPM: Check that the www.conf exists"
+  stat:
+    path: /etc/php/7.4/fpm/pool.d/www.conf
+  register: stat_result
+
+- name: "PHP-FPM: Remove default conf"
+  command: mv /etc/php/7.4/fpm/pool.d/www.conf /etc/php/7.4/fpm/pool.d/www.conf.old
+  notify: reload fpm
+  when: stat_result.stat.exists
+
+- name: Install composer
+  include: composer.yml
