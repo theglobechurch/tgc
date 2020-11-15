@@ -5,5 +5,5 @@ vendor
 node_modules
 tmp
 web/cpresources
-web/cr-assets
+web/cr-assets/*
 web/imager

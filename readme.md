@@ -6,5 +6,13 @@ Sprinkled with Tailwind.
 
 ## Setup
 
-- `composer install`
-- `npm install && npm run dev`
+```bash
+cp .env.example .env
+```
+
+Edit the `.env` file as required
+
+```bash
+composer install
+npm install && npm run dev
+```
