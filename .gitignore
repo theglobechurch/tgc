@@ -35,3 +35,7 @@ public/uploads/*
 !/app/assets/js/.keep
 !/app/assets/svg/.keep
 !/app/assets/svg/sir-trevor-icons.svg
+
+
+.env
+vaultPass.cnf
