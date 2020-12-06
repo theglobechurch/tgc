@@ -117,15 +117,15 @@ private
       }
     when 'christmas'
       {
-        "title" => 'Christmas 2017',
-        "subtitle" => 'Carol services near London Bridge and Waterloo',
+        "title" => 'Christmas Carols',
+        "subtitle" => 'Experience the unique hope of Christmas',
         "image" => {
-          "320": view_context.asset_path("static-banner/christmas/christmas_320.jpg"),
-          "640": view_context.asset_path("static-banner/christmas/christmas_640.jpg"),
-          "960": view_context.asset_path("static-banner/christmas/christmas_960.jpg"),
-          "1280": view_context.asset_path("static-banner/christmas/christmas_1280.jpg"),
-          "1920": view_context.asset_path("static-banner/christmas/christmas_1920.jpg"),
-          "2560": view_context.asset_path("static-banner/christmas/christmas_2560.jpg"),
+          "320": view_context.asset_path("static-banner/christmas/christmas-2020_320.jpg"),
+          "640": view_context.asset_path("static-banner/christmas/christmas-2020_640.jpg"),
+          "960": view_context.asset_path("static-banner/christmas/christmas-2020_960.jpg"),
+          "1280": view_context.asset_path("static-banner/christmas/christmas-2020_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/christmas/christmas-2020_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/christmas/christmas-2020_2560.jpg"),
         },
       }
     when 'wonder'

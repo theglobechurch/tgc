@@ -1,188 +1,42 @@
 <div class="site-container">
   <section class="c-content-box">
-    <main class="c-content-box__main c-content-box__main--text-focus">
-      <div class="c-content-box__main__container">
-        <p>Live or work near London's Southbank? We'd love to invite you to join us this Christmas time as we celebrate together; singing carols and re-telling the nativity story.
-        <div class="st-button"><a href="#section:sunday-10th-december" class="u-btn u-btn--dark u-btn--centred"><strong>Traditional carol service</strong><br />Sunday 10th December</a></div>
-        <div class="st-button"><a href="#section:wednesday-13th-december" class="u-btn u-btn--dark u-btn--centred"><strong>After-work carols</strong><br />Wednesday 13th December</a></div>
-
-        <blockquote class="st-blockquote">
-          <div class="st-blockquote__body">
-            <p>Now this is real freedom - to be truly seen. What could be better for Christmas this year? A Prince of Peace who scatters our fear? Yes, God is the Maker - but we hide from him…</p>
-          </div>
-          <footer class="st-blockquote__footer">
-            - <cite>Jonty Allcock; Wrapping paper</cite>
-          </footer>
-        </blockquote>
-        <figure class="st-video">
-          <div class="st-video__container">
-            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FCoMissionLDN%2Fvideos%2F1922895634392711%2F&amp;width=560&amp;controls=false&amp;mute=false" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
-          </div>
-          <figcaption class="st-video__caption">
-            Wrapping paper - Jonty Allcock / Co-Mission 2017
-          </figcaption>
-        </figure>
+    <main class="c-content-box__main">
+      <div class="c-content-box__main--text-focus">
+        <div class="c-content-box__main__container">
+          <p>Perhaps it goes without saying, Christmas this year is going to be different…but that doesn't mean Christmas is cancelled.</p>
+          <p>We invite you to enjoy the wonder of Christmas in a 30 minute celebration of the unique hope that is found in Jesus.</p>
+          <p>Featuring classic Christmas carols, poignant storytelling, and a few moments to pause and experience the excitement of Christmas afresh.</p>
+        </div>
       </div>
+
+      <aside class="c-content-box__aside">
+        <ul class="c-icon-list">
+
+          <li class="c-icon-list__item">
+            <a>
+              <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
+              <span>
+                Tues 15th Dec<br />
+                Wed 16th Dec<br />
+                Thurs 18th Dec<br />
+              </span>
+            </a>
+          </li>
+
+          <li class="c-icon-list__item">
+            <a>
+              <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
+              <span>
+                7.30pm
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="/live" class="u-btn u-btn--dark u-btn--block" target="_blank">Watch now</a>
+      </aside>
+
     </main>
   </section>
+
 </div>
-
-<%= render('/shared/internal_nav',
-           sections: ['Sunday 10th December', 'Wednesday 13th December'],
-           current: 'sunday-10th-december') %>
-
-<section class="c-content-box">
-  <header class="c-content-box__header js-object-fit-container">
-    <%=
-      responsive_image_tag(
-        {
-          "320": asset_path("static-banner/christmas/london-bridge-traditional-carols_320.jpg"),
-          "640": asset_path("static-banner/christmas/london-bridge-traditional-carols_640.jpg"),
-          "960": asset_path("static-banner/christmas/london-bridge-traditional-carols_960.jpg"),
-          "1280": asset_path("static-banner/christmas/london-bridge-traditional-carols_1280.jpg"),
-          "1920": asset_path("static-banner/christmas/london-bridge-traditional-carols_1920.jpg"),
-          "2560": asset_path("static-banner/christmas/london-bridge-traditional-carols_2560.jpg"),
-        },
-        sizes: [
-          '(max-width: 1200px) 1200px',
-          '100vw'
-        ],
-        class: 'c-content-box__header__img',
-        alt: ''
-      )
-    %>
-    <div class="c-content-box__header__container">
-      <h1 class="c-content-box__header__title">Traditional Carol Service</h1>
-      <h2 class="c-content-box__header__subtitle">Sunday 10th December</h2>
-    </div>
-  </header>
-
-  <main class="c-content-box__main">
-    <div class="c-content-box__main--text-focus">
-      <div class="c-content-box__main__container">
-        <p>At the heart of the Christmas story is a glorious message of hope and freedom. We would love you to come and experience it for yourself.</p>
-        <p>On Sunday 10th December we'll be meeting together near London Bridge to celebrate, to sing, to hear the Christmas story.</p>
-        <p>Everyone is welcome afterwards after the service to join us after for a small meal together.</p>
-      </div>
-    </div>
-
-    <aside class="c-content-box__aside">
-      <ul class="c-icon-list">
-
-        <li class="c-icon-list__item">
-          <a>
-            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
-            <span>
-              Sunday 10th December
-            </span>
-          </a>
-        </li>
-
-        <li class="c-icon-list__item">
-          <a>
-            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
-            <span>
-              4.30pm
-            </span>
-          </a>
-        </li>
-
-        <li class="c-icon-list__item">
-          <a>
-            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
-            <address>
-              Hodgkin Building,<br />
-              Guy's Campus,<br />
-              Newcomen Street,<br />
-              SE1 1UL
-            </address>
-          </a>
-        </li>
-      </ul>
-
-      <a href="https://goo.gl/maps/Qc3bUfA2arP2" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
-    </aside>
-
-  </main>
-</section>
-
-<%= render('/shared/internal_nav',
-           sections: ['Sunday 10th December', 'Wednesday 13th December'],
-           current: 'wednesday-13th-december') %>
-
-<section class="c-content-box">
-  <header class="c-content-box__header js-object-fit-container">
-
-      <%=
-        responsive_image_tag(
-          {
-            "320": asset_path("static-banner/christmas/after-work-carols-waterloo_320.jpg"),
-            "640": asset_path("static-banner/christmas/after-work-carols-waterloo_640.jpg"),
-            "960": asset_path("static-banner/christmas/after-work-carols-waterloo_960.jpg"),
-            "1280": asset_path("static-banner/christmas/after-work-carols-waterloo_1280.jpg"),
-            "1920": asset_path("static-banner/christmas/after-work-carols-waterloo_1920.jpg"),
-            "2560": asset_path("static-banner/christmas/after-work-carols-waterloo_2560.jpg"),
-          },
-          sizes: [
-            '(max-width: 1200px) 1200px',
-            '100vw'
-          ],
-          class: 'c-content-box__header__img',
-          alt: ''
-        )
-      %>
-
-      <div class="c-content-box__header__container">
-          <h1 class="c-content-box__header__title">Evening Carols</h1>
-          <h2 class="c-content-box__header__subtitle">Wednesday 13th December</h2>
-      </div>
-  </header>
-
-  <main class="c-content-box__main">
-
-    <div class="c-content-box__main--text-focus">
-      <div class="c-content-box__main__container">
-        <p>Get in the festive spirit with an evening of traditional carols, mulled wine and a message of the true meaning of Christmas.</p>
-        <p>Come on your own or with colleagues, friends or family, just five minutes walk from Waterloo Station.</p>
-      </div>
-    </div>
-
-    <aside class="c-content-box__aside">
-      <ul class="c-icon-list">
-
-        <li class="c-icon-list__item">
-          <a>
-            <%= svg_tag('calendar', class: 'c-icon-list__item__icon') %>
-            <span>
-              Wednesday 13th December
-            </span>
-          </a>
-        </li>
-
-        <li class="c-icon-list__item">
-          <a>
-            <%= svg_tag('clock', class: 'c-icon-list__item__icon') %>
-            <span>
-              7pm
-            </span>
-          </a>
-        </li>
-
-        <li class="c-icon-list__item">
-          <a>
-            <%= svg_tag('map', class: 'c-icon-list__item__icon') %>
-            <address>
-              The Warehouse,<br />
-              13 Theed Street,<br />
-              Waterloo,<br />
-              SE1 8ST
-            </address>
-          </a>
-        </li>
-      </ul>
-
-      <a href="https://goo.gl/maps/wvK7ArUf4Bp" class="u-btn u-btn--dark u-btn--block" target="_blank">Get directions</a>
-    </aside>
-
-  </main>
-</section>
