@@ -26,11 +26,11 @@ module ApplicationHelper
   end
 
   def responsive_image_tag(graphic, html_options = {})
-    srcset = graphic.map { |(k, v)| "#{URI.escape(v)} #{k}w" }
+    srcset = graphic.map { |(k, v)| "#{request.base_url}#{URI.escape(v)} #{k}w" }
     kwargs = html_options.deep_merge(sizes:
       html_options.fetch(:sizes, []).join(', '))
-    fallback = graphic.try(:[], :"960")
-    fallback = graphic.values[0] if fallback.nil?
+    fallback = request.base_url + graphic.try(:[], :"960")
+    fallback = request.base_url + graphic.values[0] if fallback.nil?
     image_tag URI.escape(fallback),
               srcset: srcset.join(', '),
               **kwargs

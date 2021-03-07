@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Globe Blog</title>
+  <link href="https://globe.church/blog" />
+  <author>
+      <name>The Globe Church</name>
+  </author>
+  <id>https://globe.church/export/blog</id>
+
+  <updated>2021-03-07T00:00:00+00:00</updated>
+
+  <% @articles.each do |article| %>
+    <entry>
+      <content>
+        <![CDATA[<%= render article.body %>]]>
+      </content>
+    </entry>
+  <% end %>
+
+</feed>
