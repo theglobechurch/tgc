@@ -39,3 +39,6 @@ public/uploads/*
 
 .env
 vaultPass.cnf
+vendor/
+storage/
+web/

@@ -33,7 +33,7 @@ Rails.application.routes.draw do
         get 'preview'
       end
     end
- 
+
     resource :user, only: [:edit] do
       collection do
         patch 'update_password'
@@ -71,6 +71,11 @@ Rails.application.routes.draw do
       get 'sermon'
     end
   end
+
+  # Migrate oontent out…
+  get 'export/blog', to: 'export#blog'
+  get 'export/audio', to: 'export#audio'
+  get 'export/series', to: 'export#series'
 
   resources :resources, only: %i[show]
   get :resources, to: redirect('/preaching')
