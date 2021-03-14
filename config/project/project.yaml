@@ -1,4 +1,4 @@
-dateModified: 1605450744
+dateModified: 1615738121
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
@@ -16,6 +16,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.3.0
   imager:
     edition: standard
     enabled: true
@@ -40,5 +44,5 @@ system:
   live: true
   name: 'The Globe Church'
   retryDuration: null
-  schemaVersion: 3.5.13
+  schemaVersion: 3.6.6
   timeZone: UTC

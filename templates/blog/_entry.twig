@@ -2,12 +2,16 @@
 {% extends '/_layouts/base' %}
 
 {% block content %}
-
+<main class="mx-auto">
   {% if entry.leadImage.one() %}
     <img src="{{ entry.leadImage[0].url() }}" alt="{{ entry.leadImage[0].title }}" />
   {% endif %}
 
   {{ entry.title }}
 
+  <div class="prose mx-auto">
+  {{ entry.pageBody }}
+  </div>
+</main>
 
 {% endblock %}

@@ -2,8 +2,9 @@
   "require": {
     "aelvan/imager": "^2.3",
     "aelvan/imager-do-spaces-driver": "1.0.0",
-    "craftcms/cms": "3.5.15.1",
-    "craftcms/redactor": "2.8.3",
+    "craftcms/cms": "3.6.10",
+    "craftcms/feed-me": "4.3.6",
+    "craftcms/redactor": "2.8.5",
     "jalendport/craft-readtime": "1.6.0",
     "misterbk/mix": "1.5.2",
     "putyourlightson/craft-dashboard-begone": "1.0.1",
@@ -23,7 +24,7 @@
     "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {
-      "php": "7.0"
+      "php": "7.4"
     }
   },
   "scripts": {

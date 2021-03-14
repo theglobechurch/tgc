@@ -1,4 +1,4 @@
-contentColumnType: string(960)
+contentColumnType: text
 fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
 handle: description
 instructions: 'Short introduction to content. Will be displayed on social media, might be displayed on the page'
@@ -6,12 +6,12 @@ name: Description
 searchable: false
 settings:
   byteLimit: null
-  charLimit: 240
+  charLimit: null
   code: ''
   columnType: null
   initialRows: '4'
   multiline: '1'
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

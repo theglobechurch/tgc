@@ -13,7 +13,10 @@
   {% nav category in entries %}
     <a class="block border m-2 p-2" href="{{ category.url }}">
       <h2>{{ category.title }}</h2>
+
+      {% if category.leadImage.one() %}
       {{ category.leadImage.one().url }}
+      {% endif %}
 
       {% include '/_partials/utility/rwdImg' with {
         img: category.leadImage.one() ?? null,

@@ -9,7 +9,7 @@ settings:
   allowUploads: true
   allowedKinds:
     - audio
-  defaultUploadLocationSource: 'volume:fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0'
+  defaultUploadLocationSource: 'volume:fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0' # General
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -19,11 +19,11 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:b9be74d1-5a3b-4a45-b9b6-690e0a03e6d4'
+  singleUploadLocationSource: 'volume:b9be74d1-5a3b-4a45-b9b6-690e0a03e6d4' # Recordings
   singleUploadLocationSubpath: '{postDate|date(''Y'')}/{slug}'
   source: null
   sources:
-    - 'volume:b9be74d1-5a3b-4a45-b9b6-690e0a03e6d4'
+    - 'volume:b9be74d1-5a3b-4a45-b9b6-690e0a03e6d4' # Recordings
   targetSiteId: null
   useSingleFolder: true
   validateRelatedElements: false

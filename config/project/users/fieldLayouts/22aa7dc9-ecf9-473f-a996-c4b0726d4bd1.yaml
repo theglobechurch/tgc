@@ -20,7 +20,7 @@ tabs:
         warning: null
         width: 100
       -
-        fieldUid: 50ec1514-bf90-4ded-b96a-a87d667853a3
+        fieldUid: 50ec1514-bf90-4ded-b96a-a87d667853a3 # Description
         instructions: 'Keep it brief. One sentence is all you need here. This will be displayed below blog posts.'
         label: 'Short introduction'
         required: '1'

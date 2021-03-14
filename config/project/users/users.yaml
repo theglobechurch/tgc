@@ -1,6 +1,6 @@
 allowPublicRegistration: false
 defaultGroup: ''
 photoSubpath: /avatars
-photoVolumeUid: fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0
+photoVolumeUid: fdcbfbe5-de93-49e6-b5f8-d867b6eb26c0 # General
 requireEmailVerification: true
 suspendByDefault: false

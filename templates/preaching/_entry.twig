@@ -6,6 +6,14 @@
 
 {% block content %}
 
+{% if entry.recording.one() %}
+<audio
+    controls
+    src="{{ entry.recording.one().url}}">
+</audio>
+{% endif %}
+
+
   <div>
     {% include '/_partials/utility/biblePassage' with { item: entry } %}
   </div>
