@@ -1,17 +1,61 @@
-
 {% extends '/_layouts/base' %}
 
 {% block content %}
-<main class="mx-auto">
-  {% if entry.leadImage.one() %}
-    <img src="{{ entry.leadImage[0].url() }}" alt="{{ entry.leadImage[0].title }}" />
-  {% endif %}
+<main class="sm:flex sm:flex-row rounded m-4 p-4 rounded bg-white text-black lg:container">
+  <aside class="sm:flex-1 sm:pr-4 sm:border-r sm:border-petrel">
+    <div class="sm:sticky sm:top-4 text-center">
+      {% if entry.leadImage.one() %}
+        <img
+          class="rounded mb-4"
+          src="{{ entry.leadImage[0].url() }}"
+          alt="{{ entry.leadImage[0].title }}"
+        />
+      {% endif %}
 
-  {{ entry.title }}
+      <div class="hidden sm:block">
+        <div class="mb-8">
+          <h1 class="font-bold">{{ entry.title }}</h1>
+          <p>By {{ entry.author }} on {{ entry.postDate|date("D j M, Y") }}</p>
+        </div>
 
-  <div class="prose mx-auto">
-  {{ entry.pageBody }}
-  </div>
+        <div>
+          <p class="mb-1">Share this post…</p>
+          <div class="inline-grid gap-2 grid-cols-3 justify-center">
+            <a target="_blank" href="https://api.whatsapp.com/send?text={{ craft.app.request.absoluteUrl|url_encode }}" class="no-underline rounded-full h-8 w-8 flex items-center justify-center bg-[#108c7e] text-white hover:bg-[#075f54] transition-colors">
+              {% include '/_partials/utility/svg' with { icon: 'whatsapp', class: 'fill-current h-4 w-4'} %}
+            </a>
+            <a target="_blank" href="https://twitter.com/intent/tweet?text={{ craft.app.request.absoluteUrl|url_encode }}" class="no-underline rounded-full h-8 w-8 flex items-center justify-center bg-[#1da1f1] text-white hover:bg-[#1c91da] transition-colors">
+              {% include '/_partials/utility/svg' with { icon: 'twitter', class: 'fill-current h-4 w-4'} %}
+            </a>
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ craft.app.request.absoluteUrl|url_encode }}" class="no-underline rounded-full h-8 w-8 flex items-center justify-center bg-[#1a77f2] text-white hover:bg-[#4167b1] transition-colors">
+              {% include '/_partials/utility/svg' with { icon: 'facebook', class: 'fill-current h-4 w-4'} %}
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <section class="sm:flex-1 sm:pl-4">
+
+    <div class="mb-8">
+      <h1 class="font-bold text-2xl">
+        {{ entry.title }}
+      </h1>
+
+      <p>
+        By {{ entry.author }} on {{ entry.postDate|date("D j M, Y") }}
+      </p>
+    </div>
+
+    <div class="prose md:prose-lg font-serif">
+    {{ entry.pageBody }}
+    </div>
+
+  </section>
+
 </main>
 
 {% endblock %}

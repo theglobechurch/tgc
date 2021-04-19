@@ -23,7 +23,7 @@
     <link rel="author" href="humans.txt" />
   </head>
 
-  <body>
+  <body class="text-white bg-petrel">
     {% if craft.app.config.general.devMode == false %}
     <!-- GTM CODE PLS -->
     {% endif %}
@@ -34,7 +34,9 @@
 
     {% block content %}{% endblock %}
 
-    {% block footer %}{% endblock %}
+    {% block footer %}
+      {% include "_partials/footer" %}
+    {% endblock %}
 
     <script src="{{ mix('app.js') }}"></script>
   </body>

@@ -1,5 +1,11 @@
-@import "tailwindcss/base";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "tailwindcss/components";
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-@import "tailwindcss/utilities";
+  a {
+    @apply underline;
+  }
+}

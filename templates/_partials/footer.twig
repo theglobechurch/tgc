@@ -1,0 +1,22 @@
+{% set blogposts = craft.entries.section('blog').
+              orderBy('postDate desc').limit(5).all() %}
+
+<footer class="lg:container mt-4 p-4">
+
+  <nav>
+    <a href="/blog" class="font-bold">Blog</a>
+
+    <ul>
+      {% for post in blogposts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+  </nav>
+
+  <p class="text-xs mt-8">
+    &copy; Copyright 2021 The Globe Church, London &middot;
+    Registered Charity 1160195 &middot;
+    <a href="/privacy">Privacy Policy</a>
+  </p>
+</footer>

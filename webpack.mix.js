@@ -11,15 +11,24 @@ if (!mix.inProduction()) {
 
 mix.setPublicPath("./web/cr-assets");
 
+mix.svgSprite("resources/svg/**/*.svg", {
+  output: {
+    filename: 'sprite.svg'
+  }
+})
+
+mix.options({
+  autoprefixer: { remove: false }
+});
+
 mix
   .sourceMaps()
   .js("resources/js/app.js", "app.js")
   .postCss("resources/css/app.css", "app.css", [
-    require("postcss-import"),
     require("tailwindcss"),
-    require("autoprefixer"),
   ])
-  // .svgSprite("resources/svg/**/*.svg", "sprite.svg")
   // .copyDirectory("resources/favicon", "./web/cr-assets/favicon")
   // .copyDirectory("resources/img", "./web/cr-assets/img")
   .version();
+
+mix.disableSuccessNotifications();

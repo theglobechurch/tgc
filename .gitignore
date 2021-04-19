@@ -8,3 +8,7 @@ web/cpresources
 web/cr-assets/*
 web/imager
 vaultPass.cnf
+
+
+app/*
+log/*
