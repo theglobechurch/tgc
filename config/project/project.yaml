@@ -1,4 +1,4 @@
-dateModified: 1615738121
+dateModified: 1619417976
 email:
   fromEmail: james@globe.church
   fromName: 'The Globe Church'
@@ -44,5 +44,5 @@ system:
   live: true
   name: 'The Globe Church'
   retryDuration: null
-  schemaVersion: 3.6.6
+  schemaVersion: 3.6.8
   timeZone: UTC
