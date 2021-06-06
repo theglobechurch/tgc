@@ -1,4 +1,9 @@
 {% extends '/_layouts/base' %}
+{%
+  set parentEvent = craft.entries.section('events').
+                        relatedTo({targetElement: entry}).
+                        one()
+%}
 
 {% block header %}
   <h1 class="text-xl">{{ entry.title}}</h1>
@@ -10,4 +15,19 @@
   <a href="{{ entry.dateAndTime.getIcsUrl }}">Add to calendar</a>
 
   {{ entry.pageBody }}
+
+  {% if entry.relatedEvents | length %}
+    {% include 'events/_partials/eventList'
+     with {
+       title: 'Related events',
+       eventList: entry.relatedEvents.all(),
+     }
+    %}
+  {% endif %}
+
+  {% if parentEvent %}
+  <a href="{{ parentEvent.url }}" class="no-underline block rounded bg-white p-2 text-black">
+    This event is part of {{ parentEvent.title }}
+  </a>
+  {% endif %}
 {% endblock %}

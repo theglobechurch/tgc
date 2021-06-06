@@ -1,0 +1,43 @@
+{# {% if attribute(event, 'start') is not null %}
+  {% set eventStart = event.start %}
+  {% set eventEnd = event.end %}
+{% else %}
+  {% set eventStart = event.dateAndTime.next.start %}
+  {% set eventEnd = event.dateAndTime.next.end %}
+{% endif %} #}
+
+{{ event.dateAndTime.startDate|date() }}
+{{ event.dateAndTime.next.start|date() }}
+{% if attribute(event, 'start') %}
+  test
+{% endif %}
+
+{# <a href="{{ event.url }}" class="block no-underline group py-4">
+  <p class="font-bold group-hover:text-sockeye">
+    {{ event.title }}
+  </p>
+
+  <p class="flex text-sm">
+    {% include '/_partials/utility/svg' with { icon: 'date', class: 'fill-current h-4 w-4 mr-1 mt-0.5 inline-block'} %}
+    {% if event.dateAndTime.allDay %}
+      {{ eventStart | date('l jS F') }}
+      {% if eventStart != eventEnd %}
+        - {{ eventEnd | date('l jS F') }}
+      {% endif %}
+    {% else %}
+      {{ eventStart | date('l jS F, g:ia') }}
+      - {{ eventEnd | date('g:ia') }}
+    {% endif %}
+  </p>
+
+  {% if event.location | length %}
+  <p class="flex text-sm">
+    {% include '/_partials/utility/svg' with { icon: 'explore', class: 'fill-current h-4 w-4 mr-1 mt-0.5 inline-block'} %}
+    {{ event.location.one() }}
+  </p>
+  {% endif %}
+
+  <p class="my-2">{{ event.description }}</p>
+
+  <p class="underline text-sm group-hover:text-sockeye">More information…</p>
+</a> #}

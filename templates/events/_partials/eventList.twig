@@ -1,0 +1,12 @@
+  <section class="mb-4">
+    <header class="pt-8 px-4 mb-4">
+      <h1 class="border-b text-2xl uppercase font-bold">{{ title }}</h1>
+      <p>{{ subtitle|default(null) }}</p>
+    </header>
+
+    <div class="rounded px-4 bg-white text-black lg:container divide-y">
+      {% for event in eventList %}
+        {% include 'events/_partials/eventPreview' %}
+      {% endfor %}
+    </div>
+  </section>

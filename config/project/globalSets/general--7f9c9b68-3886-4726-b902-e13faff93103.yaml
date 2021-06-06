@@ -1,0 +1,18 @@
+fieldLayouts:
+  4c6544e1-879f-4c7b-a215-965ae6f3cc98:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a097c181-ffe7-44dc-aea2-f3dd9f206de6 # Related Events
+            instructions: 'Featured events are highlighted on the homepage, the calendar, and elsewhere.'
+            label: 'Featured events'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Events
+        sortOrder: 1
+handle: general
+name: General

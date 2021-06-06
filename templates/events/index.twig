@@ -1,3 +1,14 @@
+{% set start = now|date(timezone="Europe/London") %}
+{% set sevenDays = start|date_modify('+7 day') %}
+{% set threeMonths = start|date_modify('+3 month')|date_modify('last day of this month') %}
+{% set nextSevenDays = craft.calendarize.between(start, sevenDays, { section: ['events'] }) %}
+{% set nextThreeMonths = craft.calendarize.between(
+  sevenDays|date_modify('+1 day'),
+  threeMonths,
+  { section: ['events'] }
+) %}
+{% set featuredEvent = general.relatedEvents.one() %}
+
 {% extends '/_layouts/base' %}
 
 {% block header %}
@@ -6,15 +17,69 @@
 
 {% block content %}
 
-  <h1 class="border-b p-2 m-2">This term</h1>
+<main class="m-4 p-4 lg:container">
 
-  {% set monthStart = '2020-08-01' %}
-  {% set monthEnd = '2020-12-31' %}
-  {% set occurrences = craft.calendarize.between(monthStart, monthEnd, { section: ['events'] }) %}
-  {% for occurrence in occurrences %}
-    <a href="{{occurrence.url }}" class="block border m-2 p-2">
-      {{ occurrence.title }} - {{ occurrence.next | date('Y-m-d H:i') }}
-    </a>
-  {% endfor %}
+  <section class="grid gap-4 md:grid-cols-3 mb-4 bg-white p-4 rounded">
+    {% include "events/_partials/coreEventThumb"
+       with {
+        title: 'Sundays',
+        subtitle: 'Church Service',
+        link: '/events/church-service',
+        image: null,
+        color: 'sockeye',
+       }
+    %}
+
+    {% include "events/_partials/coreEventThumb"
+       with {
+        title: 'Globe Focus',
+        subtitle: 'Small Group Bible Studies',
+        link: '/events/globe-focus',
+        image: null,
+        color: 'gold',
+       }
+    %}
+
+    {% include "events/_partials/coreEventThumb"
+       with {
+        title: 'Globe Central',
+        subtitle: 'Prayer Gathering',
+        link: '/events/central-prayer-meeting',
+        image: null,
+        color: 'lark',
+       }
+    %}
+  </section>
+
+  {% if featuredEvent and featuredEvent.dateAndTime.next.end >= now %}
+  <a href="{{ featuredEvent.url }}" class="group block no-underline bg-white rounded p-4 text-black lg:container mb-4">
+    <span class="mb-2 uppercase text-xs text-white font-bold rounded bg-sockeye px-2 py-1 inline-block group-hover:bg-sockeye-darker">
+      Featured event
+    </span>
+    <h2 class="text-2xl uppercase font-bold">{{ featuredEvent.title}}</h2>
+    <p class="flex text-sm">
+      {% include '/_partials/utility/svg' with { icon: 'date', class: 'fill-current h-4 w-4 mr-1 mt-0.5 inline-block'} %}
+      {{ featuredEvent.dateAndTime.next.start|date }} - {{ featuredEvent.dateAndTime.next.end|date }}
+    </p>
+    <p>{{ featuredEvent.description }}</p>
+    <p class="text-sm underline group-hover:text-sockeye-darker">Find out more</p>
+  </a>
+  {% endif %}
+
+  {% include 'events/_partials/eventList'
+     with {
+       title: 'Next seven days',
+       subtitle: "#{start|date('l jS F')} - #{sevenDays|date('l jS F')}",
+       eventList: nextSevenDays,
+     }
+  %}
+
+  {% include 'events/_partials/eventList'
+     with {
+       title: 'Further ahead',
+       subtitle: "Events up to #{threeMonths|date('F')}",
+       eventList: nextThreeMonths,
+     }
+  %}
 
 {% endblock %}

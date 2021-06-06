@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 51a71e36-16cc-46e3-9106-66e6ff4d8d62
+handle: relatedEvents
+instructions: ''
+name: 'Related Events'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add an event'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:f1837303-dbd3-4f76-a729-e7c9a3756833'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

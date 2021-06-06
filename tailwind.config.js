@@ -7,6 +7,8 @@ const colors = {
 
   sockeye: {
     DEFAULT: "#d06348",
+    darker: "#b1452a",
+    darkest: "#93280c",
   },
 
   petrel: {
@@ -27,7 +29,7 @@ const colors = {
 };
 
 module.exports = {
-  mode: 'jit',
+  // mode: 'jit',
   purge: {
     content: ["./templates/**/*.html", "./templates/**/*.twig"],
     options: {},
@@ -61,5 +63,8 @@ module.exports = {
   variants: {
     animation: ["motion-safe"],
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };
