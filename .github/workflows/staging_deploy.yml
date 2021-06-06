@@ -1,4 +1,9 @@
-name: Build & Deploy
+name: Staging Build & Deploy
+
+environment:
+ name: staging_environment
+ url: https://next.globe.church
+
 on:
   push:
     branches: [github-actions]
