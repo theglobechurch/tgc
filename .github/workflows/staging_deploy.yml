@@ -14,12 +14,12 @@ jobs:
     steps:
       - name: Deploy
         uses: appleboy/ssh-action@v0.1.4
-        host: ${{secrets.SSH_HOST}}
-        username: ${{secrets.SSH_USER}}
-        key: ${{secrets.SSH_KEY}}
-
-        script: |
-          cd /srv/next.globe.church/deploy
-          mkdir test
-          cd test
-          git clone git@github.com:theglobechurch/tgc.git
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{secrets.SSH_USER}}
+          key: ${{secrets.SSH_KEY}}
+          script: |
+            cd /srv/next.globe.church/deploy
+            mkdir test
+            cd test
+            git clone git@github.com:theglobechurch/tgc.git
