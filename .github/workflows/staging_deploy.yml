@@ -12,6 +12,8 @@ jobs:
       name: staging_environment
       url: https://next.globe.church
     steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "Here's the host ${{ secrets.SSH_HOST }}."
       - name: Deploy
         uses: appleboy/ssh-action@v0.1.4
         with:
