@@ -1,0 +1,20 @@
+name: Build & Deploy
+on:
+  push:
+    branches: [github-actions]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.4
+        with: ${{secrets.SSH_HOST}}
+        key: ${{secrets.SSH_KEY}}
+        user: ${{secrets.SSH_USER}}
+
+        script: |
+          cd /srv/next.globe.church/deploy
+          mkdir test
+          cd test
+          git clone git@github.com:theglobechurch/tgc.git
