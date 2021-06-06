@@ -1,8 +1,5 @@
 name: Staging Build & Deploy
 
-environment:
- name: staging_environment
- url: https://next.globe.church
 
 on:
   push:
@@ -11,12 +8,15 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: staging_environment
+      url: https://next.globe.church
     steps:
       - name: Deploy
         uses: appleboy/ssh-action@v0.1.4
-        with: ${{secrets.SSH_HOST}}
+        host: ${{secrets.SSH_HOST}}
+        username: ${{secrets.SSH_USER}}
         key: ${{secrets.SSH_KEY}}
-        user: ${{secrets.SSH_USER}}
 
         script: |
           cd /srv/next.globe.church/deploy
