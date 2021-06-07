@@ -19,7 +19,6 @@ jobs:
           username: ${{secrets.SSH_USER}}
           key: ${{secrets.SSH_KEY}}
           script: |
-            cd /srv/next.globe.church/deploy
-            mkdir test
-            cd test
+            mkdir -p /srv/next.globe.church/deploy/test
+            cd /srv/next.globe.church/deploy/test
             git clone git@github.com:theglobechurch/tgc.git .
