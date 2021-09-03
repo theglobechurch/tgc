@@ -90,6 +90,18 @@ private
           "2560": view_context.asset_path("static-banner/about_2560.jpg"),
         },
       }
+    when 'students'
+      {
+        "title" => 'Students at The Globe Church',
+        "image" => {
+          "320": view_context.asset_path("static-banner/about_320.jpg"),
+          "640": view_context.asset_path("static-banner/about_640.jpg"),
+          "960": view_context.asset_path("static-banner/about_960.jpg"),
+          "1280": view_context.asset_path("static-banner/about_1280.jpg"),
+          "1920": view_context.asset_path("static-banner/about_1920.jpg"),
+          "2560": view_context.asset_path("static-banner/about_2560.jpg"),
+        },
+      }
     when 'get-involved'
       {
         "title" => 'Get involved',
