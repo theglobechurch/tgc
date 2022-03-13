@@ -30,11 +30,17 @@ module ApplicationHelper
       return nil
     end
 
-    srcset = graphic.map { |(k, v)| "https://globe.church#{URI.escape(v)} #{k}w" }
+    base = "https://globe.church"
+
+    if Rails.env.development?
+      base = "http://localhost:3000"
+    end
+
+    srcset = graphic.map { |(k, v)| "#{base}#{URI.escape(v)} #{k}w" }
     kwargs = html_options.deep_merge(sizes:
       html_options.fetch(:sizes, []).join(', '))
-    fallback = !graphic.try(:[], :"960").blank? ? "https://globe.church#{graphic.try(:[], :"960")}" : nil
-    fallback = "https://globe.church#{graphic.values[0]}" if fallback.nil?
+    fallback = !graphic.try(:[], :"960").blank? ? "#{base}#{graphic.try(:[], :"960")}" : nil
+    fallback = "#{base}#{graphic.values[0]}" if fallback.nil?
     image_tag URI.escape(fallback),
               srcset: srcset.join(', '),
               **kwargs

@@ -4,7 +4,7 @@ keywords = "The Globe Church, Sermon, Recordings, Church"
 email = "info@globe.church"
 image = root_url + "assets/podcast-cover.jpg"
 if @artwork != nil
-  image = root_url + @artwork 
+  image = root_url + @artwork
 end
 
 xml.instruct! :xml, version: "1.0"
@@ -41,8 +41,12 @@ xml.rss "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
 
     @recordings.each do |recording|
       recording_url = root_url + recording.upload.file.remote_url[1..-1]
+      title = recording.title
+      if recording.reference_string
+        title = "#{title} - #{recording.reference_string}"
+      end
       xml.item do
-        xml.title recording.title
+        xml.title title
         xml.description recording.introduction
         xml.pubDate recording.display_date.to_s(:rfc822)
         xml.link resource_url(recording)
