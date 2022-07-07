@@ -5,7 +5,7 @@
     "globe-fractal": "theglobechurch/fractal#a7b54a0",
     "gulp-svg-symbols": "^2.0.2",
     "gulp-svgmin": "^1.2.4",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "natives": "^1.1.6",
     "prop-types": "^15.5.10",
     "react": "^16.8.4",
